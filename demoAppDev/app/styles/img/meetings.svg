@@ -1,0 +1,19 @@
+
+<svg width="45px" height="35px" viewBox="0 0 45 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Priority-Msg-/-Img-Annotation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-0-Chat" transform="translate(-240.000000, -626.000000)">
+            <g id="Navigation/Tab-Grey" transform="translate(225.000000, 618.000000)">
+                <rect id="Container" x="0" y="0" width="75" height="50"></rect>
+                <text id="↳-Text" font-family=".SFNSText, .SF NS Text" font-size="10" font-weight="normal" letter-spacing="0.12" fill="#6F6D6D">
+                    <tspan x="14.8398242" y="41">Meetings</tspan>
+                </text>
+                <text id="↳-Icon" font-family="TeamsAssets-Regular, Teams Assets" font-size="22" font-weight="normal" fill="#6F6D6D">
+                    <tspan x="26.5" y="30"></tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
