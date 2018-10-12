@@ -1,3 +1,4 @@
+webpack/environment.js
 node_modules/
 dist/
 .gitattributes

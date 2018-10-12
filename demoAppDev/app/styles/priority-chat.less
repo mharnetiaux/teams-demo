@@ -1,7 +1,10 @@
 @import "css-reset.less";
+@import "../fonts/fonts.less";
 
 body,
-html {
+html,
+a {
+    font-family: "TeamsAssets-Light";
     background-color: #F8F7F7;
     height: 100%;
     overflow:hidden;
@@ -31,18 +34,14 @@ html {
 
 // Message screen
 .message-window {
-    background: url("img/new-chat.png") no-repeat top;
+    //background: url("img/new-chat.png") no-repeat top;
     background-size: contain;
     background-color: #f3f2f1;
     display: flex;
     flex-direction: column;
     height: 100%;
     width: 100%;
-
-    input {
-        border: none; // Temporary
-    }
-
+    
     // Search for contact
     .search {
         width: 85%;
@@ -54,7 +53,7 @@ html {
 
     // New Message body
     .container-new-message {
-        background: url("img/message-type.png") no-repeat bottom;
+        //background: url("img/message-type.png") no-repeat bottom;
         background-size: contain;
         height: 100%;
         width: 100%;
@@ -69,7 +68,7 @@ html {
         }
 
         &.urgent{
-            background: url("img/urgent-message.png") no-repeat bottom;
+            //background: url("img/urgent-message.png") no-repeat bottom;
             background-size: contain;
             height: 100%;
             width:100%;
@@ -79,7 +78,7 @@ html {
             }
 
             .message-send {
-                background: url("img/send.png") no-repeat center;
+                //background: url("img/send.png") no-repeat center;
                 background-color: #F8F7F7;
                 width: 3rem;
                 height: 2.5rem;
@@ -109,7 +108,7 @@ html {
 
 
 .message-chat {
-    background: url("img/chat-history.png") no-repeat bottom;
+    //background: url("img/chat-history.png") no-repeat bottom;
     background-size: contain;
     height: 100%;
     width: 100%;
@@ -126,7 +125,7 @@ html {
 }
 
 .modal-backdrop {
-    background: url("img/important.png") no-repeat top;
+    //background: url("img/important.png") no-repeat top;
     background-size: cover;
     position: fixed;
     bottom: 0;

@@ -102,11 +102,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		HjaNSaoGKRE6zC0J+55BqJRstog=
+		7kfPyTjjF3LTicHtxlGsLewV5xg=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		LoPoGEgpGZb9d+4ganT+GF8t2q4=
+		20Vv+wthV9iHwRAnCv/Yo+pGUss=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		6ywVboG4wVIWFz519zhBPXRoOHY=
+		ajQlJL1Jt9JlxZDSLc5wdzL2gAM=
 		</data>
 		<key>CDVNotification.bundle/beep.wav</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		lYYQ5ZApYG7NbDCOHUun0ZT43cM=
+		+D46SqMbwRmkDhh+1NIfJkOMNZ0=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -240,37 +240,9 @@
 		<data>
 		vmBqbq9xYLWa8fnHGya5qRjdCVE=
 		</data>
-		<key>www/css/img/chat-history.png</key>
-		<data>
-		IpNaL/pN7s7Lqwtc5ZdergMZfYk=
-		</data>
-		<key>www/css/img/important.png</key>
-		<data>
-		7X55Zn2M3JbYbPCyYRQU1/0LEio=
-		</data>
-		<key>www/css/img/menu.png</key>
-		<data>
-		twtj8FA7Tr45jYYQyqZNnFWA00Y=
-		</data>
-		<key>www/css/img/message-type.png</key>
-		<data>
-		LgNijNbNc+2cR0zK4MpUmPq4w08=
-		</data>
-		<key>www/css/img/new-chat.png</key>
-		<data>
-		gZ421cXxdEOPNf98lAcGEMV1E28=
-		</data>
-		<key>www/css/img/send.png</key>
-		<data>
-		qXm1ozt45B76mrTiazJjuOtQEXM=
-		</data>
-		<key>www/css/img/urgent-message.png</key>
-		<data>
-		hEdMzEzrGk/9+kb8DMVqibqmALY=
-		</data>
 		<key>www/css/main.bundle.css</key>
 		<data>
-		4RnlsUSqYNtQKGm1UcfdIQnAsg4=
+		tVKNya8BhBxD7559TLHXSK60WO8=
 		</data>
 		<key>www/index.html</key>
 		<data>
@@ -282,7 +254,7 @@
 		</data>
 		<key>www/js/main.bundle.js</key>
 		<data>
-		/0P97ZTB0SpcJXP2DAeubM//wQc=
+		2cqcg8qj3lKiW4wzzRJXhiOL9W8=
 		</data>
 		<key>www/plugins/cordova-plugin-badge/www/badge.js</key>
 		<data>
@@ -607,22 +579,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HjaNSaoGKRE6zC0J+55BqJRstog=
+			7kfPyTjjF3LTicHtxlGsLewV5xg=
 			</data>
 			<key>hash2</key>
 			<data>
-			sljjT6R6K9E37NfI/AWkGSW5jptC884OVZeXYU+59kU=
+			NpbIpzYF80YihrTMp6GQaiLLAWRVz40rJ2AzLSwnImM=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LoPoGEgpGZb9d+4ganT+GF8t2q4=
+			20Vv+wthV9iHwRAnCv/Yo+pGUss=
 			</data>
 			<key>hash2</key>
 			<data>
-			sm3+Ew6/2yOBvCKo15BABtNJ6/0RACFCxdjrCiRAO74=
+			lF98iYthBEmABujELv00d4CK2TqKPDSBZ87D3PHNcXw=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -640,11 +612,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6ywVboG4wVIWFz519zhBPXRoOHY=
+			ajQlJL1Jt9JlxZDSLc5wdzL2gAM=
 			</data>
 			<key>hash2</key>
 			<data>
-			yGLyyOeGz1xrebYKeHJFPZsn9WcjleW/i7brRLOMbak=
+			MV5cmenefJjskE0GJbhuR3CHaeBhABUUVDWjYqYmBCA=
 			</data>
 		</dict>
 		<key>CDVNotification.bundle/beep.wav</key>
@@ -860,11 +832,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lYYQ5ZApYG7NbDCOHUun0ZT43cM=
+			+D46SqMbwRmkDhh+1NIfJkOMNZ0=
 			</data>
 			<key>hash2</key>
 			<data>
-			g9OW3Fc6r3onp9ZelT/DNx3kPJUVpZweaNtZ6hTsiRg=
+			6c6Yo2k+3EdAm1oyHFdun86m1EUQshUkLh3vd5pA53I=
 			</data>
 		</dict>
 		<key>config.xml</key>
@@ -966,92 +938,15 @@
 			bdnCWoaegQyenzGPlp1pXA4/2gG0NcZwj8uW4yq4a18=
 			</data>
 		</dict>
-		<key>www/css/img/chat-history.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			IpNaL/pN7s7Lqwtc5ZdergMZfYk=
-			</data>
-			<key>hash2</key>
-			<data>
-			UNeVUvVFNoFasZnkVkgli+Appbau/2hbYWuyGo8Lmno=
-			</data>
-		</dict>
-		<key>www/css/img/important.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			7X55Zn2M3JbYbPCyYRQU1/0LEio=
-			</data>
-			<key>hash2</key>
-			<data>
-			0pqA8UtLJvODhVWBGftKN7XOxapjjfiWzJLLtxgY9ig=
-			</data>
-		</dict>
-		<key>www/css/img/menu.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			twtj8FA7Tr45jYYQyqZNnFWA00Y=
-			</data>
-			<key>hash2</key>
-			<data>
-			Qmg0dOkRsGrce0bWviVt3/iYgKJuIy5Wm9Z16KYQ/2E=
-			</data>
-		</dict>
-		<key>www/css/img/message-type.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			LgNijNbNc+2cR0zK4MpUmPq4w08=
-			</data>
-			<key>hash2</key>
-			<data>
-			2dWvauesrvRoWnvSDxlkGlVQVfkwczCwR/IXfnllpZ8=
-			</data>
-		</dict>
-		<key>www/css/img/new-chat.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			gZ421cXxdEOPNf98lAcGEMV1E28=
-			</data>
-			<key>hash2</key>
-			<data>
-			K1VyPoNw3sic95k4jTdTq+WYz/0WnvcqG8kPL9fBwsc=
-			</data>
-		</dict>
-		<key>www/css/img/send.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			qXm1ozt45B76mrTiazJjuOtQEXM=
-			</data>
-			<key>hash2</key>
-			<data>
-			whKPAJl652GX/vVIDJ3Vzosi6SdV1kX4ABFzYpXA7N8=
-			</data>
-		</dict>
-		<key>www/css/img/urgent-message.png</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			hEdMzEzrGk/9+kb8DMVqibqmALY=
-			</data>
-			<key>hash2</key>
-			<data>
-			pjm39fkNBGFCHKkrpQm2wgO7iEkB8Z1Aa55DxvgNr3s=
-			</data>
-		</dict>
 		<key>www/css/main.bundle.css</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4RnlsUSqYNtQKGm1UcfdIQnAsg4=
+			tVKNya8BhBxD7559TLHXSK60WO8=
 			</data>
 			<key>hash2</key>
 			<data>
-			YvAyx4U9L+qEa/vs6OHs3wT4eSYJzsv6yJV609zdDL8=
+			l/uKfNE1peLItPBN08Ezu692gwS3cvFO8rfQGQMFOjY=
 			</data>
 		</dict>
 		<key>www/index.html</key>
@@ -1080,11 +975,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/0P97ZTB0SpcJXP2DAeubM//wQc=
+			2cqcg8qj3lKiW4wzzRJXhiOL9W8=
 			</data>
 			<key>hash2</key>
 			<data>
-			VITBc9DIo0OD1kPPVeziwujNHbTY/CriQ5sp1PmNoMs=
+			YIuMjetKO/KNVNsBTzaalDwCphremJLUhot2hvSmr70=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-badge/www/badge.js</key>

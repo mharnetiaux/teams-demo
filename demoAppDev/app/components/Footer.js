@@ -1,10 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Activity from "../styles/img/activity.svg";
-import Chat from "../styles/img/chat.svg";
-import Teams from "../styles/img/teams.svg";
-import Meetings from "../styles/img/meetings.svg";
-import Calls from "../styles/img/calls.svg";
+import Activity from '../icon/activity.svg';
+import Chat from "../icon/chat.svg";
+import Teams from "../icon/teams.svg";
+import Meetings from "../icon/meetings.svg";
+import Calls from "../icon/calls.svg";
 
 const Footer = () => (
     <nav className="footer">

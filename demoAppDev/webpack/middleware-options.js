@@ -4,7 +4,6 @@ import webpackConfig from '../webpack.config.babel';
 const middleware_options = {
     publicPath:webpackConfig.output.publicPath,
     contentBase:path.resolve(__dirname, './dist'),
-    historyApiFallback: true,
     compress: true,
     hot: true,
     open: true,

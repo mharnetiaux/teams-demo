@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Contact from "../styles/img/contact.svg";
-import Search from "../styles/img/search.svg";
-import Menu from "../styles/img/menu.svg";
+import Contact from "../icon/contact.svg";
+import Search from "../icon/search.svg";
+import Menu from "../icon/menu.svg";
 
 const Nav = () => (
     <nav className="home-navigation">

@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import environment from './webpack/enviornment.js';
+import environment from './webpack/environment.js';
 import path from 'path';
 
 const config = {
@@ -43,11 +43,20 @@ const config = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(png|jpg|gif)$/,
                 use: {
                     loader: "file-loader",
                     options: {
-                        name: "img/[name].[ext]",
+                        name: "img/[name].[ext]"
+                    },
+                },
+            },
+            {
+                test: /\.(ttf|eot|woff|woff2)$/,
+                use: {
+                    loader: "url-loader",
+                    options: {
+                        name: "fonts/[name].[ext]",
                     },
                 },
             },
@@ -60,7 +69,7 @@ const config = {
                     {
                         loader: "react-svg-loader",
                         options: {
-                            jsx: true // true outputs JSX tags
+                            jsx: true
                         }
                     }
                 ]
