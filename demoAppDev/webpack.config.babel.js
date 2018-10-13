@@ -43,35 +43,14 @@ const config = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg|gif)$/,
-                use: {
-                    loader: "file-loader",
-                    options: {
-                        name: "img/[name].[ext]"
-                    },
-                },
-            },
-            {
-                test: /\.(ttf|eot|woff|woff2)$/,
-                use: {
-                    loader: "url-loader",
-                    options: {
-                        name: "fonts/[name].[ext]",
-                    },
-                },
-            },
-            {
-                test: /\.svg$/,
+                test: /\.(svg)$/,
                 use: [
                     {
-                        loader: "babel-loader"
-                    },
-                    {
-                        loader: "react-svg-loader",
+                        loader: 'file-loader',
                         options: {
-                            jsx: true
-                        }
-                    }
+                            name: '[path][name].[ext]'
+                        },
+                    },
                 ]
             }
         ]

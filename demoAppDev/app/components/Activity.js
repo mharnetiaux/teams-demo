@@ -5,7 +5,6 @@ import Footer from "./Footer";
 
 const Activity = () => (
     <Page>
-        <h1>Activity</h1>
         <Nav/>
         <Footer/>
     </Page>

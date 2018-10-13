@@ -5,7 +5,6 @@ import Footer from "./Footer";
 
 const Teams = () => (
     <Page>
-        <h1>Teams</h1>
         <Nav/>
         <Footer/>
     </Page>

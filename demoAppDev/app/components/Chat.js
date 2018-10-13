@@ -6,7 +6,6 @@ import Footer from "./Footer";
 const Chat = () => (
     <Page>
         <Nav/>
-        <h1></h1>
         <Footer/>
     </Page>
 );
