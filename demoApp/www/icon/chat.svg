@@ -7,7 +7,7 @@
         <g id="1-0-Chat" transform="translate(-101.000000, -627.000000)">
             <g id="Navigation/Tab-Purple" transform="translate(75.000000, 618.000000)">
                 <rect id="Container" x="0" y="0" width="75" height="50"></rect>
-                <text id="↳-Text" font-family=".SFNSText, .SF NS Text" font-size="10" font-weight="normal" letter-spacing="0.12" fill="#686CCE">
+                <text id="↳-Text" font-family="Arial" font-size="10" font-weight="normal" letter-spacing="0.12" fill="#686CCE">
                     <tspan x="25.9025781" y="41">Chat</tspan>
                 </text>
                 <text id="↳-Icon" font-family="TeamsAssets-Regular, Teams Assets" font-size="22" font-weight="normal" fill="#686CCE">

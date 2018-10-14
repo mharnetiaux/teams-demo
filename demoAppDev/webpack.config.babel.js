@@ -43,7 +43,7 @@ const config = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(svg)$/,
+                test: /\.(svg|ttf)$/,
                 use: [
                     {
                         loader: 'file-loader',

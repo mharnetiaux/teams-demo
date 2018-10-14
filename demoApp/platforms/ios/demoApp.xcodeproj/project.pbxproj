@@ -20,6 +20,8 @@
 		4A21BA1DF1414EE7AC189E22 /* GCDWebServerFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3137B7A727C241C0A45AF704 /* GCDWebServerFunctions.m */; };
 		4CA2D5AE1A89405A81B02F18 /* GCDWebServerDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D921BFC0F3C40AEBB81EDE7 /* GCDWebServerDataResponse.m */; };
 		555AB388BC01494EA284F0D2 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE98909808742359EEAF06E /* CDVNotification.m */; };
+		57CBE7D421729E3A004721DE /* TeamsAssets-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57CBE7D621729E3A004721DE /* TeamsAssets-Light.ttf */; };
+		57CBE7D721729E4A004721DE /* TeamsAssets-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57CBE7D921729E4A004721DE /* TeamsAssets-Regular.ttf */; };
 		5AC31A81B662490FADBB6B4F /* GCDWebServerURLEncodedFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB88B25CE744A1A35E9668 /* GCDWebServerURLEncodedFormRequest.m */; };
 		60FDE12FF4F047A68F31DA70 /* UNUserNotificationCenter+APPLocalNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C1D8083C094974A972040B /* UNUserNotificationCenter+APPLocalNotification.m */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
@@ -117,6 +119,8 @@
 		4CADABAF39AB47868A319674 /* UNNotificationRequest+APPLocalNotification.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "UNNotificationRequest+APPLocalNotification.m"; path = "cordova-plugin-local-notification/UNNotificationRequest+APPLocalNotification.m"; sourceTree = "<group>"; };
 		50C2F6FF9E5F411DB050AB9D /* CDVIonicKeyboard.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVIonicKeyboard.h; path = "cordova-plugin-ionic-keyboard/CDVIonicKeyboard.h"; sourceTree = "<group>"; };
 		53E11D7A1E8A48A38878ED7A /* GCDWebServerStreamedResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerStreamedResponse.h; path = "cordova-plugin-ionic-webview/GCDWebServerStreamedResponse.h"; sourceTree = "<group>"; };
+		57CBE7D521729E3A004721DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = "en.lproj/TeamsAssets-Light.ttf"; sourceTree = "<group>"; };
+		57CBE7D821729E4A004721DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = "en.lproj/TeamsAssets-Regular.ttf"; sourceTree = "<group>"; };
 		5CE6903E15B3442BA469324C /* CDVIonicKeyboard.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVIonicKeyboard.m; path = "cordova-plugin-ionic-keyboard/CDVIonicKeyboard.m"; sourceTree = "<group>"; };
 		5DE98909808742359EEAF06E /* CDVNotification.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVNotification.m; path = "cordova-plugin-dialogs/CDVNotification.m"; sourceTree = "<group>"; };
 		5EB7F3BBE8C045859BDDA27C /* GCDWebServerFunctions.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFunctions.h; path = "cordova-plugin-ionic-webview/GCDWebServerFunctions.h"; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				57CBE7D621729E3A004721DE /* TeamsAssets-Light.ttf */,
+				57CBE7D921729E4A004721DE /* TeamsAssets-Regular.ttf */,
 				0207DA571B56EA530066E2B4 /* Images.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* demoApp-Info.plist */,
@@ -433,7 +439,9 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				57CBE7D421729E3A004721DE /* TeamsAssets-Light.ttf in Resources */,
 				791F89AE41C340AC9E04BDAD /* CDVNotification.bundle in Resources */,
+				57CBE7D721729E4A004721DE /* TeamsAssets-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +460,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2>/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2>/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH && node cordova/lib/copy-www-build-step.js";
+			shellScript = "NODEJS_PATH=/usr/local/bin; NVM_NODE_PATH=~/.nvm/versions/node/`nvm version 2>/dev/null`/bin; N_NODE_PATH=`find /usr/local/n/versions/node/* -maxdepth 0 -type d 2>/dev/null | tail -1`/bin; XCODE_NODE_PATH=`xcode-select --print-path`/usr/share/xcs/Node/bin; PATH=$NODEJS_PATH:$NVM_NODE_PATH:$N_NODE_PATH:$XCODE_NODE_PATH:$PATH && node cordova/lib/copy-www-build-step.js\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -506,6 +514,27 @@
 			targetProxy = 301BF550109A68C00062928A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		57CBE7D621729E3A004721DE /* TeamsAssets-Light.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57CBE7D521729E3A004721DE /* en */,
+			);
+			name = "TeamsAssets-Light.ttf";
+			path = "/Users/mattdharnetiaux/teams-demo/demoApp/platforms/ios/demoApp/Resources/../../../../../../Desktop";
+			sourceTree = "<absolute>";
+		};
+		57CBE7D921729E4A004721DE /* TeamsAssets-Regular.ttf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57CBE7D821729E4A004721DE /* en */,
+			);
+			name = "TeamsAssets-Regular.ttf";
+			path = "/Users/mattdharnetiaux/teams-demo/demoApp/platforms/ios/demoApp/Resources/../../../../../../Desktop";
+			sourceTree = "<absolute>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
