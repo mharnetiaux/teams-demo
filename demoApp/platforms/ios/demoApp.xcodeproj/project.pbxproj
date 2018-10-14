@@ -23,6 +23,8 @@
 		4B2B8845BD9F40E1B4C078A3 /* GCDWebServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 27430719B97B4E44AAAF3142 /* GCDWebServerRequest.m */; };
 		4DD8830B5E2C4D948B788546 /* CDVWKProcessPoolFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 68741ADF90104AD691BB482E /* CDVWKProcessPoolFactory.m */; };
 		53BA31D6756141889BCE23A9 /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E2DBCCDF83426FA4D2296C /* GCDWebServer.m */; };
+		57B533DD2173EEC500FF4CBC /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 57B533DA2173EEC500FF4CBC /* icon */; };
+		57B533DE2173EEC500FF4CBC /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 57B533DC2173EEC500FF4CBC /* fonts */; };
 		5CC5E932665A44AAB827953D /* GCDWebServerMultiPartFormRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3327342100A041419FE08DDE /* GCDWebServerMultiPartFormRequest.m */; };
 		60B53970491245AB8A7FF6F7 /* GCDWebServerStreamedResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF6AE8CA1EF4B298651A8F9 /* GCDWebServerStreamedResponse.m */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
@@ -112,6 +114,8 @@
 		48F1F1B9EE9B496DA8534F27 /* CDVOrientation.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVOrientation.h; path = "cordova-plugin-screen-orientation/CDVOrientation.h"; sourceTree = "<group>"; };
 		4A727C9120CB44E787930E69 /* CDVViewController+SplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "CDVViewController+SplashScreen.h"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.h"; sourceTree = "<group>"; };
 		52181300242648E3A0CE488F /* GCDWebServerFileRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFileRequest.m; path = "cordova-plugin-ionic-webview/GCDWebServerFileRequest.m"; sourceTree = "<group>"; };
+		57B533DA2173EEC500FF4CBC /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icon; path = ../../../../../../icon; sourceTree = "<group>"; };
+		57B533DC2173EEC500FF4CBC /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = fonts; path = ../../../../../../fonts; sourceTree = "<group>"; };
 		5A4FFA5FBAC4481FA9266875 /* CDVIonicKeyboard.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVIonicKeyboard.h; path = "cordova-plugin-ionic-keyboard/CDVIonicKeyboard.h"; sourceTree = "<group>"; };
 		5E730DFFAA094334838AFB7B /* GCDWebServerStreamedResponse.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerStreamedResponse.h; path = "cordova-plugin-ionic-webview/GCDWebServerStreamedResponse.h"; sourceTree = "<group>"; };
 		607F7EAF7592463DB64CBA7E /* APPBadge.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = APPBadge.h; path = "cordova-plugin-badge/APPBadge.h"; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				57B533DC2173EEC500FF4CBC /* fonts */,
+				57B533DA2173EEC500FF4CBC /* icon */,
 				0207DA571B56EA530066E2B4 /* Images.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* demoApp-Info.plist */,
@@ -431,7 +437,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
+				57B533DD2173EEC500FF4CBC /* icon in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
+				57B533DE2173EEC500FF4CBC /* fonts in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
 				254606C291034D9698514360 /* CDVNotification.bundle in Resources */,
 			);

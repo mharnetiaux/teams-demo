@@ -8,7 +8,7 @@ const config = {
     entry: environment.hotModule(),
     output: {
         path: __dirname + '/dist',
-        filename: 'js/[name].bundle.js',
+        filename: 'js/[name].bundle.js'
     },
     module: {
         rules: [{
@@ -48,8 +48,8 @@ const config = {
                     loader: 'file-loader',
                     options: {
                         name: '[path][name].[ext]'
-                    },
-                }, ]
+                    }
+                } ]
             }
         ]
     },
