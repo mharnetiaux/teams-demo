@@ -44,14 +44,12 @@ const config = {
             },
             {
                 test: /\.(svg|ttf)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[path][name].[ext]'
-                        },
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name].[ext]'
                     },
-                ]
+                }, ]
             }
         ]
     },
