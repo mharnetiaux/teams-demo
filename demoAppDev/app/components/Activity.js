@@ -6,7 +6,7 @@ import Footer from "./Footer";
 const Activity = () => (
     <Page>
         <Nav/>
-        <section>Activity Page</section>
+        <section className="page-content">Activity Page</section>
         <Footer/>
     </Page>
 );

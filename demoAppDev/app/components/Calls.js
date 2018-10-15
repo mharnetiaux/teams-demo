@@ -6,7 +6,7 @@ import Footer from "./Footer";
 const Calls = () => (
     <Page>
         <Nav/>
-        <section>Calls Page</section>
+        <section className="page-content">Calls Page</section>
         <Footer/>
     </Page>
 );

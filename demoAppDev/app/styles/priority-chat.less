@@ -3,28 +3,41 @@
 
 body,
 html {
-    background-color: #F8F7F7;
+    background-color:#F9F8F7;
     height: 100%;
     overflow:hidden;
     position: relative;
+    font-size: 1rem;
 }
 
 // Navigation container
 .home-navigation {
-    width: 100%;
-}
+    background: #F9F8F7;
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin: 0 auto;
 
+    .contact {
+        margin-left: auto;
+    }
 
-// Main container element
-.home-page {
-    width: 100%;
+    .menu {
+        margin-right: 1.5rem;
+    }
 }
 
 // Footer
 .footer {
+    width: 95%;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 // Message screen
@@ -112,7 +125,6 @@ html {
 }
 
 .modal-backdrop {
-    background-size: cover;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -129,15 +141,9 @@ html {
 /* Page */
 
 .page {
+    padding-top: 2rem;
     height: 100%;
-    position: fixed;
-    top: 0;
-    width: 100%;
     transition: transform 0s ease-out;
-}
-
-.page__inner {
-    height: 100%;
 }
 
 .page-enter {
@@ -162,4 +168,9 @@ html {
 
 .page--prev.page-exit {
     transform: translate(100%, 0);
+}
+
+.page-content {
+    width: 100%;
+    background: #fff;
 }

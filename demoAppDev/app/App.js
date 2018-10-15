@@ -10,10 +10,11 @@ import Meetings from './components/Meetings';
 import Calls from './components/Calls';
 import Contact from './components/messaging/message-home';
 import Message from './components/messaging/message-contact';
+const supportsHistory = 'pushState' in window.history;
 
 
 const App = ({}) => (
-    <HashRouter>
+    <HashRouter forceRefresh={!supportsHistory}>
             <Route
                 render={({ location }) => {
                     const {pathname} = location;
