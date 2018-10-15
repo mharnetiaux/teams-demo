@@ -7,8 +7,10 @@ Development Requirements:
   2.  run `cordova platform add ios`
 
   3. `cd platforms/ios/` -- run `open demoApp.xcodeproj/`
-
-  4. Assign Provisioning Profile -- See Apple Developer Docs
+  
+  4. run `cordova-icon` and `cordova-splash` -- This creates custom app icon and splash screen
+  
+  5. Assign Provisioning Profile -- See Apple Developer Docs
   
   Useful Commands: 
 
