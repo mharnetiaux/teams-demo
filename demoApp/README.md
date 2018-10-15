@@ -12,12 +12,4 @@ Development Requirements:
   
   Useful Commands: 
 
-    `npm run cordova-icon` -- add app icon
-
-    `npm run cordova-splash` -- add app splash screen
-  
-    `npm run build` -- build ios project
-  
-    `npm run sim` -- side-load ios app to iphone
-  
-    `npm run em` -- emulate ios app in xcode 
+    `npm run cordova-icon`
