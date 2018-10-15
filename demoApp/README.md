@@ -8,6 +8,10 @@ Development Requirements:
   
   2. `cordova platform add ios`
 
+  3. `cd platform/ios/` and run `open demoApp.xcodeproj/`
+
+  4. Assign Provisioning Profile 
+
   `npm run build`to build ios project
 
   `npm run cordova-icon`to add app icon
