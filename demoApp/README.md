@@ -8,14 +8,16 @@ Development Requirements:
   
   2. `cordova platform add ios`
 
-  Run `npm run build`to build ios project
+  `npm run build`to build ios project
 
-  Run `npm run cordova-icon`to add app icon
+  `npm run cordova-icon`to add app icon
 
-  Run `npm run cordova-splash`to add app splash screen
+  `npm run cordova-splash`to add app splash screen
+  
+  `npm run sim`to side-load ios app to iphone
+  
+  `npm run sim`to side-load ios app to iphone
 
-  Run `npm run sim`to side-load ios app to iphone
-
-  Run `npm run em`to emulate ios app in xcode  
+  `npm run em`to emulate ios app in xcode  
 
  
