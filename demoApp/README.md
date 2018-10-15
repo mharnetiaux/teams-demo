@@ -1,13 +1,10 @@
+Development Requirements: 
+  - xcode
+  - npm
+  - git
+  - cordova
+    
 
-
-![alt text](https://media.giphy.com/media/113ZcqZZZH9AZy/giphy.gif)
-
-
-# React
- 
-# Cool Features
-
-Local server listening on `localhost:8080`, once you've run the following commands:
 
   1. `cd` into root directory -- run `npm install`
   
