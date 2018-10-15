@@ -7,7 +7,15 @@
 	.st1{font-family:'TeamsAssets-Light';}
 	.st2{font-size:22px;}
 </style>
-<desc>Created with Sketch.</desc>
+<font horiz-adv-x="2048">
+<!-- Copyright (c) 2017 by Microsoft. All rights reserved. -->
+<!-- Copyright: Copyright 2018 Adobe System Incorporated. All rights reserved. -->
+<font-face font-family="TeamsAssets-Light" units-per-em="2048" underline-position="-119" underline-thickness="119"/>
+<missing-glyph horiz-adv-x="600"/>
+<glyph unicode="&#xE41A;" horiz-adv-x="2048" d="M1918,1600C1918,1583 1912,1568 1900,1556C1887,1543 1872,1537 1855,1537l-1664,0C174,1537 159,1543 147,1556C134,1568 128,1583 128,1600C128,1617 134,1632 147,1645C159,1657 174,1663 191,1663l1664,0C1872,1663 1887,1657 1900,1645C1912,1632 1918,1617 1918,1600M1918,320C1918,303 1912,288 1900,276C1887,263 1872,257 1855,257l-1664,0C174,257 159,263 147,276C134,288 128,303 128,320C128,337 134,352 147,365C159,377 174,383 191,383l1664,0C1872,383 1887,377 1900,365C1912,352 1918,337 1918,320M1918,960C1918,943 1912,928 1900,916C1887,903 1872,897 1855,897l-1664,0C174,897 159,903 147,916C134,928 128,943 128,960C128,977 134,992 147,1005C159,1017 174,1023 191,1023l1664,0C1872,1023 1887,1017 1900,1005C1912,992 1918,977 1918,960z"/>
+</font>
+
+	<desc>Created with Sketch.</desc>
 <g id="Priority-Msg-_x2F_-Img-Annotation">
 	<g id="_x31_-0-Chat" transform="translate(-16.000000, -34.000000)">
 		<g id="Icon_x2F_Brand-Line" transform="translate(15.000000, 30.000000)">
