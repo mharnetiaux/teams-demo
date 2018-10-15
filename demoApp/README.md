@@ -1,16 +1,14 @@
 Development Requirements: 
-  - xcode
-  - cordova
+  - install xcode
+  - install cordova
     
-
-
-  1. `cd` into root directory -- run `npm install`
+  1. `cd` into root `teams-demo/demoApp` -- run `npm install`
   
-  2. `cordova platform add ios`
+  2.  run `cordova platform add ios`
 
-  3. `cd platform/ios/` and run `open demoApp.xcodeproj/`
+  3. `cd platform/ios/` -- run `open demoApp.xcodeproj/`
 
-  4. Assign Provisioning Profile
+  4. Assign Provisioning Profile -- See Apple Developer Docs
   
   Useful Commands: 
 
