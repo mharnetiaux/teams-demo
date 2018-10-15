@@ -6,6 +6,7 @@ import Footer from "./Footer";
 const Teams = () => (
     <Page>
         <Nav/>
+        <section>Teams Page</section>
         <Footer/>
     </Page>
 );

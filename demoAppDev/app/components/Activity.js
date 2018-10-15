@@ -6,6 +6,7 @@ import Footer from "./Footer";
 const Activity = () => (
     <Page>
         <Nav/>
+        <section>Activity Page</section>
         <Footer/>
     </Page>
 );
