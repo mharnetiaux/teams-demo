@@ -12,4 +12,8 @@ Development Requirements:
   
   Useful Commands: 
 
-    `npm run cordova-icon`
+  `npm run build` -- build ios project
+  
+  `npm run em` -- emulate ios app in xcode
+  
+  `npm run sim` -- sideload ios app on device 
