@@ -37,5 +37,9 @@
       "cordova-plugin-local-notification": {},
       "cordova-plugin-splashscreen": {}
     }
+  },
+  "devDependencies": {
+    "cordova-icon": "^1.0.0",
+    "cordova-splash": "^1.0.0"
   }
 }

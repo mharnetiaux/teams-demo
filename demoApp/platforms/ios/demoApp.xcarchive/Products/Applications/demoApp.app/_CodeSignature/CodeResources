@@ -102,11 +102,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		agb6KX0l25N2nX0c3w+Ig38A5SQ=
+		hAQ/pZC1gzDlUqeIG8T+SwlmIy8=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		NeRshlvk6SVtjfO4qL4Z14xsSn8=
+		jwbKYWECN/4C+Ff3vkuOcAcgONE=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -114,7 +114,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		vvNQfIq0ZlChAF3VLn/koqRtyL0=
+		WzQqxPrH8HQ0ge1+JV6nEqPTElQ=
 		</data>
 		<key>CDVNotification.bundle/beep.wav</key>
 		<data>
@@ -198,7 +198,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		uJ+2z1xoUhpMtEQXfb+CwrouugY=
+		ZuZopGM80up/Jo4RMT9dnO45tKo=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -240,9 +240,21 @@
 		<data>
 		e58E8og5zgOINklSJlPNzPcfbiE=
 		</data>
+		<key>www/fonts/TeamsAssets-Light.ttf</key>
+		<data>
+		ZbmluB5q600zFz3RYMSgpmH0+1A=
+		</data>
+		<key>www/fonts/TeamsAssets-Regular.ttf</key>
+		<data>
+		eIldAYKzZe9BQLn3qfnOnlyiNAA=
+		</data>
 		<key>www/icon/activity.svg</key>
 		<data>
-		KjmTqWM9RtZtdWQoDq4nwkltXts=
+		/JZD+gymdOxwXvRQNDxV9fET/Jg=
+		</data>
+		<key>www/icon/activity2.svg</key>
+		<data>
+		r7UZjN/nx69cxG6ztWXvuYzs5cI=
 		</data>
 		<key>www/icon/calls.svg</key>
 		<data>
@@ -274,7 +286,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		pbuHFLkfrTx3aZKmLLlZ+bLzSLQ=
+		pEvHue0fcSxkB59fbmWP100gHyg=
 		</data>
 		<key>www/js/index.js</key>
 		<data>
@@ -282,7 +294,7 @@
 		</data>
 		<key>www/js/main.bundle.js</key>
 		<data>
-		iAshTj2QT8nSjS2H0ld+ZtY8d9U=
+		eV48d0DMurNrxvGXd5X+oCND654=
 		</data>
 		<key>www/plugins/cordova-plugin-badge/www/badge.js</key>
 		<data>
@@ -607,22 +619,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			agb6KX0l25N2nX0c3w+Ig38A5SQ=
+			hAQ/pZC1gzDlUqeIG8T+SwlmIy8=
 			</data>
 			<key>hash2</key>
 			<data>
-			XKpxL7F0kVTQCEvHKeVwqq9deFL446tcmYv0x8Cuz+A=
+			Gl7pJxyCXgFotqvLrv1VZrutGeBETi4baCzRipt05PM=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			NeRshlvk6SVtjfO4qL4Z14xsSn8=
+			jwbKYWECN/4C+Ff3vkuOcAcgONE=
 			</data>
 			<key>hash2</key>
 			<data>
-			7+wG/eD/ituZ6hl3GTqOEMbyhbUG7jtf67+tyN/PPXI=
+			v6LbIbpPMChcDZJf4lQ8qVX//hrRmAY1+VQzCAD/hvA=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -640,11 +652,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vvNQfIq0ZlChAF3VLn/koqRtyL0=
+			WzQqxPrH8HQ0ge1+JV6nEqPTElQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Kt5lOCa/DfvHj/WxWUSmxm2Pbq2rnwQ5UYbHU3MbPY8=
+			+kxzt37jim1kUNHIr+VcCQQ22q0Dg/LUR1iV4h6+oh0=
 			</data>
 		</dict>
 		<key>CDVNotification.bundle/beep.wav</key>
@@ -860,11 +872,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			uJ+2z1xoUhpMtEQXfb+CwrouugY=
+			ZuZopGM80up/Jo4RMT9dnO45tKo=
 			</data>
 			<key>hash2</key>
 			<data>
-			dOCd3LgihPUnGS3H+IoeLUWDXRQ1dJknE+Iiuud47Uo=
+			eybfKj7zo3j6/7AX4rDObmSXVXQ1pLadXcJRFceSnvw=
 			</data>
 		</dict>
 		<key>config.xml</key>
@@ -966,15 +978,48 @@
 			caLoJe2GjsjKWOod0SZmjYpct9hSqkl3RgVc7B3DBHQ=
 			</data>
 		</dict>
+		<key>www/fonts/TeamsAssets-Light.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ZbmluB5q600zFz3RYMSgpmH0+1A=
+			</data>
+			<key>hash2</key>
+			<data>
+			iU/j6F5CVDgXlqjjA+hiIseRiPfSZii/SMr5WyBrtaM=
+			</data>
+		</dict>
+		<key>www/fonts/TeamsAssets-Regular.ttf</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			eIldAYKzZe9BQLn3qfnOnlyiNAA=
+			</data>
+			<key>hash2</key>
+			<data>
+			k6VzP6hM4Mpub/Wbduz5BmxH+4erS0OSwIwPsHRzcI8=
+			</data>
+		</dict>
 		<key>www/icon/activity.svg</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KjmTqWM9RtZtdWQoDq4nwkltXts=
+			/JZD+gymdOxwXvRQNDxV9fET/Jg=
 			</data>
 			<key>hash2</key>
 			<data>
-			bSNqUAOTWpY80jhpkXmTOX6raxqdnKf/y+qKjrYWnjM=
+			uL+p9GFew+M/cXIvzZB+KuzulDgn/ILzL89iO7t6YQs=
+			</data>
+		</dict>
+		<key>www/icon/activity2.svg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			r7UZjN/nx69cxG6ztWXvuYzs5cI=
+			</data>
+			<key>hash2</key>
+			<data>
+			8lPh2I4Kdb03ZbKsI4PpxwDHMGW6+QMzLkoOfrpNpR4=
 			</data>
 		</dict>
 		<key>www/icon/calls.svg</key>
@@ -1058,11 +1103,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pbuHFLkfrTx3aZKmLLlZ+bLzSLQ=
+			pEvHue0fcSxkB59fbmWP100gHyg=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZgR3UJA/BuIilRADqtsVZPeb8J3sKkA2m2mbubYcoUA=
+			F0b7cHpH+lQ7QFOLRSGArZzf4iSiTK9ZYC53Jbq1K7s=
 			</data>
 		</dict>
 		<key>www/js/index.js</key>
@@ -1080,11 +1125,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			iAshTj2QT8nSjS2H0ld+ZtY8d9U=
+			eV48d0DMurNrxvGXd5X+oCND654=
 			</data>
 			<key>hash2</key>
 			<data>
-			Wmmrb2SoYqQsGHOnBJBXKSYdMV79caKgpJsz9qs5wEE=
+			emrA4tdYC6WYMnlnI7wcFsExzhFO8UXbYxjHegZOE2M=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-badge/www/badge.js</key>

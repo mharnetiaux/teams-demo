@@ -1,18 +1,45 @@
-<svg width="37px" height="35px" viewBox="0 0 37 35" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <title>Activity</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Priority-Msg-/-Img-Annotation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="1-0-Chat" transform="translate(-19.000000, -626.000000)">
-            <g id="Navigation/Tab-Grey" transform="translate(0.000000, 618.000000)">
-                <rect id="Container" x="0" y="0" width="75" height="50"></rect>
-                <text id="↳-Text" font-family="Arial" font-size="10" font-weight="normal" letter-spacing="0.12" fill="#6F6D6D">
-                    <tspan x="18.9633594" y="41">Activity</tspan>
-                </text>
-                <text id="↳-Icon" font-family="TeamsAssets-Regular, Teams Assets" font-size="22" font-weight="normal" fill="#6F6D6D">
-                    <tspan x="26.5" y="30"></tspan>
-                </text>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 37 35" style="enable-background:new 0 0 37 35;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:#6F6D6D;}
+	.st2{font-family:'ArialMT';}
+	.st3{font-size:10px;}
+	.st4{font-family:'TeamsAssets-Regular';}
+	.st5{font-size:22px;}
+</style>
+<font horiz-adv-x="2048">
+<!-- Arial is a trademark of The Monotype Corporation in the United States and/or other countries. -->
+    <!-- Copyright: Copyright 2018 Adobe System Incorporated. All rights reserved. -->
+<font-face font-family="ArialMT" units-per-em="2048" underline-position="-217" underline-thickness="150"/>
+<missing-glyph horiz-adv-x="1536" d="M256,0l0,1280l1024,0l0,-1280M288,32l960,0l0,1216l-960,0z"/>
+<glyph unicode="A" horiz-adv-x="1366" d="M-3,0l563,1466l209,0l600,-1466l-221,0l-171,444l-613,0l-161,-444M420,602l497,0l-153,406C717,1131 683,1233 660,1312C641,1218 615,1125 581,1032z"/>
+<glyph unicode="c" horiz-adv-x="1024" d="M828,389l177,-23C986,244 936,149 857,80C777,11 679,-24 563,-24C418,-24 301,24 213,119C124,214 80,350 80,527C80,642 99,742 137,828C175,914 233,979 311,1022C388,1065 473,1086 564,1086C679,1086 774,1057 847,999C920,940 967,857 988,750l-175,-27C796,794 767,848 725,884C682,920 631,938 571,938C480,938 407,906 350,841C293,776 265,673 265,532C265,389 292,286 347,221C402,156 473,124 561,124C632,124 691,146 738,189C785,232 815,299 828,389z"/>
+<glyph unicode="i" horiz-adv-x="455" d="M136,1259l0,207l180,0l0,-207M136,0l0,1062l180,0l0,-1062z"/>
+<glyph unicode="t" horiz-adv-x="569" d="M528,161l26,-159C503,-9 458,-14 418,-14C353,-14 302,-4 266,17C230,38 205,65 190,99C175,132 168,203 168,311l0,611l-132,0l0,140l132,0l0,263l179,108l0,-371l181,0l0,-140l-181,0l0,-621C347,250 350,217 357,202C363,187 373,176 388,167C402,158 422,154 449,154C469,154 495,156 528,161z"/>
+<glyph unicode="v" horiz-adv-x="1024" d="M430,0l-404,1062l190,0l228,-636C469,357 491,286 512,212C528,268 550,335 579,414l236,648l185,0l-402,-1062z"/>
+<glyph unicode="y" horiz-adv-x="1024" d="M127,-409l-20,169C146,-251 181,-256 210,-256C250,-256 282,-249 306,-236C330,-223 350,-204 365,-180C376,-162 395,-117 420,-46C423,-36 429,-21 436,-2l-403,1064l194,0l221,-615C477,369 502,287 525,201C546,284 570,364 599,443l227,619l180,0l-404,-1080C559,-135 525,-215 501,-259C469,-318 432,-362 391,-389C350,-417 300,-431 243,-431C208,-431 170,-424 127,-409z"/>
+</font>
+
+	<font horiz-adv-x="2048">
+<!-- Copyright (c) 2017 by Microsoft. All rights reserved. -->
+        <!-- Copyright: Copyright 2018 Adobe System Incorporated. All rights reserved. -->
+<font-face font-family="TeamsAssets-Regular" units-per-em="2048" underline-position="-119" underline-thickness="119"/>
+<missing-glyph horiz-adv-x="600"/>
+<glyph unicode="&#xE625;" horiz-adv-x="2048" d="M1348,1955C1395,1925 1439,1889 1478,1848C1517,1807 1550,1761 1577,1712C1605,1662 1626,1609 1641,1554C1656,1498 1663,1441 1663,1383l0,-487C1663,867 1669,844 1681,827C1692,810 1709,797 1730,788C1747,780 1767,773 1791,768C1842,757 1879,738 1900,711C1913,696 1919,672 1919,640C1919,606 1906,576 1881,551C1869,539 1855,530 1839,523C1823,516 1807,512 1791,512l-1536,0C220,512 191,525 166,551C140,576 127,605 127,640C127,669 133,692 145,709C156,726 173,739 194,748C211,756 231,763 255,768C306,779 343,798 364,825C377,840 383,864 383,896l0,512C383,1522 412,1629 471,1730C528,1827 604,1903 701,1960C800,2019 907,2048 1022,2048C1139,2048 1248,2017 1348,1955M1343,320C1343,277 1335,236 1318,197C1301,158 1278,124 1249,95C1219,65 1185,42 1146,25C1107,8 1066,0 1023,0C980,0 940,8 901,25C862,42 828,65 798,95C768,125 745,159 728,198C711,237 703,277 703,320C703,337 709,352 722,365C735,378 750,384 767,384l512,0C1296,384 1311,378 1324,365C1337,352 1343,337 1343,320z"/>
+</font>
+
+	<title>Activity</title>
+<desc>Created with Sketch.</desc>
+<g id="Priority-Msg-_x2F_-Img-Annotation">
+	<g id="_x31_-0-Chat" transform="translate(-19.000000, -626.000000)">
+		<g id="Navigation_x2F_Tab-Grey" transform="translate(0.000000, 618.000000)">
+			<rect id="Container" class="st0" width="75" height="50"/>
+			<text transform="matrix(1 0 0 1 18.9633 41)" class="st1 st2 st3">Activity</text>
+			<text transform="matrix(1 0 0 1 26.5 30)" class="st1 st4 st5"></text>
+		</g>
+	</g>
+</g>
 </svg>
