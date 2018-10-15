@@ -1,20 +1,22 @@
-<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Priority-Msg-/-Img-Annotation" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="TeamsAssets-Light, Teams Assets" font-weight="300">
-        <g id="1-0-Chat" transform="translate(-339.000000, -31.000000)">
-            <g id="Header">
-                <g id="Right-Icons" transform="translate(294.000000, 30.000000)">
-                    <g id="Icon/Brand-Line" transform="translate(44.000000, 0.000000)">
-                        <text id="↳-22px" font-size="22" fill="#6264A7">
-                            <tspan x="0" y="22"></tspan>
-                        </text>
-                        <text id="↳-16px" font-size="16"></text>
-                        <text id="↳-12px" font-size="12"></text>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#6264A7;}
+	.st1{font-family:'TeamsAssets-Light';}
+	.st2{font-size:22px;}
+</style>
+<desc>Created with Sketch.</desc>
+<g id="Priority-Msg-_x2F_-Img-Annotation">
+	<g id="_x31_-0-Chat" transform="translate(-339.000000, -31.000000)">
+		<g id="Header">
+			<g id="Right-Icons" transform="translate(294.000000, 30.000000)">
+				<g id="Icon_x2F_Brand-Line" transform="translate(44.000000, 0.000000)">
+					<text transform="matrix(1 0 0 1 0 22)" class="st0 st1 st2"></text>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
 </svg>

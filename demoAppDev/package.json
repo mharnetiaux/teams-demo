@@ -27,7 +27,6 @@
         "loader-utils": "^1.1.0",
         "node-sass": "^4.5.3",
         "postcss-loader": "^3.0.0",
-        "react-addons-test-utils": "^15.6.2",
         "replace": "^0.3.0",
         "sass-loader": "^6.0.6",
         "style-loader": "^0.18.2",
@@ -40,7 +39,6 @@
     },
     "dependencies": {
         "classnames": "^2.2.6",
-        "prop-types": "^15.6.2",
         "react": "^16.5.2",
         "react-dom": "^16.5.2",
         "react-modal": "^3.5.1",

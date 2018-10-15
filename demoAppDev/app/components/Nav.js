@@ -6,9 +6,9 @@ import Menu from "../../icon/menu.svg";
 
 const Nav = () => (
     <nav className="home-navigation">
-        <Link to={{pathname:'/menu', state:{prev:'true'}}} className="menu"><img src={Menu}/></Link>
-        <Link to={{pathname:'/search', state:{prev:'true'}}} className="search"><img src={Search}/></Link>
-        <Link to={{pathname:'/contact', state:{prev:'true'}}} className="contact"><img src={Contact}/></Link>
+        <Link to={{pathname:'/menu', state:{prev:'true'}}} className="menu"><img width="20" height="16" src={Menu}/></Link>
+        <Link to={{pathname:'/search', state:{prev:'true'}}} className="search"><img width="22" height="22" src={Search}/></Link>
+        <Link to={{pathname:'/contact', state:{prev:'true'}}} className="contact"><img width="20" height="20" src={Contact}/></Link>
     </nav>
 );
 
