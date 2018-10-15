@@ -1,7 +1,6 @@
 plugins/
 platforms/
 node_modules/
-dist/
 .gitattributes
 .vs/
 obj/
