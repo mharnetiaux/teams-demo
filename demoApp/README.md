@@ -1,7 +1,5 @@
 Development Requirements: 
   - xcode
-  - npm
-  - git
   - cordova
     
 
