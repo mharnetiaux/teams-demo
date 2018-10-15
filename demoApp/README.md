@@ -6,12 +6,16 @@ Development Requirements:
 
   1. `cd` into root directory -- run `npm install`
   
-  2. `npm run dev` -- navigate to `localhost:8080`
+  2. `cordova platform add ios`
 
-  Run `npm build` to publish code into `../demoApp/www` folder
+  Run `npm run build`to build ios project
 
-  ES6 to ES5 -- transpile ES6 to ES5
-  
-  SASS and LESS -- preprocessor for CSS
-  
-  Hot reloading -- JS and CSS compiled, server refreshed... just press save.
+  Run `npm run cordova-icon`to add app icon
+
+  Run `npm run cordova-splash`to add app splash screen
+
+  Run `npm run sim`to side-load ios app to iphone
+
+  Run `npm run em`to emulate ios app in xcode  
+
+ 

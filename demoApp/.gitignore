@@ -1,5 +1,6 @@
-plugins/**
-platforms/**
+config.xml
+plugins/
+platforms/
 node_modules/
 .gitattributes
 .vs/
