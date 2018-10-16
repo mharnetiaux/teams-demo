@@ -10,11 +10,10 @@ function Page({children,location: {state,},}) {
     });
 
     return (
-
-        <section className={cx}>
-            <div className="page__inner">
+        <section className={cx + ""}>
+            <section className="page__inner">
                 {children}
-            </div>
+            </section>
         </section>
     );
 }
