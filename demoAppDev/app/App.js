@@ -1,4 +1,4 @@
-import './styles/priority-chat.less';
+import './styles/app.less';
 import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Route, Switch, HashRouter} from 'react-router-dom';
