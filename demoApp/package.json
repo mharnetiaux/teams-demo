@@ -7,7 +7,7 @@
   "scripts": {
     "build": "cordova build ios --buildFlag='-UseModernBuildSystem=0'",
     "sim": "cordova run --device ios --buildFlag='-UseModernBuildSystem=0'",
-    "em": "cordova emulate ios --buildFlag='-UseModernBuildSystem=0'",
+    "em": "cordova emulate ios --target='iPhone-6-Plus' --buildFlag='-UseModernBuildSystem=0'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Apache Cordova Team",

@@ -1,6 +1,5 @@
 @import "css-reset.less";
 @import "variables.less";
-@import "fonts.less";
 
 body,
 html {
@@ -32,7 +31,7 @@ html {
 // Footer
 .footer {
     width: 95%;
-    padding-top: 0.5rem;
+    padding-top: 03.5rem;
     position: fixed;
     bottom: 0;
     display: flex;
@@ -41,6 +40,20 @@ html {
     right: 0;
     margin-right: auto;
     margin-left: auto;
+    
+    .icon {
+        // Footer Icons
+        .st1 {
+            fill: @icon-not-selected;
+        }
+
+        &:hover {
+            text-decoration: none;
+            .st1 {
+                fill: @icon-fill;
+            }
+        }
+    }
 }
 
 // Message screen
