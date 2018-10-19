@@ -1,9 +1,10 @@
 import React from "react";
 import Page from "./Page";
+import ChatContent from "./chat/ChatContent";
 
 const Chat = () => (
     <Page>
-        <section className="page-content">Chat Page</section>
+        <ChatContent/>
     </Page>
 );
 

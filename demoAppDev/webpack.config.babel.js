@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import environment from './webpack/environment.js';
 import path from 'path';
 
@@ -43,13 +44,13 @@ const config = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(svg|ttf)$/,
+                test: /\.(svg|png|jpg|gif)$/,
                 use: [{
                     loader: 'file-loader',
                     options: {
                         name: '[path][name].[ext]'
                     }
-                } ]
+                }]
             }
         ]
     },
@@ -64,7 +65,10 @@ const config = {
             inject: '</body>',
             filename: 'index.html'
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new CopyWebpackPlugin([
+            {from:'./images',to:'images'}
+        ])
     ],
     stats: {
         children: false
