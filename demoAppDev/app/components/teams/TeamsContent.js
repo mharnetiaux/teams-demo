@@ -24,14 +24,14 @@ class TeamsContent extends Component {
             
             const teamLinks = item.links.map((link, key)=>{
                 return (
-                    <Link className="team-link" key={key} to={{pathname:"/" + link, state:{prev:'true'}}}>{link}</Link>
+                    <Link className="team-link" to={{pathname:"/" + link, state:{prev:'true'}}}>{link}</Link>
                 )
             });
             
             return (
-                <section className="teams-content" key={key}>
+                <section className={item.open ? "teams-content open": "teams-content closed"} key={key}>
                     <a className="team-info"><img className="arrow" src={item.arrow}/><span className="team"><img src={item.icon} width="" height=""/></span><span>{item.team}</span><span className="team-menu"><img src={item.menu}/></span></a>
-                    <section className="team-links">
+                    <section className="team-links" key={key}>
                         {teamLinks}
                     </section>
                 </section>
