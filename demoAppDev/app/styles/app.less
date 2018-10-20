@@ -12,27 +12,40 @@ html {
 }
 
 // Header container
-.header {
-    width: 95%;;
-    padding-bottom: 0.5rem;
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
-
-    &.header-alert-none {
-        padding-top: 2rem;
+header {
+    position: relative;
+    &::after {
+        position: absolute;
+        height: 0.04rem;
+        width: 100%;
+        box-shadow: 0 0.1rem 0.1rem 0 rgba(0,0,0,0.20);
+        content: "";
+        bottom: 0;
     }
 
-    &.header-alert {
-        padding-top: 0;
-    }
+    .header {
+        width: 95%;;
+        padding-bottom: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        position: relative;
 
-    .contact {
-        margin-left: auto;
-    }
+        &.header-alert-none {
+            padding-top: 2rem;
+        }
 
-    .menu {
-        margin-right: 1.5rem;
+        &.header-alert {
+            padding-top: 0;
+        }
+
+        .contact {
+            margin-left: auto;
+        }
+
+        .menu {
+            margin-right: 1.5rem;
+        }
     }
 }
 
@@ -231,3 +244,4 @@ footer {
 
 
 @import "chat.less";
+@import "teams.less";

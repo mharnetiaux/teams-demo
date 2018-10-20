@@ -1,0 +1,44 @@
+.teams-content {
+    padding-top: 1rem;
+    width: 95%;
+    margin: auto;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        height: 0.04rem;
+        width: 100%;
+        box-shadow: 0 0.1rem 0.1rem 0 rgba(0,0,0,0.20);
+        content: "";
+        bottom: 0;
+    }
+
+    .team-info {
+        display: flex;
+        align-items: center;
+
+        .team {
+            padding-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .team-menu {
+            margin-left: auto;
+        }
+    }
+
+    .team-links {
+        display: flex;
+        flex-direction: column;
+        margin-left: 4rem;
+
+        .team-link {
+            margin: 1rem 0;
+            color: @font-black;
+        }
+
+        .team-link:last-child {
+            color: @icon-fill;
+        }
+    }
+}
