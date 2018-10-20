@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import {render} from 'react-dom';
 import {Route, Switch, HashRouter} from 'react-router-dom';
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import Header from "./components/Nav";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Chat from './components/Chat';
 import Activity from './components/Activity';

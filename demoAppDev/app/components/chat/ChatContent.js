@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import SVG from 'react-inlinesvg';
+import read from '../../../icon/unread.svg';
 
 class ChatContent extends Component {
 
@@ -8,13 +10,16 @@ class ChatContent extends Component {
         this.state = {
             chatItems: [
                 {
-                    name: "Bill Stevens",
-                    priority: "Urgent",
-                    message: "We need you A.S.A.P",
+                    read: false,
+                    name: "Ruth",
                     time: date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-                    status: "online",
-                    profile: "/images/name.png"
+                    message: "We need you A.S.A.P",
+                    priorityIcon: "/images/urgent_red.png",
+                    priority: "- URGENT",
+                    avatar: "/images/profile_1.png",
+                    type: "urgent"
                 }
+
             ]
         }
     }
@@ -22,21 +27,21 @@ class ChatContent extends Component {
     render() {
         const chatItem = this.state.chatItems.map(((item, key)=>{
             return (
-                <ul key={key}>
-                    <li>{item.name}</li>
-                    <li>{item.priority}</li>
-                    <li>{item.message}</li>
-                    <li>{item.time}</li>
-                    <li>{item.status}</li>
-                    <li><img src={item.profile} alt="no image"/></li>
-                </ul>
+                <section className="chat-container" key={key}>
+                    <span className="avatar-container">
+                        <span className={item.read ? "read" : "unread"}><SVG src={read}/></span>
+                        <img src={item.avatar} alt="profile picture"/>
+                    </span>
+                    <ul>
+                        <li className={"message-info" + " " + item.type}><span className={item.type}>{item.name} {item.priority}</span><span className="time">{item.time}</span></li>
+                        <li className="message-info"><span className="message">{item.message}</span><img src={item.priorityIcon} alt="Urgent" width="13" height="13"/></li>
+                    </ul>
+                </section>
             );
         }));
         
         return(
-            <ul>
-                {chatItem}
-            </ul>
+            <section className="page-content">{chatItem}</section>
         );
     }
 }

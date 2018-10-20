@@ -1,0 +1,51 @@
+.chat-container {
+    padding: 1rem 0;
+    position: relative;
+    display: flex;
+    width: 95%;
+    margin: auto;
+
+    &::after {
+      position: absolute;
+      height: 0.04rem;
+      width: 100%;
+      box-shadow: 0 0.1rem 0.1rem 0 rgba(0,0,0,0.20);
+      content: "";
+      bottom: 0;
+    }
+  
+    ul {
+        flex: 1;
+    }
+  
+    .avatar-container {
+        margin-right: 0.5rem;
+    }
+
+    .message-info {
+        color: @font-grey;
+        display: flex;
+        justify-content: space-between;
+
+        &:first-of-type {
+            margin-bottom: 0.5rem;
+        }
+
+        &.urgent {
+            color: @alert-red;
+        }
+    }
+
+    .avatar-container {
+      align-items: center;
+      display: flex;
+
+      .unread {
+          margin-right: 0.5rem;
+      }
+
+      .read {
+          display: none;
+      }
+    }
+}

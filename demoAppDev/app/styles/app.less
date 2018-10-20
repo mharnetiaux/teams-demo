@@ -3,6 +3,7 @@
 
 body,
 html {
+    font-family: Helvetica;
     background-color: @iphone-bg-grey;
     height: 100%;
     overflow:hidden;
@@ -17,7 +18,14 @@ html {
     display: flex;
     flex-direction: row;
     margin: 0 auto;
-    padding-top: 2rem;
+
+    &.header-alert-none {
+        padding-top: 2rem;
+    }
+
+    &.header-alert {
+        padding-top: 0;
+    }
 
     .contact {
         margin-left: auto;
@@ -29,28 +37,30 @@ html {
 }
 
 // Footer
-.footer {
-    width: 95%;
-    padding-top: 03.5rem;
+footer {
+    background: @iphone-bg-grey;
     position: fixed;
     bottom: 0;
-    display: flex;
-    justify-content: space-between;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-    
-    .icon {
-        // Footer Icons
-        .st1 {
-            fill: @icon-not-selected;
-        }
+    width: 100%;
+    .nav-footer {
+        width: 95%;
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        margin-right: auto;
+        margin-left: auto;
 
-        &:hover {
-            text-decoration: none;
+        .icon {
+            // Footer Icons
             .st1 {
-                fill: @icon-fill;
+                fill: @icon-not-selected;
+            }
+
+            &:hover {
+                text-decoration: none;
+                .st1 {
+                    fill: @icon-fill;
+                }
             }
         }
     }
@@ -191,7 +201,33 @@ html {
     overflow-y: scroll;
     background: @white;
     position: fixed;
-    height: 80%;
-    max-height: 80%;
     width: 100%;
+    max-height:75vh;
 }
+
+.page-title{
+    position: absolute;
+    z-index: 1;
+    top: -2rem;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+// Alert
+.alert {
+    padding: 2rem 0 1rem 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    background: @alert-red;
+    color: @white;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.none {
+    display: none;
+}
+
+
+@import "chat.less";
