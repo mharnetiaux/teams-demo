@@ -70,10 +70,9 @@ class TeamsContent extends Component {
             ]
         }
     }
-
-    render() {
-
-        const teamItems = this.state.teams.map((item, key)=>{
+    
+    getTeams() {
+        return this.state.teams.map((item, key)=>{
 
             const teamLinks = item.links.map((link, key)=>{
                 return (
@@ -96,9 +95,12 @@ class TeamsContent extends Component {
                 </section>
             )
         });
-        
+    }
+
+    render() {
+
         return(
-            <section className="page-content">{teamItems}</section>
+            <section className="page-content">{this.getTeams()}</section>
         );
     }
 }
