@@ -1,1 +1,26 @@
 @import "datepicker.less";
+
+.team-weekdays {
+    position: relative;
+    padding-top: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+
+    &::before {
+        position: absolute;
+        height: 0.04rem;
+        width: 100%;
+        box-shadow: 0 0.1rem 0.1rem 0 rgba(0,0,0,0.20);
+        content: "";
+        top: 0;
+    }
+
+    span {
+      color: #6F6D6D;
+      display: inline-block;
+      width: 1.7rem;
+      line-height: 1.7rem;
+      text-align: center;
+      margin: 0.166rem;
+    }
+}

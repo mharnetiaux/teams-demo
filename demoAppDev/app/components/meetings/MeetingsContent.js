@@ -7,8 +7,10 @@ class MeetingsContent extends Component {
     constructor() {
         super(...arguments);
         this.state = {
-            startDate: moment()
-        }
+            startDate: moment(),
+            days : ["S","M","T","W","T","F","S"]
+        };
+        this.handleChange.bind(this);
     }
 
     handleChange(date) {
@@ -20,6 +22,7 @@ class MeetingsContent extends Component {
     render() {
         return(
             <section className="page-content">
+                <span className="team-weekdays">{this.state.days.map((day)=>{return (<span>{day}</span>)})}</span>
                 <DatePicker
                     inline
                     selected={this.state.startDate}

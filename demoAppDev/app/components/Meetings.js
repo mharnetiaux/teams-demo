@@ -10,8 +10,9 @@ function a() {
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     const d = new Date();
     const m = months[d.getMonth()];
+    const y = d.getFullYear();
 
-    return m;
+    return m + " " + y;
 }
 
 const Meetings = () => (
