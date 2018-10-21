@@ -8,7 +8,7 @@ import ChatContent from "./chat/ChatContent";
 const Chat = () => (
     <Page className="chat-page">
         <h2 className="page-title">Chat</h2>
-        <Link to={{pathname:'/contact', state:{prev:'true'}}} className="contact"><SVG src={ChatIcon}/></Link>
+        <Link to={{pathname:'/contact', state:{prev:'true'}}} className="chat-link"><SVG src={ChatIcon}/></Link>
         <ChatContent/>
     </Page>
 );

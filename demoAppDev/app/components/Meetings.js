@@ -5,7 +5,7 @@ import SVG from 'react-inlinesvg';
 import MeetingsIcon from '../../icon/meetings-icon.svg';
 import MeetingsContent from "./meetings/MeetingsContent";
 
-function a() {
+function date() {
     "use strict";
     const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
     const d = new Date();
@@ -17,8 +17,8 @@ function a() {
 
 const Meetings = () => (
     <Page>
-        <h2 className="page-title">{a()}</h2>
-        <Link to={{pathname:'/contact', state:{prev:'true'}}} className="contact"><SVG src={MeetingsIcon}/></Link>
+        <h2 className="page-title">{date()}</h2>
+        <Link to={{pathname:'/contact', state:{prev:'true'}}} className="meetings-link"><SVG src={MeetingsIcon}/></Link>
         <MeetingsContent/>
     </Page>
 );

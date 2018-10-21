@@ -1,5 +1,9 @@
-<svg width="21" height="18" xmlns="http://www.w3.org/2000/svg">
-    <text font-size="22" fill="#6264A7" transform="translate(-1 -2)" fill-rule="evenodd" font-family="TeamsAssets-Light, Teams Assets" font-weight="300">
-        <tspan x="0" y="22"></tspan>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 18" width="21" height="18">
+    <font horiz-adv-x="2048">
+        <font-face font-family="TeamsAssets-Light" units-per-em="2048" underline-position="-119" underline-thickness="119"/>
+        <glyph unicode="" horiz-adv-x="2048" d="M1151 1728V768h192c17 0 32-6 45-19s19-28 19-45-6-32-19-45-28-19-45-19H831c-17 0-32 6-45 19s-19 28-19 45 6 32 19 45 28 19 45 19h192v960c0 17 6 32 19 45s28 19 45 19 32-6 45-19 19-28 19-45M511 320c0-17-6-32-19-45s-28-19-45-19-32 6-45 19-19 28-19 45v832h128m640-832c0-17-6-32-19-45s-28-19-45-19-32 6-45 19-19 28-19 45v192h128M511 1728v-320h192c17 0 32-6 45-19s19-28 19-45-6-32-19-45-28-19-45-19H191c-17 0-32 6-45 19s-19 28-19 45 6 32 19 45 28 19 45 19h192v320c0 17 6 32 19 45s28 19 45 19 32-6 45-19 19-28 19-45M1791 320c0-17-6-32-19-45s-28-19-45-19-32 6-45 19-19 28-19 45v576h128m0 832v-576h192c17 0 32-6 45-19s19-28 19-45-6-32-19-45-28-19-45-19h-512c-17 0-32 6-45 19s-19 28-19 45 6 32 19 45 28 19 45 19h192v576c0 17 6 32 19 45s28 19 45 19 32-6 45-19 19-28 19-45z"/>
+    </font>
+    <text transform="translate(-1 20)" fill="#6264A7" font-family="'TeamsAssets-Light'" font-size="22">
+        
     </text>
 </svg>

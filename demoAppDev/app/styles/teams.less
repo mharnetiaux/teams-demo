@@ -1,3 +1,10 @@
+.teams-link {
+    position: absolute;
+    z-index: 1;
+    top: -2.4rem;
+    right: 0.5rem;
+}
+
 .teams-content {
     padding-top: 1rem;
     width: 95%;
@@ -36,10 +43,23 @@
             .team-link {
                 margin: 1rem 0;
                 color: @font-black;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
 
             .team-link:last-child {
                 color: @icon-fill;
+            }
+
+            .teams-alert {
+                &.yes {
+                    display: inline;
+                }
+
+                &.no {
+                    display: none;
+                }
             }
         }
     }

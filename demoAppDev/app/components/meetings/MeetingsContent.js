@@ -22,7 +22,7 @@ class MeetingsContent extends Component {
     render() {
         return(
             <section className="page-content">
-                <span className="team-weekdays">{this.state.days.map((day)=>{return (<span>{day}</span>)})}</span>
+                <span className="team-weekdays">{this.state.days.map((day, key)=>{return (<span key={key}>{day}</span>)})}</span>
                 <DatePicker
                     inline
                     selected={this.state.startDate}
