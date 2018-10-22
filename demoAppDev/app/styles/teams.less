@@ -13,9 +13,9 @@
 
     &::after {
         position: absolute;
-        height: 0.04rem;
+        height: 1px;
         width: 100%;
-        box-shadow: 0 0.1rem 0.1rem 0 rgba(0,0,0,0.20);
+        box-shadow: 1px 1px 0 rgba(0,0,0,0.20);
         content: "";
         bottom: 0;
     }
@@ -54,11 +54,16 @@
 
             .teams-alert {
                 &.yes {
-                    display: inline;
+                    display: flex;
+                    align-items: center;
                 }
 
                 &.no {
                     display: none;
+                }
+
+                span:last-child {
+                    margin-left: 0.5rem;
                 }
             }
         }

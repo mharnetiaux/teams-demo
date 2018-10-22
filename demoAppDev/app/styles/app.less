@@ -16,9 +16,9 @@ header {
     position: relative;
     &::after {
         position: absolute;
-        height: 0.04rem;
+        height: 1px;
         width: 100%;
-        box-shadow: 0 0.1rem 0.1rem 0 rgba(0,0,0,0.20);
+        box-shadow: 1px 1px 0 rgba(0,0,0,0.20);
         content: "";
         bottom: 0;
     }
@@ -51,10 +51,12 @@ header {
 
 // Footer
 footer {
-    background: @iphone-bg-grey;
+    background: url(~"/images/footer-bg.png") no-repeat top center;
+    background-color: @iphone-bg-grey;
     position: fixed;
     bottom: 0;
     width: 100%;
+    padding-top: 1rem;
     .nav-footer {
         width: 95%;
         padding-top: 1rem;
@@ -216,7 +218,7 @@ footer {
     background: @white;
     position: fixed;
     width: 100%;
-    max-height:75vh;
+    max-height:70vh;
 }
 
 .page-title{

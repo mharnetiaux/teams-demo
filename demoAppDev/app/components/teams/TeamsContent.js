@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import SVG from 'react-inlinesvg';
 import ALERT from '../../../icon/teams-alert.svg';
+import IMPORTANT from '../../../icon/important.svg';
 
 class TeamsContent extends Component {
 
@@ -79,6 +80,7 @@ class TeamsContent extends Component {
                     <Link key={key} className="team-link" to={{pathname:"/" + link.route, state:{prev:'true'}}}>
                         <span className="teams-text">{link.route}</span>
                         <span className={link.alert ? "teams-alert yes" : "teams-alert no"}>
+                            <SVG src={IMPORTANT}/>
                             <SVG src={ALERT}/>
                         </span>
                     </Link>

@@ -1,11 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="44" height="21">
-	<path d="M24.5 0h9C39.3 0 44 4.7 44 10.5S39.3 21 33.5 21h-9C18.7 21 14 16.3 14 10.5S18.7 0 24.5 0z" fill="#cc4a31"/>
-	<text transform="translate(25.546 16)" font-size="13" font-family="ArialMT" fill="#fff">
-		1
-	</text>
-	<g>
-		<text transform="translate(-6 19.41)" fill="#c4314b" font-family="TeamsAssets-Light" font-size="16">
-			
+<svg width="30" height="21" xmlns="http://www.w3.org/2000/svg">
+	<g fill="none" fill-rule="evenodd">
+		<rect fill="#CC4A31" width="30" height="21" rx="10.5"/>
+		<text font-family=".AppleSystemUIFont" font-size="13" letter-spacing="-.078" fill="#FFF">
+			<tspan x="11.546" y="16">1</tspan>
 		</text>
 	</g>
 </svg>
