@@ -76,9 +76,9 @@
 
     .message-received {
         overflow-y: scroll;
-        min-height: 60%;
-        position: relative;
+        position: fixed;
         padding: 1rem 0;
+        max-height: 60%;
 
         .message {
             display: flex;
@@ -119,6 +119,27 @@
             .urgent {
                 background: url(~"/images/message-urgent-bg.png") no-repeat left;
                 background-color: @white;
+            }
+        }
+
+        .response {
+            position: relative;
+            background: @icon-fill;
+            color: @white;
+            border: 1px solid @icon-fill;
+            border-radius: 4px;
+            margin: 1rem 2rem 1rem auto;
+            width: 65%;
+            padding: 0.5rem;
+
+            &::after {
+                content: "";
+                background: url(~"/images/message-read.png") no-repeat;
+                height: 1rem;
+                width: 1rem;
+                position: absolute;
+                bottom: -.2rem;
+                right: -1.5rem;
             }
         }
     }
