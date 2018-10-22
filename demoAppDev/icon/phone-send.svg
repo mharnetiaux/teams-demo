@@ -3,7 +3,7 @@
 		<font-face font-family="TeamsAssets-Light" units-per-em="2048" underline-position="-119" underline-thickness="119"/>
 		<glyph unicode="" horiz-adv-x="2048" d="M208 1859l1735-718c23-9 42-25 56-47s21-45 21-70-7-48-20-69c-14-22-32-38-54-47L206 188c-18-7-35-11-51-11-34 0-64 13-90 39-26 25-39 54-39 89 0 11 1 21 4 29l159 690-159 690c-3 8-4 18-4 29 0 16 3 32 10 48 7 15 16 29 28 41 25 25 55 38 89 38 18 0 36-4 55-11m98-899L154 305l1583 655M306 1088h1431L157 1742z"/>
 	</font>
-	<text transform="translate(0 21)" font-size="22" font-family="TeamsAssets-Light" fill="#bdbdbd">
+	<text transform="translate(0 21)" font-size="22" class="send-icon" font-family="TeamsAssets-Light" fill="#bdbdbd">
 		
 	</text>
 </svg>

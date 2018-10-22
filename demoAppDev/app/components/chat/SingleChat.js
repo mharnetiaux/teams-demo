@@ -59,7 +59,8 @@ class SingleChat extends Component {
         const messageObj = this.state.message.response.map(item => {
            return item.message;
         }), 
-        message = messageObj.toString();
+        message = messageObj.toString(),
+        send = document.getElementById("send").classList.add("send");
 
         if (this.state.counter < message.length) {
             document.getElementById("send-message").value += message.charAt(this.state.counter);
@@ -126,7 +127,7 @@ class SingleChat extends Component {
                         <li><SVG src={PhoneEmailIcon}/></li>
                         <li><SVG src={PhoneLocationIcon}/></li>
                         <li><SVG src={PhoneEmojiIcon}/></li>
-                        <li><SVG src={PhoneSendIcon}/></li>
+                        <li id="send"><SVG src={PhoneSendIcon}/></li>
                     </ul>
                 </footer>
             </section>

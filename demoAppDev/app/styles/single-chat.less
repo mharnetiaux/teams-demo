@@ -57,11 +57,10 @@
             textarea {
                 overflow-y: auto;
                 resize: none;
-                box-shadow: inset 0 0 0 0;
+                box-shadow: none;
                 width: 90%;
                 margin: auto;
                 display: block;
-                border-style:solid;
                 border: 1px solid #DFDEDE;
                 border-radius: 4px;
                 height: 1rem;
@@ -144,6 +143,10 @@
             li:last-child {
                 margin-left: auto;
                 margin-right: 0;
+            }
+
+            .send .send-icon {
+                fill: @icon-fill;
             }
         }
     }
