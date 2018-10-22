@@ -9,6 +9,10 @@ html {
     overflow:hidden;
     position: relative;
     font-size: 1rem;
+
+    a {
+        text-decoration: none !important; /// Figure out why you need !important
+    }
 }
 
 // Header container
@@ -247,5 +251,6 @@ footer {
 
 
 @import "chat.less";
+@import "single-chat.less";
 @import "teams.less";
 @import "meetings.less";

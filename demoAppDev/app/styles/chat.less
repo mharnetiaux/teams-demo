@@ -10,11 +10,23 @@
     display: flex;
     text-align: center;
 
+    &::after {
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        box-shadow: 1px 1px 0 rgba(0,0,0,0.20);
+        content: "";
+        bottom: 0;
+    }
+
     li {
         padding: 1rem 0;
         flex: 1;
-        color: @icon-fill;
         font-size: 15px;
+
+        a {
+            color: @icon-fill;
+        }
 
         &::before {
             display: none;
@@ -68,6 +80,7 @@
         justify-content: space-between;
 
         &:first-of-type {
+            color: @black;
             margin-bottom: 0.2rem;
         }
 

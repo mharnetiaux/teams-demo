@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import SubNav from './SubNav';
+import {Link} from "react-router-dom";
 import SVG from 'react-inlinesvg';
 import read from '../../../icon/unread.svg';
 
@@ -78,16 +79,18 @@ class ChatContent extends Component {
     render() {
         const chatItem = this.state.chatItems.map(((item, key)=>{
             return (
-                <section className="chat-container" key={key}>
+                <Link to={{pathname:'/chat-content', state:{prev:'true'}}} key={key}>
+                    <section className="chat-container" key={key}>
                     <span className="avatar-container">
                         <span className={item.read ? "read" : "unread"}><SVG src={read}/></span>
                         <img src={item.avatar} alt="profile picture"/>
                     </span>
-                    <ul>
-                        <li className={"message-info" + " " + item.type}><span className={item.type}>{item.name} {item.priority}</span><span className="time">{item.time}</span></li>
-                        <li className="message-info"><span className="message">{item.message}</span><img className={item.type ? "urgent" : "normal"} src={item.priorityIcon} alt="Urgent" width="13" height="13"/></li>
-                    </ul>
-                </section>
+                        <ul>
+                            <li className={"message-info" + " " + item.type}><span className={item.type}>{item.name} {item.priority}</span><span className="time">{item.time}</span></li>
+                            <li className="message-info"><span className="message">{item.message}</span><img className={item.type ? "urgent" : "normal"} src={item.priorityIcon} alt="Urgent" width="13" height="13"/></li>
+                        </ul>
+                    </section>
+                </Link>
             );
         }));
         

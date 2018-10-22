@@ -1,0 +1,46 @@
+.single-chat{
+    position: fixed;
+    height: 100%;
+    background: @iphone-bg-grey;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+
+   header {
+       padding-top: 2rem;
+       position: relative;
+
+       .person {
+           position: absolute;
+           text-align: center;
+           left: 0;
+           right: 0;
+           color: @icon-fill;
+           width: 50%;
+           margin: auto;
+       }
+       .icon-container {
+           width: 95%;
+           margin: 0 auto;
+           list-style: none;
+           display: flex;
+           align-items: center;
+
+           .camera-icon {
+               margin-left: auto;
+               padding-right: 1rem
+           }
+
+           .phone-icon {
+               flex: 0;
+               margin-left: 0;
+           }
+
+           .back-arrow {
+               display: block;
+               width: 2rem;
+               height: 2rem;
+           }
+       }
+   }
+}

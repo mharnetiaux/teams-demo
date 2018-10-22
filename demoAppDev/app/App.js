@@ -6,6 +6,7 @@ import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Chat from './components/Chat';
+import SingleChat from './components/chat/SingleChat';
 import Activity from './components/Activity';
 import Teams from './components/Teams';
 import Meetings from './components/Meetings';
@@ -33,6 +34,7 @@ const App = ({}) => (
                                         <Route path="/teams" component={Teams}/>
                                         <Route exact path="/" component={Activity}/>
                                         <Route path="/chat" component={Chat}/>
+                                        <Route path="/chat-content" component={SingleChat}/>
                                         <Route path="/contact" component={Contact}/>
                                         <Route path="/message" component={Message}/>
                                     </Switch>
