@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SubNav from './SubNav';
 import SVG from 'react-inlinesvg';
 import read from '../../../icon/unread.svg';
 
@@ -66,7 +67,7 @@ class ChatContent extends Component {
                     message: "Rita: See attached Image",
                     priorityIcon: "The sales team are owning that problem.",
                     priority: "normal",
-                    avatar: "/images/profile_6.png",
+                    avatar: "/images/profile_5.png",
                     urgent: true
                 }
 
@@ -91,7 +92,10 @@ class ChatContent extends Component {
         }));
         
         return(
-            <section className="page-content">{chatItem}</section>
+            <section className="page-content">
+                <SubNav/>
+                {chatItem}
+            </section>
         );
     }
 }

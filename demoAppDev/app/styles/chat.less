@@ -5,6 +5,39 @@
     right: 0.5rem;
 }
 
+.chat-sub-nav {
+    position: relative;
+    display: flex;
+    text-align: center;
+
+    li {
+        padding: 1rem 0;
+        flex: 1;
+        color: @icon-fill;
+        font-size: 15px;
+
+        &::before {
+            display: none;
+            position: absolute;
+            height: 4px;
+            width: 50%;
+            background: @icon-fill;
+            content: "";
+            bottom: 0;
+        }
+
+        &.recent.selected::before{
+            display: block;
+            left: 0;
+        }
+
+        &.contacts.selected::before {
+            display: block;
+            right: 0;
+        }
+    }
+}
+
 .chat-container {
     padding: 1rem 0;
     position: relative;
