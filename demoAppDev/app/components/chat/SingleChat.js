@@ -17,9 +17,31 @@ class SingleChat extends Component {
     constructor() {
         super(...arguments);
         this.toggleClass = this.toggleClass.bind(this);
+        this.typeWriter = this.typeWriter.bind(this);
         this.state = {
             conversation: true,
-            files: false
+            files: false,
+            counter: 0,
+            message: {
+                received: [
+                    {
+                        name: "Ruth F.",
+                        pic: "/images/profile-small.png",
+                        priority: "URGENT!",
+                        message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
+                        urgent: true,
+                        urgentImg: "/images/urgent_red.png"
+                    }
+                ],
+                response: [
+                    {
+                        message: "Might be the dexamethasone. Will order additional tests.",
+                        read: true,
+                        readIcon: "/images/message.read.png"
+                        
+                    }
+                ]
+            }
         };
     }
 
@@ -30,6 +52,44 @@ class SingleChat extends Component {
             files: !this.state.files
         });
     };
+
+    // Pass string to tell input what to write
+    typeWriter(event) {
+        event.preventDefault();
+        const messageObj = this.state.message.response.map(item => {
+           return item.message;
+        }), 
+        message = messageObj.toString();
+
+        if (this.state.counter < message.length) {
+            document.getElementById("send-message").value += message.charAt(this.state.counter);
+            this.state.counter++;
+            this.adjustHeight();
+        }
+    }
+
+    adjustHeight(){
+        const a = document.getElementById("send-message");
+        console.log(a.scrollHeight + " scroll-height");
+        console.log(a.clientHeight + " clientHeight");
+        a.style.height = (a.scrollHeight > a.clientHeight) ? (a.scrollHeight - 34)+"px" : "1px";
+    }
+
+    getMessages() {
+        return this.state.message.received.map((item, key)=>{
+            return(
+                  <section className="message" key={key}>
+                      <img className="profile-pic" src={item.pic}/>
+                      <ul className={"message-content" + item.urgent ? "urgent" : null}>
+                          <li className="name">{item.name}</li>
+                          <li className="priority">{item.priority}</li>
+                          <li className="content">{item.message}</li>
+                      </ul>
+                      <img className={"urgent" + " " + item.urgent ? "yes" : "no"} src={item.urgentImg}/>
+                  </section>
+            )
+        });
+    }
 
     render() {
         return(
@@ -50,16 +110,24 @@ class SingleChat extends Component {
                         </li>
                     </ul>
                 </header>
+                <section className="message-received">
+                    {this.getMessages()}
+                </section>
+                <section className="input-message">
+                    <form>
+                       <textarea placeholder="Send a message" id="send-message" onKeyDown={this.typeWriter}></textarea>
+                    </form>
+                </section>
                 <footer className="footer-2">
-                   <ul className="footer-icons">
-                       <li><SVG src={PhoneImagesIcon}/></li>
-                       <li><SVG src={PhoneImportantIcon}/></li>
-                       <li><SVG src={PhoneAttachmentIcon}/></li>
-                       <li><SVG src={PhoneEmailIcon}/></li>
-                       <li><SVG src={PhoneLocationIcon}/></li>
-                       <li><SVG src={PhoneEmojiIcon}/></li>
-                       <li><SVG src={PhoneSendIcon}/></li>
-                   </ul>
+                    <ul className="footer-icons">
+                        <li><SVG src={PhoneImagesIcon}/></li>
+                        <li><SVG src={PhoneImportantIcon}/></li>
+                        <li><SVG src={PhoneAttachmentIcon}/></li>
+                        <li><SVG src={PhoneEmailIcon}/></li>
+                        <li><SVG src={PhoneLocationIcon}/></li>
+                        <li><SVG src={PhoneEmojiIcon}/></li>
+                        <li><SVG src={PhoneSendIcon}/></li>
+                    </ul>
                 </footer>
             </section>
         );
