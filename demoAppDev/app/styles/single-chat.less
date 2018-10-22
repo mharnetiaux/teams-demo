@@ -6,41 +6,70 @@
     top: 0;
     z-index: 1;
 
-   header {
-       padding-top: 2rem;
-       position: relative;
+    header {
+        padding-top: 2rem;
+        position: relative;
 
-       .person {
-           position: absolute;
-           text-align: center;
-           left: 0;
-           right: 0;
-           color: @icon-fill;
-           width: 50%;
-           margin: auto;
-       }
-       .icon-container {
-           width: 95%;
-           margin: 0 auto;
-           list-style: none;
-           display: flex;
-           align-items: center;
+        .person {
+             position: absolute;
+             text-align: center;
+             left: 0;
+             right: 0;
+             color: @icon-fill;
+             width: 50%;
+             margin: auto;
+        }
+        .icon-container {
+            width: 95%;
+            margin: 0 auto;
+            list-style: none;
+            display: flex;
+            align-items: center;
 
-           .camera-icon {
-               margin-left: auto;
-               padding-right: 1rem
-           }
+            .camera-icon {
+                margin-left: auto;
+                padding-right: 1rem
+            }
 
-           .phone-icon {
-               flex: 0;
-               margin-left: 0;
-           }
+            .phone-icon {
+                flex: 0;
+                margin-left: 0;
+            }
 
-           .back-arrow {
-               display: block;
-               width: 2rem;
-               height: 2rem;
-           }
-       }
+            .back-arrow {
+                display: block;
+                width: 4rem;
+                height: 2rem;
+
+                a {
+                    display: block;
+                }
+            }
+        }
    }
+
+    footer {
+        padding: 0.5rem 0;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+
+        .footer-icons {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            width: 90%;
+            margin: auto;
+
+            li {
+                margin-right: 2rem;
+            }
+
+            li:last-child {
+                margin-left: auto;
+                margin-right: 0;
+            }
+        }
+    }
+
 }

@@ -4,6 +4,13 @@ import SVG from 'react-inlinesvg';
 import PhoneIcon from '../../../icon/phone.svg';
 import BackArrow from '../../../icon/back-arrow.svg';
 import CameraIcon from '../../../icon/camera.svg';
+import PhoneSendIcon from '../../../icon/phone-send.svg';
+import PhoneEmojiIcon from '../../../icon/phone-emoji.svg';
+import PhoneLocationIcon from '../../../icon/phone-location.svg';
+import PhoneEmailIcon from '../../../icon/phone-email.svg';
+import PhoneAttachmentIcon from '../../../icon/phone-attachment.svg';
+import PhoneImportantIcon from '../../../icon/phone-important.svg';
+import PhoneImagesIcon from '../../../icon/phone-images.svg'
 
 class SingleChat extends Component {
 
@@ -43,6 +50,17 @@ class SingleChat extends Component {
                         </li>
                     </ul>
                 </header>
+                <footer className="footer-2">
+                   <ul className="footer-icons">
+                       <li><SVG src={PhoneImagesIcon}/></li>
+                       <li><SVG src={PhoneImportantIcon}/></li>
+                       <li><SVG src={PhoneAttachmentIcon}/></li>
+                       <li><SVG src={PhoneEmailIcon}/></li>
+                       <li><SVG src={PhoneLocationIcon}/></li>
+                       <li><SVG src={PhoneEmojiIcon}/></li>
+                       <li><SVG src={PhoneSendIcon}/></li>
+                   </ul>
+                </footer>
             </section>
         );
     }
