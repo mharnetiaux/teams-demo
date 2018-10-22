@@ -72,7 +72,8 @@ const config = {
     ],
     stats: {
         children: false
-    }
+    },
+    devtool: 'cheap-module-eval-source-map'
 };
 
 export default config;
