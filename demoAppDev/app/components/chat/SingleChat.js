@@ -98,15 +98,7 @@ class SingleChat extends Component {
         });
     }
 
-    toggleGalleryModal() {
-        console.log(`toggling modal gallery: ${this.state.showGalleryModal}`);
-        this.setState((prevState) => {
-            return {
-                showGalleryModal: !prevState.showGalleryModal
-            }
-        });
-    }
-
+    /// Return user input as message
     getMessageBody() {
         const elementSendMessage = document.getElementById("send-message");
         const text = elementSendMessage.value;
@@ -122,6 +114,15 @@ class SingleChat extends Component {
             message.classList.add("response");
             message.textContent = responseMessage;
             document.getElementById("messages").appendChild(message);
+        });
+    }
+    
+    toggleGalleryModal() {
+        console.log(`toggling modal gallery: ${this.state.showGalleryModal}`);
+        this.setState((prevState) => {
+            return {
+                showGalleryModal: !prevState.showGalleryModal
+            }
         });
     }
 
