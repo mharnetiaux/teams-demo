@@ -17,9 +17,9 @@ var app = {
         cordova.plugins.notification.local.schedule({
             title: "Ruth - URGENT",
             text: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
+            attachments: ['file://icon/urgent-notification.svg'],
             trigger: {
-                every: 'minute',
-                counter: 1,
+                in: 1,
                 unit: 'minute'
             }
         });
