@@ -13,6 +13,9 @@ import Meetings from './components/Meetings';
 import Calls from './components/Calls';
 import Contact from './components/messaging/message-home';
 import Message from './components/messaging/message-contact';
+import IDTchat from './components/IDTchat';
+import IDTmore from './components/IDTmore';
+import IDTpatientList from './components/idt/PatientList';
 const supportsHistory = 'pushState' in window.history;
 
 
@@ -37,6 +40,9 @@ const App = ({}) => (
                                         <Route path="/chat-content" component={SingleChat}/>
                                         <Route path="/contact" component={Contact}/>
                                         <Route path="/message" component={Message}/>
+                                        <Route path="/IDT" component={IDTchat} />
+                                        <Route path="/more" component={IDTmore} />
+                                        <Route path="/idt-patient-list" component={IDTpatientList}/>
                                     </Switch>
                                 )}
                             />

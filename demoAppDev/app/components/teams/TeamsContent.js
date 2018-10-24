@@ -13,42 +13,71 @@ class TeamsContent extends Component {
                 {
                     open: true,
                     alert: true,
-                    team: "Northwind Traders",
+                    team: "Intensive Care Unit",
                     icon: "/images/northwest-traders.png",
                     arrow: "/images/arrow-open.png",
                     menu: "/images/ellipses.png",
                     links: [
                         {
-                            route: "Marketing",
+                            route: "General",
                             alert: false
                         },
                         {
-                            route: "Overview",
+                            route: "Announcements",
                             alert: true
                         },
                         {
-                            route: "Performance",
+                            route: "Staffing",
                             alert: false
                         },
                         {
-                            route: "32 more channels",
+                            route: "Safety",
+                            alert: false
+                        },
+                        {
+                            route: "Neonatal ICU",
+                            alert: false
+                        },
+                        {
+                            route: "Onboarding",
+                            alert: false
+                        },
+                        {
+                            route: "12 more channels",
                             alert: false
                         }
                     ]
                 },
                 {
-                    open: false,
+                    open: true,
                     alert: false,
-                    team: "Tailspin Toys",
+                    team: "Contoso Hospital",
                     icon: "/images/tailspin_toys.png",
-                    arrow: "/images/arrow-closed.png",
+                    arrow: "/images/arrow-open.png",
                     menu: "/images/ellipses.png",
-                    links: []
+                    links: [
+                        {
+                            route: "General",
+                            alert: false
+                        },
+                        {
+                            route: "Announcements",
+                            alert: false
+                        },
+                        {
+                            route: "IDT",
+                            alert: false
+                        },
+                        {
+                            route: "Safety",
+                            alert: false
+                        }
+                    ]
                 },
                 {
                     open: true,
                     alert: false,
-                    team: "Account Teams",
+                    team: "Patient Safety",
                     icon: "/images/account-team.png",
                     arrow: "/images/arrow-open.png",
                     menu: "/images/ellipses.png",
@@ -58,14 +87,21 @@ class TeamsContent extends Component {
                             alert: false
                         },
                         {
-                            route: "Accounting",
+                            route: "Avoidable Deaths",
                             alert: false
                         },
                         {
-                            route: "Finance",
+                            route: "Mortality review",
+                            alert: false
+                        },
+                        {
+                            route: "Preventing Falls",
+                            alert: false
+                        },
+                        {
+                            route: "Sepsis Plans",
                             alert: false
                         }
-
                     ]
                 }
             ]

@@ -1,0 +1,110 @@
+.idt-sub-nav {
+    position: relative;
+    display: flex;
+    text-align: center;
+
+    &::after {
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        box-shadow: 1px 1px 0 rgba(0,0,0,0.20);
+        content: "";
+        bottom: 0;
+    }
+
+    li {
+        padding: 1rem 0;
+        flex: 1;
+        font-size: 15px;
+
+        a {
+            color: @icon-fill;
+        }
+
+        &::before {
+            display: none;
+            position: absolute;
+            height: 4px;
+            width: 33%;
+            background: @icon-fill;
+            content: "";
+            bottom: 0;
+        }
+
+        &.chat.selected::before{
+            display: block;
+            left: 0;
+        }
+
+        &.files.selected::before {
+            display: block;
+            right: 0;
+        }
+
+        &.more.selected::before {
+            display: block;
+            right: 0;
+        }
+    }
+}
+
+
+.idt-list div.message-icon{
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    padding: 6px 5px;
+}
+
+.idt-list {
+    background: @white;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0;
+    width: 100%;
+    overflow: scroll;
+    height: 93%;
+}
+.idt-list-header{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    display: flex;
+}
+.idt-list-header div{
+    margin: 10px;
+}
+.idt-list-header-name, .idt-list-header-location{
+    flex-grow: 1;
+}
+.idt {
+    background: @white;
+    margin-left: 10px;
+    padding: 16px 16px 16px 6px;
+    display: flex;
+    border-bottom: 1px solid @iphone-bg-alert;
+}
+.idt-body{
+    padding: 6px 5px;
+    flex-grow: 1;
+}
+.idt-body span{
+    float: right;
+}
+.idt-add-new{
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 300;
+    color: @icon-fill;
+    margin: 16px;
+}
+.patient{
+    display:flex;
+    padding: 14px;
+    margin: 0px 8px;
+    border-bottom: 1px solid gray;
+}
