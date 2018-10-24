@@ -61,21 +61,20 @@ const idtChatData = {
 }
 const SalyerData = {
     Name: "Salyer, Darrell",
-    Demographics: [
-        {
-            Room: "1-A",
-            LocationUnit: "Sher-2A Cardiac Care, 1505 Greenview Avenue, Elgin, Illinois",
-            Payor: "Premera",
-            ID: "123456789",
-            Gender: "Male",
-            Age: 87,
-            DateOfBirth: "March 18, 1931",
-            DateOfAdmittance: "May 21, 2018",
-            AttendingPhysiscian: "Jazmine Simmons",
-            CareManager: "Bruno Zhao",
+    Demographics: 
+    {
+        Room: "1-A",
+        LocationUnit: "Sher-2A Cardiac Care, 1505 Greenview Avenue, Elgin, Illinois",
+        Payor: "Premera",
+        ID: "123456789",
+        Gender: "Male",
+        Age: 87,
+        DateOfBirth: "March 18, 1931",
+        DateOfAdmittance: "May 21, 2018",
+        AttendingPhysiscian: "Jazmine Simmons",
+        CareManager: "Bruno Zhao",
 
-        }
-    ],
+    },
     Medications: [
         {
             MedicationName: "Maxalt",
@@ -116,12 +115,87 @@ export default class PatientList extends Component{
         super(props);
         this.state = {
             redirect: false,
-            patients: patientData
+            patients: patientData,
+            salyerData: SalyerData
         }
+        this.redirectList = this.redirectList.bind(this);
     }
     render(){
         if (this.state.redirect) {
-            return <Redirect push to="/messages" />;
+            // const diagnosisItems = this.state.salyerData.Details.Diagnosis.map((item)=>{
+            //     return (
+            //         <li><span>{item}</span></li>
+            //     );
+            // });
+            // const medicalItems = this.state.salyerData.Details.MedicalHistory.map(((item, key)=>{
+            //     return (
+            //         <li><span>{item}</span></li>
+            //     );
+            // }));
+            // const allergyItems = this.state.salyerData.Details.Allergies.map(((item, key)=>{
+            //     return (
+            //         <li><span>{item}</span></li>
+            //     );
+            // }));
+            return (
+                <Page className="chat-page">
+                    <h2 className="page-title">Patients</h2>
+                    <section className="page-content">
+                        <div className="idt-patient-list-header">
+                            <div>Patients list</div>
+                        </div>
+                        <div>{this.state.salyerData.Name}</div>
+                        <div>
+                            <div className="demographic-item">
+                                <div>Room</div>
+                                <div>{this.state.salyerData.Demographics.Room}</div>
+                            </div>
+                            <div className="demographic-item">
+                                <div>Location unit</div>
+                                <div>{this.state.salyerData.Demographics.LocationUnit}</div>
+                            </div>
+                            <div className="demographic-item">
+                                <div>Payor</div>
+                                <div>{this.state.salyerData.Demographics.Payor}</div>
+                            </div>
+                            <div className="demographic-item">
+                                <div>ID</div>
+                                <div>{this.state.salyerData.Demographics.ID}</div>
+                            </div>
+                            <div className="demographic-item">
+                                <div>Gender</div>
+                                <div>{this.state.salyerData.Demographics.Gender}</div>
+                            </div>
+                            <div className="demographic-item">
+                                <div>Age</div>
+                                <div>{this.state.salyerData.Demographics.Room}</div>
+                            </div>
+                            <div className="demographic-item">
+                                <div>Date of birth</div>
+                                <div>{this.state.salyerData.Demographics.DateOfBirth}</div>
+                            </div>
+                            <div className="demographic-item">
+                                <div>Admitted</div>
+                                <div>{this.state.salyerData.Demographics.DateOfAdmittance}</div>
+                            </div>
+                            <div className="demographic-item">
+                                <div>Attending physician</div>
+                                <div>{this.state.salyerData.Demographics.AttendingPhysiscian}</div>
+                            </div>
+                            <div >
+                                <div>Care manager</div>
+                                <div>{this.state.salyerData.Demographics.CareManager}</div>
+                            </div>
+                        </div>
+                        {this.getMedications()}
+                        <div>
+                            {/* <div><ul>{diagnosisItems}</ul></div> */}
+                            {/* <div><ul>{medicalItems}</ul></div>
+                            <div><ul>{allergyItems}</ul></div> */}
+                        </div>
+                    </section>
+                </Page>
+            )
         } else{
             return (
                 <Page className="chat-page">
@@ -141,7 +215,7 @@ export default class PatientList extends Component{
                         <ul className="patient-list">
                             {this.state.patients.map((patient, index) => {
                                 return (
-                                    <li key={patient.patientName+index} className={`patient`}>
+                                    <li key={patient.patientName+index} className={`patient`} onClick={this.redirectList}>
                                         <div className="idt-list-header-name">{patient.patientName}</div>
                                         <div className="idt-list-header-location">{patient.patientLocation}</div>
                                         <div className="idt-list-header-room">{patient.patientRoom}</div>
@@ -155,5 +229,52 @@ export default class PatientList extends Component{
             )
         }
              
+    }
+    redirectList() {
+        this.setState((prevState) => {
+            return {
+                redirect: !prevState.redirect
+            }
+        });
+    }
+    getMedications(){
+        const meetingTime = this.state.salyerData.Medications.map((time)=>{
+            return(
+                <span className="time-container">
+                    <ul className="busy">
+                        <li className="title">{time.MedicationName}</li>
+                        <li className="time">{time.MedicationNote}</li>
+                    </ul>
+                </span>
+            )
+        });
+
+        return (
+            <section className="meeting">
+                <div className="meeting-time">
+                    {meetingTime}
+                </div>
+            </section>
+        )
+    }
+    getDetails(){
+        const meetingTime = this.state.salyerData.Details.map((time)=>{
+            return(
+                <span className="time-container">
+                    <ul className="busy">
+                        <li className="title">{time.MedicationName}</li>
+                        <li className="time">{time.MedicationNote}</li>
+                    </ul>
+                </span>
+            )
+        });
+
+        return (
+            <section className="meeting">
+                <div className="meeting-time">
+                    {meetingTime}
+                </div>
+            </section>
+        )
     }
 }
