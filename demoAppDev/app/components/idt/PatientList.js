@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
+import Page from "../Page";
 
 const patientData = [
     {
@@ -123,24 +124,34 @@ export default class PatientList extends Component{
             return <Redirect push to="/messages" />;
         } else{
             return (
+                <Page className="chat-page">
+                <h2 className="page-title">Patients</h2>
                 <section className="idt-patient-list">
+                    <div className="idt-patient-list-header">
+                        <div>Diabetic patients</div>
+                        <div>Room</div>
+                    </div>
+                    <div className="idt-patient-list-add-new">+ Add patient</div>
                     <div>
-                        <div>
-                            <span>Name</span>
-                            <span>Location</span>
-                            <span>Room</span>
+                        <div className="idt-list-header">
+                            <div className="idt-list-header-name">Name</div>
+                            <div className="idt-list-header-location">Location</div>
+                            <div className="idt-list-header-room">Room</div>
                         </div>
-                        <ul className="patientList">
+                        <ul className="patient-list">
                             {this.state.patients.map((patient, index) => {
                                 return (
                                     <li key={patient.patientName+index} className={`patient`}>
-                                        <span>{patient.patientName}</span><span>{patient.patientLocation}</span><span>{patient.patientRoom}</span>
+                                        <div className="idt-list-header-name">{patient.patientName}</div>
+                                        <div className="idt-list-header-location">{patient.patientLocation}</div>
+                                        <div className="idt-list-header-room">{patient.patientRoom}</div>
                                     </li>
                                 )
                             })}
                         </ul>
                     </div>   
                 </section>
+                </Page>
             )
         }
              

@@ -14,14 +14,10 @@ export default class moreContent extends Component{
             more: true,
             idtMoreItems: [
                 {
-                    read: false,
-                    name: "Ruth",
-                    time: date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-                    message: "We need you A.S.A.P",
-                    priorityIcon: "/images/urgent_red.png",
-                    priority: "- URGENT",
+                    name: "Patients",
+                    time: date.toLocaleString('en-US', { month: 'numeric', day: 'numeric' }),
+                    message: "Modified by You on ",
                     avatar: "/images/Patient.png",
-                    type: "urgent"
                 }
             ]
         };
@@ -39,14 +35,13 @@ export default class moreContent extends Component{
         const idtMoreItem = this.state.idtMoreItems.map(((item, key)=>{
             return (
                 <Link to={{pathname:'/idt-patient-list', state:{prev:'true'}}} key={key}>
-                    <section className="chat-container" key={key}>
-                    <span className="avatar-container">
-                        <span className={item.read ? "read" : "unread"}><SVG src={read}/></span>
-                        <img src={item.avatar} alt="profile picture"/>
+                    <section className="idt-container" key={key}>
+                    <span className="idt-patient-container">
+                        <img src={item.avatar} alt="patient picture"/>
                     </span>
                         <ul>
-                            <li className={"message-info" + " " + item.type}><span className={item.type}>{item.name} {item.priority}</span><span className="time">{item.time}</span></li>
-                            <li className="message-info"><span className="message">{item.message}</span><img className={item.type ? "urgent" : "normal"} src={item.priorityIcon} alt="Urgent" width="13" height="13"/></li>
+                            <li className={"message-info"}><span>{item.name}</span></li>
+                            <li className="message-info"><span className="message">{item.message}{item.time}</span></li>
                         </ul>
                     </section>
                 </Link>
@@ -67,6 +62,7 @@ export default class moreContent extends Component{
                     </li>
                 </ul>
                 {idtMoreItem}
+                <div className="idt-add-new">+ Add new</div>
             </section>
         
         )

@@ -48,6 +48,63 @@
     }
 }
 
+.idt-container {
+    padding: 1rem 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 0px;
+
+    &::after {
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      box-shadow: 1px 1px 0 rgba(0,0,0,0.20);
+      content: "";
+      bottom: 0;
+    }
+  
+    ul {
+        margin-top: 6px;
+        flex: 1;
+    }
+  
+    .idt-patient-container {
+        margin-right: 0.5rem;
+        margin-left: 16px;
+        
+        img{
+            width: 44px;
+        }
+    }
+
+    .message-info {
+        color: @font-grey;
+        display: flex;
+        justify-content: space-between;
+
+        &:first-of-type {
+            color: @black;
+            margin-bottom: 0.2rem;
+        }
+
+        .normal {
+          color: @font-grey;
+          font-size: 17px;
+        }
+
+        .message {
+            font-size: 15px;
+            color: @font-grey;
+        }
+    }
+
+    .idt-patient-container {
+      align-items: center;
+      display: flex;
+    }
+}
+
 
 .idt-list div.message-icon{
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
@@ -71,8 +128,10 @@
     height: 93%;
 }
 .idt-list-header{
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    font-size: 12px;
+    color: #5C5B5B;
+    border-top: 1px solid rgba(0,0,0,0.20);
+    border-bottom: 1px solid rgba(0,0,0,0.20);
     display: flex;
 }
 .idt-list-header div{
@@ -96,15 +155,29 @@
     float: right;
 }
 .idt-add-new{
-    font-size: 1.4rem;
+    font-size: 17px;
     font-style: normal;
     font-weight: 300;
     color: @icon-fill;
-    margin: 16px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.20);
 }
 .patient{
     display:flex;
     padding: 14px;
     margin: 0px 8px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgba(0,0,0,0.20);
+}
+
+.idt-patient-list-add-new{
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    color: @icon-fill;
+    padding: 16px;
+}
+.idt-patient-list-header{
+    padding: 16px;
+    display:flex;
+    border-bottom: 1px solid rgba(0,0,0,0.20);
 }

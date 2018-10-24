@@ -20,31 +20,38 @@ class TeamsContent extends Component {
                     links: [
                         {
                             route: "General",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Announcements",
-                            alert: true
+                            alert: true,
+                            color: "black"
                         },
                         {
                             route: "Staffing",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Safety",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Neonatal ICU",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Onboarding",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "12 more channels",
-                            alert: false
+                            alert: false,
+                            color: "purple"
                         }
                     ]
                 },
@@ -58,19 +65,23 @@ class TeamsContent extends Component {
                     links: [
                         {
                             route: "General",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Announcements",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "IDT",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Safety",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         }
                     ]
                 },
@@ -84,23 +95,28 @@ class TeamsContent extends Component {
                     links: [
                         {
                             route: "General",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Avoidable Deaths",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Mortality review",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Preventing Falls",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         },
                         {
                             route: "Sepsis Plans",
-                            alert: false
+                            alert: false,
+                            color: "black"
                         }
                     ]
                 }
@@ -114,7 +130,7 @@ class TeamsContent extends Component {
             const teamLinks = item.links.map((link, key)=>{
                 return (
                     <Link key={key} className="team-link" to={{pathname:"/" + link.route, state:{prev:'true'}}}>
-                        <span className="teams-text">{link.route}</span>
+                        <span className={link.color==="black" ? "teams-text": "teams-text purple"}>{link.route}</span>
                         <span className={link.alert ? "teams-alert yes" : "teams-alert no"}>
                             <SVG src={IMPORTANT}/>
                             <SVG src={ALERT}/>
