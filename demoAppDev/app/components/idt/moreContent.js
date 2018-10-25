@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import SVG from 'react-inlinesvg';
-import read from '../../../icon/unread.svg';
+import PlusIcon from '../../../icon/plus-add-new.svg';
+
+import FollowIcon from "../../../icon/follow-icon.svg";
+import BackArrow from '../../../icon/back-arrow.svg';
 
 export default class moreContent extends Component{
     constructor(){
@@ -44,33 +47,47 @@ export default class moreContent extends Component{
             return (
                 <Link to={{pathname:'/idt-patient-list', state:{prev:'true'}}} key={key}>
                     <section className="idt-container" key={key}>
-                    <span className="idt-patient-container">
-                        <img src={item.avatar} alt="patient picture"/>
-                    </span>
+                        <span className="idt-patient-container">
+                            <img src={item.avatar} alt="patient picture"/>
+                        </span>
                         <ul>
                             <li className={"message-info"}><span>{item.name}</span></li>
                             <li className="message-info"><span className="message">{item.message}{item.time}</span></li>
                         </ul>
+                        <span className="idt-patient-arrow">
+                            <img src={"/images/RightArrowPatients.png"} alt="arrow picture"/>
+                        </span>
                     </section>
                 </Link>
             );
         }));
 
         return (
-            <section className="page-content">
-                <ul className="idt-sub-nav">
-                    <li className={this.state.chat ? 'chat selected': "chat"} onClick={() => {this.toggleClass("chat")}}>
-                        <Link to={{pathname:'/idt', state:{next:'false'}}}>Chat</Link>
-                    </li>
-                    <li className={this.state.files ? 'files selected': "files"} onClick={() => {this.toggleClass("files")}}>
-                        <Link to={{pathname:'/files', state:{next:'false'}}}>Files</Link>
-                    </li>
-                    <li className={this.state.more ? 'more selected': "more"} onClick={() => {this.toggleClass("more")}}>
-                        <Link to={{pathname:'/more', state:{next:'false'}}}>More</Link>
-                    </li>
-                </ul>
+            <section className="idt-chat">
+                <header>
+                    <h2 className="person"> IDT</h2>
+                    <ul className="icon-container">
+                        <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
+                            src={BackArrow}/></Link></li>
+                        <li className="follow-icon"><SVG src={FollowIcon}/></li>
+                    </ul>
+                    <ul className="idt-sub-nav">
+                        <li className={this.state.chat ? 'chat selected': "chat"} onClick={() => {this.toggleClass("chat")}}>
+                            <Link to={{pathname:'/idt', state:{next:'false'}}}>Chat</Link>
+                        </li>
+                        <li className={this.state.files ? 'files selected': "files"} onClick={() => {this.toggleClass("files")}}>
+                            <Link to={{pathname:'/files', state:{next:'false'}}}>Files</Link>
+                        </li>
+                        <li className={this.state.more ? 'more selected': "more"} onClick={() => {this.toggleClass("more")}}>
+                            <Link to={{pathname:'/more', state:{next:'false'}}}>More</Link>
+                        </li>
+                    </ul>
+                </header>
                 {idtMoreItem}
-                <div className="idt-add-new">+ Add new</div>
+                <div className="idt-add-new">
+                    <span className="idt-add-new-svg"><SVG src={PlusIcon}/></span>
+                    <span className="idt-add-new-text">Add new</span>
+                </div>
             </section>
         
         )

@@ -53,8 +53,8 @@
     padding: 1rem 0;
     position: relative;
     display: flex;
-    width: 100%;
-    margin: 0px;
+    width: 96%;
+    margin: 0 0 0 16px;
 
     &::after {
       position: absolute;
@@ -72,7 +72,6 @@
   
     .idt-patient-container {
         margin-right: 0.5rem;
-        margin-left: 16px;
         
         img{
             width: 44px;
@@ -104,6 +103,15 @@
       align-items: center;
       display: flex;
     }
+
+    .idt-patient-arrow{
+        align-items: center;
+        display: flex;
+        margin-right: 17px;
+        img{
+            width: 12px;
+        }
+    } 
 }
 
 
@@ -166,12 +174,18 @@
     float: right;
 }
 .idt-add-new{
+    padding: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.20);
+}
+.idt-add-new-svg{
+    margin-left: 9px;
+}
+.idt-add-new-text{
+    margin-left: 23px;
     font-size: 17px;
     font-style: normal;
     font-weight: 300;
     color: @icon-fill;
-    padding: 16px;
-    border-bottom: 1px solid rgba(0,0,0,0.20);
 }
 .patient{
     display:flex;
@@ -188,11 +202,34 @@
     padding: 16px;
 }
 .idt-patient-list-header{
-    padding: 16px;
+    padding: 15px;
     display: flex;
     border-bottom: 1px solid rgba(0,0,0,0.20);
     background-color: @iphone-bg-grey;
-    color: @icon-fill;
+    
+    .left-text{
+        color: @icon-fill;
+        font-size: 17px;
+    }
+    .down-caret{
+        position: absolute;
+        left: 155px;
+        width: 22px;
+    }
+    .right-text{
+        position: absolute;
+        left: 262px;
+    }
+    .down-arrow{
+        position: absolute;
+        left: 304px;
+        width: 22px;
+    }
+    .info-icon{
+        position: absolute;
+        left: 336px;
+        width: 22px;
+    }
 }
 .idt-patient-list-name{
     font-size: 22px;
@@ -274,9 +311,54 @@
             color: @font-grey;
         }
     }
+}
 
-    .idt-patient-container {
-      align-items: center;
-      display: flex;
+
+
+.idt-chat{
+    position: fixed;
+    height: 100%;
+    background: @iphone-bg-grey;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+
+    header {
+        padding-top: 2rem;
+        position: relative;
+
+        .person {
+            position: absolute;
+            text-align: center;
+            left: 0;
+            right: 0;
+            color: @icon-fill;
+            width: 50%;
+            margin: auto;
+        }
+        .icon-container {
+            width: 95%;
+            margin: 0 auto;
+            list-style: none;
+            display: flex;
+            align-items: center;
+
+            .follow-icon {
+                margin-left: auto;
+                padding-right: 1rem
+            }
+
+            .back-arrow {
+                display: block;
+                width: 4rem;
+                height: 2rem;
+
+                a {
+                    display: block;
+                }
+            }
+        }
     }
 }

@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
+import SVG from 'react-inlinesvg';
+import FollowIcon from "../../../icon/follow-icon.svg";
+import BackArrow from '../../../icon/back-arrow.svg';
+import CameraIcon from '../../../icon/camera.svg';
 
 export default class IDTContent extends Component{
     constructor(){
@@ -30,8 +34,15 @@ export default class IDTContent extends Component{
 
     render() {
         return (
-            <section className="page-content">
-                <ul className="idt-sub-nav">
+            <section className="idt-chat">
+                <header>
+                    <h2 className="person"> IDT</h2>
+                    <ul className="icon-container">
+                        <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
+                            src={BackArrow}/></Link></li>
+                        <li className="follow-icon"><SVG src={FollowIcon}/></li>
+                    </ul>
+                    <ul className="idt-sub-nav">
                     <li className={this.state.chat ? 'chat selected': "chat"} onClick={() => {this.toggleClass("chat")}}>
                         <Link to={{pathname:'/idt', state:{next:'false'}}}>Chat</Link>
                     </li>
@@ -42,6 +53,7 @@ export default class IDTContent extends Component{
                         <Link to={{pathname:'/more', state:{next:'false'}}}>More</Link>
                     </li>
                 </ul>
+                </header>
             </section>
         )
     }

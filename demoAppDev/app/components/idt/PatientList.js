@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import Page from "../Page";
 
+import {Link} from "react-router-dom";
+import SVG from 'react-inlinesvg';
+import CloseHeader from '../../../icon/close-header.svg';
+import DownCaret from '../../../icon/idt-patients-down-caret.svg';
+import DownArrow from '../../../icon/idt-patients-down-arrow.svg';
+import InfoIcon from '../../../icon/idt-patients-info.svg';
+
 const patientData = [
     {
         patientName: "Salyer, Darrell",
@@ -142,34 +149,44 @@ export default class PatientList extends Component{
             )
         } else{
             return (
-                <Page className="chat-page">
-                <h2 className="page-title">Patients</h2>
-                <section className="idt-patient-list">
-                    <div className="idt-patient-list-header">
-                        <div>Diabetic patients</div>
-                        <div>Room</div>
-                    </div>
-                    <div className="idt-patient-list-add-new">+ Add patient</div>
-                    <div>
-                        <div className="idt-list-header">
-                            <div className="idt-list-header-name">Name</div>
-                            <div className="idt-list-header-location">Location</div>
-                            <div className="idt-list-header-room">Room</div>
-                        </div>
-                        <ul className="patient-list">
-                            {this.state.patients.map((patient, index) => {
-                                return (
-                                    <li key={patient.patientName+index} className={`patient`} onClick={this.redirectList}>
-                                        <div className="idt-list-header-name">{patient.patientName}</div>
-                                        <div className="idt-list-header-location">{patient.patientLocation}</div>
-                                        <div className="idt-list-header-room">{patient.patientRoom}</div>
-                                    </li>
-                                )
-                            })}
+                <section className="idt-chat">
+                    <header>
+                        <h2 className="person"> Patients</h2>
+                        <ul className="icon-container">
+                            <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
+                                src={CloseHeader}/></Link></li>
                         </ul>
-                    </div>   
+                    </header>
+                    <section className="idt-patient-list">
+                        <div className="idt-patient-list-header">
+                            <div className="left-text">Diabetic patients</div>
+                            <SVG className="down-caret" src={DownCaret}/>
+                            <div className="right-text">Room</div>
+                            <SVG className="down-arrow" src={DownArrow}/>
+                            <SVG className="info-icon" src={InfoIcon}/>
+                        </div>
+                        <div className="idt-patient-list-add-new">+ Add patient</div>
+                        <div>
+                            <div className="idt-list-header">
+                                <div className="idt-list-header-name">Name</div>
+                                <div className="idt-list-header-location">Location</div>
+                                <div className="idt-list-header-room">Room</div>
+                            </div>
+                            <ul className="patient-list">
+                                {this.state.patients.map((patient, index) => {
+                                    return (
+                                        <li key={patient.patientName+index} className={`patient`} onClick={this.redirectList}>
+                                            <div className="idt-list-header-name">{patient.patientName}</div>
+                                            <div className="idt-list-header-location">{patient.patientLocation}</div>
+                                            <div className="idt-list-header-room">{patient.patientRoom}</div>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </div>   
+                    </section>
                 </section>
-                </Page>
+
             )
         }
              
