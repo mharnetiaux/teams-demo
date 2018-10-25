@@ -1,4 +1,8 @@
 import React,{Component} from 'react';
+import SVG from 'react-inlinesvg';
+import TakePhoto from '../../../icon/take-photo.svg';
+import TakeVideo from '../../../icon/take-video.svg';
+import PhotoLibrary from '../../../icon/photo-library.svg';
 
 class CameraModal extends Component{
     constructor(props){
@@ -19,17 +23,17 @@ class CameraModal extends Component{
                         <div className="rectangle11"></div>
                     </div>
                     <div className="btn">
-                        <span className="camera"></span><a href="#"></a>
+                        <span className="camera"><SVG src={TakePhoto}/></span><a href="#"></a>
                         <span className="cm-btn-text" onClick={this.startCameraBelow}>Take photo</span>
                     </div>
                     <span className="separator"></span>
                     <div className="btn">
-                        <span className="video"></span><a href="#"></a>
+                        <span className="video"><SVG src={TakeVideo}/></span><a href="#"></a>
                         <span className="cm-btn-text">Take video</span>
                     </div>
                     <span className="separator"></span>
                     <div className="btn">
-                        <span className="library"></span><a href="#"></a>
+                        <span className="library"><SVG src={PhotoLibrary}/></span><a href="#"></a>
                         <span className="cm-btn-text">Photo library</span>
                     </div>
                 </div>

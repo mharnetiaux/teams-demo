@@ -17,6 +17,7 @@ import IDTcontent from './components/idt/IDTContent';
 import moreContent from './components/idt/moreContent';
 import filesContent from './components/idt/filesContent';
 import IDTpatientList from './components/idt/PatientList';
+import CameraOverlay from './components/CameraOverlayScreen';
 const supportsHistory = 'pushState' in window.history;
 
 
@@ -45,6 +46,7 @@ const App = ({}) => (
                                         <Route path="/more" component={moreContent} />
                                         <Route path="/idt-patient-list" component={IDTpatientList}/>
                                         <Route path="/files" component={filesContent} />
+                                        <Route path="/cameraOverlay" component={CameraOverlay} />
                                     </Switch>
                                 )}
                             />

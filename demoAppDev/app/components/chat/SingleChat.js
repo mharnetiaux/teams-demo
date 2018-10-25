@@ -125,14 +125,13 @@ class SingleChat extends Component {
             }
         });
     }
-
     toggleCameraControls() {
         this.setState({redirect: true});
     }
 
     render() {
         if (this.state.redirect) {
-            return <Redirect push to="/teams"/>;
+            return <Redirect push to="/cameraOverlay"/>;
         }
         else {
             return (

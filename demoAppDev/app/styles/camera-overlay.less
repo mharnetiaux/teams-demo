@@ -1,0 +1,221 @@
+#cameraBackground{
+    background-image: null;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.canvas-container{
+    position: relative;
+}
+
+.canvas-div{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 90px;
+}
+.camera-controls{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.hidden-canvas{
+    display:none;
+}
+
+.block1{
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    height: 90px;
+}
+.block2{
+    margin-top: 125%;
+    padding: 0;
+    border-radius: 0;
+    height: 110px;
+}
+.blackBlock{
+    background: black;
+    /* height: 90px; */
+}
+.blackBloc.block1{
+    height: 80px;
+}
+.blackBloc.block2{
+    margin-top: 145%;
+    height: 80px;
+}
+
+.camera-controls .btn.Close span {
+    background: center/contain no-repeat url(../.././images/close.png);
+    width: 22px;
+    height: 22px;
+    margin: 10px;
+    float: left;
+}
+.camera-controls .btn.ReverseAndPower span {
+    background: center/contain no-repeat url(../.././images/ReverseAndPowerCameraIcons.png);
+    background-size: 80px 30px;
+    width: 80px;
+    height: 30px;
+    margin: 10px;
+    float: right; 
+}
+.camera-controls .btn span{
+    background-size: contain;
+    display: block;
+}
+.camera-controls .btn.OvalTakePhoto span {
+    background: center/contain no-repeat url(../.././images/OvalTakePhoto.png);
+    margin: auto;
+    width: 63px;
+    height: 63px;
+}
+.camera-controls-text{
+    color: white;
+    float: right;
+}
+.camera-controls-text span{
+    margin-left: 7px;
+    padding-left: 7px;
+    display: inline-block;
+}
+
+.camera-controls .btn.AnnotationControls span {
+    background: center/contain no-repeat url(../.././images/right_annotation_icons.png);
+    width: 165px;
+    height: 40px;
+    margin: 3px;
+    float: right; 
+}
+.camera-controls .btn.CameraIcon span {
+    background: center/contain no-repeat url(../.././images/camera_icon_annotation.png);
+    background-size: 40px 35px;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    float: left;
+}
+.camera-controls .btn.DoneIcon .doneSpan {
+    background: var(--main-color);
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    float: right;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+    padding-left: 20px;
+    line-height: 2.8rem;
+}
+.doneSpan2 {
+    color: white;
+    font-size: 26px;
+    text-align: left;
+    line-height: 2.8rem;
+}
+.DoneIcon .arrowy {
+    top: 0px;
+    position: relative;
+    color: white;
+    padding: 1em 0.7em;
+}
+.DoneIcon .arrowy.righty{
+    padding: 1em 0em 1em 0.7em;
+    margin-right: 0.7em;
+}
+.DoneIcon .arrowy.righty:before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.DoneIcon .arrowy.righty:before {
+    top: 0.6em;
+}
+.DoneIcon arrowy.righty:after {
+    bottom: 1.1em;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+button{
+    background: gray;
+    color:#333;
+    border-radius: 3px;
+    border:1px solid #ccc;
+    margin:.25rem;
+    width: 30%;
+    height: 30%;
+    background: url(../.././images/OvalTakePhoto.png) no-repeat;
+}
+
+/* camera modal */
+.camera-color-modal{
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 5px;
+    bottom: 0;
+    margin: auto;
+    /* background-color: rgba(0,0,0, 0.5); */
+}
+.camera-color-modal-inner{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 10%;
+    height: 265px;
+    top: 48px;
+    right: 0
+}
+.camera-color-modal-inner > .btn{
+    width: 25px;
+    height: 25px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    margin: 8px;
+    box-shadow: 0 0 0 1pt white;
+    outline-width: 2px;
+    outline-color: white;
+}
+.camera-color-modal-inner > .btn:active{
+    width: 25px;
+    height: 25px;
+    border: 6px solid white;
+    border-radius: 50%;
+    margin: 8px;
+    box-shadow: 0 0 0 3pt black;
+    outline-width: 3px;
+    outline-color: black;
+}
+
+.RedSelector{
+    background-color: #CF021A; 
+}
+.GreenSelector{
+    background-color: #0DAC37; 
+}
+.BlueSelector{
+    background-color: #1E5EFE; 
+}
+.YellowSelector{
+    background-color: #FFF600; 
+}
+.WhiteSelector{
+    background-color: #FFFFFF; 
+}
+.BlackSelector{
+    background-color: #000000; 
+}
