@@ -2,6 +2,7 @@
     position: relative;
     display: flex;
     text-align: center;
+    background: @iphone-bg-grey;
 
     &::after {
         position: absolute;
@@ -38,7 +39,7 @@
 
         &.files.selected::before {
             display: block;
-            right: 0;
+            right: 33%;
         }
 
         &.more.selected::before {
@@ -137,9 +138,19 @@
 .idt-list-header div{
     margin: 10px;
 }
-.idt-list-header-name, .idt-list-header-location{
+.idt-list-header-name{
     flex-grow: 1;
+    max-width: 170px;
 }
+.idt-list-header-location{
+    flex-grow: 1;
+    max-width: 183px;
+}
+.idt-list-header-room{
+    flex-grow: 1;
+    max-width: 40px;
+}
+
 .idt {
     background: @white;
     margin-left: 10px;
@@ -164,8 +175,8 @@
 }
 .patient{
     display:flex;
-    padding: 14px;
-    margin: 0px 8px;
+    padding: 14px 14px 14px 0px;
+    margin: 0 0 0 15px;
     border-bottom: 1px solid rgba(0,0,0,0.20);
 }
 
@@ -180,9 +191,14 @@
     padding: 16px;
     display: flex;
     border-bottom: 1px solid rgba(0,0,0,0.20);
+    background-color: @iphone-bg-grey;
+    color: @icon-fill;
 }
-
-
+.idt-patient-list-name{
+    font-size: 22px;
+    padding: 18px;
+    background-color: @iphone-bg-grey;
+}
 
 
 
@@ -193,11 +209,74 @@
     div{
         &:first-of-type {
             color: @icon-not-selected;
+            min-width: 100px;
         }
         flex-grow: 1;
         padding: 16px;
         &:last-of-type {
             text-align: right;
+            max-width: 205px;
         }
+    }
+}
+
+
+
+//files
+.idt-files {
+    padding: 1rem 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 0px;
+
+    &::after {
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      box-shadow: 1px 1px 0 rgba(0,0,0,0.20);
+      content: "";
+      bottom: 0;
+    }
+  
+    ul {
+        margin-top: 0px;
+        flex: 1;
+    }
+  
+    .idt-files-container {
+        margin-left: 24px;
+        margin-right: 24px;
+        padding-top: 8px;
+        
+        img{
+            width: 23px;
+        }
+    }
+
+    .message-info {
+        color: @font-grey;
+        display: flex;
+        justify-content: space-between;
+
+        &:first-of-type {
+            color: @black;
+            margin-bottom: 0.2rem;
+        }
+
+        .normal {
+          color: @font-grey;
+          font-size: 17px;
+        }
+
+        .message {
+            font-size: 15px;
+            color: @font-grey;
+        }
+    }
+
+    .idt-patient-container {
+      align-items: center;
+      display: flex;
     }
 }

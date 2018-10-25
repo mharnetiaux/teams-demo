@@ -62,19 +62,19 @@ const idtChatData = {
 const SalyerData = {
     Name: "Salyer, Darrell",
     Demographics: 
-    {
-        Room: "1-A",
-        LocationUnit: "Sher-2A Cardiac Care, 1505 Greenview Avenue, Elgin, Illinois",
-        Payor: "Premera",
-        ID: "123456789",
-        Gender: "Male",
-        Age: 87,
-        DateOfBirth: "March 18, 1931",
-        DateOfAdmittance: "May 21, 2018",
-        AttendingPhysiscian: "Jazmine Simmons",
-        CareManager: "Bruno Zhao",
+        {
+            "Room": "1-A",
+            "Location unit": "Sher-2A Cardiac Care, 1505 Greenview Avenue, Elgin, Illinois",
+            "Payor": "Premera",
+            "ID": "123456789",
+            "Gender": "Male",
+            "Age": 87,
+            "Date of birth": "March 18, 1931",
+            "Date of admittance": "May 21, 2018",
+            "Attending physiscian": "Jazmine Simmons",
+            "Care manager": "Bruno Zhao",
 
-    },
+        },
     Medications: [
         {
             MedicationName: "Maxalt",
@@ -93,13 +93,13 @@ const SalyerData = {
             MedicationNote: "2.7 mg. Mouth/throat cough drops lozenge. Start 02/03/17."
         },
     ],
-    Details: [
+    Details: 
         { 
-            Diagnosis: ["Migraine with aura, non-intractable (346.00)", "Common migraine without mention of intractable migraine (231.00)", "Unspecified ashtma, uncomplicated (j45.909)"],
-            MedicalHistory: ["CAD w/ Left heart cath in 2005 showing 40% LAD, 50% small D2, 40% RCA and 30% large OM; 2006 TTE showing LVEF 60-65% with diastolic dysfunction, LVH, mild LA dilation", "DM 2, last A1c 6.7 in 9/2005", "h/o iron deficiency anemia"],
-            Allergies: ["Peanuts", "Seasonal Allergies"]
-        }
-    ], 
+            "Diagnosis": ["Migraine with aura, non-intractable (346.00)", "Common migraine without mention of intractable migraine (231.00)", "Unspecified ashtma, uncomplicated (j45.909)"],
+            "MedicalHistory": ["CAD w/ Left heart cath in 2005 showing 40% LAD, 50% small D2, 40% RCA and 30% large OM; 2006 TTE showing LVEF 60-65% with diastolic dysfunction, LVH, mild LA dilation", "DM 2, last A1c 6.7 in 9/2005", "h/o iron deficiency anemia"],
+            "Allergies": ["Peanuts", "Seasonal Allergies"]
+        },
+    
     Notes: [
         {
             NoteName: "Gerardo McGuire",
@@ -107,8 +107,8 @@ const SalyerData = {
             NoteText: "Followed up with family. Able to go home safely"
         }
     ]
-
 }
+
 
 export default class PatientList extends Component{
     constructor(props){
@@ -119,24 +119,12 @@ export default class PatientList extends Component{
             salyerData: SalyerData
         }
         this.redirectList = this.redirectList.bind(this);
+        this.getMedications = this.getMedications.bind(this);
+        this.getDetails = this.getDetails.bind(this);
+        this.getPatientData = this.getPatientData.bind(this);
     }
     render(){
         if (this.state.redirect) {
-            // const diagnosisItems = this.state.salyerData.Details.Diagnosis.map((item)=>{
-            //     return (
-            //         <li><span>{item}</span></li>
-            //     );
-            // });
-            // const medicalItems = this.state.salyerData.Details.MedicalHistory.map(((item, key)=>{
-            //     return (
-            //         <li><span>{item}</span></li>
-            //     );
-            // }));
-            // const allergyItems = this.state.salyerData.Details.Allergies.map(((item, key)=>{
-            //     return (
-            //         <li><span>{item}</span></li>
-            //     );
-            // }));
             return (
                 <Page className="chat-page">
                     <h2 className="page-title">Patients</h2>
@@ -144,55 +132,11 @@ export default class PatientList extends Component{
                         <div className="idt-patient-list-header">
                             <div>Patients list</div>
                         </div>
-                        <div>{this.state.salyerData.Name}</div>
-                        <div>
-                            <div className="demographic-item">
-                                <div>Room</div>
-                                <div>{this.state.salyerData.Demographics.Room}</div>
-                            </div>
-                            <div className="demographic-item">
-                                <div>Location unit</div>
-                                <div>{this.state.salyerData.Demographics.LocationUnit}</div>
-                            </div>
-                            <div className="demographic-item">
-                                <div>Payor</div>
-                                <div>{this.state.salyerData.Demographics.Payor}</div>
-                            </div>
-                            <div className="demographic-item">
-                                <div>ID</div>
-                                <div>{this.state.salyerData.Demographics.ID}</div>
-                            </div>
-                            <div className="demographic-item">
-                                <div>Gender</div>
-                                <div>{this.state.salyerData.Demographics.Gender}</div>
-                            </div>
-                            <div className="demographic-item">
-                                <div>Age</div>
-                                <div>{this.state.salyerData.Demographics.Room}</div>
-                            </div>
-                            <div className="demographic-item">
-                                <div>Date of birth</div>
-                                <div>{this.state.salyerData.Demographics.DateOfBirth}</div>
-                            </div>
-                            <div className="demographic-item">
-                                <div>Admitted</div>
-                                <div>{this.state.salyerData.Demographics.DateOfAdmittance}</div>
-                            </div>
-                            <div className="demographic-item">
-                                <div>Attending physician</div>
-                                <div>{this.state.salyerData.Demographics.AttendingPhysiscian}</div>
-                            </div>
-                            <div >
-                                <div>Care manager</div>
-                                <div>{this.state.salyerData.Demographics.CareManager}</div>
-                            </div>
-                        </div>
+                        <div className="idt-patient-list-name">{this.state.salyerData.Name}</div>
+                        {this.getPatientData()}
                         {this.getMedications()}
-                        <div>
-                            {/* <div><ul>{diagnosisItems}</ul></div> */}
-                            {/* <div><ul>{medicalItems}</ul></div>
-                            <div><ul>{allergyItems}</ul></div> */}
-                        </div>
+                        {this.getDetails()}
+
                     </section>
                 </Page>
             )
@@ -237,6 +181,22 @@ export default class PatientList extends Component{
             }
         });
     }
+    getPatientData(){
+        let data = [];
+        for(let key in this.state.salyerData.Demographics){
+            data.push(
+                <div className="demographic-item">
+                    <div>{key}</div>
+                    <div>{this.state.salyerData.Demographics[key]}</div>
+                </div>
+            )
+        }
+        return (
+            <div>
+                {data}
+            </div>
+        )
+    }
     getMedications(){
         const meetingTime = this.state.salyerData.Medications.map((time)=>{
             return(
@@ -258,21 +218,25 @@ export default class PatientList extends Component{
         )
     }
     getDetails(){
-        const meetingTime = this.state.salyerData.Details.map((time)=>{
-            return(
+        let details = [];
+        for(let key in this.state.salyerData.Details){
+            let children = [];
+            for(let value in this.state.salyerData.Details[key]){
+                children.push(<li className="time">{this.state.salyerData.Details[key][value]}</li>);
+            }
+            details.push(
                 <span className="time-container">
                     <ul className="busy">
-                        <li className="title">{time.MedicationName}</li>
-                        <li className="time">{time.MedicationNote}</li>
+                        <li className="title">{key}</li>
+                        {children}
                     </ul>
                 </span>
             )
-        });
-
+        }
         return (
             <section className="meeting">
                 <div className="meeting-time">
-                    {meetingTime}
+                    {details}
                 </div>
             </section>
         )

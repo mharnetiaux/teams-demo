@@ -167,7 +167,7 @@ class SingleChat extends Component {
                     </section>
                     <footer className="footer-2">
                         <ul className="footer-icons">
-                            <li><SVG src={PhoneImagesIcon}/></li>
+                            <li onClick={this.toggleGalleryModal}><SVG src={PhoneImagesIcon}/></li>
                             <li><SVG src={PhoneImportantIcon}/></li>
                             <li><SVG src={PhoneAttachmentIcon}/></li>
                             <li><SVG src={PhoneEmailIcon}/></li>
