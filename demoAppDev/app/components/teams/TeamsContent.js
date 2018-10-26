@@ -8,7 +8,9 @@ class TeamsContent extends Component {
 
     constructor() {
         super(...arguments);
+        this.toggleClass = this.toggleClass.bind(this);
         this.state = {
+            open: false,
             teams: [
                 {
                     open: true,
@@ -56,7 +58,7 @@ class TeamsContent extends Component {
                     ]
                 },
                 {
-                    open: true,
+                    open: false,
                     alert: false,
                     team: "Contoso Hospital",
                     icon: "/images/tailspin_toys.png",
@@ -123,6 +125,15 @@ class TeamsContent extends Component {
             ]
         }
     }
+
+    toggleClass() {
+        /*this.setState(
+            {
+                open: !this.state.open
+            }
+        );*/
+        console.log(this);
+    };
     
     getTeams() {
         return this.state.teams.map((item, key)=>{
@@ -138,10 +149,9 @@ class TeamsContent extends Component {
                     </Link>
                 )
             });
-
-
+            
             return (
-                <section className={item.open ? "teams-content open": "teams-content closed"} key={key}>
+                <section className={item.open ? "teams-content open": "teams-content closed"} key={key} onClick={this.toggleClass}>
                     <a className="team-info"><img className="arrow" src={item.arrow}/><span className="team"><img src={item.icon} width="" height=""/></span><span>{item.team}</span><span className="team-menu"><img src={item.menu}/></span></a>
                     <section className="team-links" key={key}>
                         {teamLinks}

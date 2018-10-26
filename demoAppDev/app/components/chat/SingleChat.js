@@ -158,6 +158,7 @@ class SingleChat extends Component {
                     </header>
                     <section className="message-received" id="messages">
                         {this.getMessages()}
+                        <div id="scroll"></div>
                     </section>
                     <section className="input-message">
                         <form>

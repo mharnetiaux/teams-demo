@@ -23,6 +23,17 @@ var app = {
                 unit: 'minute'
             }
         });
+
+        Keyboard.shrinkView(true);
+        Keyboard.hideFormAccessoryBar(false);
+        Keyboard.disableScrollingInShrinkView(false);
+        Keyboard.automaticScrollToTopOnHiding = false;
+        
+        window.addEventListener('keyboardDidShow', function () {
+            "use strict";
+            var a = document.getElementById("scroll");
+            a.scrollIntoView();
+        });
     }
 };
 
