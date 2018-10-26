@@ -37,8 +37,8 @@ const App = ({}) => (
                                         <Route path="/calls" component={Calls}/>
                                         <Route path="/meetings" component={Meetings}/>
                                         <Route path="/teams" component={Teams}/>
-                                        <Route exact path="/" component={Activity}/>
-                                        <Route path="/chat" component={Chat}/>
+                                        <Route exact path="/activity" component={Activity}/>
+                                        <Route path="/" component={Chat}/>
                                         <Route path="/chat-content" component={SingleChat}/>
                                         <Route path="/contact" component={Contact}/>
                                         <Route path="/message" component={Message}/>
