@@ -17,8 +17,6 @@ import CameraModal from './CameraModal';
 
 UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 
-
-
 class SingleChat extends Component {
 
     constructor() {
@@ -50,6 +48,11 @@ class SingleChat extends Component {
                         message: "Might be the dexamethasone. Will order additional tests.",
                         read: true,
                         readIcon: "/images/message.read.png"
+                    },
+                    {
+                        message: "Order a CT scan of Darell Salyer's left lung before today's IDT.",
+                        read: true,
+                        readIcon: "/images/message.read.png"
                     }
                 ]
             },
@@ -62,13 +65,12 @@ class SingleChat extends Component {
     openModal() {
         this.setState({modalIsOpen: true});
     }
-    
 
     closeModal() {
         this.setState({modalIsOpen: false});
     }
 
-    /// switch class on element
+    /// Switch class on element
     toggleClass() {
         this.setState(
             {
@@ -85,7 +87,7 @@ class SingleChat extends Component {
             }),
             message = messageObj.toString(),
             send = document.getElementById("send").classList.add("send");
-
+        
         if (this.state.counter < message.length) {
             document.getElementById("send-message").value += message.charAt(this.state.counter);
             this.state.counter++;
@@ -93,7 +95,7 @@ class SingleChat extends Component {
         }
     }
     
-    /// Adjust height of input depending on size
+    /// Adjust height of input depending on size of content
     adjustHeight() {
         const a = document.getElementById("send-message");
         a.style.height = (a.scrollHeight > a.clientHeight) ? (a.scrollHeight - 34) + "px" : "1px";
@@ -134,7 +136,8 @@ class SingleChat extends Component {
             document.getElementById("messages").appendChild(message);
         });
     }
-    //shows/hides the bottom modal that pulls up the camera when clicked
+
+    /// Shows/hides the bottom modal that pulls up the camera when clicked
     toggleGalleryModal() {
         console.log(`toggling modal gallery: ${this.state.showGalleryModal}`);
         this.setState((prevState) => {
@@ -143,6 +146,7 @@ class SingleChat extends Component {
             }
         });
     }
+
     toggleCameraControls() {
         this.setState({redirect: true});
     }
@@ -157,7 +161,7 @@ class SingleChat extends Component {
                     <header id="single-chat-header">
                         <h2 className="person"> Ruth Franklin</h2>
                         <ul className="icon-container">
-                            <li className="back-arrow"><Link to={{pathname: '/chat', state: {prev: 'true'}}}><SVG
+                            <li className="back-arrow"><Link to={{pathname: '/', state: {prev: 'true'}}}><SVG
                                 src={BackArrow}/></Link></li>
                             <li className="camera-icon"><SVG src={CameraIcon}/></li>
                             <li className="phone-icon"><SVG src={PhoneIcon}/></li>
@@ -186,7 +190,7 @@ class SingleChat extends Component {
                     <footer className="footer-2">
                         <ul className="footer-icons">
                             <li onClick={this.toggleGalleryModal}><SVG src={PhoneImagesIcon}/></li>
-                            <li onClick={this.openModal}><SVG src={PhoneImportantIcon}/></li>
+                            <li onClick={this.openModal} id="important"><SVG src={PhoneImportantIcon}/></li>
                             <li><SVG src={PhoneAttachmentIcon}/></li>
                             <li><SVG src={PhoneEmailIcon}/></li>
                             <li><SVG src={PhoneLocationIcon}/></li>
