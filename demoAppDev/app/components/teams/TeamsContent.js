@@ -132,7 +132,7 @@ class TeamsContent extends Component {
                 open: !this.state.open
             }
         );*/
-        console.log(this);
+        console.log(this.state.teams.team);
     };
     
     getTeams() {
@@ -151,7 +151,7 @@ class TeamsContent extends Component {
             });
             
             return (
-                <section className={item.open ? "teams-content open": "teams-content closed"} key={key} onClick={this.toggleClass}>
+                <section className={item.open ? "teams-content open": "teams-content closed"} key={key}>
                     <a className="team-info"><img className="arrow" src={item.arrow}/><span className="team"><img src={item.icon} width="" height=""/></span><span>{item.team}</span><span className="team-menu"><img src={item.menu}/></span></a>
                     <section className="team-links" key={key}>
                         {teamLinks}
