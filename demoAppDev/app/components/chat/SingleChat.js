@@ -21,6 +21,7 @@ class SingleChat extends Component {
 
     constructor() {
         super(...arguments);
+        this.urgent = this.urgent.bind(this);
         this.toggleClass = this.toggleClass.bind(this);
         this.typeWriter = this.typeWriter.bind(this);
         this.toggleCameraControls = this.toggleCameraControls.bind(this);
@@ -47,12 +48,14 @@ class SingleChat extends Component {
                     {
                         message: "Might be the dexamethasone. Will order additional tests.",
                         read: true,
-                        readIcon: "/images/message.read.png"
+                        readIcon: "/images/message.read.png",
+                        urgent: true
                     },
                     {
                         message: "Order a CT scan of Darell Salyer's left lung before today's IDT.",
                         read: true,
-                        readIcon: "/images/message.read.png"
+                        readIcon: "/images/message.read.png",
+                        urgent: true
                     }
                 ]
             },
@@ -120,8 +123,8 @@ class SingleChat extends Component {
 
     /// Return user input as message
     getMessageBody() {
-        const elementSendMessage = document.getElementById("send-message");
-        const text = elementSendMessage.value;
+        const elementSendMessage = document.getElementById("send-message"),
+              text = elementSendMessage.value;
         document.getElementById("send").classList.remove("send");
         elementSendMessage.value = "";
         elementSendMessage.style.height = "1rem";
@@ -134,7 +137,19 @@ class SingleChat extends Component {
             message.classList.add("response");
             message.textContent = responseMessage;
             document.getElementById("messages").appendChild(message);
+            document.getElementById("input-message").classList.remove("urgent")
         });
+    }
+
+    urgent(){
+        const responseWrapper = document.getElementById("input-message"),
+              reminder = document.createElement("span"),
+              title = document.createElement("span");
+        responseWrapper.classList.add("urgent");
+        title.textContent = "URGENT!";
+        reminder.textContent = "Notify recipient every 2 min for 20 min";
+        responseWrapper.appendChild(title);
+        responseWrapper.appendChild(reminder);
     }
 
     /// Shows/hides the bottom modal that pulls up the camera when clicked
@@ -181,7 +196,7 @@ class SingleChat extends Component {
                         {this.getMessages()}
                         <span id="scroll"></span>
                     </section>
-                    <section className="input-message">
+                    <section className="input-message" id="input-message">
                         <form>
                             <textarea placeholder="Send a message" id="send-message"
                                       onKeyDown={this.typeWriter}></textarea>
@@ -209,7 +224,9 @@ class SingleChat extends Component {
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.afterOpenModal}
                         onRequestClose={this.closeModal}
-                    ></UrgentModal>
+                    >
+                        <button onClick={this.urgent}>click</button>
+                    </UrgentModal>
                 </section>
             );
         }

@@ -52,10 +52,16 @@
 
     .input-message {
         flex: 1;
+
+        span {
+            display: none;
+        }
+        
         form {
             width: 100%;
 
             textarea {
+                font-family: "Helvetica", Helvetica, Arial, sans-serif;
                 overflow-y: auto;
                 resize: none;
                 box-shadow: none;
@@ -70,6 +76,48 @@
 
                 &::placeholder {
                     line-height: 16px;
+                }
+            }
+        }
+
+        &.urgent {
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            flex: inherit;
+            background: @alert-red;
+            width: 95%;
+            margin: auto;
+            justify-content: flex-end;
+
+            span:first-of-type {
+                order:2;
+                background: @white;
+                width:98%;
+                font-size: 13px;
+                margin-left: auto;
+                padding-top: 1rem;
+                text-indent: 0.5rem;
+                display: block;
+                color: @alert-red;
+            }
+
+            span:last-of-type {
+                font-size: 13px;
+                display: block;
+                color: @white;
+                padding: 0.5rem 0;
+                text-indent: 1rem;
+            }
+
+            form{
+                order: 3;
+
+                textarea {
+                    border: 1px solid transparent;
+                    border-radius: 0;
+                    margin-right: 0;
+                    width: 92.7%;
                 }
             }
         }
