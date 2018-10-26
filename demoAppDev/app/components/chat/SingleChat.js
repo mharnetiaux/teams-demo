@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
+import { Redirect } from 'react-router';
 import SVG from 'react-inlinesvg';
 import PhoneIcon from '../../../icon/phone.svg';
 import BackArrow from '../../../icon/back-arrow.svg';
@@ -116,7 +117,7 @@ class SingleChat extends Component {
             document.getElementById("messages").appendChild(message);
         });
     }
-    
+    //shows/hides the bottom modal that pulls up the camera when clicked
     toggleGalleryModal() {
         console.log(`toggling modal gallery: ${this.state.showGalleryModal}`);
         this.setState((prevState) => {

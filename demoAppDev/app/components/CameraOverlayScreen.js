@@ -54,14 +54,16 @@ class CameraOverlayScreen extends Component{
     }
     render() {
         if (this.state.redirect) {
-            return <Redirect push to="/messages"/>
+            return <Redirect push to="/chat-content"/>
         }
         else{
             return (
-                <div className="app" id="cameraBackground">
+                <section className="idt-chat">
+                    <header></header>
+                    <div className="app" id="cameraBackground">
                     {this.state.showPhotoControls ?
                         <div className="camera-controls">
-                            <div class="block1">
+                            <div className="block1">
                                 <div className={`btn Close`} onClick={(event) => { this.stopCamera(); this.redirectCamera();}}>
                                     <span></span>
                                 </div>
@@ -69,7 +71,7 @@ class CameraOverlayScreen extends Component{
                                     <span></span>
                                 </div>
                             </div>
-                            <div class="block2">
+                            <div className="block2">
                                 <div className={`btn OvalTakePhoto`} onClick={this.cameraTakePicture}>
                                     <span></span>
                                 </div>
@@ -88,7 +90,7 @@ class CameraOverlayScreen extends Component{
                         <div class="canvas-container">
                             <CanvasElement myImage={this.props.imgCameraSrc} setImg={this.props.setImgSrc} currentColor={this.state.currentColor}></CanvasElement>
                             <div className="camera-controls">
-                                <div class="block1 blackBlock">
+                                <div className="block1 blackBlock">
                                     <div className={`btn Close`} onClick={this.redirectCamera}>
                                         <span></span>
                                     </div>
@@ -96,7 +98,7 @@ class CameraOverlayScreen extends Component{
                                         <span></span>
                                     </div>
                                 </div>
-                                <div class="block2 blackBlock">
+                                <div className="block2 blackBlock">
                                     <div className={`btn CameraIcon`}>
                                         <span></span>
                                     </div>
@@ -116,7 +118,8 @@ class CameraOverlayScreen extends Component{
                         : null
                     }
                     
-                </div>
+                    </div>
+                </section>
             );
         }
     }
