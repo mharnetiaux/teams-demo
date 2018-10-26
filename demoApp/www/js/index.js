@@ -30,7 +30,7 @@ var app = {
         Keyboard.automaticScrollToTopOnHiding = false;
         
         window.addEventListener('keyboardDidShow', function () {
-            document.getElementById("scroll").scrollIntoView();
+            document.getElementById("scroll").scrollIntoView({behavior: "instant", block: "end", inline: "end"});
         });
     }
 };
