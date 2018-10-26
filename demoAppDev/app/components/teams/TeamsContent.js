@@ -14,7 +14,7 @@ class TeamsContent extends Component {
                     open: true,
                     alert: true,
                     team: "Intensive Care Unit",
-                    icon: "/images/northwest-traders.png",
+                    icon: "/images/intensive-care-unit.png",
                     arrow: "/images/arrow-open.png",
                     menu: "/images/ellipses.png",
                     links: [
@@ -34,32 +34,17 @@ class TeamsContent extends Component {
                             color: "black"
                         },
                         {
-                            route: "Safety",
-                            alert: false,
-                            color: "black"
-                        },
-                        {
-                            route: "Neonatal ICU",
-                            alert: false,
-                            color: "black"
-                        },
-                        {
-                            route: "Onboarding",
-                            alert: false,
-                            color: "black"
-                        },
-                        {
-                            route: "12 more channels",
+                            route: "15 more channels",
                             alert: false,
                             color: "purple"
                         }
                     ]
                 },
                 {
-                    open: false,
+                    open: true,
                     alert: false,
                     team: "Contoso Hospital",
-                    icon: "/images/tailspin_toys.png",
+                    icon: "/images/contoso-hospital.png",
                     arrow: "/images/arrow-open.png",
                     menu: "/images/ellipses.png",
                     links: [
@@ -89,7 +74,7 @@ class TeamsContent extends Component {
                     open: true,
                     alert: false,
                     team: "Patient Safety",
-                    icon: "/images/account-team.png",
+                    icon: "/images/patient-safety.png",
                     arrow: "/images/arrow-open.png",
                     menu: "/images/ellipses.png",
                     links: [
@@ -109,15 +94,11 @@ class TeamsContent extends Component {
                             color: "black"
                         },
                         {
-                            route: "Preventing Falls",
+                            route: "2 more channels",
                             alert: false,
-                            color: "black"
-                        },
-                        {
-                            route: "Sepsis Plans",
-                            alert: false,
-                            color: "black"
+                            color: "purple"
                         }
+                        
                     ]
                 }
             ]
