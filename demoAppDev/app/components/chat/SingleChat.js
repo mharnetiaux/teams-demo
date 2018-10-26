@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import { Redirect } from 'react-router';
 import SVG from 'react-inlinesvg';
+import UrgentModal from 'react-modal';
 import PhoneIcon from '../../../icon/phone.svg';
 import BackArrow from '../../../icon/back-arrow.svg';
 import CameraIcon from '../../../icon/camera.svg';
@@ -14,6 +15,10 @@ import PhoneImportantIcon from '../../../icon/phone-important.svg';
 import PhoneImagesIcon from '../../../icon/phone-images.svg';
 import CameraModal from './CameraModal';
 
+UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+
+
+
 class SingleChat extends Component {
 
     constructor() {
@@ -23,6 +28,8 @@ class SingleChat extends Component {
         this.toggleCameraControls = this.toggleCameraControls.bind(this);
         this.toggleGalleryModal = this.toggleGalleryModal.bind(this);
         this.getMessageBody = this.getMessageBody.bind(this);
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
         this.state = {
             conversation: true,
             files: false,
@@ -47,8 +54,18 @@ class SingleChat extends Component {
                 ]
             },
             showGalleryModal: false,
-            history: ""
+            history: "",
+            modalIsOpen: false
         };
+    }
+    
+    openModal() {
+        this.setState({modalIsOpen: true});
+    }
+    
+
+    closeModal() {
+        this.setState({modalIsOpen: false});
     }
 
     /// switch class on element
@@ -75,7 +92,7 @@ class SingleChat extends Component {
             this.adjustHeight();
         }
     }
-
+    
     /// Adjust height of input depending on size
     adjustHeight() {
         const a = document.getElementById("send-message");
@@ -158,7 +175,7 @@ class SingleChat extends Component {
                     </header>
                     <section className="message-received" id="messages">
                         {this.getMessages()}
-                        <div id="scroll"></div>
+                        <span id="scroll"></span>
                     </section>
                     <section className="input-message">
                         <form>
@@ -169,7 +186,7 @@ class SingleChat extends Component {
                     <footer className="footer-2">
                         <ul className="footer-icons">
                             <li onClick={this.toggleGalleryModal}><SVG src={PhoneImagesIcon}/></li>
-                            <li><SVG src={PhoneImportantIcon}/></li>
+                            <li onClick={this.openModal}><SVG src={PhoneImportantIcon}/></li>
                             <li><SVG src={PhoneAttachmentIcon}/></li>
                             <li><SVG src={PhoneEmailIcon}/></li>
                             <li><SVG src={PhoneLocationIcon}/></li>
@@ -184,6 +201,11 @@ class SingleChat extends Component {
                         />
                         : null
                     }
+                    <UrgentModal
+                        isOpen={this.state.modalIsOpen}
+                        onAfterOpen={this.afterOpenModal}
+                        onRequestClose={this.closeModal}
+                    ></UrgentModal>
                 </section>
             );
         }
