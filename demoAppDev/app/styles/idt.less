@@ -215,44 +215,44 @@
         font-size: 17px;
     }
     .down-caret{
-        position: absolute;
-        left: 155px;
+        position: relative;
+        left: 10px;
         width: 22px;
     }
     .right-text{
-        position: absolute;
-        left: 262px;
+        position: relative;
+        left: 85px;
     }
     .down-arrow{
-        position: absolute;
-        left: 304px;
+        position: relative;
+        left: 90px;
         width: 22px;
     }
     .info-icon{
-        position: absolute;
-        left: 336px;
+        position: relative;
+        left: 115px;
         width: 22px;
     }
 
     .patient-list-icon{
-        position: absolute;
-        left: 12px;
+        position: relative;
+        left: 0px;
         width: 22px;
 
     }
     .patient-list-text{
         color: @icon-fill;
-        padding-left: 47px;
+        padding-left: 25px;
         font-size: 15px;
     }
     .patient-list-arrow-left{
-        position: absolute;
-        left: 293px;
+        position: relative;
+        left: 155px;
         width: 22px;
     }
     .patient-list-arrow-right{
-        position: absolute;
-        left: 335px;
+        position: relative;
+        left: 180px;
         width: 22px;
     }
 }
@@ -283,12 +283,17 @@
         position: relative;
     }
 }
-
+.idt-patient-list .meeting .time-container ul{
+    border-left: 1px solid rgba(0,0,0,0.20);
+    margin: 1rem 0;
+    padding: 0;
+}
 
 
 .demographic-item{
     display: flex;
     border-bottom: 1px solid rgba(0,0,0,0.20);
+    background-color: @white;
     div{
         &:first-of-type {
             color: @icon-not-selected;

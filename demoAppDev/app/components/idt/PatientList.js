@@ -235,7 +235,7 @@ export default class PatientList extends Component{
         const meetingTime = this.state.salyerData.Medications.map((time)=>{
             return(
                 <span className="time-container">
-                    <ul className="busy">
+                    <ul>
                         <li className="title">{time.MedicationName}</li>
                         <li className="time">{time.MedicationNote}</li>
                     </ul>
@@ -260,7 +260,7 @@ export default class PatientList extends Component{
             }
             details.push(
                 <span className="time-container">
-                    <ul className="busy">
+                    <ul>
                         <li className="title">{key}</li>
                         {children}
                     </ul>
