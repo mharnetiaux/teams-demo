@@ -8,6 +8,9 @@ import CloseHeader from '../../../icon/close-header.svg';
 import DownCaret from '../../../icon/idt-patients-down-caret.svg';
 import DownArrow from '../../../icon/idt-patients-down-arrow.svg';
 import InfoIcon from '../../../icon/idt-patients-info.svg';
+import PatientsListIcon from '../../../icon/patients-list-icon.svg';
+import PatientsListLeftArrow from '../../../icon/patients-list-left-arrow.svg';
+import PatientsListRightArrow from '../../../icon/patients-list-right-arrow.svg';
 
 const patientData = [
     {
@@ -133,19 +136,33 @@ export default class PatientList extends Component{
     render(){
         if (this.state.redirect) {
             return (
-                <Page className="chat-page">
-                    <h2 className="page-title">Patients</h2>
-                    <section className="page-content">
+                <section className="idt-chat">
+                    <header>
+                        <h2 className="person"> Patients</h2>
+                        <ul className="icon-container">
+                            <li className="back-arrow"><Link to={{pathname: '/more', state: {prev: 'true'}}}><SVG
+                                src={CloseHeader}/></Link></li>
+                        </ul>
+                    </header>
+                    <section className="idt-patient-list">
                         <div className="idt-patient-list-header">
-                            <div>Patients list</div>
+                            <SVG className="patient-list-icon" src={PatientsListIcon}/>
+                            <div className="patient-list-text" >Patients list</div>
+                            <SVG className="patient-list-arrow-left" src={PatientsListLeftArrow}/>
+                            <SVG className="patient-list-arrow-right" src={PatientsListRightArrow}/>
                         </div>
                         <div className="idt-patient-list-name">{this.state.salyerData.Name}</div>
+                        <div className="idt-patient-list-clicker open">Demographics</div>
                         {this.getPatientData()}
+                        <div className="idt-patient-list-clicker open">Medications</div>
                         {this.getMedications()}
+                        <div className="idt-patient-list-clicker closed">Vitals</div>
+                        <div className="idt-patient-list-clicker open">Details</div>
                         {this.getDetails()}
-
+                        <div className="idt-patient-list-clicker open">Notes</div>
+                        <div className="remove-patient-tab"><div className="remove-patient-tab-inner">Remove patient</div></div>
                     </section>
-                </Page>
+                </section>
             )
         } else{
             return (

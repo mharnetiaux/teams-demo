@@ -194,6 +194,9 @@
     border-bottom: 1px solid rgba(0,0,0,0.20);
 }
 
+.idt-patient-list{
+    overflow-y: scroll;
+}
 .idt-patient-list-add-new{
     font-size: 15px;
     font-style: normal;
@@ -202,7 +205,7 @@
     padding: 16px;
 }
 .idt-patient-list-header{
-    padding: 15px;
+    padding: 22px 14px;
     display: flex;
     border-bottom: 1px solid rgba(0,0,0,0.20);
     background-color: @iphone-bg-grey;
@@ -230,13 +233,56 @@
         left: 336px;
         width: 22px;
     }
+
+    .patient-list-icon{
+        position: absolute;
+        left: 12px;
+        width: 22px;
+
+    }
+    .patient-list-text{
+        color: @icon-fill;
+        padding-left: 47px;
+        font-size: 15px;
+    }
+    .patient-list-arrow-left{
+        position: absolute;
+        left: 293px;
+        width: 22px;
+    }
+    .patient-list-arrow-right{
+        position: absolute;
+        left: 335px;
+        width: 22px;
+    }
 }
 .idt-patient-list-name{
     font-size: 22px;
     padding: 18px;
     background-color: @iphone-bg-grey;
+    border-bottom: 1px solid rgba(0,0,0,0.20);
 }
-
+.idt-patient-list-clicker{
+    font-size: 12px;
+    color: @icon-not-selected;
+    background-color: @iphone-bg-grey;
+    padding: 16px 12px 12px 12px;
+}
+.remove-patient-tab{
+    background-color: @iphone-bg-grey;
+    height: 44px;
+    .remove-patient-tab-inner{
+        border-radius: 5px;
+        background-color: @white;
+        color: @alert-red;
+        font-size: 12px;
+        padding: 10px;
+        top: 4px;
+        left: 4px;
+        width: 93%;
+        position: relative;
+    }
+}
 
 
 
