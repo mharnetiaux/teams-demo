@@ -41,7 +41,8 @@ class CameraOverlayScreen extends Component{
         this.state = {
             showPhotoControls: true,
             currentColor: colors[0],
-            showColorModal: false
+            showColorModal: false,
+            canvasImage: undefined
         }
         this.cameraTakePicture = this.cameraTakePicture.bind(this);
         this.togglePhotoControls = this.togglePhotoControls.bind(this);
@@ -52,15 +53,17 @@ class CameraOverlayScreen extends Component{
         this.changeColors = this.changeColors.bind(this);
         this.toggleColorModal = this.toggleColorModal.bind(this);
     }
+    // componentWillReceiveProps(nextProps) {
+    //     console.log("CHECK THIS: "+ nextProps.imageCameraSrc);
+    //     this.setState({ canvasImage: nextProps.imageCameraSrc });  
+    // }
     render() {
         if (this.state.redirect) {
             return <Redirect push to="/chat-content"/>
         }
         else{
             return (
-                <section className="idt-chat">
-                    <header></header>
-                    <div className="app" id="cameraBackground">
+                <div className="app" id="cameraBackground">
                     {this.state.showPhotoControls ?
                         <div className="camera-controls">
                             <div className="block1">
@@ -87,8 +90,8 @@ class CameraOverlayScreen extends Component{
                     }
                     {!this.state.showPhotoControls ?
                     //revtogglekey icon
-                        <div class="canvas-container">
-                            <CanvasElement myImage={this.props.imgCameraSrc} setImg={this.props.setImgSrc} currentColor={this.state.currentColor}></CanvasElement>
+                        <div className="canvas-container">
+                            <CanvasElement myImage={this.state.canvasImage} setImg={this.props.setImgSrc} currentColor={this.state.currentColor}></CanvasElement>
                             <div className="camera-controls">
                                 <div className="block1 blackBlock">
                                     <div className={`btn Close`} onClick={this.redirectCamera}>
@@ -118,8 +121,7 @@ class CameraOverlayScreen extends Component{
                         : null
                     }
                     
-                    </div>
-                </section>
+                </div>
             );
         }
     }
@@ -142,13 +144,15 @@ class CameraOverlayScreen extends Component{
         this.togglePhotoControls();
 
         window.setTimeout(() => {
-            this.stopCamera();
             this.setImg(imageSrcData);
+            this.stopCamera();
         }, 1500);        
     }
     setImg(val) {
-        console.log("calling setImg");
-        // this.props.setImgSrc(val);
+        // console.log("calling setImg, also this.props.imgCameraSrc = "+this.state.canvasImage);
+        // this.props.setImgCameraSrc(val); 
+        this.setState({canvasImage: val});  
+        // console.log("calling setImg, also this.props.imgCameraSrc = "+this.state.canvasImage);   
     }
     setCanvasImage() {
         let canvas = document.getElementById("canvasElement");
@@ -156,14 +160,17 @@ class CameraOverlayScreen extends Component{
         
         let dataURL = canvas.toDataURL();
         this.setImg(dataURL);
-        this.redirectCamera();
-        
+        this.redirectCamera();    
     }
     stopCamera() {
+        // console.log("Also this.state.canvasImage = " + this.state.canvasImage);
+        // console.log("Also this.props.imgCameraSrc = " + this.props.imgCameraSrc);
         window.CameraPreview.stopCamera();
+        // document.getElementById("appPage").css('background-color', 'white');   
     }
     redirectCamera() {
         this.setState({redirect: true});
+        this.props.showKeyboard();
         window.StatusBar.show();
     }
     changeColors(newColor) {
@@ -179,8 +186,8 @@ class CameraOverlayScreen extends Component{
     }
 }
 
-// CameraOverlayScreen.propTypes = {
-//     setImgCameraSrc: PropTypes.func.isRequired
-// }
+CameraOverlayScreen.propTypes = {
+    setImgCameraSrc: PropTypes.func.isRequired
+}
 
 export default CameraOverlayScreen;

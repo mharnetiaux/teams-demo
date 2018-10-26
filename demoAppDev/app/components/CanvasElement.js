@@ -6,7 +6,8 @@ export default class CanvasElement extends React.Component {
         this.state = {
             saveX: undefined,
             saveY: undefined,
-            istouching : false
+            istouching : false,
+            imgSrc : this.props.myImage
         }
         this.handleTouchEnd = this.handleTouchEnd.bind(this);
         this.handleTouchStart = this.handleTouchStart.bind(this);
@@ -14,7 +15,10 @@ export default class CanvasElement extends React.Component {
         this.startDrawing = this.startDrawing.bind(this);
         this.moved = this.moved.bind(this);
     }
-
+    componentWillReceiveProps(nextProps) {
+        console.log("CHECK THIS: "+ nextProps.canvasImage);
+        this.setState({ imgSrc: nextProps.canvasImage });  
+    }
     componentDidMount() {
         const canvas = this.refs.elementCanvas;
         const ctx = canvas.getContext("2d");
@@ -33,9 +37,9 @@ export default class CanvasElement extends React.Component {
     }
     render() {
         return (
-            <div class="canvas-div">
+            <div className="canvas-div">
                 <canvas ref="elementCanvas" width={375} height={500} id="canvasElement"></canvas>
-                <img ref="imageCanvas" src={this.props.myImage} className="hidden-canvas"></img>
+                <img ref="imageCanvas" src={this.state.imgSrc} className="hidden-canvas"></img>
             </div>
         )
     }

@@ -154,7 +154,7 @@ class SingleChat extends Component {
         else {
             return (
                 <section className="single-chat">
-                    <header>
+                    <header id="single-chat-header">
                         <h2 className="person"> Ruth Franklin</h2>
                         <ul className="icon-container">
                             <li className="back-arrow"><Link to={{pathname: '/chat', state: {prev: 'true'}}}><SVG

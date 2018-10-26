@@ -21,7 +21,7 @@ import CameraOverlayScreen from './components/CameraOverlayScreen';
 const supportsHistory = 'pushState' in window.history;
 
 
-const App = ({}) => (
+const DemoApp = (props) => (
     <HashRouter forceRefresh={!supportsHistory}>
         <Route
             render={({ location }) => {
@@ -29,7 +29,7 @@ const App = ({}) => (
                 return (
                     <TransitionGroup>
                         <Header/>
-                        <CSSTransition key={pathname} classNames="page" timeout={{exit:700,enter:700}}>
+                        <CSSTransition key={pathname} classNames="page" id="appPage" timeout={{exit:700,enter:700}}>
                             <Route
                                 location={location}
                                 render={() => (
@@ -46,7 +46,7 @@ const App = ({}) => (
                                         <Route path="/more" component={moreContent} />
                                         <Route path="/idt-patient-list" component={IDTpatientList}/>
                                         <Route path="/files" component={filesContent} />
-                                        <Route path="/cameraOverlay" component={CameraOverlayScreen} />
+                                        <Route path="/cameraOverlay" render={routeProps => <CameraOverlayScreen {...routeProps} showKeyboard={props.showKeyboard} imgCameraSrc={props.imgCameraSrc} setImgCameraSrc={props.setImgCameraSrc}/>} />
                                     </Switch>
                                 )}
                             />
@@ -59,6 +59,55 @@ const App = ({}) => (
         />
     </HashRouter>
 );
+
+class App extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+          kbShowing: false,
+          imgCameraSrc: undefined,
+          showImage: false
+        }
+        this.resizeForKeyboard = this.resizeForKeyboard.bind(this);
+        this.setImgCameraSrc = this.setImgCameraSrc.bind(this);
+        this.showKeyboard = this.showKeyboard.bind(this);
+        this.toggleShowImage = this.toggleShowImage.bind(this);
+    }
+    render(){
+        return <DemoApp 
+            {...this.state} 
+            resizeForKeyboard={this.resizeForKeyboard}
+            showKeyboard={this.showKeyboard} 
+            setImgCameraSrc={this.setImgCameraSrc}
+            toggleShowImage={this.toggleShowImage}
+        />
+    }
+    resizeForKeyboard(){
+        console.log("resizeForKeybord called!!!!");
+        this.setState({
+          kbShowing: !this.state.kbShowing
+        });
+    }
+    setImgCameraSrc(value){
+        console.log("SET IMG CAMERA SOURCE!!!!!!!!!"+value);
+        this.setState({
+          imgCameraSrc: value
+        });
+    }
+    toggleShowImage(){
+        this.setState({
+          showImage: true
+        });
+    }
+    showKeyboard(){
+        window.setTimeout(() =>{
+          console.log("SHOWING KEYBOARD!!!!!!!!");
+          // window.Keyboard.show(); doesn't work because iOS sucks, have to focus instead and change config.xml
+          document.getElementById("sendFormID").focus();
+          document.getElementById("sendFormID").style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 150px 200px; background-position: 5% 5%;`;
+        }, 0);
+    }
+}
 
 render((
     <App />
