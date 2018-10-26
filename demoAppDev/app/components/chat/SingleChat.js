@@ -150,6 +150,7 @@ class SingleChat extends Component {
         reminder.textContent = "Notify recipient every 2 min for 20 min";
         responseWrapper.appendChild(title);
         responseWrapper.appendChild(reminder);
+        this.closeModal();
     }
 
     /// Shows/hides the bottom modal that pulls up the camera when clicked
