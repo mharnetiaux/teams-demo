@@ -18,7 +18,7 @@ class Header extends Component {
     render() {
         return(
             <header id="appHeader">
-                <section className={this.state.alert ? "alert": "none"}><img src={this.state.image} width="20" height="20"/><span className="alert-message">{this.state.content}</span></section>
+                <Link to={{pathname:'/', state:{prev:'true'}}}><section className={this.state.alert ? "alert": "none"}><img src={this.state.image} width="20" height="20"/><span className="alert-message">{this.state.content}</span></section></Link>
                 <nav className={this.state.alert ? "header header-alert": "header header-alert-none"}>
                     <Link to={{pathname:'/menu', state:{prev:'true'}}} className="menu"><SVG src={Menu}/></Link>
                     <Link to={{pathname:'/search', state:{prev:'true'}}} className="search"><SVG src={Search}/></Link>

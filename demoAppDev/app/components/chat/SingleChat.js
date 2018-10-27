@@ -21,44 +21,36 @@ class SingleChat extends Component {
 
     constructor() {
         super(...arguments);
-        this.urgent = this.urgent.bind(this);
+        this.urgentMessage = this.urgentMessage.bind(this);
         this.toggleClass = this.toggleClass.bind(this);
         this.typeWriter = this.typeWriter.bind(this);
         this.toggleCameraControls = this.toggleCameraControls.bind(this);
         this.toggleGalleryModal = this.toggleGalleryModal.bind(this);
-        this.getMessageBody = this.getMessageBody.bind(this);
+        this.sendMessage = this.sendMessage.bind(this);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.state = {
             conversation: true,
             files: false,
             counter: 0,
-            message: {
-                received: [
-                    {
-                        name: "Ruth F.",
-                        pic: "/images/profile-small.png",
-                        priority: "URGENT!",
-                        message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
-                        urgent: true,
-                        urgentImg: "/images/urgent_red.png"
-                    }
-                ],
-                response: [
-                    {
-                        message: "Might be the dexamethasone. Will order additional tests.",
-                        read: true,
-                        readIcon: "/images/message.read.png",
-                        urgent: true
-                    },
-                    {
-                        message: "Order a CT scan of Darell Salyer's left lung before today's IDT.",
-                        read: true,
-                        readIcon: "/images/message.read.png",
-                        urgent: true
-                    }
-                ]
-            },
+            response: [
+                {
+                    message: "Might be the dexamethasone. Will order additional tests.",
+                    read: true,
+                    readIcon: "/images/message.read.png",
+                    urgent: true
+                }
+            ],
+            received: [
+                {
+                    name: "Ruth F.",
+                    pic: "/images/profile-small.png",
+                    priority: "URGENT!",
+                    message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
+                    urgent: true,
+                    urgentImg: "/images/urgent_red.png"
+                }
+            ],
             showGalleryModal: false,
             history: "",
             modalIsOpen: false
@@ -85,11 +77,13 @@ class SingleChat extends Component {
     /// Pass string to tell input what to write
     typeWriter(event) {
         event.preventDefault();
-        const messageObj = this.state.message.response.map(item => {
+        const messageObj = this.state.response.map(item => {
                 return item.message;
             }),
             message = messageObj.toString(),
             send = document.getElementById("send").classList.add("send");
+
+        console.log(message);
         
         if (this.state.counter < message.length) {
             document.getElementById("send-message").value += message.charAt(this.state.counter);
@@ -105,10 +99,10 @@ class SingleChat extends Component {
     }
 
     /// Read state object containing array of objects
-    getMessages() {
-        return this.state.message.received.map((item, key) => {
+    getMessage() {
+        return this.state.received.map((item, key) => {
             return (
-                <section className="message" key={key}>
+                <section className="message" id="message" key={key}>
                     <img className="profile-pic" src={item.pic}/>
                     <ul className={"message-content" + item.urgent ? "urgent" : null}>
                         <li className="name">{item.name}</li>
@@ -122,7 +116,7 @@ class SingleChat extends Component {
     }
 
     /// Return user input as message
-    getMessageBody() {
+    sendMessage() {
         const elementSendMessage = document.getElementById("send-message"),
               text = elementSendMessage.value;
         document.getElementById("send").classList.remove("send");
@@ -130,18 +124,26 @@ class SingleChat extends Component {
         elementSendMessage.style.height = "1rem";
 
         this.setState({
-            history: text
-        }, () => {
-            const responseMessage = this.state.history;
-            const message = document.createElement("section");
+            history: text,
+            response: [
+                {
+                    message: "Order a CT scan of Darell Salyer's left lung before today's IDT.",
+                    read: true,
+                    readIcon: "/images/message.read.png",
+                    urgent: true
+                }
+            ]
+        },() => {
+            const responseMessage = this.state.history,
+                  message = document.createElement("section");
             message.classList.add("response");
             message.textContent = responseMessage;
             document.getElementById("messages").appendChild(message);
-            document.getElementById("input-message").classList.remove("urgent")
+            document.getElementById("input-message").classList.remove("urgent");
         });
     }
 
-    urgent(){
+    urgentMessage(){
         const responseWrapper = document.getElementById("input-message"),
               reminder = document.createElement("span"),
               title = document.createElement("span");
@@ -166,7 +168,7 @@ class SingleChat extends Component {
     toggleCameraControls() {
         this.setState({redirect: true});
     }
-
+    
     render() {
         if (this.state.redirect) {
             return <Redirect push to="/cameraOverlay"/>;
@@ -194,13 +196,12 @@ class SingleChat extends Component {
                         </ul>
                     </header>
                     <section className="message-received" id="messages">
-                        {this.getMessages()}
+                        {this.getMessage()}
                         <span id="scroll"></span>
                     </section>
                     <section className="input-message" id="input-message">
                         <form>
-                            <textarea placeholder="Send a message" id="send-message"
-                                      onKeyDown={this.typeWriter}></textarea>
+                            <textarea placeholder="Send a message" id="send-message" onKeyDown={this.typeWriter}></textarea>
                         </form>
                     </section>
                     <footer className="footer-2">
@@ -211,7 +212,7 @@ class SingleChat extends Component {
                             <li><SVG src={PhoneEmailIcon}/></li>
                             <li><SVG src={PhoneLocationIcon}/></li>
                             <li><SVG src={PhoneEmojiIcon}/></li>
-                            <li id="send" onClick={this.getMessageBody}><SVG src={PhoneSendIcon}/></li>
+                            <li id="send" onClick={this.sendMessage}><SVG src={PhoneSendIcon}/></li>
                         </ul>
                     </footer>
                     {this.state.showGalleryModal ?
@@ -226,7 +227,7 @@ class SingleChat extends Component {
                         onAfterOpen={this.afterOpenModal}
                         onRequestClose={this.closeModal}
                     >
-                        <button onClick={this.urgent}>click</button>
+                        <button onClick={this.urgentMessage}>click</button>
                     </UrgentModal>
                 </section>
             );
