@@ -11,8 +11,6 @@ import Activity from './components/Activity';
 import Teams from './components/Teams';
 import Meetings from './components/Meetings';
 import Calls from './components/Calls';
-import Contact from './components/messaging/message-home';
-import Message from './components/messaging/message-contact';
 import IDTcontent from './components/idt/IDTContent';
 import moreContent from './components/idt/moreContent';
 import filesContent from './components/idt/filesContent';
@@ -40,8 +38,6 @@ const DemoApp = (props) => (
                                         <Route path="/activity" component={Activity}/>
                                         <Route exact path="/" component={Chat}/>
                                         <Route path="/chat-content" component={SingleChat}/>
-                                        <Route path="/contact" component={Contact}/>
-                                        <Route path="/message" component={Message}/>
                                         <Route path="/IDT" component={IDTcontent} />
                                         <Route path="/more" component={moreContent} />
                                         <Route path="/idt-patient-list" component={IDTpatientList}/>

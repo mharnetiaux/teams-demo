@@ -37,7 +37,6 @@ class SingleChat extends Component {
             response: {
                 message: "Might be the dexamethasone. Will order additional tests.",
                 read: true,
-                readIcon: "/images/message.read.png",
                 urgent: false
             },
             received: [
@@ -47,7 +46,7 @@ class SingleChat extends Component {
                     priority: "URGENT!",
                     message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
                     urgent: true,
-                    urgentImg: "/images/urgent_red.png"
+                    urgentImg: "../../../icon/urgent.svg"
                 }
             ],
             showGalleryModal: false,

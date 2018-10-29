@@ -67,7 +67,8 @@ const config = {
         }),
         new webpack.HotModuleReplacementPlugin(),
         new CopyWebpackPlugin([
-            {from:'./images',to:'images'}
+            {from:'./images',to:'images'},
+            {from:'./icon',to:'icon'}
         ])
     ],
     stats: {

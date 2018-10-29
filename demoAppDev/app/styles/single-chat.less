@@ -180,9 +180,19 @@
             width: 65%;
             padding: 0.5rem;
 
+            &.urgent::before {
+                content: "";
+                background: url(~"/icon/urgent.svg") no-repeat;
+                height: 1rem;
+                width: 1rem;
+                position: absolute;
+                left: -1.5rem;
+                top: 0;
+            }
+
             &::after {
                 content: "";
-                background: url(~"/images/message-read.png") no-repeat;
+                background: url(~"/icon/read.svg") no-repeat;
                 height: 1rem;
                 width: 1rem;
                 position: absolute;
