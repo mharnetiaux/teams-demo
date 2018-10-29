@@ -50,6 +50,10 @@
         }
     }
 
+    &.urgent-open {
+        max-height: 75%;
+    }
+
     .input-message {
         flex: 1;
 
@@ -231,4 +235,16 @@
 
 .ReactModal__Overlay--after-open {
     z-index: 1;
+}
+
+.urgent-modal {
+    background: @white;
+    position: absolute;
+    bottom: 0;
+    min-height: 10rem;
+    width: 100%;
+    margin: auto;
+    border-top-left-radius: 22px;
+    border-top-right-radius: 22px;
+
 }

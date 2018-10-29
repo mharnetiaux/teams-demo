@@ -56,10 +56,14 @@ class SingleChat extends Component {
     
     openModal() {
         this.setState({modalIsOpen: true});
+        const contentBody = document.getElementById("single-chat");
+        contentBody.classList.add("urgent-open");
     }
 
     closeModal() {
         this.setState({modalIsOpen: false});
+        const contentBody = document.getElementById("single-chat");
+        contentBody.classList.remove("urgent-open");
     }
 
     /// Switch class on element
@@ -175,7 +179,7 @@ class SingleChat extends Component {
         }
         else {
             return (
-                <section className="single-chat">
+                <section className="single-chat" id="single-chat">
                     <header id="single-chat-header">
                         <h2 className="person"> Ruth Franklin</h2>
                         <ul className="icon-container">
@@ -223,11 +227,12 @@ class SingleChat extends Component {
                         : null
                     }
                     <UrgentModal
+                        className="urgent-modal"
                         isOpen={this.state.modalIsOpen}
                         onAfterOpen={this.afterOpenModal}
                         onRequestClose={this.closeModal}
                     >
-                        <button onClick={this.createUrgentMessage}></button>
+                        <button onClick={this.createUrgentMessage}>click</button>
                     </UrgentModal>
                 </section>
             );
