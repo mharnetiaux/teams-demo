@@ -27,7 +27,7 @@ class ChatContent extends Component {
                     time: "9:16 AM",
                     message: "Can you please send the file over...",
                     priorityIcon: "/images/urgent_red.png",
-                    priority: "normal",
+                    priority: "",
                     avatar: "/images/profile_2.png",
                     urgent: true
                 },
@@ -47,7 +47,7 @@ class ChatContent extends Component {
                     time: "Thursday",
                     message: "Thank you!",
                     priorityIcon: "/images/urgent_red.png",
-                    priority: "normal",
+                    priority: "",
                     avatar: "/images/profile_4.png",
                     urgent: true
                 },
@@ -57,7 +57,7 @@ class ChatContent extends Component {
                     time: "Monday",
                     message: "Rita: See attached Image",
                     priorityIcon: "/images/urgent_red.png",
-                    priority: "normal",
+                    priority: "",
                     avatar: "/images/profile_5.png",
                     urgent: true
                 },
@@ -67,7 +67,7 @@ class ChatContent extends Component {
                     time: "5/20",
                     message: "Rita: See attached Image",
                     priorityIcon: "The sales team are owning that problem.",
-                    priority: "normal",
+                    priority: "",
                     avatar: "/images/profile_5.png",
                     urgent: true
                 }
