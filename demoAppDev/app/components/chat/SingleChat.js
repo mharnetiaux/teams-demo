@@ -15,13 +15,14 @@ import PhoneImportantIcon from '../../../icon/phone-important.svg';
 import PhoneImagesIcon from '../../../icon/phone-images.svg';
 import CameraModal from './CameraModal';
 
+/// Overwrite inline styles provided by UrgentModal
 UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 
 class SingleChat extends Component {
 
     constructor() {
         super(...arguments);
-        this.urgentMessage = this.urgentMessage.bind(this);
+        this.createUrgentMessage = this.createUrgentMessage.bind(this);
         this.toggleClass = this.toggleClass.bind(this);
         this.typeWriter = this.typeWriter.bind(this);
         this.toggleCameraControls = this.toggleCameraControls.bind(this);
@@ -33,14 +34,12 @@ class SingleChat extends Component {
             conversation: true,
             files: false,
             counter: 0,
-            response: [
-                {
-                    message: "Might be the dexamethasone. Will order additional tests.",
-                    read: true,
-                    readIcon: "/images/message.read.png",
-                    urgent: true
-                }
-            ],
+            response: {
+                message: "Might be the dexamethasone. Will order additional tests.",
+                read: true,
+                readIcon: "/images/message.read.png",
+                urgent: false
+            },
             received: [
                 {
                     name: "Ruth F.",
@@ -52,7 +51,6 @@ class SingleChat extends Component {
                 }
             ],
             showGalleryModal: false,
-            history: "",
             modalIsOpen: false
         };
     }
@@ -77,16 +75,9 @@ class SingleChat extends Component {
     /// Pass string to tell input what to write
     typeWriter(event) {
         event.preventDefault();
-        const messageObj = this.state.response.map(item => {
-                return item.message;
-            }),
-            message = messageObj.toString(),
-            send = document.getElementById("send").classList.add("send");
-
-        console.log(message);
-        
-        if (this.state.counter < message.length) {
-            document.getElementById("send-message").value += message.charAt(this.state.counter);
+        document.getElementById("send").classList.add("send");
+        if(this.state.counter < this.state.response.message.length){
+            document.getElementById("send-message").value += this.state.response.message.charAt(this.state.counter);
             this.state.counter++;
             this.adjustHeight();
         }
@@ -117,33 +108,34 @@ class SingleChat extends Component {
 
     /// Return user input as message
     sendMessage() {
-        const elementSendMessage = document.getElementById("send-message"),
-              text = elementSendMessage.value;
+        const messageContainer = document.getElementById("messages"),
+              textNode = document.createElement("section"),
+              textAreaElement = document.getElementById("send-message");
+        textNode.classList.add("response");
         document.getElementById("send").classList.remove("send");
-        elementSendMessage.value = "";
-        elementSendMessage.style.height = "1rem";
+
+        textNode.textContent = this.state.response.message;
+        messageContainer.appendChild(textNode);
+        textAreaElement.value = "";
+        textAreaElement.style.height = "1rem";
+        document.getElementById("input-message").classList.remove("urgent");
+
+        if(this.state.response.urgent) {
+            textNode.classList.add("urgent");
+        }else {
+            textNode.classList.remove("urgent");
+        }
 
         this.setState({
-            history: text,
-            response: [
-                {
-                    message: "Order a CT scan of Darell Salyer's left lung before today's IDT.",
-                    read: true,
-                    readIcon: "/images/message.read.png",
-                    urgent: true
-                }
-            ]
-        },() => {
-            const responseMessage = this.state.history,
-                  message = document.createElement("section");
-            message.classList.add("response");
-            message.textContent = responseMessage;
-            document.getElementById("messages").appendChild(message);
-            document.getElementById("input-message").classList.remove("urgent");
+            counter: 0,
+            response: {
+                message: "Order a CT scan of Darell Salyer's left lung before today's IDT."
+            }
         });
     }
 
-    urgentMessage(){
+    createUrgentMessage(event){
+        event.preventDefault();
         const responseWrapper = document.getElementById("input-message"),
               reminder = document.createElement("span"),
               title = document.createElement("span");
@@ -152,6 +144,14 @@ class SingleChat extends Component {
         reminder.textContent = "Notify recipient every 2 min for 20 min";
         responseWrapper.appendChild(title);
         responseWrapper.appendChild(reminder);
+
+        this.setState({
+            response: {
+                message: this.state.response.message,
+                urgent: !this.state.response.urgent
+            }
+        });
+
         this.closeModal();
     }
 
@@ -170,6 +170,7 @@ class SingleChat extends Component {
     }
     
     render() {
+        /// What is this?
         if (this.state.redirect) {
             return <Redirect push to="/cameraOverlay"/>;
         }
@@ -227,7 +228,7 @@ class SingleChat extends Component {
                         onAfterOpen={this.afterOpenModal}
                         onRequestClose={this.closeModal}
                     >
-                        <button onClick={this.urgentMessage}>click</button>
+                        <button onClick={this.createUrgentMessage}></button>
                     </UrgentModal>
                 </section>
             );
