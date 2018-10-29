@@ -229,10 +229,14 @@ class SingleChat extends Component {
                     <UrgentModal
                         className="urgent-modal"
                         isOpen={this.state.modalIsOpen}
-                        onAfterOpen={this.afterOpenModal}
                         onRequestClose={this.closeModal}
                     >
-                        <button onClick={this.createUrgentMessage}>click</button>
+                        <section>
+                            <h2 className="title">Priority</h2>
+                            <span className="priority-modal-container">
+                                
+                            </span>
+                        </section>
                     </UrgentModal>
                 </section>
             );

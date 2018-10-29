@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 15" width="4" height="15">
-	<font horiz-adv-x="2048">
-		<font-face font-family="TeamsAssets-Light" units-per-em="2048" underline-position="-119" underline-thickness="119"/>
-		<glyph unicode="" horiz-adv-x="2048" d="M1193 1935c17-31 31-65 40-102 9-38 14-74 14-107 0-17-1-35-3-52l-103-889c-5-37-16-69-35-95-23-33-51-50-84-50s-61 17-84 50c-19 26-30 58-35 95l-101 868c-2 19-3 39-3 58 0 34 4 71 13 110s22 75 39 107c19 37 42 66 71 88 29 21 62 32 100 32 37 0 69-10 98-30 29-21 53-48 73-83m-79-1588c25-26 37-56 37-91 0-17-3-34-9-49-7-15-16-29-28-41-25-25-56-38-91-38-17 0-34 3-49 10-16 7-30 16-41 28-12 11-21 25-28 41-7 15-10 32-10 49 0 35 13 66 38 91 12 12 26 21 41 28 15 6 32 9 49 9 35 0 65-12 91-37z"/>
-	</font>
-	<text transform="translate(-6 15.409)" fill="#C4314B" font-family="'TeamsAssets-Light'" font-size="16">
-		
-	</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="4" height="15"><font horiz-adv-x="2048"><font-face font-family="TeamsAssets-Light" units-per-em="2048" underline-position="-119" underline-thickness="119"/><glyph unicode="" horiz-adv-x="2048" d="M1193 1935c17-31 31-65 40-102 9-38 14-74 14-107 0-17-1-35-3-52l-103-889c-5-37-16-69-35-95-23-33-51-50-84-50s-61 17-84 50c-19 26-30 58-35 95l-101 868c-2 19-3 39-3 58 0 34 4 71 13 110s22 75 39 107c19 37 42 66 71 88 29 21 62 32 100 32 37 0 69-10 98-30 29-21 53-48 73-83m-79-1588c25-26 37-56 37-91 0-17-3-34-9-49-7-15-16-29-28-41-25-25-56-38-91-38-17 0-34 3-49 10-16 7-30 16-41 28-12 11-21 25-28 41-7 15-10 32-10 49 0 35 13 66 38 91 12 12 26 21 41 28 15 6 32 9 49 9 35 0 65-12 91-37z"/></font><text transform="translate(-6 15.409)" fill="#C4314B" font-family="'TeamsAssets-Light'" font-size="16"></text></svg>
