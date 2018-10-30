@@ -22,7 +22,7 @@ class SingleChat extends Component {
 
     constructor() {
         super(...arguments);
-        this.createUrgentMessage = this.createUrgentMessage.bind(this);
+        this.urgentMessage = this.urgentMessage.bind(this);
         this.toggleClass = this.toggleClass.bind(this);
         this.typeWriter = this.typeWriter.bind(this);
         this.toggleCameraControls = this.toggleCameraControls.bind(this);
@@ -75,7 +75,7 @@ class SingleChat extends Component {
             });
     };
 
-    /// Pass string to tell input what to write
+    /// Pass string to tell input what to write on keyDown() event
     typeWriter(event) {
         event.preventDefault();
         document.getElementById("send").classList.add("send");
@@ -86,7 +86,7 @@ class SingleChat extends Component {
         }
     }
     
-    /// Adjust height of input depending on size of content
+    /// Adjust height of <textarea> depending on size of content
     adjustHeight() {
         const a = document.getElementById("send-message");
         a.style.height = (a.scrollHeight > a.clientHeight) ? (a.scrollHeight - 34) + "px" : "1px";
@@ -137,7 +137,7 @@ class SingleChat extends Component {
         });
     }
 
-    createUrgentMessage(event){
+    urgentMessage(event){
         event.preventDefault();
         const responseWrapper = document.getElementById("input-message"),
               reminder = document.createElement("span"),
@@ -173,7 +173,6 @@ class SingleChat extends Component {
     }
     
     render() {
-        /// What is this?
         if (this.state.redirect) {
             return <Redirect push to="/cameraOverlay"/>;
         }
@@ -231,10 +230,17 @@ class SingleChat extends Component {
                         isOpen={this.state.modalIsOpen}
                         onRequestClose={this.closeModal}
                     >
-                        <section>
-                            <h2 className="title">Priority</h2>
+                        <section className="priority-type">
+                            <h2>Priority</h2>
                             <span className="priority-modal-container">
-                                
+                                <span className="priority important">
+                                    <h3>IMPORTANT</h3>
+                                    <span className="priority-content">Message will be marked as important</span>
+                                </span>
+                                <span className="priority urgent" onClick={this.urgentMessage}>
+                                   <h3>URGENT</h3>
+                                    <span className="priority-content">Notify recipient every 2 minutes for 20 minutes</span>
+                                </span>
                             </span>
                         </section>
                     </UrgentModal>
@@ -243,4 +249,5 @@ class SingleChat extends Component {
         }
     }
 }
+
 export default SingleChat;

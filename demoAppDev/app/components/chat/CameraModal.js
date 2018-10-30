@@ -7,7 +7,6 @@ import PhotoLibrary from '../../../icon/photo-library.svg';
 class CameraModal extends Component{
     constructor(props){
         super(props);
-        
         this.startCameraAbove = this.startCameraAbove.bind(this);
         this.startCameraBelow = this.startCameraBelow.bind(this);
     }

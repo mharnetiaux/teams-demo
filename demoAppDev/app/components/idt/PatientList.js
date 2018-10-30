@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router';
-import Page from "../Page";
-
 import {Link} from "react-router-dom";
 import SVG from 'react-inlinesvg';
 import CloseHeader from '../../../icon/close-header.svg';
@@ -68,7 +65,7 @@ const idtChatData = {
     chatOne : "The choice is not clear because of conflicting medical evidence or a lack of it.",
     chatTwo : "I did find one case report of a man who developed anit-neutrophil anitbodies while on antibiotics (antibodies against one type of WBC) which then disapped when he went off antibiotics. If so, WBC should bounce back sometime between 3-30 days.",
     chatThree : "Check out this new article! https://jamanetwork.com/journals/jama/article-abstract/2678616"
-}
+};
 const SalyerData = {
     Name: "Salyer, Darrell",
     Demographics: 
@@ -117,7 +114,7 @@ const SalyerData = {
             NoteText: "Followed up with family. Able to go home safely"
         }
     ]
-}
+};
 
 
 export default class PatientList extends Component{
@@ -127,7 +124,7 @@ export default class PatientList extends Component{
             redirect: false,
             patients: patientData,
             salyerData: SalyerData
-        }
+        };
         this.redirectList = this.redirectList.bind(this);
         this.getMedications = this.getMedications.bind(this);
         this.getDetails = this.getDetails.bind(this);
@@ -168,7 +165,7 @@ export default class PatientList extends Component{
             return (
                 <section className="idt-chat">
                     <header>
-                        <h2 className="person"> Patients</h2>
+                        <h2 className="person">Patients</h2>
                         <ul className="icon-container">
                             <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
                                 src={CloseHeader}/></Link></li>
@@ -206,7 +203,6 @@ export default class PatientList extends Component{
 
             )
         }
-             
     }
     redirectList() {
         this.setState((prevState) => {

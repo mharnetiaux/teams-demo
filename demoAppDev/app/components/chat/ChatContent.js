@@ -71,13 +71,12 @@ class ChatContent extends Component {
                     avatar: "/images/profile_5.png",
                     urgent: true
                 }
-
             ]
         }
     }
-    
-    render() {
-        const chatItem = this.state.chatItems.map(((item, key)=>{
+
+    chatItem() {
+        return this.state.chatItems.map(((item, key)=>{
             return (
                 <Link to={{pathname:'/chat-content', state:{prev:'true'}}} key={key}>
                     <section className="chat-container" key={key}>
@@ -93,11 +92,13 @@ class ChatContent extends Component {
                 </Link>
             );
         }));
-        
+    }
+    
+    render() {
         return(
             <section className="page-content">
                 <SubNav/>
-                {chatItem}
+                {this.chatItem()}
             </section>
         );
     }

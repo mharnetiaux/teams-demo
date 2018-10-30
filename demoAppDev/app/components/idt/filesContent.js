@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
-
 import SVG from 'react-inlinesvg';
 import PhoneImagesIcon from '../../../icon/phone-images.svg';
-
 import FollowIcon from "../../../icon/follow-icon.svg";
 import BackArrow from '../../../icon/back-arrow.svg';
 

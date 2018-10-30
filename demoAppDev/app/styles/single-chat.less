@@ -254,4 +254,52 @@
         font-size: 13px;
     }
 
+    .priority-modal-container {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+
+        .priority {
+            position: relative;
+            text-indent: 1.5rem;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            h3 {
+                color: @font-black;
+                font-size: 17px;
+                margin-bottom: 0.2rem;
+            }
+
+            &.important {
+                background: url(~"/icon/important.svg") no-repeat top left;
+            }
+
+            &.urgent {
+                background: url(~"/icon/urgent.svg") no-repeat top left;
+            }
+
+            .priority-content {
+                color: @icon-not-selected;
+                font-size: 13px;
+                padding: 0 1.5rem;
+                text-indent: 0;
+            }
+
+            &::after {
+                position: absolute;
+                height: 1px;
+                width: 100%;
+                background: @black;
+                opacity: 0.1;
+                content: "";
+                bottom: 0;
+            }
+        }
+    }
+
 }
