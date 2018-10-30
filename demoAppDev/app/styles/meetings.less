@@ -8,22 +8,34 @@
 }
 
 .team-weekdays {
-    position: relative;
     padding-top: 0.2rem;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background: @white;
+
+    &::before,
+    &::after {
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: @black;
+        opacity: 0.1;
+        content: "";
+    }
 
     &::before {
-        position: absolute;
-        height: 0.04rem;
-        width: 100%;
-        box-shadow: 0 0.1rem 0.1rem 0 rgba(0,0,0,0.20);
-        content: "";
         top: 0;
     }
 
+    &::after {
+        bottom: 0;
+    }
+
     span {
-      color: #6F6D6D;
+      color: @icon-not-selected;
       display: inline-block;
       width: 1.7rem;
       line-height: 1.7rem;
