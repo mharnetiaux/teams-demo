@@ -105,6 +105,7 @@ class TeamsContent extends Component {
         }
     }
     
+    /// Get each individual team and render its contents
     getTeams() {
         return this.state.teams.map((item, key)=>{
             const teamLinks = item.links.map((link, key)=>{
@@ -138,14 +139,20 @@ class TeamsContent extends Component {
             )
         });
     }
-
-    componentDidMount(){
+    
+    /// Open close individual Team Menu
+    toggleTeam() {
         const team = document.getElementsByClassName("teams-content");
         for(let name of team){
             name.onclick = () => {
                 name.classList.toggle("closed");
             }
         }
+    }
+
+    /// Invoke necessary functions after (THIS) React Component has rendered
+    componentDidMount(){
+        this.toggleTeam();
     }
 
     render() {
