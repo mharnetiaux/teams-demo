@@ -141,11 +141,10 @@ class TeamsContent extends Component {
 
     componentDidMount(){
         const team = document.getElementsByClassName("teams-content");
-
-        for(let i = 0; i < team.length; i++){
-             team[i].onclick = function () {
-                team[i].classList.toggle("closed");
-             }
+        for(let name of team){
+            name.onclick = () => {
+                name.classList.toggle("closed");
+            }
         }
     }
 
