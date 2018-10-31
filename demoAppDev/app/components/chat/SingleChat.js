@@ -159,7 +159,7 @@ class SingleChat extends Component {
         this.closeModal();
     }
 
-    /// Shows/hides the bottom modal that pulls up the camera when clicked
+    /// Shows/Hides the bottom modal that pulls up the camera when clicked
     toggleGalleryModal() {
         console.log(`toggling modal gallery: ${this.state.showGalleryModal}`);
         this.setState((prevState) => {
