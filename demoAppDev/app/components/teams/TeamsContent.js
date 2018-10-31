@@ -11,7 +11,7 @@ class TeamsContent extends Component {
         this.state = {
             teams: [
                 {
-                    open: false,
+                    open: true,
                     alert: true,
                     team: "Intensive Care Unit",
                     icon: "/images/intensive-care-unit.png",

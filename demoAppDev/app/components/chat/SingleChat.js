@@ -114,9 +114,9 @@ class SingleChat extends Component {
         const messageContainer = document.getElementById("messages"),
               textNode = document.createElement("section"),
               textAreaElement = document.getElementById("send-message");
+
         textNode.classList.add("response");
         document.getElementById("send").classList.remove("send");
-
         textNode.textContent = this.state.response.message;
         messageContainer.appendChild(textNode);
         textAreaElement.value = "";
@@ -137,6 +137,7 @@ class SingleChat extends Component {
         });
     }
 
+    /// Mark message as URGENT
     urgentMessage(event){
         event.preventDefault();
         const responseWrapper = document.getElementById("input-message"),
