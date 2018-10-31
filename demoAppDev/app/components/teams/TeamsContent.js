@@ -11,7 +11,7 @@ class TeamsContent extends Component {
         this.state = {
             teams: [
                 {
-                    open: true,
+                    open: false,
                     alert: true,
                     team: "Intensive Care Unit",
                     icon: "/images/intensive-care-unit.png",
@@ -41,7 +41,7 @@ class TeamsContent extends Component {
                     ]
                 },
                 {
-                    open: true,
+                    open: false,
                     alert: false,
                     team: "Contoso Hospital",
                     icon: "/images/contoso-hospital.png",
@@ -71,7 +71,7 @@ class TeamsContent extends Component {
                     ]
                 },
                 {
-                    open: true,
+                    open: false,
                     alert: false,
                     team: "Patient Safety",
                     icon: "/images/patient-safety.png",
@@ -139,8 +139,17 @@ class TeamsContent extends Component {
         });
     }
 
-    render() {
+    componentDidMount(){
+        const team = document.getElementsByClassName("teams-content");
 
+        for(let i = 0; i < team.length; i++){
+             team[i].onclick = function () {
+                team[i].classList.toggle("closed");
+             }
+        }
+    }
+
+    render() {
         return(
             <section className="page-content">{this.getTeams()}</section>
         );
