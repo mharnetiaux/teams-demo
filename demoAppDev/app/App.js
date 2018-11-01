@@ -42,7 +42,7 @@ const DemoApp = (props) => (
                                         <Route path="/more" component={moreContent} />
                                         <Route path="/idt-patient-list" component={IDTpatientList}/>
                                         <Route path="/files" component={filesContent} />
-                                        <Route path="/cameraOverlay" render={routeProps => <CameraOverlayScreen {...routeProps} showKeyboard={props.showKeyboard} imgCameraSrc={props.imgCameraSrc} setImgCameraSrc={props.setImgCameraSrc}/>} />
+                                        <Route path="/cameraOverlay" render={routeProps => <CameraOverlayScreen {...routeProps} showKeyboard={props.showKeyboard} imgCameraSrc={props.imgCameraSrc} setImgSrc={props.setImgCameraSrc}/>} />
                                     </Switch>
                                 )}
                             />
@@ -85,7 +85,7 @@ class App extends Component{
         });
     }
     setImgCameraSrc(value){
-        console.log("SET IMG CAMERA SOURCE!!!!!!!!!"+value);
+        console.log("SET IMG CAMERA SOURCE!!!!!!!!!");
         this.setState({
           imgCameraSrc: value
         });
@@ -99,8 +99,8 @@ class App extends Component{
         window.setTimeout(() =>{
           console.log("SHOWING KEYBOARD!!!!!!!!");
           // window.Keyboard.show(); doesn't work because iOS sucks, have to focus instead and change config.xml
-          document.getElementById("sendFormID").focus();
-          document.getElementById("sendFormID").style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 150px 200px; background-position: 5% 5%;`;
+          document.getElementById("send-message").focus();
+          document.getElementById("send-message").style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 150px 200px; background-position: 5% 5%;`;
         }, 0);
     }
 }
