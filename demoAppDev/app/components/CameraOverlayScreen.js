@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
-import PropTypes from 'prop-types'
-import CanvasElement from './CanvasElement'
+import PropTypes from 'prop-types';
+import CanvasElement from './CanvasElement';
+import ColorSelectorButton from './ColorSelectorButton';
 
 const colors = ['#CF021A', '#0DAC37', '#1E5EFE', '#FFF600', '#FFFFFF', '#000000'];
 
@@ -9,27 +10,12 @@ const CameraColorModal = (props) => {
     return (
         <div className="camera-color-modal">
             <div className="camera-color-modal-inner">
-                <div className={`btn RedSelector`} onClick={(e) => {e.stopPropagation; e.preventDefault; props.changeColor('#CF021A')}}>
-                    <span></span>
-                    <a></a>
-                </div>
-                <div className={`btn GreenSelector`} onClick={(e) => {e.stopPropagation; e.preventDefault; props.changeColor('#0DAC37')}}>
-                    <span></span>
-                    <a></a>
-                </div>
-                <div className={`btn BlueSelector`} onClick={(e) => {e.stopPropagation; e.preventDefault; props.changeColor('#1E5EFE')}}>
-                    <span></span>
-                    <a></a>
-                </div>
-                <div className={`btn YellowSelector`} onClick={(e) => {e.stopPropagation; e.preventDefault; props.changeColor('#FFF600')}}>
-                    <span></span>
-                </div>
-                <div className={`btn WhiteSelector`} onClick={(e) => {e.stopPropagation; e.preventDefault; props.changeColor('#FFFFFF')}}>
-                    <span></span>
-                </div>
-                <div className={`btn BlackSelector`} onClick={(e) => {e.stopPropagation; e.preventDefault; props.changeColor('#000000')}}>
-                    <span></span>
-                </div>
+                <ColorSelectorButton changeColor={props.changeColor} colorClass="RedSelector" color="#CF021A"/>
+                <ColorSelectorButton changeColor={props.changeColor} colorClass="GreenSelector" color="#0DAC37"/>
+                <ColorSelectorButton changeColor={props.changeColor} colorClass="BlueSelector" color="#1E5EFE"/>
+                <ColorSelectorButton changeColor={props.changeColor} colorClass="YellowSelector" color="#FFF600"/>
+                <ColorSelectorButton changeColor={props.changeColor} colorClass="WhiteSelector" color="#FFFFFF"/>
+                <ColorSelectorButton changeColor={props.changeColor} colorClass="BlackSelector" color="#000000"/>
             </div>
         </div>
     )
@@ -41,8 +27,7 @@ class CameraOverlayScreen extends Component{
         this.state = {
             showPhotoControls: true,
             currentColor: colors[0],
-            showColorModal: false,
-            canvasImage: undefined
+            showColorModal: false
         }
         this.cameraTakePicture = this.cameraTakePicture.bind(this);
         this.togglePhotoControls = this.togglePhotoControls.bind(this);
@@ -53,10 +38,6 @@ class CameraOverlayScreen extends Component{
         this.changeColors = this.changeColors.bind(this);
         this.toggleColorModal = this.toggleColorModal.bind(this);
     }
-    // componentWillReceiveProps(nextProps) {
-    //     console.log("CHECK THIS: "+ nextProps.imageCameraSrc);
-    //     this.setState({ canvasImage: nextProps.imageCameraSrc });  
-    // }
     render() {
         if (this.state.redirect) {
             return <Redirect push to="/chat-content"/>
@@ -91,7 +72,7 @@ class CameraOverlayScreen extends Component{
                     {!this.state.showPhotoControls ?
                     //revtogglekey icon
                         <div className="canvas-container">
-                            <CanvasElement myImage={this.state.canvasImage} setImg={this.props.setImgSrc} currentColor={this.state.currentColor}></CanvasElement>
+                            <CanvasElement myImage={this.props.imgCameraSrc} setImg={this.props.setImgSrc} currentColor={this.state.currentColor}></CanvasElement>
                             <div className="camera-controls">
                                 <div className="block1 blackBlock">
                                     <div className={`btn Close`} onClick={this.redirectCamera}>
@@ -130,7 +111,9 @@ class CameraOverlayScreen extends Component{
         this.setState({
           showPhotoControls: !this.state.showPhotoControls
         });
-      }
+    }
+    //something is messing with this meta tag in index.html in demoApp, need to replace after build
+    //<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: content:;">
     cameraTakePicture(event) {         
         let imageSrcData = undefined;
         window.CameraPreview.takePicture({width:500, height: 800, quality: 50}, onSuccess, onFail);
@@ -144,15 +127,13 @@ class CameraOverlayScreen extends Component{
         this.togglePhotoControls();
 
         window.setTimeout(() => {
-            this.setImg(imageSrcData);
             this.stopCamera();
+            this.setImg(imageSrcData);
         }, 1500);        
     }
     setImg(val) {
-        // console.log("calling setImg, also this.props.imgCameraSrc = "+this.state.canvasImage);
-        // this.props.setImgCameraSrc(val); 
-        this.setState({canvasImage: val});  
-        // console.log("calling setImg, also this.props.imgCameraSrc = "+this.state.canvasImage);   
+        console.log("calling setImg");
+        this.props.setImgSrc(val); 
     }
     setCanvasImage() {
         let canvas = document.getElementById("canvasElement");
@@ -163,10 +144,7 @@ class CameraOverlayScreen extends Component{
         this.redirectCamera();    
     }
     stopCamera() {
-        // console.log("Also this.state.canvasImage = " + this.state.canvasImage);
-        // console.log("Also this.props.imgCameraSrc = " + this.props.imgCameraSrc);
-        window.CameraPreview.stopCamera();
-        // document.getElementById("appPage").css('background-color', 'white');   
+        window.CameraPreview.stopCamera();   
     }
     redirectCamera() {
         this.setState({redirect: true});
