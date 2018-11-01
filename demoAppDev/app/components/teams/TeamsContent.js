@@ -99,7 +99,7 @@ class TeamsContent extends Component {
         }
     }
     
-    /// Get each individual team and render its contents
+    /// Get each Team and render its contents
     getTeams() {
         return this.state.teams.map((item, key)=>{
             const teamLinks = item.links.map((link, key)=>{

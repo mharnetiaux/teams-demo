@@ -6,9 +6,12 @@
 }
 
 .chat-sub-nav {
-    position: relative;
+    position: fixed;
     display: flex;
     text-align: center;
+    width: 100%;
+    background: @white;
+    z-index: 1;
 
     &::after {
         position: absolute;
@@ -49,6 +52,11 @@
             right: 0;
         }
     }
+}
+
+.chat-content {
+    margin-top: 3rem;
+    max-height: 435px;
 }
 
 .chat-container {
