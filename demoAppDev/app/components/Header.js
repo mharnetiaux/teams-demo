@@ -10,7 +10,7 @@ class Header extends Component {
         super(...arguments);
         this.state = {
             alert: true,
-            image: "/images/urgent_white.png",
+            image: "/icon/urgent-white.svg",
             content: "URGENT! Darrell Salyer's blood sugar is hi..."
         }
     }

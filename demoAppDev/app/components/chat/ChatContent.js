@@ -36,7 +36,7 @@ class ChatContent extends Component {
                     time: "Yesterday",
                     message: "great, talk to you tomorrow?",
                     priorityIcon: "/icon/urgent.svg",
-                    priority: "normal",
+                    priority: "",
                     avatar: "/images/profile_3.png",
                     urgent: true
                 },
