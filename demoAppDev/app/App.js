@@ -35,9 +35,9 @@ const DemoApp = (props) => (
                                         <Route path="/calls" component={Calls}/>
                                         <Route path="/meetings" component={Meetings}/>
                                         <Route path="/teams" component={Teams}/>
-                                        <Route path="/activity" component={Activity}/>
+                                        <Route path="/activity" render={routeProps => <Activity {...routeProps} activityClassName={props.activityClassName} setStateOfChat={props.setStateOfChat}/> }/>
                                         <Route exact path="/" component={Chat}/>
-                                        <Route path="/chat-content" component={SingleChat}/>
+                                        <Route path="/chat-content" render={routeProps => <SingleChat {...routeProps} stateOfChat={props.stateOfChat} currentContact={props.currentContact}/>} />
                                         <Route path="/IDT" component={IDTcontent} />
                                         <Route path="/more" component={moreContent} />
                                         <Route path="/idt-patient-list" component={IDTpatientList}/>
@@ -62,12 +62,15 @@ class App extends Component{
         this.state = {
           kbShowing: false,
           imgCameraSrc: undefined,
-          showImage: false
+          showImage: false,
+          stateOfChat: "StateOne",
+          currentContact: "Ruth Franklin"
         }
         this.resizeForKeyboard = this.resizeForKeyboard.bind(this);
         this.setImgCameraSrc = this.setImgCameraSrc.bind(this);
         this.showKeyboard = this.showKeyboard.bind(this);
         this.toggleShowImage = this.toggleShowImage.bind(this);
+        this.setStateOfChat = this.setStateOfChat.bind(this);
     }
     render(){
         return <DemoApp 
@@ -76,6 +79,7 @@ class App extends Component{
             showKeyboard={this.showKeyboard} 
             setImgCameraSrc={this.setImgCameraSrc}
             toggleShowImage={this.toggleShowImage}
+            setStateOfChat={this.setStateOfChat}
         />
     }
     resizeForKeyboard(){
@@ -103,6 +107,15 @@ class App extends Component{
           document.getElementById("send-message").style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 150px 200px; background-position: 5% 5%;`;
         }, 0);
     }
+    setStateOfChat(arr){
+        this.setState({
+            stateOfChat: arr[0],
+            currentContact: arr[1]
+        });
+    }
+    // setStateOfChat(){
+    //     console.log("SETSTATE!");
+    // }
 }
 
 render((
