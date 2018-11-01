@@ -11,8 +11,6 @@ class TeamsContent extends Component {
         this.state = {
             teams: [
                 {
-                    open: true,
-                    alert: true,
                     team: "Intensive Care Unit",
                     icon: "/images/intensive-care-unit.png",
                     arrow: "/images/arrow-open.png",
@@ -41,8 +39,6 @@ class TeamsContent extends Component {
                     ]
                 },
                 {
-                    open: false,
-                    alert: false,
                     team: "Contoso Hospital",
                     icon: "/images/contoso-hospital.png",
                     arrow: "/images/arrow-open.png",
@@ -71,8 +67,6 @@ class TeamsContent extends Component {
                     ]
                 },
                 {
-                    open: false,
-                    alert: false,
                     team: "Patient Safety",
                     icon: "/images/patient-safety.png",
                     arrow: "/images/arrow-open.png",
@@ -140,10 +134,10 @@ class TeamsContent extends Component {
         });
     }
     
-    /// Open close individual Team Menu
+    /// Open/Close individual Team Menu
     toggleTeam() {
         const team = document.getElementsByClassName("teams-content");
-        for(let name of team){
+        for(let name of team) {
             name.onclick = () => {
                 name.classList.toggle("closed");
             }
@@ -151,7 +145,7 @@ class TeamsContent extends Component {
     }
 
     /// Invoke necessary functions after (THIS) React Component has rendered
-    componentDidMount(){
+    componentDidMount() {
         this.toggleTeam();
     }
 
