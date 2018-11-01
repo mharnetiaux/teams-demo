@@ -6,13 +6,14 @@ class MeetingsContent extends Component {
 
     constructor() {
         super(...arguments);
+        this.handleChange = this.handleChange.bind(this);
         this.state = {
             startDate: moment(),
             days : ["S","M","T","W","T","F","S"],
             meetings: [
                 {
+                    isToday: true,
                     day: "TODAY",
-                    date: "October 21",
                     schedule: [
                         {
                             title: "Contoso ICU team gathering",
@@ -45,8 +46,8 @@ class MeetingsContent extends Component {
                     ]
                 },
                 {
+                    isToday: false,
                     day: "TOMORROW",
-                    date: "October 22",
                     schedule: [
                         {
                             title: "Contoso ICU team gathering",
@@ -80,7 +81,16 @@ class MeetingsContent extends Component {
                 }
             ]
         };
-        this.handleChange.bind(this);
+    }
+
+    getDate(n){
+        const date = new Date(),
+              months = ["January","February","March","April","May","June","July","August","September","October","November","December"],
+              dayOfWeek = ["Sunday","Monday","Tuesday", "Wednesday","Thursday","Friday","Saturday"],
+              m = months[date.getMonth()],
+              dw = dayOfWeek[date.getDay()],
+              dd = date.getDate();
+        return m + " " + (dd + n);
     }
 
     getMeetings(){
@@ -97,10 +107,9 @@ class MeetingsContent extends Component {
                       </span>
                   )
             });
-
             return (
                  <section className="meeting" key={key}>
-                     <ul><li>{item.day}</li><li>{item.date}</li></ul>
+                     <ul><li>{item.day}</li><li>{item.isToday ? this.getDate(0) : this.getDate(1)}</li></ul>
                      <div className="meeting-time">
                          {meetingTime}
                      </div>
@@ -117,7 +126,7 @@ class MeetingsContent extends Component {
     
     render() {
         return(
-            <section className="page-content">
+            <section className="page-content meetings-content">
                 <span className="team-weekdays">{this.state.days.map((day, key)=>{return (<span key={key}>{day}</span>)})}</span>
                 <DatePicker
                     inline
