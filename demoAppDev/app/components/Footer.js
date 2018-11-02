@@ -10,11 +10,11 @@ import Calls from "../../icon/calls.svg";
 class Footer extends Component {
     constructor() {
         super();
-        this.toggleTeam = this.toggleTeam.bind(this);
+        this.toggleSelected = this.toggleSelected.bind(this);
     }
 
     /// Open/Close individual Team Menu
-    toggleTeam() {
+    toggleSelected() {
         const link = document.getElementsByClassName("icon"),
               selected = document.getElementsByClassName("selected");
 
@@ -27,7 +27,7 @@ class Footer extends Component {
     }
 
     componentDidMount(){
-        this.toggleTeam();
+        this.toggleSelected();
     }
     
     render() {
