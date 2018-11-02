@@ -13,6 +13,7 @@ import moreContent from './components/idt/moreContent';
 import filesContent from './components/idt/filesContent';
 import IDTpatientList from './components/idt/PatientList';
 import CameraOverlayScreen from './components/CameraOverlayScreen';
+import Footer from './components/Footer';
 
 
 const DemoApp = (props) => (
@@ -20,19 +21,22 @@ const DemoApp = (props) => (
         <Route
             render={({ location }) => {
                 return (
-                    <Switch location={location}>
-                        <Route path="/calls" component={Calls}/>
-                        <Route path="/meetings" component={Meetings}/>
-                        <Route path="/teams" component={Teams}/>
-                        <Route path="/activity" render={routeProps => <Activity {...routeProps} activityClassName={props.activityClassName} setStateOfChat={props.setStateOfChat}/> }/>
-                        <Route exact path="/" component={Chat}/>
-                        <Route path="/chat-content" render={routeProps => <SingleChat {...routeProps} stateOfChat={props.stateOfChat} currentContact={props.currentContact}/>} />
-                        <Route path="/IDT" component={IDTcontent} />
-                        <Route path="/more" component={moreContent} />
-                        <Route path="/idt-patient-list" component={IDTpatientList}/>
-                        <Route path="/files" component={filesContent} />
-                        <Route path="/cameraOverlay" render={routeProps => <CameraOverlayScreen {...routeProps} showKeyboard={props.showKeyboard} imgCameraSrc={props.imgCameraSrc} setImgSrc={props.setImgCameraSrc}/>} />
-                    </Switch>
+                    <span>
+                        <Switch location={location}>
+                            <Route path="/calls" component={Calls}/>
+                            <Route path="/meetings" component={Meetings}/>
+                            <Route path="/teams" component={Teams}/>
+                            <Route path="/activity" render={routeProps => <Activity {...routeProps} activityClassName={props.activityClassName} setStateOfChat={props.setStateOfChat}/> }/>
+                            <Route exact path="/" component={Chat}/>
+                            <Route path="/chat-content" render={routeProps => <SingleChat {...routeProps} stateOfChat={props.stateOfChat} currentContact={props.currentContact}/>} />
+                            <Route path="/IDT" component={IDTcontent} />
+                            <Route path="/more" component={moreContent} />
+                            <Route path="/idt-patient-list" component={IDTpatientList}/>
+                            <Route path="/files" component={filesContent} />
+                            <Route path="/cameraOverlay" render={routeProps => <CameraOverlayScreen {...routeProps} showKeyboard={props.showKeyboard} imgCameraSrc={props.imgCameraSrc} setImgSrc={props.setImgCameraSrc}/>} />
+                        </Switch>
+                        <Footer/>
+                    </span>
                 );
             }}
         />

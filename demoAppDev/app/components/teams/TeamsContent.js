@@ -7,7 +7,7 @@ import IMPORTANT from '../../../icon/important.svg';
 class TeamsContent extends Component {
 
     constructor() {
-        super(...arguments);
+        super();
         this.state = {
             teams: [
                 {
