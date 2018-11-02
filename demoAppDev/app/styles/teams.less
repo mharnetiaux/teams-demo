@@ -41,16 +41,15 @@
     }
 
     .team-links {
-        transition-property: opacity, visibility, max-height;
-        transition-duration: 1s, 1s, 1s;
+        transition-property: visibility, max-height;
+        transition-duration: 1s, 1s;
         visibility: visible;
-        opacity: 1;
         max-height: 100vh;
         display: flex;
         flex-direction: column;
         overflow: hidden;
         margin-left: 5rem;
-
+        
         .team-link {
             margin: 1rem 0;
             color: @font-black;
@@ -86,14 +85,15 @@
         }
 
         .team-links {
-            opacity: 0;
             visibility: hidden;
             max-height: 0;
-            transition-property: opacity, visibility, max-height;
-            transition-duration: 1s, 1s, 0.5s;
+            transition-property: visibility, max-height;
+            transition-duration: 1s, 0.4s;
         }
 
         .arrow {
+            transition-property: transform;
+            transition-duration: 0.4s;
             transform: rotate(-90deg);
         }
     }
