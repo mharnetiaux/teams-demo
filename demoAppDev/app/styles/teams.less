@@ -7,6 +7,7 @@
 
 .teams-content {
     padding-top: 1rem;
+    min-height: 3rem;
     width: 95%;
     margin: auto;
     position: relative;
@@ -19,6 +20,10 @@
         opacity: 0.1;
         content: "";
         bottom: 0;
+    }
+
+    .team-menu {
+        display: none;
     }
 
     .team-info {
@@ -84,16 +89,20 @@
             padding-bottom: 0.5rem;
         }
 
+        .team-menu {
+            display: inherit;
+        }
+
         .team-links {
             visibility: hidden;
             max-height: 0;
             transition-property: visibility, max-height;
-            transition-duration: 1s, 0.4s;
+            transition-duration: 0.4s, 0.4s;
         }
 
         .arrow {
             transition-property: transform;
-            transition-duration: 0.1s;
+            transition-duration: 0.15s;
             transform: rotate(-90deg);
         }
     }
