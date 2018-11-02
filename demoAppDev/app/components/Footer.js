@@ -10,7 +10,6 @@ import Calls from "../../icon/calls.svg";
 class Footer extends Component {
     constructor() {
         super();
-        this.toggleSelected = this.toggleSelected.bind(this);
     }
 
     /// Open/Close individual Team Menu
