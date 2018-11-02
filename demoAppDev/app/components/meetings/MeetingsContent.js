@@ -5,7 +5,7 @@ import moment from 'moment';
 class MeetingsContent extends Component {
 
     constructor() {
-        super(...arguments);
+        super();
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             startDate: moment(),

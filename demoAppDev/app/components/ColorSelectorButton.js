@@ -5,7 +5,7 @@ export default class ColorSelectorButton extends Component{
         super(props);
         this.state = {
             activeColorClass: "not-active"
-        }
+        };
         this.toggleColorSelectorButtons = this.toggleColorSelectorButtons.bind(this);
     }
     render() {

@@ -1,15 +1,28 @@
 import React from "react";
-import Page from "./Page";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Activity = (props) => {
+const header = {
+    title: "Activity",
+    alert: {
+        on: true,
+        image: "/icon/urgent-white.svg",
+        content: "URGENT! Darrell Salyer's blood sugar is hi..."
+    },
+    links:['menu','search']
+},
+
+Activity = (props) => {
     return (
-        <Page>
-            <section className="page-content">Activity Page</section>
+        <section className="page activity transition-item">
+            <Header title={header.title} links={header.links} alert={header.alert}/>
+            <section className="page-content"></section>
             <div className="activity-selector" onClick={()=>{props.setStateOfChat(["StateOne","Ruth Franklin"])}}>Click here for Priority Messaging Scenario</div>
             <div className="activity-selector" onClick={()=>{props.setStateOfChat(["StateTwo","Laurence Gilbertson"])}}>Click here for Image Annotation Scenario</div>
-        </Page>
+            <Footer/>
+        </section>
     );    
-}
+};
 
 
 

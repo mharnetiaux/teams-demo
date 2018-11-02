@@ -1,19 +1,26 @@
 import React from "react";
-import Page from "./Page";
-import {Link} from "react-router-dom";
-import SVG from 'react-inlinesvg';
 import SubNav from './chat/SubNav';
-import ChatIcon from "../../icon/chat-icon.svg";
 import ChatContent from "./chat/ChatContent";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Chat = () => (
-    <Page className="chat-page">
-        <h2 className="page-title">Chat</h2>
-        <Link to={{pathname:'/contact', state:{prev:'true'}}} className="chat-link"><SVG src={ChatIcon}/></Link>
+const header = {
+    title: "Chat",
+    alert: {
+        on: true,
+        image: "/icon/urgent-white.svg",
+        content: "URGENT! Darrell Salyer's blood sugar is hi..."
+    },
+    links:['menu','search','contact']
+},
+
+Chat = () => (
+    <section className="page chat transition-item">
+        <Header title={header.title} links={header.links} alert={header.alert}/>
         <SubNav/>
         <ChatContent/>
-    </Page>
+        <Footer/>
+    </section>
 );
-
 
 export default Chat;

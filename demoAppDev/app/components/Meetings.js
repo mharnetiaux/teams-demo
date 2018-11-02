@@ -1,9 +1,7 @@
 import React from "react";
-import Page from "./Page";
-import {Link} from "react-router-dom";
-import SVG from 'react-inlinesvg';
-import MeetingsIcon from '../../icon/meetings-icon.svg';
 import MeetingsContent from "./meetings/MeetingsContent";
+import Header from "./Header";
+import Footer from "./Footer";
 
 function date() {
     "use strict";
@@ -15,12 +13,22 @@ function date() {
     return m + " " + y;
 }
 
-const Meetings = () => (
-    <Page>
-        <h2 className="page-title">{date()}</h2>
-        <Link to={{pathname:'/contact', state:{prev:'true'}}} className="meetings-link"><SVG src={MeetingsIcon}/></Link>
+const header = {
+    title: date(),
+    alert: {
+        on: true,
+        image: "/icon/urgent-white.svg",
+        content: "URGENT! Darrell Salyer's blood sugar is hi..."
+    },
+    links:['menu','search','meetings-icon']
+},
+
+Meetings = () => (
+    <section className="page meetings transition-item">
+        <Header title={header.title} links={header.links} alert={header.alert}/>
         <MeetingsContent/>
-    </Page>
+        <Footer/>
+    </section>
 );
 
 

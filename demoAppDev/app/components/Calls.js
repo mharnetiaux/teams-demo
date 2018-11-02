@@ -1,10 +1,22 @@
 import React from "react";
-import Page from "./Page";
+import Header from "./Header";
+import Footer from "./Footer";
 
-const Calls = () => (
-    <Page>
-        <section className="page-content">Calls Page</section>
-    </Page>
+const header = {
+    title: "Calls",
+    alert: {
+        on: true,
+        image: "/icon/urgent-white.svg",
+        content: "URGENT! Darrell Salyer's blood sugar is hi..."
+    },
+    links:['menu','search','phone']
+},
+
+Calls = () => (
+    <section className="page-content">
+        <Header title={header.title} alert={header.alert} links={header.links}/>
+        <Footer/>
+    </section>
 );
 
 

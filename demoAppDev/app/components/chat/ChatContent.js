@@ -95,7 +95,7 @@ class ChatContent extends Component {
     
     render() {
         return(
-            <section className="page-content chat-content">
+            <section className="page-content chat">
                 {this.chatItem()}
             </section>
         );

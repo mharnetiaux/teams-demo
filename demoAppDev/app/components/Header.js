@@ -1,27 +1,28 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import SVG from 'react-inlinesvg';
-import Search from "../../icon/search.svg";
-import Menu from "../../icon/menu.svg";
 
 class Header extends Component {
 
     constructor() {
-        super(...arguments);
-        this.state = {
-            alert: true,
-            image: "/icon/urgent-white.svg",
-            content: "URGENT! Darrell Salyer's blood sugar is hi..."
-        }
+        super();
+    }
+
+    getHeaderContent(){
+        return this.props.links.map((link, key) => {
+            return (
+                <Link to={link} className={link} key={key}><SVG src={"/icon/" + link + ".svg"}/></Link>
+            )
+        })
     }
 
     render() {
         return(
             <header id="appHeader">
-                <Link to={{pathname:'/', state:{prev:'true'}}}><section className={this.state.alert ? "alert": "none"}><img src={this.state.image} width="20" height="20"/><span className="alert-message">{this.state.content}</span></section></Link>
-                <nav className={this.state.alert ? "header header-alert": "header header-alert-none"}>
-                    <Link to={{pathname:'/menu', state:{prev:'true'}}} className="menu"><SVG src={Menu}/></Link>
-                    <Link to={{pathname:'/search', state:{prev:'true'}}} className="search"><SVG src={Search}/></Link>
+                <Link className="alert-container" to='/'><section className={this.props.alert.on ? "alert": "none"}><img src={this.props.alert.image} width="20" height="20"/><span className="alert-message">{this.props.alert.content}</span></section></Link>
+                <nav className={this.props.alert.on ? "header header-alert": "header header-alert-none"}>
+                    <h2 className="page-title">{this.props.title}</h2>
+                    {this.getHeaderContent()}
                 </nav>
             </header>
         );

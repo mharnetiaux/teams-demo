@@ -1,9 +1,8 @@
 import './styles/app.less';
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import {Route, Switch, HashRouter} from 'react-router-dom';
-import {CSSTransition, TransitionGroup} from 'react-transition-group';
-import Header from "./components/Header";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+//import PageTransition from "react-router-page-transition";
 import Footer from "./components/Footer";
 import Chat from './components/Chat';
 import SingleChat from './components/chat/SingleChat';
@@ -16,44 +15,30 @@ import moreContent from './components/idt/moreContent';
 import filesContent from './components/idt/filesContent';
 import IDTpatientList from './components/idt/PatientList';
 import CameraOverlayScreen from './components/CameraOverlayScreen';
-const supportsHistory = 'pushState' in window.history;
 
 
 const DemoApp = (props) => (
-    <HashRouter forceRefresh={!supportsHistory}>
+    <Router>
         <Route
             render={({ location }) => {
-                const {pathname} = location;
                 return (
-                    <TransitionGroup>
-                        <Header/>
-                        <CSSTransition key={pathname} classNames="page" id="appPage" timeout={{exit:700,enter:700}}>
-                            <Route
-                                location={location}
-                                render={() => (
-                                    <Switch>
-                                        <Route path="/calls" component={Calls}/>
-                                        <Route path="/meetings" component={Meetings}/>
-                                        <Route path="/teams" component={Teams}/>
-                                        <Route path="/activity" render={routeProps => <Activity {...routeProps} activityClassName={props.activityClassName} setStateOfChat={props.setStateOfChat}/> }/>
-                                        <Route exact path="/" component={Chat}/>
-                                        <Route path="/chat-content" render={routeProps => <SingleChat {...routeProps} stateOfChat={props.stateOfChat} currentContact={props.currentContact}/>} />
-                                        <Route path="/IDT" component={IDTcontent} />
-                                        <Route path="/more" component={moreContent} />
-                                        <Route path="/idt-patient-list" component={IDTpatientList}/>
-                                        <Route path="/files" component={filesContent} />
-                                        <Route path="/cameraOverlay" render={routeProps => <CameraOverlayScreen {...routeProps} showKeyboard={props.showKeyboard} imgCameraSrc={props.imgCameraSrc} setImgSrc={props.setImgCameraSrc}/>} />
-                                    </Switch>
-                                )}
-                            />
-
-                        </CSSTransition>
-                        <Footer/>
-                    </TransitionGroup>
+                    <Switch location={location}>
+                        <Route path="/calls" component={Calls}/>
+                        <Route path="/meetings" component={Meetings}/>
+                        <Route path="/teams" component={Teams}/>
+                        <Route path="/activity" render={routeProps => <Activity {...routeProps} activityClassName={props.activityClassName} setStateOfChat={props.setStateOfChat}/> }/>
+                        <Route exact path="/" component={Chat}/>
+                        <Route path="/chat-content" render={routeProps => <SingleChat {...routeProps} stateOfChat={props.stateOfChat} currentContact={props.currentContact}/>} />
+                        <Route path="/IDT" component={IDTcontent} />
+                        <Route path="/more" component={moreContent} />
+                        <Route path="/idt-patient-list" component={IDTpatientList}/>
+                        <Route path="/files" component={filesContent} />
+                        <Route path="/cameraOverlay" render={routeProps => <CameraOverlayScreen {...routeProps} showKeyboard={props.showKeyboard} imgCameraSrc={props.imgCameraSrc} setImgSrc={props.setImgCameraSrc}/>} />
+                    </Switch>
                 );
             }}
         />
-    </HashRouter>
+    </Router>
 );
 
 class App extends Component{
@@ -65,7 +50,7 @@ class App extends Component{
           showImage: false,
           stateOfChat: "StateOne",
           currentContact: "Ruth Franklin"
-        }
+        };
         this.resizeForKeyboard = this.resizeForKeyboard.bind(this);
         this.setImgCameraSrc = this.setImgCameraSrc.bind(this);
         this.showKeyboard = this.showKeyboard.bind(this);

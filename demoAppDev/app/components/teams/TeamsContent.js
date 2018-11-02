@@ -104,7 +104,7 @@ class TeamsContent extends Component {
         return this.state.teams.map((item, key)=>{
             const teamLinks = item.links.map((link, key)=>{
                 return (
-                    <Link key={key} className="team-link" to={{pathname:"/" + link.route, state:{prev:'true'}}}>
+                    <Link key={key} className="team-link" to="/">
                         <span className={link.color==="black" ? "teams-text": "teams-text purple"}>{link.route}</span>
                         <span className={link.alert ? "teams-alert yes" : "teams-alert no"}>
                             <SVG src={IMPORTANT}/>

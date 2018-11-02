@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 class SubNav extends Component {
 
     constructor() {
-        super(...arguments);
+        super();
         this.toggleClass = this.toggleClass.bind(this);
         this.state = {
             results: true,
