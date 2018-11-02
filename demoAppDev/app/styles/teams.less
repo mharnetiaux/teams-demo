@@ -41,8 +41,14 @@
     }
 
     .team-links {
+        transition-property: opacity, visibility, max-height;
+        transition-duration: 1s, 1s, 1s;
+        visibility: visible;
+        opacity: 1;
+        max-height: 100vh;
         display: flex;
         flex-direction: column;
+        overflow: hidden;
         margin-left: 5rem;
 
         .team-link {
@@ -75,13 +81,16 @@
     }
 
     &.closed {
-
         .team-info {
             padding-bottom: 0.5rem;
         }
 
         .team-links {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
+            max-height: 0;
+            transition-property: opacity, visibility, max-height;
+            transition-duration: 1s, 1s, 0.5s;
         }
 
         .arrow {
