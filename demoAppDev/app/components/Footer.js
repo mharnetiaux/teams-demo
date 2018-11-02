@@ -12,7 +12,7 @@ class Footer extends Component {
         super();
     }
 
-    /// Open/Close individual Team Menu
+    /// Toggle Footer selections
     toggleSelected() {
         const link = document.getElementsByClassName("icon"),
               selected = document.getElementsByClassName("selected");
@@ -25,6 +25,7 @@ class Footer extends Component {
         }
     }
 
+    /// Invoke necessary functions after (THIS) React Component has rendered
     componentDidMount(){
         this.toggleSelected();
     }
