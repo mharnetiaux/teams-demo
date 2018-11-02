@@ -1,6 +1,7 @@
 import React from "react";
 import MeetingsContent from "./meetings/MeetingsContent";
 import Header from "./Header";
+import Footer from "./Footer";
 
 function date() {
     "use strict";
@@ -26,6 +27,7 @@ Meetings = () => (
     <section className="page meetings transition-item">
         <Header title={header.title} links={header.links} alert={header.alert}/>
         <MeetingsContent/>
+        <Footer/>
     </section>
 );
 
