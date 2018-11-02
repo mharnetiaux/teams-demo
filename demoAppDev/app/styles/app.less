@@ -21,6 +21,15 @@ html {
 // Header container
 header {
     position: relative;
+    &::after{
+        position: absolute;
+        height:0.1rem;
+        width: 100%;
+        background: @font-grey;
+        content: "";
+        opacity: 0.1;
+        bottom: 0;
+    }
 
     .alert-container {
         display: block;
