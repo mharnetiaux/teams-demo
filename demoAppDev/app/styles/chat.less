@@ -5,17 +5,6 @@
     width: 100%;
     background: transparent;
 
-    &::after {
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        background: @black;
-        opacity: 0.1;
-        content: "";
-        bottom: 0;
-        z-index: 1;
-    }
-
     li {
         padding: 1rem 0;
         flex: 1;
@@ -23,26 +12,6 @@
 
         a {
             color: @icon-fill;
-        }
-
-        &::before {
-            display: none;
-            position: absolute;
-            height: 4px;
-            width: 50%;
-            background: @icon-fill;
-            content: "";
-            bottom: 0;
-        }
-
-        &.recent.selected::before{
-            display: block;
-            left: 0;
-        }
-
-        &.contacts.selected::before {
-            display: block;
-            right: 0;
         }
     }
 }
