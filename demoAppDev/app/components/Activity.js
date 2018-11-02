@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "./Header";
-import Footer from "./Footer";
 
 const header = {
     title: "Activity",
@@ -19,7 +18,6 @@ Activity = (props) => {
             <section className="page-content"></section>
             <div className="activity-selector" onClick={()=>{props.setStateOfChat(["StateOne","Ruth Franklin"])}}>Click here for Priority Messaging Scenario</div>
             <div className="activity-selector" onClick={()=>{props.setStateOfChat(["StateTwo","Laurence Gilbertson"])}}>Click here for Image Annotation Scenario</div>
-            <Footer/>
         </section>
     );    
 };

@@ -1,10 +1,9 @@
 import React from "react";
 import TeamsContent from './teams/TeamsContent';
 import Header from "./Header";
-import Footer from "./Footer";
 
 const header = {
-    title: "Chat",
+    title: "Teams",
     alert: {
         on: true,
         image: "/icon/urgent-white.svg",
@@ -17,7 +16,6 @@ Teams = () => (
     <section className="page teams transition-item">
         <Header title={header.title} alert={header.alert} links={header.links}/>
         <TeamsContent/>
-        <Footer/>
     </section>
 );
 

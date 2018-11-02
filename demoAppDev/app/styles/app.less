@@ -22,15 +22,6 @@ html {
 header {
     position: relative;
 
-    &::after {
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        box-shadow: 1px 1px 0 rgba(0,0,0,0.20);
-        content: "";
-        bottom: 0;
-    }
-
     .alert-container {
         display: block;
         margin-bottom: 1rem;
@@ -51,16 +42,7 @@ header {
         margin: 0 auto;
         position: relative;
         min-height: 2rem;
-        &::after {
-            position: absolute;
-            height: 1px;
-            width: 100%;
-            background: @black;
-            opacity: 0.1;
-            content: "";
-            bottom: 0;
-        }
-
+        
         &.header-alert-none {
             padding-top: 2rem;
         }
@@ -226,24 +208,20 @@ footer:not(.footer-2) {
     height: 100%;
 
     &.transition-item {
-        transition: transform 0.5s, opacity 0.5s;
+        transition: transform 0.5s;
 
         &.transition-appear {
-            opacity: 0;
             transform: translate3d(100%, 0, 0);
         }
 
         &.transition-appear.transition-appear-active {
-            opacity: 1;
             transform: translate3d(0, 0, 0);
         }
         &.transition-leave {
-            opacity: 1;
             transform: translate3d(0, 0, 0);
         }
 
         &.transition-leave.transition-leave-active {
-            opacity: 0;
             transform: translate3d(100%, 0, 0);
         }
     }
@@ -254,7 +232,7 @@ footer:not(.footer-2) {
     background: @white;
     position: fixed;
     width: 100%;
-    max-height: 29rem;
+    max-height: 30rem;
 
     &.chat {
        margin-top: 3rem;
