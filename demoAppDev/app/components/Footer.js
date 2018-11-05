@@ -11,12 +11,17 @@ class Footer extends Component {
     /// Toggle Footer selections
     toggleSelected() {
         const link = document.getElementsByClassName("icon"),
-              selected = document.getElementsByClassName("selected");
+              selected = document.getElementsByClassName("selected"),
+              page = document.getElementsByClassName("page");
 
+        page[0].classList.add("page-selected");
         for(let name of link) {
             name.onclick = () => {
                 selected[0].classList.remove("selected");
                 name.classList.toggle("selected");
+                setTimeout(()=>{
+                    page[0].classList.add("page-selected");
+                },100);
             };
         }
     }

@@ -6,7 +6,7 @@ import read from '../../../icon/unread.svg';
 class ChatContent extends Component {
 
     constructor() {
-        super(...arguments);
+        super();
         let date = new Date();
         this.state = {
             chatItems: [
