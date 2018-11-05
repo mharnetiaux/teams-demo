@@ -4,7 +4,7 @@ import webpack from 'webpack';
 import webpack_dev_middleware from 'webpack-dev-middleware';
 import webpack_hot_middleware from 'webpack-hot-middleware';
 import webpackConfig from '../webpack.config.babel';
-import options from '../webpack/middleware-options.js';
+import options from '../webpack/middleware-options';
 
 const app = express(),
       port = options.port,

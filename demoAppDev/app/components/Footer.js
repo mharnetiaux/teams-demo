@@ -8,10 +8,6 @@ import Meetings from "../../icon/meetings.svg";
 import Calls from "../../icon/calls.svg";
 
 class Footer extends Component {
-    constructor() {
-        super();
-    }
-
     /// Toggle Footer selections
     toggleSelected() {
         const link = document.getElementsByClassName("icon"),

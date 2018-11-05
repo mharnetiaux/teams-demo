@@ -19,5 +19,4 @@ Teams = () => (
     </section>
 );
 
-
 export default Teams;

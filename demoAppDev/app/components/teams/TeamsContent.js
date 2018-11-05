@@ -106,10 +106,7 @@ class TeamsContent extends Component {
                 return (
                     <Link key={key} className="team-link" to={`/${link.route}`}>
                         <span className={link.color==="black" ? "teams-text": "teams-text purple"}>{link.route}</span>
-                        <span className={link.alert ? "teams-alert yes" : "teams-alert no"}>
-                            <SVG src={IMPORTANT}/>
-                            <SVG src={ALERT}/>
-                        </span>
+                        <span className={link.alert ? "teams-alert yes" : "teams-alert no"}><SVG src={IMPORTANT}/><SVG src={ALERT}/></span>
                     </Link>
                 )
             });
@@ -118,13 +115,9 @@ class TeamsContent extends Component {
                 <section className={item.open ? "teams-content open": "teams-content closed"} key={key}>
                     <a className="team-info">
                         <img className="arrow" src={item.arrow}/>
-                        <span className="team">
-                            <img src={item.icon} width="" height=""/>
-                        </span>
+                        <span className="team"><img src={item.icon}/></span>
                         <span>{item.team}</span>
-                        <span className="team-menu">
-                            <img src={item.menu}/>
-                        </span>
+                        <span className="team-menu"><img src={item.menu}/></span>
                     </a>
                     <section className="team-links" key={key}>
                         {teamLinks}
