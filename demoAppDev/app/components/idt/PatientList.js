@@ -8,6 +8,9 @@ import InfoIcon from '../../../icon/idt-patients-info.svg';
 import PatientsListIcon from '../../../icon/patients-list-icon.svg';
 import PatientsListLeftArrow from '../../../icon/patients-list-left-arrow.svg';
 import PatientsListRightArrow from '../../../icon/patients-list-right-arrow.svg';
+import PlusIcon from '../../../icon/plus-add-new.svg';
+import DeleteIcon from '../../../icon/delete.svg';
+import RightArrow from '../../../icon/right-arrow.svg';
 
 const patientData = [
     {
@@ -66,7 +69,7 @@ const idtChatData = {
     chatTwo : "I did find one case report of a man who developed anit-neutrophil anitbodies while on antibiotics (antibodies against one type of WBC) which then disapped when he went off antibiotics. If so, WBC should bounce back sometime between 3-30 days.",
     chatThree : "Check out this new article! https://jamanetwork.com/journals/jama/article-abstract/2678616"
 };
-const SalyerData = {
+let SalyerData = {
     Name: "Salyer, Darrell",
     Demographics: 
         {
@@ -120,15 +123,24 @@ const SalyerData = {
 export default class PatientList extends Component{
     constructor(props){
         super(props);
+        let date = new Date();
         this.state = {
             redirect: false,
             patients: patientData,
-            salyerData: SalyerData
+            salyerData: SalyerData,
+            counter: 0,
+            response: {
+                message: "Monitor blood sugar and order additional CT scan of left lung in two weeks."
+            },
         };
         this.redirectList = this.redirectList.bind(this);
         this.getMedications = this.getMedications.bind(this);
         this.getDetails = this.getDetails.bind(this);
         this.getPatientData = this.getPatientData.bind(this);
+        this.getNotes = this.getNotes.bind(this);
+        this.typeWriter = this.typeWriter.bind(this);
+        this.adjustHeight = this.adjustHeight.bind(this);
+        this.addNote = this.addNote.bind(this);
     }
     render(){
         if (this.state.redirect) {
@@ -137,7 +149,7 @@ export default class PatientList extends Component{
                     <header>
                         <h2 className="person"> Patients</h2>
                         <ul className="icon-container">
-                            <li className="back-arrow"><Link to={{pathname: '/more', state: {prev: 'true'}}}><SVG
+                            <li className="back-close"><Link to={{pathname: '/more', state: {prev: 'true'}}}><SVG
                                 src={CloseHeader}/></Link></li>
                         </ul>
                     </header>
@@ -157,7 +169,20 @@ export default class PatientList extends Component{
                         <div className="idt-patient-list-clicker open">Details</div>
                         {this.getDetails()}
                         <div className="idt-patient-list-clicker open">Notes</div>
-                        <div className="remove-patient-tab"><div className="remove-patient-tab-inner">Remove patient</div></div>
+                        <section className="input-message" id="input-message">
+                            <form>
+                                <textarea placeholder="Write a note..." id="send-message" onKeyDown={this.typeWriter}></textarea>
+                            </form>
+                            <div id="send-arrow" onClick={this.addNote}><SVG src={RightArrow}/></div>
+                        </section>
+                        {/* <div id="send-arrow"><SVG src={RightArrow}/></div> */}
+                        {this.getNotes()}
+                        <div className="remove-patient-tab">
+                            <div className="remove-patient-tab-inner">
+                                <SVG className="delete-icon" src={DeleteIcon}/>
+                                <span>Remove patient</span>
+                            </div>
+                        </div>
                     </section>
                 </section>
             )
@@ -167,7 +192,7 @@ export default class PatientList extends Component{
                     <header>
                         <h2 className="person">Patients</h2>
                         <ul className="icon-container">
-                            <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
+                            <li className="back-close"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
                                 src={CloseHeader}/></Link></li>
                         </ul>
                     </header>
@@ -179,7 +204,10 @@ export default class PatientList extends Component{
                             <SVG className="down-arrow" src={DownArrow}/>
                             <SVG className="info-icon" src={InfoIcon}/>
                         </div>
-                        <div className="idt-patient-list-add-new">+ Add patient</div>
+                        <div className="idt-patient-list-add-new">
+                            <SVG className="plus-icon" src={PlusIcon}/> 
+                            Add patient
+                        </div>
                         <div>
                             <div className="idt-list-header">
                                 <div className="idt-list-header-name">Name</div>
@@ -230,10 +258,30 @@ export default class PatientList extends Component{
     getMedications(){
         const meetingTime = this.state.salyerData.Medications.map((time)=>{
             return(
-                <span className="time-container">
+                <span className="time-container" key={time.MedicationName}>
                     <ul>
                         <li className="title">{time.MedicationName}</li>
                         <li className="time">{time.MedicationNote}</li>
+                    </ul>
+                </span>
+            )
+        });
+
+        return (
+            <section className="meeting">
+                <div className="meeting-time">
+                    {meetingTime}
+                </div>
+            </section>
+        )
+    }
+    getNotes(){
+        const meetingTime = this.state.salyerData.Notes.map((time)=>{
+            return(
+                <span className="time-container" key={time.NoteName}>
+                    <ul>
+                        <li className="title">{time.NoteName}</li>
+                        <li className="time">{time.NoteText}</li>
                     </ul>
                 </span>
             )
@@ -270,5 +318,38 @@ export default class PatientList extends Component{
                 </div>
             </section>
         )
+    }
+    /// Pass string to tell input what to write on keyDown() event
+    typeWriter(event) {
+        event.preventDefault();
+        // document.getElementById("send-arrow").classList.add("send");
+        if(this.state.counter < this.state.response.message.length){
+            document.getElementById("send-message").value += this.state.response.message.charAt(this.state.counter);
+            this.state.counter++;
+            this.adjustHeight();
+        }
+    }
+    /// Adjust height of <textarea> depending on size of content
+    adjustHeight() {
+        const a = document.getElementById("send-message");
+        a.style.height = (a.scrollHeight > a.clientHeight) ? (a.scrollHeight - 34) + "px" : "1px";
+    }
+    addNote(){
+        console.log("adding note");
+        SalyerData.Notes.push(
+            {
+                NoteName: "Sylvia McCarthye",
+                NoteDate: "May 4, 11:36 AM",
+                NoteText: "Monitor blood sugar and order additional CT scan of left lung in two weeks."
+            }
+        );
+        this.setState({
+            counter: 0,
+            response: {
+                message: ""
+            },
+            salyerData: SalyerData
+        });
+
     }
 }
