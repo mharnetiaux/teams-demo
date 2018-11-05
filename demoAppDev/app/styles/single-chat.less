@@ -4,9 +4,19 @@
     background: @iphone-bg-grey;
     width: 100%;
     top: 0;
+    visibility: hidden;
+    right: -100%;
     z-index: 1;
     display: flex;
     flex-direction: column;
+
+    &.open {
+        transition-property: visibility, right;
+        transition-duration: 0.5s, 0.5s;
+        right: 0;
+        visibility: visible;
+        overflow: hidden;
+    }
 
     &.urgent-open {
         max-height: 75%;

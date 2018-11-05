@@ -198,6 +198,12 @@ class SingleChat extends Component {
             document.getElementsByClassName("page")[0].classList.add("page-selected");
         },100)
     }
+
+    componentDidMount(){
+        setTimeout(()=>{
+            document.getElementById("single-chat").classList.add("open");
+        },50)
+    }
     
     render() {
         if (this.state.redirect) {
