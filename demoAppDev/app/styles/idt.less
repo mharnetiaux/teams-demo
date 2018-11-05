@@ -202,6 +202,46 @@
 
 .idt-patient-list{
     overflow-y: scroll;
+    #send-arrow{
+        background-color: @iphone-bg-grey;
+        position: relative;
+        width: 20px;
+        span{
+            top: 12px;
+            position: absolute;
+        }
+        svg{width:20px;}
+    }
+    .input-message {
+        display:flex;
+        background-color: @white;
+        padding: 10px 0px;
+        
+        form {
+            width: 85%;
+
+            textarea {
+                font-family: "Helvetica", Helvetica, Arial, sans-serif;
+                overflow-y: auto;
+                resize: none;
+                box-shadow: none;
+                width: 90%;
+                margin: auto 0 auto auto;
+                display: block;
+                border: none;
+                // border: 1px solid #DFDEDE;
+                // border-radius: 4px;
+                height: 1rem;
+                max-height: 5rem;
+                padding: 1rem 0.5rem;
+                background-color: @iphone-bg-grey;
+
+                &::placeholder {
+                    line-height: 16px;
+                }
+            }
+        }
+    }
 }
 .idt-patient-list-add-new{
     font-size: 15px;
