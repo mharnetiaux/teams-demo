@@ -8,6 +8,8 @@ import InfoIcon from '../../../icon/idt-patients-info.svg';
 import PatientsListIcon from '../../../icon/patients-list-icon.svg';
 import PatientsListLeftArrow from '../../../icon/patients-list-left-arrow.svg';
 import PatientsListRightArrow from '../../../icon/patients-list-right-arrow.svg';
+import PlusIcon from '../../../icon/plus-add-new.svg';
+import DeleteIcon from '../../../icon/delete.svg';
 
 const patientData = [
     {
@@ -137,7 +139,7 @@ export default class PatientList extends Component{
                     <header>
                         <h2 className="person"> Patients</h2>
                         <ul className="icon-container">
-                            <li className="back-arrow"><Link to={{pathname: '/more', state: {prev: 'true'}}}><SVG
+                            <li className="back-close"><Link to={{pathname: '/more', state: {prev: 'true'}}}><SVG
                                 src={CloseHeader}/></Link></li>
                         </ul>
                     </header>
@@ -157,7 +159,12 @@ export default class PatientList extends Component{
                         <div className="idt-patient-list-clicker open">Details</div>
                         {this.getDetails()}
                         <div className="idt-patient-list-clicker open">Notes</div>
-                        <div className="remove-patient-tab"><div className="remove-patient-tab-inner">Remove patient</div></div>
+                        <div className="remove-patient-tab">
+                            <div className="remove-patient-tab-inner">
+                                <SVG className="delete-icon" src={DeleteIcon}/>
+                                <spam>Remove patient</spam>
+                            </div>
+                        </div>
                     </section>
                 </section>
             )
@@ -167,7 +174,7 @@ export default class PatientList extends Component{
                     <header>
                         <h2 className="person">Patients</h2>
                         <ul className="icon-container">
-                            <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
+                            <li className="back-close"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
                                 src={CloseHeader}/></Link></li>
                         </ul>
                     </header>
@@ -179,7 +186,10 @@ export default class PatientList extends Component{
                             <SVG className="down-arrow" src={DownArrow}/>
                             <SVG className="info-icon" src={InfoIcon}/>
                         </div>
-                        <div className="idt-patient-list-add-new">+ Add patient</div>
+                        <div className="idt-patient-list-add-new">
+                            <SVG className="plus-icon" src={PlusIcon}/> 
+                            Add patient
+                        </div>
                         <div>
                             <div className="idt-list-header">
                                 <div className="idt-list-header-name">Name</div>

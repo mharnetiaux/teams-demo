@@ -39,30 +39,6 @@ export default class IDTContent extends Component{
                     message: "great, talk to you tomorrow?",
                     avatar: "/images/profile_3.png",
                     replies: false
-                },
-                {
-                    read: true,
-                    name: "Cassandra Dunn",
-                    time: "Thursday",
-                    message: "Thank you!",
-                    avatar: "/images/profile_4.png",
-                    replies: false
-                },
-                {
-                    read: true,
-                    name: "Pete. Krystal, Darren + 4",
-                    time: "Monday",
-                    message: "Rita: See attached Image",
-                    avatar: "/images/profile_5.png",
-                    replies: false
-                },
-                {
-                    read: true,
-                    name: "Edmee Plant",
-                    time: "5/20",
-                    message: "Rita: See attached Image",
-                    avatar: "/images/profile_5.png",
-                    replies: false
                 }
             ]
         };
@@ -101,7 +77,10 @@ export default class IDTContent extends Component{
                     </section>
                     <div className="reply-box">
                         {item.replies && <div className="replies">{item.replies}</div>}
-                        <div className="reply-tab"><SVG src={replyIcon}/>Reply</div>
+                        <div className="reply-tab">
+                            <SVG className="reply-icon" src={replyIcon}/>
+                            <span className="reply-text">Reply</span>
+                        </div>
                     </div>
                 </div>
             );
