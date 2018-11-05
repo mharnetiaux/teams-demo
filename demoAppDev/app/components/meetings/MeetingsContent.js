@@ -6,7 +6,6 @@ class MeetingsContent extends Component {
 
     constructor() {
         super();
-        this.handleChange = this.handleChange.bind(this);
         this.state = {
             startDate: moment(),
             days : ["S","M","T","W","T","F","S"],
@@ -117,12 +116,6 @@ class MeetingsContent extends Component {
             )
         });
     }
-
-    handleChange(date) {
-        this.setState({
-            startDate: date
-        });
-    }
     
     render() {
         return(
@@ -131,7 +124,6 @@ class MeetingsContent extends Component {
                 <DatePicker
                     inline
                     selected={this.state.startDate}
-                    onChange={this.handleChange}
                 />
                 {this.getMeetings()}
             </section>
