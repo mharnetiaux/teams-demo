@@ -20,7 +20,7 @@ UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 
 class SingleChat extends Component {
     constructor() {
-        super();
+        super(...arguments);
         this.backButton = this.backButton.bind(this);
         this.urgentMessage = this.urgentMessage.bind(this);
         this.toggleClass = this.toggleClass.bind(this);
@@ -35,7 +35,7 @@ class SingleChat extends Component {
             files: false,
             counter: 0,
             response: {
-                message: "Might be the dexamethasone. Will order additional tests.",
+                message: this.props.chatResponseMessage,
                 read: true,
                 urgent: false
             },
@@ -49,30 +49,10 @@ class SingleChat extends Component {
                     urgentImg: "../../../icon/urgent.svg"
                 }
             ],
-            stateOfChat: "StateOne",
+            stateOfChat: this.props.stateOfChat,
             showGalleryModal: false,
             modalIsOpen: false
         };
-    }
-    componentWillReceiveProps(nextProps){
-        if(nextProps.stateOfChat === "StateOne"){
-            this.setState({
-                response: {
-                    message: "Might be the dexamethasone. Will order additional tests.",
-                    read: true,
-                    urgent: false
-                }
-            });
-        } else{
-            this.setState({
-                response: {
-                    message: "Dr. Gilbertson, are you available?",
-                    read: true,
-                    urgent: false
-                },
-                stateOfChat: "StateTwo"
-            });
-        }
     }
     openModal() {
         this.setState({modalIsOpen: true});
@@ -230,10 +210,12 @@ class SingleChat extends Component {
                             </li>
                         </ul>
                     </header>
-                    {this.state.stateOfChat==="StateOne" && <section className="message-received" id="messages">
-                        {this.getMessage()}
+                    <section className="message-received" id="messages">
+                        {this.state.stateOfChat==="StateOne" &&
+                            this.getMessage()
+                        }
                         <span id="scroll"></span>
-                    </section>}
+                    </section>
                     <section className="input-message" id="input-message">
                         <form>
                             <textarea placeholder="Send a message" id="send-message" onKeyDown={this.typeWriter}></textarea>

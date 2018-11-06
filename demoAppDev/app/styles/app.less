@@ -18,6 +18,10 @@ html {
         list-style-type: none;
     }
 }
+//this was important for the camera overlay to show the camera
+html{
+    background: transparent;
+}
 
 // Header container
 header {
@@ -268,8 +272,13 @@ div div.rectangle11 {
     margin: 10px;
     padding: 50px 20px;
     border-radius: 8px;
-    background: @icon-fill;
+    background: @font-black;
+    border: 9px solid @icon-not-selected;
     color: white;
+}
+.activity-selector-active{
+    border-style: inset;
+    border: 9px solid @icon-fill; 
 }
 
 .alert-container {

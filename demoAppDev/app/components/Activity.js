@@ -11,8 +11,18 @@ Activity = (props) => {
         <section className="page activity transition-item">
             <Header title={header.title} links={header.links}/>
             <section className="page-content"></section>
-            <div className="activity-selector" onClick={()=>{props.setStateOfChat(["StateOne","Ruth Franklin"])}}>Click here for Priority Messaging Scenario</div>
-            <div className="activity-selector" onClick={()=>{props.setStateOfChat(["StateTwo","Laurence Gilbertson"])}}>Click here for Image Annotation Scenario</div>
+                <div 
+                    className="activity-selector" 
+                    onClick={(event) => {props.setStateOfChat(["StateOne","Ruth Franklin","Might be the dexamethasone. Will order additional tests."]); event.target.classList.toggle("activity-selector-active")}}
+                >
+                    Click here for Priority Messaging Scenario
+                </div>
+                <div 
+                    className="activity-selector" 
+                    onClick={(event) => {props.setStateOfChat(["StateTwo","Laurence Gilbertson","Dr. Gilbertson, are you available?"]); event.target.classList.toggle("activity-selector-active")}}
+                >
+                    Click here for Image Annotation Scenario
+                </div>
         </section>
     );    
 };
