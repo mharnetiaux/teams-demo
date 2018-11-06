@@ -5,7 +5,8 @@ body,
 html {
     font-family: Helvetica;
     height: 100%;
-    background-color: @iphone-bg-grey;
+    // this is important for the camera overlay to show the camera, is it important to keep?
+    // background-color: @iphone-bg-grey;
     overflow:hidden;
     position: relative;
     font-size: 1rem;
@@ -19,9 +20,9 @@ html {
     }
 }
 //this was important for the camera overlay to show the camera
-html{
-    background: transparent;
-}
+// html{
+//     background: transparent;
+// }
 
 // Header container
 header {
@@ -119,6 +120,7 @@ footer:not(.footer-2) {
 .page {
     background-color: @white;
     position: fixed;
+    position: relative;
     left: -100%;
     visibility: hidden;
     width:100%;
