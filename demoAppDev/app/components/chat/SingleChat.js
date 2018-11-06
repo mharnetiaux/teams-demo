@@ -20,7 +20,8 @@ UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 
 class SingleChat extends Component {
     constructor() {
-        super(...arguments);
+        super();
+        this.backButton = this.backButton.bind(this);
         this.urgentMessage = this.urgentMessage.bind(this);
         this.toggleClass = this.toggleClass.bind(this);
         this.typeWriter = this.typeWriter.bind(this);
@@ -191,6 +192,18 @@ class SingleChat extends Component {
     toggleCameraControls() {
         this.setState({redirect: true});
     }
+
+    backButton(){
+        setTimeout(()=>{
+            document.getElementsByClassName("page")[0].classList.add("page-selected");
+        },100)
+    }
+
+    componentDidMount(){
+        setTimeout(()=>{
+            document.getElementById("single-chat").classList.add("open");
+        },50)
+    }
     
     render() {
         if (this.state.redirect) {
@@ -202,8 +215,7 @@ class SingleChat extends Component {
                     <header id="single-chat-header">
                         <h2 className="person"> {this.props.currentContact}</h2>
                         <ul className="icon-container">
-                            <li className="back-arrow"><Link to={{pathname: '/', state: {prev: 'true'}}}><SVG
-                                src={BackArrow}/></Link></li>
+                            <li className="back-arrow" onClick={this.backButton}><Link to='/'><SVG src={BackArrow}/></Link></li>
                             <li className="camera-icon"><SVG src={CameraIcon}/></li>
                             <li className="phone-icon"><SVG src={PhoneIcon}/></li>
                         </ul>

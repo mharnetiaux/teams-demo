@@ -15,8 +15,7 @@ class Header extends Component {
     render() {
         return(
             <header>
-                <Link className="alert-container" to='/'><section className={this.props.alert.on ? "alert": "none"}><img src={this.props.alert.image} width="20" height="20"/><span className="alert-message">{this.props.alert.content}</span></section></Link>
-                <nav className={this.props.alert.on ? "header header-alert": "header header-alert-none"}><h2 className="page-title">{this.props.title}</h2>{this.getHeaderContent()}</nav>
+                <nav className="header"><h2 className="page-title">{this.props.title}</h2>{this.getHeaderContent()}</nav>
             </header>
         );
     }

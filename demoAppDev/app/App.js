@@ -1,7 +1,7 @@
 import './styles/app.less';
 import React, {Component} from 'react';
 import {render} from 'react-dom';
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import {HashRouter as Router, Link, Route, Switch} from "react-router-dom";
 import Chat from './components/Chat';
 import SingleChat from './components/chat/SingleChat';
 import Activity from './components/Activity';
@@ -15,9 +15,21 @@ import IDTpatientList from './components/idt/PatientList';
 import CameraOverlayScreen from './components/CameraOverlayScreen';
 import Footer from './components/Footer';
 
+const Alert = () => {
+    const alertType = {
+        on: true,
+        content: "URGENT! Darrell Salyer's blood sugar is hi...",
+        image: "/icon/urgent-white.svg",
+    };
+    return(
+        <Link className="alert-container" to='/'><section className={alertType.on ? "alert": "none"}><img src={alertType.image} width="20" height="20"/><span className="alert-message">{alertType.content}</span></section></Link>
+    );
+},
 
-const DemoApp = (props) => (
+DemoApp = (props) => (
     <Router>
+        <span>
+        {Alert()}
         <Route
             render={({ location }) => {
                 return (
@@ -40,18 +52,21 @@ const DemoApp = (props) => (
                 );
             }}
         />
+        </span>
     </Router>
 );
+
+
 
 class App extends Component{
     constructor(props){
         super(props);
         this.state = {
-          kbShowing: false,
-          imgCameraSrc: undefined,
-          showImage: false,
-          stateOfChat: "StateOne",
-          currentContact: "Ruth Franklin"
+            kbShowing: false,
+            imgCameraSrc: undefined,
+            showImage: false,
+            stateOfChat: "StateOne",
+            currentContact: "Ruth Franklin"
         };
         this.resizeForKeyboard = this.resizeForKeyboard.bind(this);
         this.setImgCameraSrc = this.setImgCameraSrc.bind(this);
@@ -60,14 +75,16 @@ class App extends Component{
         this.setStateOfChat = this.setStateOfChat.bind(this);
     }
     render(){
-        return <DemoApp 
-            {...this.state} 
-            resizeForKeyboard={this.resizeForKeyboard}
-            showKeyboard={this.showKeyboard} 
-            setImgCameraSrc={this.setImgCameraSrc}
-            toggleShowImage={this.toggleShowImage}
-            setStateOfChat={this.setStateOfChat}
-        />
+        return (
+            <DemoApp
+                {...this.state}
+                resizeForKeyboard={this.resizeForKeyboard}
+                showKeyboard={this.showKeyboard}
+                setImgCameraSrc={this.setImgCameraSrc}
+                toggleShowImage={this.toggleShowImage}
+                setStateOfChat={this.setStateOfChat}
+            />
+        )
     }
     resizeForKeyboard(){
         console.log("resizeForKeybord called!!!!");

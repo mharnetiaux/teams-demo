@@ -84,6 +84,12 @@
         }
     }
 
+    .arrow {
+        transition-property: transform;
+        transition-duration: 0.3s;
+        transform: rotate(0deg);
+    }
+
     &.closed {
         .team-info {
             padding-bottom: 0.5rem;
@@ -102,7 +108,7 @@
 
         .arrow {
             transition-property: transform;
-            transition-duration: 0.5s;
+            transition-duration: 0.3s;
             transform: rotate(-90deg);
         }
     }

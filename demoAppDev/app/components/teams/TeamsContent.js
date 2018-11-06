@@ -11,6 +11,7 @@ class TeamsContent extends Component {
         this.state = {
             teams: [
                 {
+                    alert: true,
                     team: "Intensive Care Unit",
                     icon: "/images/intensive-care-unit.png",
                     arrow: "/images/arrow-open.png",
@@ -39,6 +40,7 @@ class TeamsContent extends Component {
                     ]
                 },
                 {
+                    alert: false,
                     team: "Contoso Hospital",
                     icon: "/images/contoso-hospital.png",
                     arrow: "/images/arrow-open.png",
@@ -67,6 +69,7 @@ class TeamsContent extends Component {
                     ]
                 },
                 {
+                    alert: false,
                     team: "Patient Safety",
                     icon: "/images/patient-safety.png",
                     arrow: "/images/arrow-open.png",
@@ -112,7 +115,7 @@ class TeamsContent extends Component {
             });
             
             return (
-                <section className={item.open ? "teams-content open": "teams-content closed"} key={key}>
+                <section className={item.alert ? "teams-content open": "teams-content closed"} key={key}>
                     <a className="team-info">
                         <img className="arrow" src={item.arrow}/>
                         <span className="team"><img src={item.icon}/></span>
