@@ -14,17 +14,12 @@ function date() {
 
 const header = {
     title: date(),
-    alert: {
-        on: true,
-        image: "/icon/urgent-white.svg",
-        content: "URGENT! Darrell Salyer's blood sugar is hi..."
-    },
     links:['menu','search','meetings-icon']
 },
 
 Meetings = () => (
     <section className="page meetings transition-item">
-        <Header title={header.title} links={header.links} alert={header.alert}/>
+        <Header title={header.title} links={header.links}/>
         <MeetingsContent/>
     </section>
 );

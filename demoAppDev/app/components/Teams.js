@@ -4,17 +4,12 @@ import Header from "./Header";
 
 const header = {
     title: "Teams",
-    alert: {
-        on: true,
-        image: "/icon/urgent-white.svg",
-        content: "URGENT! Darrell Salyer's blood sugar is hi..."
-    },
     links:['menu','search','teams-icon']
 },
 
 Teams = () => (
     <section className="page teams transition-item">
-        <Header title={header.title} alert={header.alert} links={header.links}/>
+        <Header title={header.title} links={header.links}/>
         <TeamsContent/>
     </section>
 );
