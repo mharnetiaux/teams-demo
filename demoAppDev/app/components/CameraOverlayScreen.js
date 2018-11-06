@@ -38,6 +38,12 @@ class CameraOverlayScreen extends Component{
         this.changeColors = this.changeColors.bind(this);
         this.toggleColorModal = this.toggleColorModal.bind(this);
     }
+    componentWillUnmount(){
+        window.setTimeout(() => {
+            document.getElementById("alertContainer").style.opacity = 1;
+            document.getElementById("appFooter").style.opacity = 1;
+        } , 200);
+    }
     render() {
         if (this.state.redirect) {
             return <Redirect push to="/chat-content"/>

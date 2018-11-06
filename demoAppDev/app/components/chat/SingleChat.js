@@ -221,7 +221,7 @@ class SingleChat extends Component {
                             <textarea placeholder="Send a message" id="send-message" onKeyDown={this.typeWriter}></textarea>
                         </form>
                     </section>
-                    <footer className="footer-2">
+                    <footer className="footer-2" id="single-chat-footer-2">
                         <ul className="footer-icons">
                             <li onClick={this.toggleGalleryModal}><SVG src={PhoneImagesIcon}/></li>
                             <li onClick={this.openModal} id="important"><SVG src={PhoneImportantIcon}/></li>
