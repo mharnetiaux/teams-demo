@@ -20,10 +20,9 @@ UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 
 class SingleChat extends Component {
     constructor() {
-        super(...arguments);
+        super();
         this.backButton = this.backButton.bind(this);
         this.urgentMessage = this.urgentMessage.bind(this);
-        this.toggleClass = this.toggleClass.bind(this);
         this.typeWriter = this.typeWriter.bind(this);
         this.toggleCameraControls = this.toggleCameraControls.bind(this);
         this.toggleGalleryModal = this.toggleGalleryModal.bind(this);
@@ -54,26 +53,20 @@ class SingleChat extends Component {
             modalIsOpen: false
         };
     }
+
+    /// Modal that closes when Important is selected
     openModal() {
         this.setState({modalIsOpen: true});
         const contentBody = document.getElementById("single-chat");
         contentBody.classList.add("urgent-open");
     }
 
+    /// Modal that opens when Important is selected
     closeModal() {
         this.setState({modalIsOpen: false});
         const contentBody = document.getElementById("single-chat");
         contentBody.classList.remove("urgent-open");
     }
-
-    /// Switch class on element
-    toggleClass() {
-        this.setState(
-            {
-                conversation: !this.state.conversation,
-                files: !this.state.files
-            });
-    };
 
     /// Pass string to tell input what to write on keyDown() event
     typeWriter(event) {
@@ -173,8 +166,9 @@ class SingleChat extends Component {
         this.setState({redirect: true});
     }
 
-    backButton(){
-        setTimeout(()=>{
+    /// Add selected class to previous page
+    backButton() {
+        setTimeout(() => {
             document.getElementsByClassName("page")[0].classList.add("page-selected");
         },100)
     }
@@ -200,12 +194,10 @@ class SingleChat extends Component {
                             <li className="phone-icon"><SVG src={PhoneIcon}/></li>
                         </ul>
                         <ul className="chat-sub-nav">
-                            <li className={this.state.conversation ? 'recent selected' : "recent"}
-                                onClick={this.toggleClass}>
+                            <li className={this.state.conversation ? 'recent selected' : "recent"}>
                                 <Link to={{pathname: '/chat-content', state: {next: 'false'}}}>Conversation</Link>
                             </li>
-                            <li className={this.state.files ? 'contacts selected' : "contacts"}
-                                onClick={this.toggleClass}>
+                            <li className={this.state.files ? 'contacts selected' : "contacts"}>
                                 <Link to={{pathname: '/chat-content', state: {next: 'false'}}}>Files</Link>
                             </li>
                         </ul>

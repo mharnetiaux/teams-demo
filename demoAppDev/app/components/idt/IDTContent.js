@@ -44,6 +44,7 @@ export default class IDTContent extends Component{
             ]
         };
     }
+
     toggleClass(navValue) {
         if(navValue === "chat"){
             this.setState({
@@ -60,8 +61,10 @@ export default class IDTContent extends Component{
         }
 
     };
-    backButton(){
-        setTimeout(()=>{
+
+    /// Add selected class to previous page
+    backButton() {
+        setTimeout(() => {
             document.getElementsByClassName("page")[0].classList.add("page-selected");
         },100)
     }

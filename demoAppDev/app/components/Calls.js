@@ -7,7 +7,7 @@ const header = {
 },
 
 Calls = () => (
-    <section className="page calls transition-item">
+    <section className="page calls">
         <Header title={header.title} links={header.links}/>
     </section>
 );
