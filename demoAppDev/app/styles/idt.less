@@ -322,7 +322,41 @@
     font-size: 12px;
     color: @icon-not-selected;
     background-color: @iphone-bg-grey;
-    padding: 16px 12px 12px 12px;
+    
+    .idt-patient-list-clicker-header {
+        padding: 16px 12px 12px 12px;
+    }
+    .idt-patient-list-clicker-header.open{
+        .collapseChevron{
+            display: inline-block;
+        }
+        .expandChevron{
+            display: none;
+        }
+    }
+    .idt-patient-list-clicker-header.closed{
+        .collapseChevron{
+            display: none;
+        }
+        .expandChevron{
+            display: inline-block;
+        }
+    }
+    .idt-patient-list-clicker-text{
+        background-color: #fff;
+        transition-property: visibility, max-height;
+        transition-duration: 1s, 1s;
+        visibility: visible;
+        max-height: 100vh;
+    }
+    &.closed {
+        .idt-patient-list-clicker-text{
+            visibility: hidden;
+            max-height: 0;
+            transition-property: visibility, max-height;
+            transition-duration: 0.4s, 0.4s;
+        }
+    }
 }
 .remove-patient-tab{
     background-color: @iphone-bg-grey;
@@ -357,13 +391,15 @@
     display: flex;
     border-bottom: 1px solid rgba(0,0,0,0.20);
     background-color: @white;
+    width: 95%;
+    margin-left: 5%;
     div{
         &:first-of-type {
             color: @icon-not-selected;
             min-width: 100px;
         }
         flex-grow: 1;
-        padding: 16px;
+        padding: 16px 16px 16px 0px;
         &:last-of-type {
             text-align: right;
             max-width: 205px;

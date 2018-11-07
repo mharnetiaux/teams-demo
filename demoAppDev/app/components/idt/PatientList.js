@@ -11,6 +11,8 @@ import PatientsListRightArrow from '../../../icon/patients-list-right-arrow.svg'
 import PlusIcon from '../../../icon/plus-add-new.svg';
 import DeleteIcon from '../../../icon/delete.svg';
 import RightArrow from '../../../icon/right-arrow.svg';
+import CollapseChevron from '../../../icon/collapse-chevron.svg';
+import ExpandChevron from '../../../icon/collapse-right-chevron.svg';
 
 const patientData = [
     {
@@ -141,6 +143,7 @@ export default class PatientList extends Component{
         this.typeWriter = this.typeWriter.bind(this);
         this.adjustHeight = this.adjustHeight.bind(this);
         this.addNote = this.addNote.bind(this);
+        this.toggleChevron = this.toggleChevron.bind(this);
     }
     render(){
         if (this.state.redirect) {
@@ -161,14 +164,45 @@ export default class PatientList extends Component{
                             <SVG className="patient-list-arrow-right" src={PatientsListRightArrow}/>
                         </div>
                         <div className="idt-patient-list-name">{this.state.salyerData.Name}</div>
-                        <div className="idt-patient-list-clicker open">Demographics</div>
-                        {this.getPatientData()}
-                        <div className="idt-patient-list-clicker open">Medications</div>
-                        {this.getMedications()}
-                        <div className="idt-patient-list-clicker closed">Vitals</div>
-                        <div className="idt-patient-list-clicker open">Details</div>
+                        
+                        <div id="demographicsID" className="idt-patient-list-clicker">
+                            <div 
+                                id="demographics-header" className="idt-patient-list-clicker-header open" 
+                                onClick={()=> this.toggleChevron(["demographics-header","demographicsID"])}
+                            >
+                                <SVG className="collapseChevron" src={CollapseChevron}/>
+                                <SVG className="expandChevron" src={ExpandChevron}/>
+                                Demographics
+                            </div>
+                            {this.getPatientData()}
+                        </div>
+                        
+                        <div id="medicationsID" className="idt-patient-list-clicker">
+                            <div 
+                                id="medications-header"    
+                                className="idt-patient-list-clicker-header open" 
+                                onClick={() => this.toggleChevron(["medications-header", "medicationsID"])}
+                            >
+                                <SVG className="collapseChevron" src={CollapseChevron}/>
+                                <SVG className="expandChevron" src={ExpandChevron}/>
+                                Medications
+                            </div>
+                            {this.getMedications()}
+                        </div>
+                        
+                        <div className="idt-patient-list-clicker closed">
+                            <SVG src={ExpandChevron}/>
+                            Vitals
+                        </div>
+                        <div className="idt-patient-list-clicker open">
+                            <SVG src={CollapseChevron}/>
+                            Details
+                        </div>
                         {this.getDetails()}
-                        <div className="idt-patient-list-clicker open">Notes</div>
+                        <div className="idt-patient-list-clicker open">
+                            <SVG src={CollapseChevron}/>
+                            Notes
+                        </div>
                         <section className="input-message" id="input-message">
                             <form>
                                 <textarea placeholder="Write a note..." id="send-message" onKeyDown={this.typeWriter}></textarea>
@@ -250,7 +284,7 @@ export default class PatientList extends Component{
             )
         }
         return (
-            <div>
+            <div className="idt-patient-list-clicker-text">
                 {data}
             </div>
         )
@@ -268,11 +302,13 @@ export default class PatientList extends Component{
         });
 
         return (
-            <section className="meeting">
-                <div className="meeting-time">
+            <div className="idt-patient-list-clicker-text">
+                <section className="meeting">
+                    <div className="meeting-time">
                     {meetingTime}
-                </div>
-            </section>
+                    </div>
+                </section>
+            </div>
         )
     }
     getNotes(){
@@ -336,7 +372,8 @@ export default class PatientList extends Component{
     }
     addNote(){
         console.log("adding note");
-        SalyerData.Notes.push(
+        SalyerData.Notes.splice(
+            0,0,
             {
                 NoteName: "Sylvia McCarthye",
                 NoteDate: "May 4, 11:36 AM",
@@ -350,6 +387,10 @@ export default class PatientList extends Component{
             },
             salyerData: SalyerData
         });
-
+    }
+    toggleChevron(idVar){
+        document.getElementById(idVar[0]).classList.toggle('open');
+        document.getElementById(idVar[0]).classList.toggle('closed');
+        document.getElementById(idVar[1]).classList.toggle('closed');
     }
 }

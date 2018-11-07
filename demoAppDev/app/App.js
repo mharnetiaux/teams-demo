@@ -22,7 +22,7 @@ const Alert = () => {
         image: "/icon/urgent-white.svg",
     };
     return(
-        <Link className="alert-container" to='/'><section className={alertType.on ? "alert": "none"}><img src={alertType.image} width="20" height="20"/><span className="alert-message">{alertType.content}</span></section></Link>
+        <Link id="alertContainer" className="alert-container" to='/'><section className={alertType.on ? "alert": "none"}><img src={alertType.image} width="20" height="20"/><span className="alert-message">{alertType.content}</span></section></Link>
     );
 },
 
@@ -38,9 +38,9 @@ DemoApp = (props) => (
                             <Route path="/calls" component={Calls}/>
                             <Route path="/meetings" component={Meetings}/>
                             <Route path="/teams" component={Teams}/>
-                            <Route path="/activity" render={routeProps => <Activity {...routeProps} activityClassName={props.activityClassName} setStateOfChat={props.setStateOfChat}/> }/>
+                            <Route path="/activity" render={routeProps => <Activity {...routeProps} setStateOfChat={props.setStateOfChat}/> }/>
                             <Route exact path="/" component={Chat}/>
-                            <Route path="/chat-content" render={routeProps => <SingleChat {...routeProps} stateOfChat={props.stateOfChat} currentContact={props.currentContact}/>} />
+                            <Route path="/chat-content" render={routeProps => <SingleChat {...routeProps} stateOfChat={props.stateOfChat} currentContact={props.currentContact} chatResponseMessage={props.chatResponseMessage}/>} />
                             <Route path="/IDT" component={IDTcontent} />
                             <Route path="/more" component={moreContent} />
                             <Route path="/idt-patient-list" component={IDTpatientList}/>
@@ -66,6 +66,7 @@ class App extends Component{
             imgCameraSrc: undefined,
             showImage: false,
             stateOfChat: "StateOne",
+            chatResponseMessage: "Might be the dexamethasone. Will order additional tests.",
             currentContact: "Ruth Franklin"
         };
         this.resizeForKeyboard = this.resizeForKeyboard.bind(this);
@@ -109,17 +110,34 @@ class App extends Component{
           // window.Keyboard.show(); doesn't work because iOS sucks, have to focus instead and change config.xml
           document.getElementById("send-message").focus();
           document.getElementById("send-message").style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 150px 200px; background-position: 5% 5%;`;
+            
+            const messageContainer = document.getElementById("messages"),
+                textNode = document.createElement("section"),
+                imageNode = document.createElement("section");
+            //add responses again
+            textNode.classList.add("response");
+            textNode.textContent = "Dr. Gilbertson, are you available?";
+            messageContainer.appendChild(textNode);
+
+            //add image
+            imageNode.classList.add("response-image");
+            imageNode.style.cssText = `background:url(${this.state.imgCameraSrc}) no-repeat;`;
+
+            messageContainer.appendChild(imageNode);
+
+            this.setState({
+                stateOfChat: "StateTwoPartB",
+                chatResponseMessage: "Need a consult."
+            });  
         }, 0);
     }
     setStateOfChat(arr){
         this.setState({
             stateOfChat: arr[0],
-            currentContact: arr[1]
+            currentContact: arr[1],
+            chatResponseMessage: arr[2]
         });
     }
-    // setStateOfChat(){
-    //     console.log("SETSTATE!");
-    // }
 }
 
 render((

@@ -18,6 +18,10 @@ html {
         list-style-type: none;
     }
 }
+//this was important for the camera overlay to show the camera
+// html{
+//     background: transparent;
+// }
 
 // Header container
 header {
@@ -183,7 +187,7 @@ footer:not(.footer-2) {
     background-color: rgba(0,0,0, 0.5);
 }
 .camera-modal-inner{
-    background: #FFFFFF;
+    background: @white;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -268,8 +272,13 @@ div div.rectangle11 {
     margin: 10px;
     padding: 50px 20px;
     border-radius: 8px;
-    background: @icon-fill;
+    background: @font-black;
+    border: 9px solid @icon-not-selected;
     color: white;
+}
+.activity-selector-active{
+    border-style: inset;
+    border: 9px solid @icon-fill; 
 }
 
 .alert-container {
