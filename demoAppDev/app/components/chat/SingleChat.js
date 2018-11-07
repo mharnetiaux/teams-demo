@@ -20,7 +20,7 @@ UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 
 class SingleChat extends Component {
     constructor() {
-        super();
+        super(...arguments);
         this.backButton = this.backButton.bind(this);
         this.urgentMessage = this.urgentMessage.bind(this);
         this.typeWriter = this.typeWriter.bind(this);
