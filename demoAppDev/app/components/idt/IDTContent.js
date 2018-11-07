@@ -8,7 +8,8 @@ import replyIcon from "../../../icon/reply-icon.svg";
 
 export default class IDTContent extends Component{
     constructor(){
-        super(...arguments);
+        super();
+        this.backButton = this.backButton.bind(this);
         this.toggleClass = this.toggleClass.bind(this);
         let date = new Date();
         this.state = {
@@ -59,6 +60,11 @@ export default class IDTContent extends Component{
         }
 
     };
+    backButton(){
+        setTimeout(()=>{
+            document.getElementsByClassName("page")[0].classList.add("page-selected");
+        },100)
+    }
 
     render() {
         const chatItem = this.state.chatItems.map(((item, key)=>{
@@ -91,7 +97,7 @@ export default class IDTContent extends Component{
                 <header>
                     <h2 className="person"> IDT</h2>
                     <ul className="icon-container">
-                        <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
+                        <li className="back-arrow" onClick={this.backButton}><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
                             src={BackArrow}/></Link></li>
                         <li className="follow-icon"><SVG src={FollowIcon}/></li>
                     </ul>
