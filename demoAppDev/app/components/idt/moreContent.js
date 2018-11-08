@@ -10,6 +10,7 @@ export default class moreContent extends Component{
         super(...arguments);
         let date = new Date();
         this.toggleClass = this.toggleClass.bind(this);
+        this.backButton = this.backButton.bind(this);
         this.state = {
             chat: false,
             files: false,
@@ -24,6 +25,7 @@ export default class moreContent extends Component{
             ]
         };
     }
+
     toggleClass(navValue) {
         if(navValue === "chat"){
             this.setState({
@@ -40,6 +42,13 @@ export default class moreContent extends Component{
         }
 
     };
+
+    /// Add selected class to previous page
+    backButton() {
+        setTimeout(() => {
+            document.getElementsByClassName("page")[0].classList.add("page-selected");
+        },100)
+    }
 
     render() {
         const idtMoreItem = this.state.idtMoreItems.map(((item, key)=>{
@@ -66,7 +75,7 @@ export default class moreContent extends Component{
                 <header>
                     <h2 className="person"> IDT</h2>
                     <ul className="icon-container">
-                        <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
+                        <li className="back-arrow" onClick={this.backButton}><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
                             src={BackArrow}/></Link></li>
                         <li className="follow-icon"><SVG src={FollowIcon}/></li>
                     </ul>
