@@ -81,6 +81,9 @@ const idtChatData = {
     chatTwo : "I did find one case report of a man who developed anit-neutrophil anitbodies while on antibiotics (antibodies against one type of WBC) which then disapped when he went off antibiotics. If so, WBC should bounce back sometime between 3-30 days.",
     chatThree : "Check out this new article! https://jamanetwork.com/journals/jama/article-abstract/2678616"
 };
+const todayDate = new Date();
+let copiedDate = new Date(todayDate.valueOf());
+let dateMonthAgo = new Date(copiedDate.setDate(todayDate.getDate() - 30));
 let SalyerData = {
     Name: "Salyer, Darrell",
     Demographics: 
@@ -104,11 +107,11 @@ let SalyerData = {
         },
         {
             MedicationName: "Acetominophen (Tylenol)",
-            MedicationNote: "325 mg oral tablet. Start at 02/26/18."
+            MedicationNote: `325 mg oral tablet. Start at ${dateMonthAgo.toLocaleString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' })}.`
         },
         {
             MedicationName: "Fluticasone Propionate",
-            MedicationNote: "50 mcg/act nasal flonase allergy relief suspension. Start 03/26/18."
+            MedicationNote: `50 mcg/act nasal flonase allergy relief suspension. Start ${dateMonthAgo.toLocaleString('en-US', { month: 'numeric', day: 'numeric', year: '2-digit' })}.`
         },
         {
             MedicationName: "Menthol",
@@ -125,7 +128,7 @@ let SalyerData = {
     Notes: [
         {
             NoteName: "Gerardo McGuire",
-            NoteDate: "May 4, 11:36 AM",
+            NoteDate: todayDate.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }),
             NoteText: "Followed up with family. Able to go home safely"
         }
     ]
@@ -200,19 +203,39 @@ export default class PatientList extends Component{
                             </div>
                             {this.getMedications()}
                         </div>
-                        
-                        <div className="idt-patient-list-clicker closed">
-                            <SVG src={ExpandChevron}/>
-                            Vitals
+                        <div id="vitalsID" className="idt-patient-list-clicker">
+                            <div 
+                                id="vitals-header"    
+                                className="idt-patient-list-clicker-header open" 
+                                onClick={() => this.toggleChevron(["vitals-header", "vitalsID"])}
+                            >
+                                <SVG className="collapseChevron" src={CollapseChevron}/>
+                                <SVG className="expandChevron" src={ExpandChevron}/>
+                                Vitals
+                            </div>
                         </div>
-                        <div className="idt-patient-list-clicker open">
-                            <SVG src={CollapseChevron}/>
-                            Details
+                        <div id="detailsID" className="idt-patient-list-clicker">
+                            <div 
+                                id="details-header"    
+                                className="idt-patient-list-clicker-header open" 
+                                onClick={() => this.toggleChevron(["details-header", "detailsID"])}
+                            >
+                                <SVG className="collapseChevron" src={CollapseChevron}/>
+                                <SVG className="expandChevron" src={ExpandChevron}/>
+                                Details
+                            </div>
+                            {this.getDetails()}
                         </div>
-                        {this.getDetails()}
-                        <div className="idt-patient-list-clicker open">
-                            <SVG src={CollapseChevron}/>
-                            Notes
+                        <div id="notesID" className="idt-patient-list-clicker">
+                            <div 
+                                id="notes-header"    
+                                className="idt-patient-list-clicker-header open" 
+                                onClick={() => this.toggleChevron(["notes-header", "notesID"])}
+                            >
+                                <SVG className="collapseChevron" src={CollapseChevron}/>
+                                <SVG className="expandChevron" src={ExpandChevron}/>
+                                Notes
+                            </div>
                         </div>
                         <section className="input-message" id="input-message">
                             <form>
@@ -323,26 +346,6 @@ export default class PatientList extends Component{
             </div>
         )
     }
-    getNotes(){
-        const meetingTime = this.state.salyerData.Notes.map((time)=>{
-            return(
-                <span className="time-container" key={time.NoteName}>
-                    <ul>
-                        <li className="title">{time.NoteName}</li>
-                        <li className="time">{time.NoteText}</li>
-                    </ul>
-                </span>
-            )
-        });
-
-        return (
-            <section className="meeting">
-                <div className="meeting-time">
-                    {meetingTime}
-                </div>
-            </section>
-        )
-    }
     getDetails(){
         let details = [];
         for(let key in this.state.salyerData.Details){
@@ -360,13 +363,37 @@ export default class PatientList extends Component{
             )
         }
         return (
+            <div className="idt-patient-list-clicker-text">
+                <section className="meeting">
+                    <div className="meeting-time">
+                        {details}
+                    </div>
+                </section>
+            </div>
+        )
+    }
+    getNotes(){
+        const meetingTime = this.state.salyerData.Notes.map((time)=>{
+            return(
+                <span className="time-container" key={time.NoteName}>
+                    <ul>
+                        <li className="title">{time.NoteName}</li>
+                        <li className="time">{time.NoteDate}</li>
+                        <li className="time">{time.NoteText}</li>
+                    </ul>
+                </span>
+            )
+        });
+
+        return (
             <section className="meeting">
                 <div className="meeting-time">
-                    {details}
+                    {meetingTime}
                 </div>
             </section>
         )
     }
+
     /// Pass string to tell input what to write on keyDown() event
     typeWriter(event) {
         event.preventDefault();
@@ -384,11 +411,13 @@ export default class PatientList extends Component{
     }
     addNote(){
         console.log("adding note");
+        let newDate = new Date();
+  
         SalyerData.Notes.splice(
             0,0,
             {
                 NoteName: "Sylvia McCarthye",
-                NoteDate: "May 4, 11:36 AM",
+                NoteDate: newDate.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', hour12: true }),
                 NoteText: "Monitor blood sugar and order additional CT scan of left lung in two weeks."
             }
         );
