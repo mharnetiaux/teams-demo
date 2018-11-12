@@ -64,6 +64,16 @@ const patientData = [
         patientName: "Blackwell, Margarita",
         patientLocation: "Sher 2-A Med Surg..",
         patientRoom: "6"
+    },
+    {
+        patientName: "Parker, Elva",
+        patientLocation: "Sher 2-A Med Surg..",
+        patientRoom: "7"
+    },
+    {
+        patientName: "Browning, Kristin",
+        patientLocation: "Sher 2-A Med Surg..",
+        patientRoom: "8"
     }
 ]
 const idtChatData = {
@@ -150,7 +160,8 @@ export default class PatientList extends Component{
             return (
                 <section className="idt-chat">
                     <header>
-                        <h2 className="person"> Patients</h2>
+                    <h2 className="header-center">Patients</h2>
+                    <h1 className="header-center header-center-under">Contoso Hospital / IDT</h1>
                         <ul className="icon-container">
                             <li className="back-close"><Link to={{pathname: '/more', state: {prev: 'true'}}}><SVG
                                 src={CloseHeader}/></Link></li>
@@ -224,7 +235,8 @@ export default class PatientList extends Component{
             return (
                 <section className="idt-chat">
                     <header>
-                        <h2 className="person">Patients</h2>
+                        <h2 className="header-center">Patients</h2>
+                        <h1 className="header-center header-center-under">Contoso Hospital / IDT</h1>
                         <ul className="icon-container">
                             <li className="back-close"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
                                 src={CloseHeader}/></Link></li>

@@ -64,7 +64,8 @@ export default class moreContent extends Component{
         return (
             <section className="idt-chat">
                 <header>
-                    <h2 className="person"> IDT</h2>
+                <h2 className="header-center header-center-purple">IDT</h2>
+                    <h1 className="header-center header-center-under">Contoso Hospital</h1>
                     <ul className="icon-container">
                         <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
                             src={BackArrow}/></Link></li>

@@ -93,7 +93,7 @@ export default class filesContent extends Component{
     render() {
         const idtFileItem = this.state.idtFileItems.map(((item, key)=>{
             return (
-                <Link to={{pathname:'/idt-patient-list', state:{prev:'true'}}} key={key}>
+                // <Link to={{pathname:'/idt-patient-list', state:{prev:'true'}}} key={key}>
                     <section className="idt-files" key={key}>
                         <span className="idt-files-container">
                             {item.avatar ? <img src={item.avatar} alt="file picture"/> : <SVG src={PhoneImagesIcon}/>}
@@ -103,14 +103,15 @@ export default class filesContent extends Component{
                             <li className="message-info"><span className="message">{item.message}{item.time}</span></li>
                         </ul>
                     </section>
-                </Link>
+                // </Link>
             );
         }));
 
         return (
             <section className="idt-chat">
                 <header>
-                    <h2 className="person"> IDT</h2>
+                    <h2 className="header-center header-center-purple">IDT</h2>
+                    <h1 className="header-center header-center-under">Contoso Hospital</h1>
                     <ul className="icon-container">
                         <li className="back-arrow"><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
                             src={BackArrow}/></Link></li>

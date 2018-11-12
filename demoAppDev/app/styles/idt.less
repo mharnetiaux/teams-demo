@@ -53,8 +53,8 @@
     padding: 1rem 0;
     position: relative;
     display: flex;
-    width: 96%;
-    margin: 0 0 0 16px;
+    width: 100%;
+    background: @white;
 
     &::after {
       position: absolute;
@@ -71,8 +71,7 @@
     }
   
     .idt-patient-container {
-        margin-right: 0.5rem;
-        
+        margin: 0 0.5rem 0 16px;
         img{
             width: 44px;
         }
@@ -109,7 +108,7 @@
         display: flex;
         margin-right: 17px;
         img{
-            width: 12px;
+            width: 9px;
         }
     } 
 }
@@ -142,9 +141,19 @@
     border-top: 1px solid rgba(0,0,0,0.20);
     border-bottom: 1px solid rgba(0,0,0,0.20);
     display: flex;
+    background: @white;
 }
 .idt-list-header div{
     margin: 10px;
+}
+.idt-list-header .idt-list-header-name{
+    margin: 10px 5px 10px 15px;
+}
+.idt-list-header .idt-list-header-location{
+    margin: 10px 0px 10px 0px;
+}
+.idt-list-header .idt-list-header-room{
+    margin: 10px 10px 10px 0px;
 }
 .idt-list-header-name{
     flex-grow: 1;
@@ -152,7 +161,7 @@
 }
 .idt-list-header-location{
     flex-grow: 1;
-    max-width: 183px;
+    max-width: 176px;
 }
 .idt-list-header-room{
     flex-grow: 1;
@@ -176,6 +185,7 @@
 .idt-add-new{
     padding: 16px;
     border-bottom: 1px solid rgba(0,0,0,0.20);
+    background: @white;
     .idt-add-new-svg{
         margin-left: 9px;
         width: 1.4rem;
@@ -242,6 +252,9 @@
             }
         }
     }
+    .patient-list{
+        background: @white;
+    }
 }
 .idt-patient-list-add-new{
     font-size: 15px;
@@ -249,6 +262,7 @@
     font-weight: 300;
     color: @icon-fill;
     padding: 16px;
+    background: @white;
     .plus-icon{
         fill: @icon-fill;
         svg{
@@ -380,6 +394,28 @@
         }
     }
 }
+.new-conversation-tab{
+    background-color: @iphone-bg-grey;
+    height: 44px;
+    .new-conversation-tab-inner{
+        border-radius: 5px;
+        background-color: @white;
+        color: @icon-fill;
+        font-size: 12px;
+        padding: 10px;
+        top: 4px;
+        left: 4px;
+        width: 93%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5px;
+        .new-conversation-icon svg{
+            width: 15px;
+            fill: @icon-fill;
+        }
+    }
+}
 .idt-patient-list .meeting .time-container ul{
     border-left: 1px solid rgba(0,0,0,0.20);
     margin: 1rem 0;
@@ -411,11 +447,12 @@
 
 //files
 .idt-files {
-    padding: 1rem 0;
+    padding: 1rem 0 1rem 1rem;
     position: relative;
     display: flex;
     width: 100%;
-    margin: 0px;
+    margin-bottom: 1px;
+    background-color: @white;
 
     &::after {
       position: absolute;
@@ -432,7 +469,7 @@
     }
   
     .idt-files-container {
-        margin-left: 24px;
+        // margin-left: 24px;
         margin-right: 24px;
         padding-top: 8px;
         
@@ -475,18 +512,29 @@
     display: flex;
     flex-direction: column;
 
+    .idt-chat-item{
+        border-bottom: 10px solid rgba(0,0,0,0.10);
+    }
     header {
         padding-top: 2rem;
         position: relative;
 
-        .person {
+        .header-center {
             position: absolute;
             text-align: center;
             left: 0;
             right: 0;
-            color: @icon-fill;
             width: 50%;
             margin: auto;
+        }
+        .header-center-purple{
+            color: @icon-fill;
+        }
+        .header-center-under {
+            line-height: 4.5;
+            font-size: 11px;
+            color: @font-grey;
+            z-index: 2;
         }
         .icon-container {
             width: 95%;
@@ -513,29 +561,102 @@
             }
         }
     }
+    .chat-item-scroll{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .idt-meet-container {
+        padding: 1rem 0;
+        position: relative;
+        width: 100%;
+        margin: auto;
+        background-color: @white;
+        ul {
+            flex: 1
+        }
+        .meeting-info {
+            color: @font-grey;
+            display: flex;
+            justify-content: space-between; 
+            flex-direction: column;
+            &:first-of-type {
+                color: @black;
+                margin-bottom: 0.2rem;
+            }  
+            .blurred-chat-container{
+                position: relative;
+                width: 75%;
+                margin: auto;
+                .blurred-chat {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    padding-top: 18px;
+                    
+                }
+                .blurred-chat-text{
+                    position: absolute;
+                    top: 20px;
+                    color: white;
+                    width: 96%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding: 2%;
+                    font-weight: lighter;
+                }
+            }
+            .meeting-participants{
+                display: flex;
+                padding: 0 0 15px 50px;
+                border-bottom: 1px solid rgba(0,0,0,0.20);
+                .meeting-participant-avatar{
+                    width: 44px;
+                    height: 44px;
+                    margin-right: 0.5rem;
+                }
+            }   
+        }
+    
+        .idt-meet-header {
+            align-items: center;
+            display: flex;
+            padding-left: 1rem;
+      
+            img{
+                width: 44px;
+                margin-right: 0.5rem;
+            }
+            .chat-header-date{
+              color: @font-grey;
+              font-size: 12px;
+            }
+          }
+    }
     .idt-chat-container {
         padding: 1rem 1rem;
         position: relative;
         width: 100%;
         margin: auto;
         background-color: @white;
-        &::after {
-            position: absolute;
-            height: 1px;
-            width: 100%;
-            background: @black;
-            opacity: 0.1;
-            content: "";
-            bottom: 0;
-        }
-        ul {
-            flex: 1;
-        }
+        // &::after {
+        //     position: absolute;
+        //     height: 1px;
+        //     width: 100%;
+        //     background: @black;
+        //     opacity: 0.1;
+        //     content: "";
+        //     bottom: 0;
+        // }
+        // ul {
+        //     flex: 1;
+        // }
     
         .message-info {
             color: @font-grey;
             display: flex;
             justify-content: space-between; 
+            flex-direction: column;
             &:first-of-type {
                 color: @black;
                 margin-bottom: 0.2rem;
@@ -548,11 +669,17 @@
                 font-size: 15px;
                 color: @font-grey;
             }
+            img {
+                display: block;
+                width: 75%;
+                height: auto;
+            }
         }
     
         .idt-avatar-container {
           align-items: center;
           display: flex;
+          width: 96%;
     
           img{
               width: 44px;
@@ -562,6 +689,13 @@
             color: @font-grey;
             font-size: 12px;
           }
+          .ellipses-span{
+            margin-left: auto;
+            align-self: flex-start;
+            img{
+                width: 14px;
+            }
+          }
         }
     }
     .reply-box{
@@ -570,7 +704,9 @@
         background-color: @iphone-bg-grey;
         
         .replies{
-            padding: 1rem;
+            padding: 1rem 1rem 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.20);
+            margin-left: 1rem;
         }
         .reply-tab{
             padding: 1rem;
