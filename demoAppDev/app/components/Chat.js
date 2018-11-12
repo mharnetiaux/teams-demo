@@ -9,7 +9,7 @@ const header = {
 },
 
 Chat = () => (
-    <section className="page chat transition-item">
+    <section className="page chat">
         <Header title={header.title} links={header.links}/>
         <SubNav/>
         <ChatContent/>

@@ -8,7 +8,7 @@ const header = {
 },
 
 Teams = () => (
-    <section className="page teams transition-item">
+    <section className="page teams">
         <Header title={header.title} links={header.links}/>
         <TeamsContent/>
     </section>

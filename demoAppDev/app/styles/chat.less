@@ -3,7 +3,18 @@
     display: flex;
     text-align: center;
     width: 100%;
-    background: transparent;
+    background: @iphone-bg-grey;
+    z-index: 1;
+
+    &::after {
+        position: absolute;
+        height: 0.1rem;
+        width: 100%;
+        background: @font-grey;
+        content: "";
+        opacity: 0.1;
+        bottom: 0;
+    }
 
     li {
         padding: 1rem 0;
@@ -14,6 +25,11 @@
             color: @icon-fill;
         }
     }
+}
+
+.page-content.chat {
+    padding-top: 3rem;
+    max-height: 27rem;
 }
 
 .chat-content {

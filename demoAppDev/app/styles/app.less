@@ -5,7 +5,6 @@ body,
 html {
     font-family: Helvetica;
     height: 100%;
-    background-color: @iphone-bg-grey;
     overflow: hidden;
     position: relative;
     font-size: 1rem;
@@ -18,16 +17,13 @@ html {
         list-style-type: none;
     }
 }
-//this was important for the camera overlay to show the camera
-// html{
-//     background: transparent;
-// }
 
-// Header container
+/// Header container
 header {
+    padding-top: 1rem;
     position: relative;
     background-color: @iphone-bg-grey;
-    &::after{
+    &::after {
         position: absolute;
         height:0.1rem;
         width: 100%;
@@ -58,7 +54,7 @@ header {
     }
 }
 
-// Footer
+/// Footer
 footer:not(.footer-2) {
     background: url(~"/images/footer-bg.png") no-repeat top center;
     background-color: @iphone-bg-grey;
@@ -66,6 +62,16 @@ footer:not(.footer-2) {
     bottom: 0;
     width: 100%;
     padding-top: 1rem;
+
+    &::before {
+        position: absolute;
+        height: 0.1rem;
+        width: 100%;
+        background: @font-grey;
+        content: "";
+        opacity: 0.1;
+        top: 0;
+    }
     .nav-footer {
         width: 95%;
         padding-top: 1rem;
@@ -85,13 +91,6 @@ footer:not(.footer-2) {
             }
         }
     }
-}
-
-.message-chat {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
 }
 
 // Back to main menu button
@@ -118,7 +117,7 @@ footer:not(.footer-2) {
 
 .page {
     background-color: @white;
-    position: fixed;
+    position: relative;
     left: -100%;
     visibility: hidden;
     width:100%;
@@ -154,11 +153,6 @@ footer:not(.footer-2) {
     position: fixed;
     width: 100%;
     max-height: 30rem;
-    background: transparent;
-
-    &.chat {
-        padding: 2rem 0;
-    }
 }
 
 .page-title{
@@ -185,6 +179,7 @@ footer:not(.footer-2) {
     bottom: 0;
     margin: auto;
     background-color: rgba(0,0,0, 0.5);
+    z-index: 1;
 }
 .camera-modal-inner{
     background: @white;
@@ -283,7 +278,6 @@ div div.rectangle11 {
 
 .alert-container {
     display: block;
-    margin-bottom: 1rem;
     .alert {
         padding: 2rem 0 1rem 0;
         width: 100%;

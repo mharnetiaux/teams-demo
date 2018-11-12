@@ -400,6 +400,7 @@ export default class PatientList extends Component{
             salyerData: SalyerData
         });
     }
+
     toggleChevron(idVar){
         document.getElementById(idVar[0]).classList.toggle('open');
         document.getElementById(idVar[0]).classList.toggle('closed');

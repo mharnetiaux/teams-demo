@@ -8,7 +8,7 @@ const header = {
 
 Activity = (props) => {
     return (
-        <section className="page activity transition-item">
+        <section className="page activity">
             <Header title={header.title} links={header.links}/>
             <section className="page-content"></section>
                 <div 

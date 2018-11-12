@@ -18,7 +18,7 @@ const header = {
 },
 
 Meetings = () => (
-    <section className="page meetings transition-item">
+    <section className="page meetings">
         <Header title={header.title} links={header.links}/>
         <MeetingsContent/>
     </section>
