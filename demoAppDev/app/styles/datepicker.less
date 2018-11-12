@@ -381,6 +381,26 @@
 .react-datepicker__day--today {
   font-weight: bold;
 }
+.react-datepicker__day--today:after {
+  content:"\A";
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background: @white;
+  display:inline-block;
+  margin: 20px -9px;
+  position: absolute;
+}
+.react-datepicker__day--highlighted-custom-3:after {
+  content:"\A";
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background: @icon-not-selected;
+  display:inline-block;
+  margin: 20px -9px;
+  position: absolute;
+}
 
 .react-datepicker__day--highlighted {
   border-radius: 0.3rem;

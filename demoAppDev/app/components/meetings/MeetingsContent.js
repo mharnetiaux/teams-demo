@@ -6,6 +6,15 @@ class MeetingsContent extends Component {
 
     constructor() {
         super();
+        this.highlightWithRanges = [
+            { "react-datepicker__day--highlighted-custom-3": [
+              moment().subtract(1, "days"),
+              moment().add(1, "days"),
+              moment().add(2, "days"),
+              moment().add(4, "days"),
+              moment().add(8, "days") ]
+            }
+        ]
         this.state = {
             startDate: moment(),
             days : ["S","M","T","W","T","F","S"],
@@ -124,6 +133,7 @@ class MeetingsContent extends Component {
                 <DatePicker
                     inline
                     selected={this.state.startDate}
+                    highlightDates={this.highlightWithRanges}
                 />
                 {this.getMeetings()}
             </section>
