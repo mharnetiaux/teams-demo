@@ -370,6 +370,12 @@
 }
 
 .react-datepicker__day {
+  position: relative;
+  width: 2rem;
+  line-height: 2rem;
+}
+
+.react-datepicker__day {
   cursor: pointer;
 }
 
@@ -388,8 +394,11 @@
   border-radius:50%;
   background: @white;
   display:inline-block;
-  margin: 20px -9px;
+  margin: auto;
+  left: 0;
+  right: 0;
   position: absolute;
+  bottom: 0.25rem;
 }
 .react-datepicker__day--highlighted-custom-3:after {
   content:"\A";
@@ -398,7 +407,10 @@
   border-radius:50%;
   background: @icon-not-selected;
   display:inline-block;
-  margin: 20px -9px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0.25rem;
   position: absolute;
 }
 

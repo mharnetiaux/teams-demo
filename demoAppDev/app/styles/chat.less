@@ -6,6 +6,15 @@
     background: @iphone-bg-grey;
     z-index: 1;
 
+    &::before {
+        content: "";
+        position: absolute;
+        height: 0.2rem;
+        width: 50%;
+        bottom: 0;
+        background: @icon-fill;
+    }
+
     &::after {
         position: absolute;
         height: 0.1rem;
