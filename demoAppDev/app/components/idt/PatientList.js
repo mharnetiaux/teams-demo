@@ -239,7 +239,7 @@ export default class PatientList extends Component{
                         </div>
                         <section className="input-message" id="input-message">
                             <form>
-                                <textarea placeholder="Write a note..." id="send-message" onKeyDown={this.typeWriter}></textarea>
+                                <textarea placeholder="Write a note..." id="send-new-note" onKeyDown={this.typeWriter}></textarea>
                             </form>
                             <div id="send-arrow" onClick={this.addNote}><SVG src={RightArrow}/></div>
                         </section>
@@ -375,7 +375,7 @@ export default class PatientList extends Component{
     getNotes(){
         const meetingTime = this.state.salyerData.Notes.map((time)=>{
             return(
-                <span className="time-container" key={time.NoteName}>
+                <span className="time-container no-left-border" key={time.NoteName}>
                     <ul>
                         <li className="title">{time.NoteName}</li>
                         <li className="time">{time.NoteDate}</li>
@@ -399,14 +399,14 @@ export default class PatientList extends Component{
         event.preventDefault();
         // document.getElementById("send-arrow").classList.add("send");
         if(this.state.counter < this.state.response.message.length){
-            document.getElementById("send-message").value += this.state.response.message.charAt(this.state.counter);
+            document.getElementById("send-new-note").value += this.state.response.message.charAt(this.state.counter);
             this.state.counter++;
             this.adjustHeight();
         }
     }
     /// Adjust height of <textarea> depending on size of content
     adjustHeight() {
-        const a = document.getElementById("send-message");
+        const a = document.getElementById("send-new-note");
         a.style.height = (a.scrollHeight > a.clientHeight) ? (a.scrollHeight - 34) + "px" : "1px";
     }
     addNote(){
@@ -428,6 +428,9 @@ export default class PatientList extends Component{
             },
             salyerData: SalyerData
         });
+        const textAreaElement = document.getElementById("send-new-note");
+        textAreaElement.value = "";
+        textAreaElement.style.height = "1rem";
     }
 
     toggleChevron(idVar){

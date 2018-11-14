@@ -63,10 +63,12 @@
             }
         }
     }
+
+    #send-message:focus::-webkit-input-placeholder { color:transparent; }
     
     .input-message {
         flex: 1;
-
+        
         span {
             display: none;
         }
@@ -91,6 +93,13 @@
                 &::placeholder {
                     line-height: 16px;
                 }
+            }
+            .image-send-message{
+                padding: 0px 0px 0px 0px; 
+                max-height: 210px;
+                height: 210px;  
+                background-size: 150px 200px; 
+                background-position: 5% 5%;
             }
         }
 
@@ -218,8 +227,8 @@
             position: relative;
             border-radius: 4px;
             margin: 1rem 2rem 1rem auto;
-            width: 50%;
-            height: 250px;
+            width: 40%;
+            height: 350px;
             padding: 0.5rem;
         }
     }

@@ -3,6 +3,9 @@ import { Redirect } from 'react-router';
 import PropTypes from 'prop-types';
 import CanvasElement from './CanvasElement';
 import ColorSelectorButton from './ColorSelectorButton';
+import SVG from 'react-inlinesvg';
+import BackArrow from '../../icon/back-arrow.svg';
+import ChevronRight from '../../icon/ChevronRight.svg';
 
 const colors = ['#CF021A', '#0DAC37', '#1E5EFE', '#FFF600', '#FFFFFF', '#000000'];
 
@@ -93,7 +96,13 @@ class CameraOverlayScreen extends Component{
                                         <span></span>
                                     </div>
                                     <div className={`btn DoneIcon`} onClick={this.setCanvasImage}>
-                                        <span className="doneSpan">Done <span className="doneSpan2">></span></span><span></span><div className="arrowy righty"></div>
+                                        <span className="doneSpan">Done<SVG src={ChevronRight}/> 
+                                            {/* <span className="doneSpan2">>
+                                            </span> */}
+                                        </span>
+                                        {/* <span>
+                                        </span>
+                                        <div className="arrowy righty"></div> */}
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +131,7 @@ class CameraOverlayScreen extends Component{
     //<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: content:;">
     cameraTakePicture(event) {         
         let imageSrcData = undefined;
-        window.CameraPreview.takePicture({width:500, height: 800, quality: 50}, onSuccess, onFail);
+        window.CameraPreview.takePicture({width:500, height: 800, quality: 70}, onSuccess, onFail);
         function onSuccess(imageData) { 
             console.log("GOT PICTURE!!!!!!!!");
             imageSrcData = 'data:image/jpeg;base64,' +imageData;       

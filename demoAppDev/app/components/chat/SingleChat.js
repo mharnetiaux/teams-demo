@@ -108,26 +108,47 @@ class SingleChat extends Component {
               textNode = document.createElement("section"),
               textAreaElement = document.getElementById("send-message");
 
-        textNode.classList.add("response");
-        document.getElementById("send").classList.remove("send");
-        textNode.textContent = this.state.response.message;
-        messageContainer.appendChild(textNode);
-        textAreaElement.value = "";
-        textAreaElement.style.height = "1rem";
-        document.getElementById("input-message").classList.remove("urgent");
+        if(this.props.shouldShowImageInsteadOfSendMessage){
+            document.getElementById("imageNodeID").style.cssText = `opacity:0`;
+            this.props.toggleShouldShowImageInsteadOfSendMessage();
 
-        if(this.state.response.urgent) {
-            textNode.classList.add("urgent");
-        }else {
-            textNode.classList.remove("urgent");
-        }
+            document.getElementById("send").classList.remove("send");
+            textAreaElement.value = "";
+            textAreaElement.style.height = "1rem";
 
-        this.setState({
-            counter: 0,
-            response: {
-                message: "Order a CT scan of Darell Salyer's left lung before today's IDT."
+            this.setState({
+                counter: 0,
+                response: {
+                    message: "Need a consult."
+                }
+            });
+            
+        } else{ 
+            textNode.classList.add("response");
+            document.getElementById("send").classList.remove("send");
+            textNode.textContent = this.state.response.message;
+            messageContainer.appendChild(textNode);
+            textAreaElement.value = "";
+            textAreaElement.style.height = "1rem";
+            document.getElementById("input-message").classList.remove("urgent");
+
+            if(this.state.response.urgent) {
+                textNode.classList.add("urgent");
+            }else {
+                textNode.classList.remove("urgent");
             }
-        });
+
+            this.setState({
+                counter: 0,
+                response: {
+                    message: "Order a CT scan of Darell Salyer's left lung before today's IDT."
+                }
+            });
+        }
+        
+        textAreaElement.classList.remove("image-send-message");
+        textAreaElement.style.cssText = `background: none`;
+        textAreaElement.style.height = "1rem";
     }
 
     /// Mark message as URGENT

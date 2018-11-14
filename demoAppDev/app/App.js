@@ -40,7 +40,7 @@ DemoApp = (props) => (
                             <Route path="/teams" component={Teams}/>
                             <Route path="/activity" render={routeProps => <Activity {...routeProps} setStateOfChat={props.setStateOfChat}/> }/>
                             <Route exact path="/" component={Chat}/>
-                            <Route path="/chat-content" render={routeProps => <SingleChat {...routeProps} stateOfChat={props.stateOfChat} currentContact={props.currentContact} chatResponseMessage={props.chatResponseMessage}/>} />
+                            <Route path="/chat-content" render={routeProps => <SingleChat {...routeProps} stateOfChat={props.stateOfChat} currentContact={props.currentContact} chatResponseMessage={props.chatResponseMessage} shouldShowImageInsteadOfSendMessage={props.shouldShowImageInsteadOfSendMessage} toggleShouldShowImageInsteadOfSendMessage={props.toggleShouldShowImageInsteadOfSendMessage}/>} />
                             <Route path="/IDT" component={IDTcontent} />
                             <Route path="/more" component={moreContent} />
                             <Route path="/idt-patient-list" component={IDTpatientList}/>
@@ -67,13 +67,15 @@ class App extends Component{
             showImage: false,
             stateOfChat: "StateOne",
             chatResponseMessage: "Might be the dexamethasone. Will order additional tests.",
-            currentContact: "Ruth Franklin"
+            currentContact: "Ruth Franklin",
+            shouldShowImageInsteadOfSendMessage: false
         };
         this.resizeForKeyboard = this.resizeForKeyboard.bind(this);
         this.setImgCameraSrc = this.setImgCameraSrc.bind(this);
         this.showKeyboard = this.showKeyboard.bind(this);
         this.toggleShowImage = this.toggleShowImage.bind(this);
         this.setStateOfChat = this.setStateOfChat.bind(this);
+        this.toggleShouldShowImageInsteadOfSendMessage = this.toggleShouldShowImageInsteadOfSendMessage.bind(this);
     }
     render(){
         return (
@@ -106,10 +108,14 @@ class App extends Component{
     }
     showKeyboard(){
         window.setTimeout(() =>{
-          console.log("SHOWING KEYBOARD!!!!!!!!");
-          // window.Keyboard.show(); doesn't work because iOS sucks, have to focus instead and change config.xml
-          document.getElementById("send-message").focus();
-          document.getElementById("send-message").style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 150px 200px; background-position: 5% 5%;`;
+            console.log("SHOWING KEYBOARD!!!!!!!!");
+            // window.Keyboard.show(); doesn't work because iOS sucks, have to focus instead and change config.xml
+            const a = document.getElementById("send-message");
+            a.focus();
+            a.style.cssText = `background:url(${this.state.imgCameraSrc}) no-repeat;`;
+            a.classList.add("image-send-message");
+            a.value = "";
+            document.getElementById("send").classList.add("send");
             
             const messageContainer = document.getElementById("messages"),
                 textNode = document.createElement("section"),
@@ -120,16 +126,23 @@ class App extends Component{
             messageContainer.appendChild(textNode);
 
             //add image
+            imageNode.id = "imageNodeID";
             imageNode.classList.add("response-image");
-            imageNode.style.cssText = `background:url(${this.state.imgCameraSrc}) no-repeat;`;
+            imageNode.style.cssText = `background:url(${this.state.imgCameraSrc}) no-repeat;  background-size: 300px 400px; background-position: 0% 0%; opacity:1;`;
 
             messageContainer.appendChild(imageNode);
 
             this.setState({
                 stateOfChat: "StateTwoPartB",
-                chatResponseMessage: "Need a consult."
+                chatResponseMessage: "Need a consult.",
+                shouldShowImageInsteadOfSendMessage: true
             });  
         }, 0);
+    }
+    toggleShouldShowImageInsteadOfSendMessage(){
+        this.setState({
+            shouldShowImageInsteadOfSendMessage: false
+        });  
     }
     setStateOfChat(arr){
         this.setState({
