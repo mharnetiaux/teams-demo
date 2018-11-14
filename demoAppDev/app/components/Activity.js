@@ -15,13 +15,13 @@ Activity = (props) => {
                     className="activity-selector" 
                     onClick={(event) => {props.setStateOfChat(["StateOne","Ruth Franklin","Might be the dexamethasone. Will order additional tests."]); event.target.classList.toggle("activity-selector-active")}}
                 >
-                    Click here for Priority Messaging Scenario
+                    Priority Messaging Scenario
                 </div>
                 <div 
                     className="activity-selector" 
                     onClick={(event) => {props.setStateOfChat(["StateTwo","Laurence Gilbertson","Dr. Gilbertson, are you available?"]); event.target.classList.toggle("activity-selector-active")}}
                 >
-                    Click here for Image Annotation Scenario
+                    Image Annotation Scenario
                 </div>
         </section>
     );    
