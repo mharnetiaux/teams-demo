@@ -159,7 +159,7 @@ export default class IDTContent extends Component{
                 <div className="new-conversation-tab">
                     <div className="new-conversation-tab-inner">
                         <SVG className="new-conversation-icon" src={ConversationNewIcon}/>
-                        <span>Start a new conversation</span>
+                        <span style={{margin: "3px 0 0 0"}}>Start a new conversation</span>
                     </div>
                  </div>
             </section>
