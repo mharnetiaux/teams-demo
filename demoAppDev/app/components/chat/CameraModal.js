@@ -59,9 +59,6 @@ class CameraModal extends Component{
             document.getElementById("alertContainer").style.opacity = 0;
             document.getElementById("appFooter").style.opacity = 0;
         } , 200);
-
-
-        // window.CameraPreview.show();
     }
 }
 

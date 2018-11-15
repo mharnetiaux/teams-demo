@@ -5,14 +5,14 @@ import Header from "./Header";
 
 const header = {
     title: "Chat",
-    links:['menu','search','contact']
+    links:['menu','search','contact'],
 },
 
-Chat = () => (
+Chat = (props) => (
     <section className="page chat">
         <Header title={header.title} links={header.links}/>
         <SubNav/>
-        <ChatContent/>
+        <ChatContent chatHistory={props.chatHistory}/>
     </section>
 );
 

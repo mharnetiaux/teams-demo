@@ -6,23 +6,11 @@ const header = {
     links:['menu','search']
 },
 
-Activity = (props) => {
+Activity = () => {
     return (
         <section className="page activity">
             <Header title={header.title} links={header.links}/>
             <section className="page-content"></section>
-                <div 
-                    className="activity-selector" 
-                    onClick={(event) => {props.setStateOfChat(["StateOne","Ruth Franklin","Might be the dexamethasone. Will order additional tests."]); event.target.classList.toggle("activity-selector-active")}}
-                >
-                    Priority Messaging Scenario
-                </div>
-                <div 
-                    className="activity-selector" 
-                    onClick={(event) => {props.setStateOfChat(["StateTwo","Laurence Gilbertson","Dr. Gilbertson, are you available?"]); event.target.classList.toggle("activity-selector-active")}}
-                >
-                    Image Annotation Scenario
-                </div>
         </section>
     );    
 };

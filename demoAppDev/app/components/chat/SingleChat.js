@@ -20,7 +20,7 @@ UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 
 class SingleChat extends Component {
     constructor() {
-        super(...arguments);
+        super();
         this.backButton = this.backButton.bind(this);
         this.urgentMessage = this.urgentMessage.bind(this);
         this.typeWriter = this.typeWriter.bind(this);
@@ -30,17 +30,15 @@ class SingleChat extends Component {
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
         this.state = {
-            conversation: true,
-            files: false,
             counter: 0,
             response: {
-                message: this.props.chatResponseMessage,
+                message: "Might be the dexamethasone. Will order additional tests.",
                 read: true,
                 urgent: false
             },
             received: [
                 {
-                    name: "Ruth F.",
+                    name: "Ruth Franklin",
                     pic: "/images/profile-small.png",
                     priority: "URGENT!",
                     message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
@@ -48,7 +46,6 @@ class SingleChat extends Component {
                     urgentImg: "../../../icon/urgent.svg"
                 }
             ],
-            stateOfChat: this.props.stateOfChat,
             showGalleryModal: false,
             modalIsOpen: false
         };
@@ -185,27 +182,25 @@ class SingleChat extends Component {
         }
         else {
             return (
-                <section className="single-chat" id="single-chat">
+                <section className="page single-chat" id="single-chat">
                     <header id="single-chat-header">
-                        <h2 className="person"> {this.props.currentContact}</h2>
+                        <h2 className="person">{this.state.received[0].name}</h2>
                         <ul className="icon-container">
                             <li className="back-arrow" onClick={this.backButton}><Link to='/'><SVG src={BackArrow}/></Link></li>
                             <li className="camera-icon"><SVG src={CameraIcon}/></li>
                             <li className="phone-icon"><SVG src={PhoneIcon}/></li>
                         </ul>
                         <ul className="chat-sub-nav">
-                            <li className={this.state.conversation ? 'recent selected' : "recent"}>
+                            <li className="recent">
                                 <Link to={{pathname: '/chat-content', state: {next: 'false'}}}>Conversation</Link>
                             </li>
-                            <li className={this.state.files ? 'contacts selected' : "contacts"}>
+                            <li className="contacts">
                                 <Link to={{pathname: '/chat-content', state: {next: 'false'}}}>Files</Link>
                             </li>
                         </ul>
                     </header>
                     <section className="message-received" id="messages">
-                        {this.state.stateOfChat==="StateOne" &&
-                            this.getMessage()
-                        }
+                        {this.getMessage()}
                         <span id="scroll"></span>
                     </section>
                     <section className="input-message" id="input-message">

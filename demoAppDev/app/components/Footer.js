@@ -15,6 +15,7 @@ class Footer extends Component {
               page = document.getElementsByClassName("page");
 
         page[0].classList.add("page-selected");
+
         for(let name of link) {
             name.onclick = () => {
                 selected[0].classList.remove("selected");
