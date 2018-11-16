@@ -30,7 +30,7 @@ class ChatContent extends Component {
             );
         }));
     }
-    
+
     render() {
         return(
             <section className="page-content chat">

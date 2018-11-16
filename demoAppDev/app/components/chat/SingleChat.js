@@ -31,11 +31,6 @@ class SingleChat extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.state = {
             counter: 0,
-            response: {
-                message: "Might be the dexamethasone. Will order additional tests.",
-                read: true,
-                urgent: false
-            },
             received: [
                 {
                     name: "Ruth Franklin",
