@@ -39,7 +39,7 @@ const DemoAppRouter = (props) => (
                             <Route path="/teams" component={Teams}/>
                             <Route path="/activity" render={routeProps => <Activity {...routeProps} activityHistory={props.activityHistory}/>}/>
                             <Route exact path="/" render={() => <Chat chatHistory={props.chatHistory}/>} />
-                            <Route path="/single-chat/:id" render={routeProps => <SingleChat {...routeProps} chatHistory={props.chatHistory}/>}/>
+                            <Route path="/single-chat/:id" render={routeProps => <SingleChat {...routeProps} chatHistory={props.chatHistory} toggleShowImage={props.toggleShowImage} showImage={props.showImage}/>}/>
                             <Route path="/IDT" component={IDTcontent} />
                             <Route path="/more" component={moreContent} />
                             <Route path="/idt-patient-list" component={IDTpatientList}/>

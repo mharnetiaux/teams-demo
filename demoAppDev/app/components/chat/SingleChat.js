@@ -94,9 +94,10 @@ class SingleChat extends Component {
               textNode = document.createElement("section"),
               textAreaElement = document.getElementById("send-message");
 
-        if(this.props.shouldShowImageInsteadOfSendMessage){
-            document.getElementById("imageNodeID").style.cssText = `opacity:0`;
-            this.props.toggleShouldShowImageInsteadOfSendMessage();
+        if(this.props.showImage){
+            console.log("HELLOOOOOOOOOOOOOOOOOOOOOOO!");
+            document.getElementById("imageNodeID").style.opacity = 1;
+            this.props.toggleShowImage();
 
             document.getElementById("send").classList.remove("send-fill");
             textAreaElement.value = "";
