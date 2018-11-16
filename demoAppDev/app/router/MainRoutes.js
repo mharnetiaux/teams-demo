@@ -13,6 +13,7 @@ import CameraOverlayScreen from "../components/CameraOverlayScreen";
 import Footer from "../components/Footer";
 import React from "react";
 
+/// Move this out eventually
 const Alert = () => {
     const alertType = {
         on: true,
@@ -37,8 +38,8 @@ const DemoAppRouter = (props) => (
                             <Route path="/meetings" component={Meetings}/>
                             <Route path="/teams" component={Teams}/>
                             <Route path="/activity" component={Activity}/>
-                            <Route exact path="/" render={() => <Chat chatHistory={props.chatHistory} />} />
-                            <Route path="/single-chat" component={SingleChat} />
+                            <Route exact path="/" render={() => <Chat chatHistory={props.chatHistory}/>} />
+                            <Route path="/single-chat/:id" render={routeProps => <SingleChat {...routeProps} chatHistory={props.chatHistory}/>}/>
                             <Route path="/IDT" component={IDTcontent} />
                             <Route path="/more" component={moreContent} />
                             <Route path="/idt-patient-list" component={IDTpatientList}/>

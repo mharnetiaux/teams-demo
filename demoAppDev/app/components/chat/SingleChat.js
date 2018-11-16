@@ -20,7 +20,7 @@ UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
 
 class SingleChat extends Component {
     constructor() {
-        super();
+        super(...arguments);
         this.backButton = this.backButton.bind(this);
         this.urgentMessage = this.urgentMessage.bind(this);
         this.typeWriter = this.typeWriter.bind(this);
@@ -46,6 +46,7 @@ class SingleChat extends Component {
                     urgentImg: "../../../icon/urgent.svg"
                 }
             ],
+            chatHistory: this.props.chatHistory,
             showGalleryModal: false,
             modalIsOpen: false
         };
@@ -84,7 +85,7 @@ class SingleChat extends Component {
 
     /// Read state object containing array of objects
     getMessage() {
-        return this.state.received.map((item, key) => {
+        return this.state.chatHistory[this.props.match.params.id].received.map((item, key) => {
             return (
                 <section className="message" id="message" key={key}>
                     <img className="profile-pic" src={item.pic}/>
@@ -191,8 +192,9 @@ class SingleChat extends Component {
         },100)
     }
 
-    componentDidMount(){
-        setTimeout(()=>{
+    componentDidMount() {
+        //console.log(this.state.chatHistory[this.props.match.params.id].received);
+        setTimeout(() => {
             document.getElementById("single-chat").classList.add("open");
         },50)
     }
@@ -205,7 +207,7 @@ class SingleChat extends Component {
             return (
                 <section className="page single-chat" id="single-chat">
                     <header id="single-chat-header">
-                        <h2 className="person">{this.state.received[0].name}</h2>
+                        <h2 className="person">{this.state.chatHistory[this.props.match.params.id].name}</h2>
                         <ul className="icon-container">
                             <li className="back-arrow" onClick={this.backButton}><Link to='/'><SVG src={BackArrow}/></Link></li>
                             <li className="camera-icon"><SVG src={CameraIcon}/></li>
