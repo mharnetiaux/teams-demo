@@ -81,7 +81,7 @@ class App extends Component{
                         priority: "",
                         avatar: "/images/profile_3.png",
                         response: {
-                            message: "Word up!!!",
+                            message: "Dr.Gilbertson, are you available?",
                             read: true,
                             urgent: false
                         },
@@ -89,9 +89,9 @@ class App extends Component{
                             {
                                 name: "Laurence Gilbertson",
                                 pic: "/images/profile_3.png",
-                                priority: "URGENT!",
+                                priority: "",
                                 message: "great, talk to you tomorrow?",
-                                urgent: true,
+                                urgent: false,
                                 urgentImg: "../../../icon/urgent.svg"
                             }
                         ],
@@ -171,6 +171,68 @@ class App extends Component{
                             }
                         ],
                     }
+                ],
+                activityHistory: [
+                    {
+                        read: false,
+                        type: "",
+                        name: "Ruth Franklin",
+                        time: date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
+                        message: "Priority messages chat demo...",
+                        priorityIcon: "/icon/urgent.svg",
+                        priority: "",
+                        avatar: "/images/profile_1.png"
+                    },
+                    {
+                        read: true,
+                        type: "",
+                        name: "Bernadette Guibord",
+                        time: "9:16 AM",
+                        message: "Image annotation in hat demo ...",
+                        priorityIcon: "/icon/urgent.svg",
+                        priority: "",
+                        avatar: "/images/profile_2.png"
+                    },
+                    {
+                        read: true,
+                        type: "",
+                        name: "Laurence Gilbertson",
+                        time: "Yesterday",
+                        message: "great, talk to you tomorrow?",
+                        priorityIcon: "/icon/urgent.svg",
+                        priority: "",
+                        avatar: "/images/profile_3.png"
+                    },
+                    {
+                        read: true,
+                        type: "",
+                        name: "Cassandra Dunn",
+                        time: "Thursday",
+                        message: "Thank you!",
+                        priorityIcon: "/icon/urgent.svg",
+                        priority: "",
+                        avatar: "/images/profile_4.png"
+                    },
+                    {
+                        read: true,
+                        type: "",
+                        name: "Pete. Krystal, Darren + 4",
+                        time: "Monday",
+                        message: "Rita: See attached Image",
+                        priorityIcon: "/icon/urgent.svg",
+                        priority: "",
+                        avatar: "/images/profile_5.png"
+                    },
+                    {
+                        read: true,
+                        type: "",
+                        name: "Edmee Plant",
+                        time: "5/20",
+                        message: "The sales team are owning that problem.",
+                        priorityIcon: "/icon/urgent.svg",
+                        priority: "",
+                        avatar: "/images/profile_5.png"
+                    }
                 ]
             };
         }
@@ -231,6 +293,7 @@ class App extends Component{
             <DemoAppRouter
                 {...this.state}
                 chatHistory = {this.state.chatHistory}
+                activityHistory = {this.state.activityHistory}
                 resizeForKeyboard={this.resizeForKeyboard}
                 showKeyboard={this.showKeyboard}
                 setImgCameraSrc={this.setImgCameraSrc}

@@ -7,6 +7,7 @@ import PhoneIcon from '../../../icon/phone.svg';
 import BackArrow from '../../../icon/back-arrow.svg';
 import CameraIcon from '../../../icon/camera.svg';
 import PhoneSendIcon from '../../../icon/phone-send.svg';
+import SendIcon from '../../../icon/Send.svg';
 import PhoneEmojiIcon from '../../../icon/phone-emoji.svg';
 import PhoneLocationIcon from '../../../icon/phone-location.svg';
 import PhoneEmailIcon from '../../../icon/phone-email.svg';
@@ -31,16 +32,8 @@ class SingleChat extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.state = {
             counter: 0,
-            received: [
-                {
-                    name: "Ruth Franklin",
-                    pic: "/images/profile-small.png",
-                    priority: "URGENT!",
-                    message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
-                    urgent: true,
-                    urgentImg: "../../../icon/urgent.svg"
-                }
-            ],
+            response: this.props.chatHistory[this.props.match.params.id].response,
+            received: this.props.chatHistory[this.props.match.params.id].received,
             chatHistory: this.props.chatHistory,
             showGalleryModal: false,
             modalIsOpen: false
@@ -64,7 +57,7 @@ class SingleChat extends Component {
     /// Pass string to tell input what to write on keyDown() event
     typeWriter(event) {
         event.preventDefault();
-        document.getElementById("send").classList.add("send");
+        document.getElementById("send").classList.add("send-fill");
         if(this.state.counter < this.state.response.message.length){
             document.getElementById("send-message").value += this.state.response.message.charAt(this.state.counter);
             this.state.counter++;
@@ -105,7 +98,7 @@ class SingleChat extends Component {
             document.getElementById("imageNodeID").style.cssText = `opacity:0`;
             this.props.toggleShouldShowImageInsteadOfSendMessage();
 
-            document.getElementById("send").classList.remove("send");
+            document.getElementById("send").classList.remove("send-fill");
             textAreaElement.value = "";
             textAreaElement.style.height = "1rem";
 
@@ -118,7 +111,7 @@ class SingleChat extends Component {
             
         } else{ 
             textNode.classList.add("response");
-            document.getElementById("send").classList.remove("send");
+            document.getElementById("send").classList.remove("send-fill");
             textNode.textContent = this.state.response.message;
             messageContainer.appendChild(textNode);
             textAreaElement.value = "";
@@ -234,7 +227,7 @@ class SingleChat extends Component {
                             <li><SVG src={PhoneEmailIcon}/></li>
                             <li><SVG src={PhoneLocationIcon}/></li>
                             <li><SVG src={PhoneEmojiIcon}/></li>
-                            <li id="send" onClick={this.sendMessage}><SVG src={PhoneSendIcon}/></li>
+                            <li id="send" className="send-gray" onClick={this.sendMessage}><SVG src={SendIcon}/></li>
                         </ul>
                     </footer>
                     {this.state.showGalleryModal ?
