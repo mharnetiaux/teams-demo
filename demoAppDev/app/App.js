@@ -176,61 +176,49 @@ class App extends Component{
                     {
                         read: false,
                         type: "",
-                        name: "Ruth Franklin",
+                        name: "Ruth replied",
                         time: date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
                         message: "Priority messages chat demo...",
-                        priorityIcon: "/icon/urgent.svg",
-                        priority: "",
                         avatar: "/images/profile_1.png"
                     },
                     {
                         read: true,
                         type: "",
-                        name: "Bernadette Guibord",
+                        name: "Bernadette replied",
                         time: "9:16 AM",
-                        message: "Image annotation in hat demo ...",
-                        priorityIcon: "/icon/urgent.svg",
-                        priority: "",
+                        message: "Image annotation in that demo ...",
                         avatar: "/images/profile_2.png"
                     },
                     {
                         read: true,
                         type: "",
-                        name: "Laurence Gilbertson",
+                        name: "Missed call from Laurence",
                         time: "Yesterday",
-                        message: "great, talk to you tomorrow?",
-                        priorityIcon: "/icon/urgent.svg",
-                        priority: "",
+                        message: "That sound right",
                         avatar: "/images/profile_3.png"
                     },
                     {
                         read: true,
                         type: "",
-                        name: "Cassandra Dunn",
+                        name: "Cassandra replied",
                         time: "Thursday",
-                        message: "Thank you!",
-                        priorityIcon: "/icon/urgent.svg",
-                        priority: "",
+                        message: "No urgency",
                         avatar: "/images/profile_4.png"
                     },
                     {
                         read: true,
                         type: "",
-                        name: "Pete. Krystal, Darren + 4",
+                        name: "Pete replied",
                         time: "Monday",
-                        message: "Rita: See attached Image",
-                        priorityIcon: "/icon/urgent.svg",
-                        priority: "",
+                        message: "Pasting a link her ein cas...",
                         avatar: "/images/profile_5.png"
                     },
                     {
                         read: true,
                         type: "",
-                        name: "Edmee Plant",
+                        name: "Edmee replied",
                         time: "5/20",
                         message: "The sales team are owning that problem.",
-                        priorityIcon: "/icon/urgent.svg",
-                        priority: "",
                         avatar: "/images/profile_5.png"
                     }
                 ]

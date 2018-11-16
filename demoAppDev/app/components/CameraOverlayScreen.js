@@ -49,7 +49,7 @@ class CameraOverlayScreen extends Component{
     }
     render() {
         if (this.state.redirect) {
-            return <Redirect push to="/chat-content"/>
+            return <Redirect push to="/single-chat/2"/>
         }
         else{
             return (

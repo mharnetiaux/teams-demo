@@ -51,7 +51,7 @@ class CameraModal extends Component{
     }
     startCameraBelow(){
         window.StatusBar.hide();
-        window.CameraPreview.startCamera({x: 0, y: 0, width: 400, height:700, camera: "back", toBack: true, previewDrag: true, tapPhoto: true});
+        window.CameraPreview.startCamera({x: 0, y: 0, width: window.screen.width, height: window.screen.height, camera: "back", toBack: true, previewDrag: true, tapPhoto: true});
         this.props.toggleCameraControls();
         let htmlElements = document.getElementsByTagName("html");
         htmlElements[0].style.backgroundColor = "transparent";

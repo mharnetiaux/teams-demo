@@ -27,8 +27,8 @@ class Activity extends Component {
                         <img src={item.avatar} alt="profile picture"/>
                     </span>
                         <ul>
-                            <li className={"message-info" + " " + item.type}><span className={item.type}>{item.name} {item.priority}</span><span className="time">{item.time}</span></li>
-                            <li className="message-info"><span className="message">{item.message}</span><img className={item.type ? "urgent" : "normal"} src={item.priorityIcon} alt="Urgent" width="13" height="13"/></li>
+                            <li className={"message-info" + " " + item.type}><span className={item.type}>{item.name}</span><span className="time">{item.time}</span></li>
+                            <li className="message-info"><span className="message">{item.message}</span></li>
                         </ul>
                     </section>
                 </Link>
