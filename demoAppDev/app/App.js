@@ -254,14 +254,14 @@ class App extends Component{
             // document.getElementById("send-message").focus();
             // document.getElementById("send-message").style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 50px 80px; background-position: 5% 5%;`;
             const a = document.getElementById("send-message");
-            a.style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 100px 160px; background-position: 5% 5%;`;
+            a.style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 100px 160px; background-position: 5% 5%; caret-color: transparent;`;
             a.classList.add("image-send-message");
             a.value = "";
             document.getElementById("send").classList.add("send-fill");
             
             window.setTimeout(() =>{
                 a.focus();
-            },0);
+            }, 200);
 
             const messageContainer = document.getElementById("messages"),
                 textNode = document.createElement("section"),
@@ -276,7 +276,7 @@ class App extends Component{
 
             imageNode.id = "imageNodeID";
             imageNode.classList.add("response-image");
-            imageNode.style.cssText = `background:url(${this.state.imgCameraSrc}) no-repeat;  background-size: 300px 400px; background-position: 0% 0%;`;
+            imageNode.style.cssText = `background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 180px 270px; background-position: 0% 0%;`;
             imageNode.style.opacity = 0;
             
             this.toggleShowImage();

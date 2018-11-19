@@ -126,7 +126,7 @@ class CameraOverlayScreen extends Component{
     //<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: content:;">
     cameraTakePicture(event) {         
         let imageSrcData = undefined;
-        window.CameraPreview.takePicture({width:500, height: 800, quality: 70}, onSuccess, onFail);
+        window.CameraPreview.takePicture({width:500, height: 810, quality: 80}, onSuccess, onFail);
         function onSuccess(imageData) { 
             console.log("GOT PICTURE!!!!!!!!");
             imageSrcData = 'data:image/jpeg;base64,' +imageData;       

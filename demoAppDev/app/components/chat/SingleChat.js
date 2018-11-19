@@ -204,10 +204,10 @@ class SingleChat extends Component {
                         </ul>
                         <ul className="chat-sub-nav">
                             <li className="recent">
-                                <Link to={{pathname: '/chat-content', state: {next: 'false'}}}>Conversation</Link>
+                                <Link to={{pathname: '/', state: {next: 'false'}}}>Conversation</Link>
                             </li>
                             <li className="contacts">
-                                <Link to={{pathname: '/chat-content', state: {next: 'false'}}}>Files</Link>
+                                <Link to={{pathname: '/', state: {next: 'false'}}}>Files</Link>
                             </li>
                         </ul>
                     </header>
