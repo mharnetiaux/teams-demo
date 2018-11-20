@@ -3,6 +3,8 @@ import Header from "./Header";
 import {Link} from "react-router-dom";
 import SVG from 'react-inlinesvg';
 import read from '../../icon/unread.svg';
+import CallMissed from '../../icon/CallMissed.svg';
+import Promote from '../../icon/Promote.svg';
 
 const header = {
     title: "Activity",
@@ -20,15 +22,15 @@ class Activity extends Component {
     chatItem() {
         return this.state.activityHistory.map(((item, key)=>{
             return (
-                <Link to='single-chat' key={key}>
-                    <section className="chat-container" key={key}>
-                    <span className="avatar-container">
+                <Link to='activity' key={key}>
+                    <section className="activity-container" key={key}>
+                    <span className="activity-avatar-container">
                         <span className={item.read ? "read" : "unread"}><SVG src={read}/></span>
                         <img src={item.avatar} alt="profile picture"/>
                     </span>
-                        <ul>
-                            <li className={"message-info" + " " + item.type}><span className={item.type}>{item.name}</span><span className="time">{item.time}</span></li>
-                            <li className="message-info"><span className="message">{item.message}</span></li>
+                        <ul>           
+                            <li className={"activity-message-info" + " " + item.type}><SVG className="activity-message-svg" src={item.missed ? CallMissed : Promote}/><span className={"activity-message " + item.type}>{item.name}</span><span className="time">{item.time}</span></li>
+                            <li className="activity-message-info"><span className="activity-message">{item.message}</span></li>
                         </ul>
                     </section>
                 </Link>

@@ -77,12 +77,12 @@ class SingleChat extends Component {
             return (
                 <section className="message" id="message" key={key}>
                     <img className="profile-pic" src={item.pic}/>
-                    <ul className={"message-content" + item.urgent ? "urgent" : null}>
+                    <ul className={item.urgent ? "urgent" : null}>
                         <li className="name">{item.name}</li>
                         <li className="priority">{item.priority}</li>
                         <li className="content">{item.message}</li>
                     </ul>
-                    <img className={"urgent" + " " + item.urgent ? "yes" : "no"} src={item.urgentImg}/>
+                    {item.urgent ?  <img src={item.urgentImg}/> : null}
                 </section>
             )
         });

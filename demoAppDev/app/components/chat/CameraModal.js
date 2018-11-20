@@ -57,7 +57,8 @@ class CameraModal extends Component{
         htmlElements[0].style.backgroundColor = "transparent";
         window.setTimeout(() => {
             document.getElementById("alertContainer").style.opacity = 0;
-            document.getElementById("appFooter").style.opacity = 0;
+            // document.getElementById("appFooter").style.display = 0;
+            document.getElementById("appFooter").style.display = "none";
         } , 200);
     }
 }

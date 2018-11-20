@@ -1,0 +1,85 @@
+.activity-container {
+    padding: 1rem 0;
+    position: relative;
+    display: flex;
+    width: 95%;
+    margin: auto;
+
+    &::after {
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background: @black;
+        opacity: 0.1;
+        content: "";
+        bottom: 0;
+    }
+  
+    ul {
+        flex: 1;
+    }
+  
+    .activity-avatar-container {
+        margin-right: 0.5rem;
+    }
+
+    .activity-message-svg{
+        svg{
+            width: 20px;
+            fill: @icon-fill;
+        } 
+    }
+    .activity-message-info {
+        color: @font-grey;
+        display: flex;
+        justify-content: flex-start;
+
+        &:first-of-type {
+            color: @black;
+            margin-bottom: 0.2rem;
+            font-weight: bold;
+        }
+
+        .normal {
+          color: @font-grey;
+          font-size: 17px;
+        }
+
+        .time {
+            flex-grow: 1;
+            color: @font-grey;
+            font-size: 12px;
+            text-align: end;
+        }
+
+        .activity-message {
+            flex-grow: 1;
+            font-size: 15px;
+            color: @font-grey;
+        }
+
+        img {
+            &.urgent {
+                display: inline;
+            }
+
+            &.normal {
+                display: none;
+            }
+        }
+    }
+
+    .activity-avatar-container {
+      align-items: center;
+      display: flex;
+
+      .unread {
+          margin-right: 0.5rem;
+      }
+
+      .read {
+          margin-right: 0.5rem;
+          visibility: hidden;
+      }
+    }
+}

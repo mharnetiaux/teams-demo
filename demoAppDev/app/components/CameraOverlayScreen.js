@@ -5,7 +5,7 @@ import CanvasElement from './CanvasElement';
 import ColorSelectorButton from './ColorSelectorButton';
 import SVG from 'react-inlinesvg';
 import BackArrow from '../../icon/back-arrow.svg';
-import ChevronRight from '../../icon/ChevronRight.svg';
+import ChevronMedRight from '../../icon/ChevronMedRight.svg';
 
 const colors = ['#CF021A', '#0DAC37', '#1E5EFE', '#FFF600', '#FFFFFF', '#000000'];
 
@@ -44,7 +44,8 @@ class CameraOverlayScreen extends Component{
     componentWillUnmount(){
         window.setTimeout(() => {
             document.getElementById("alertContainer").style.opacity = 1;
-            document.getElementById("appFooter").style.opacity = 1;
+            // document.getElementById("appFooter").style.opacity = 1;
+            document.getElementById("appFooter").style.display = "inherit";
         } , 200);
     }
     render() {
@@ -96,7 +97,9 @@ class CameraOverlayScreen extends Component{
                                         <span></span>
                                     </div>
                                     <div className={`btn DoneIcon`} onClick={this.setCanvasImage}>
-                                        <span className="doneSpan">Done<SVG src={ChevronRight}/> 
+                                        <span className="doneSpan">
+                                        <span>Done</span>
+                                        <SVG src={ChevronMedRight}/> 
                                         </span>
                                     </div>
                                 </div>
@@ -122,7 +125,7 @@ class CameraOverlayScreen extends Component{
           showPhotoControls: !this.state.showPhotoControls
         });
     }
-    //something is messing with this meta tag in index.html in demoApp, need to replace after build
+    //something was messing with this meta tag in index.html in demoApp, needed to replace after build, mo longer a problem
     //<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: content:;">
     cameraTakePicture(event) {         
         let imageSrcData = undefined;

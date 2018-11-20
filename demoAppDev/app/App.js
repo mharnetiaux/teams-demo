@@ -63,9 +63,9 @@ class App extends Component{
                             {
                                 name: "Bernadette Guibord",
                                 pic: "/images/profile_2.png",
-                                priority: "URGENT!",
+                                priority: "",
                                 message: "Can you please send the file over ...",
-                                urgent: true,
+                                urgent: false,
                                 urgentImg: "../../../icon/urgent.svg"
                             }
                         ],
@@ -113,9 +113,9 @@ class App extends Component{
                             {
                                 name: "Ruth Franklin",
                                 pic: "/images/profile_4.png",
-                                priority: "URGENT!",
+                                priority: "",
                                 message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
-                                urgent: true,
+                                urgent: false,
                                 urgentImg: "../../../icon/urgent.svg"
                             }
                         ],
@@ -138,9 +138,9 @@ class App extends Component{
                             {
                                 name: "Pete. Krystal, Darren + 4",
                                 pic: "/images/profile_5.png",
-                                priority: "URGENT!",
+                                priority: "",
                                 message: "Rita: See attached Image",
-                                urgent: true,
+                                urgent: false,
                                 urgentImg: "../../../icon/urgent.svg"
                             }
                         ],
@@ -163,9 +163,9 @@ class App extends Component{
                             {
                                 name: "Edmee Plant",
                                 pic: "/images/profile_5.png",
-                                priority: "URGENT!",
+                                priority: "",
                                 message: "The sales team are owning that problem.",
-                                urgent: true,
+                                urgent: false,
                                 urgentImg: "../../../icon/urgent.svg"
                             }
                         ],
@@ -177,27 +177,28 @@ class App extends Component{
                         type: "",
                         name: "Ruth replied",
                         time: date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-                        message: "Priority messages chat demo...",
+                        message: "Priority messages chat demonst...",
                         avatar: "/images/profile_1.png"
                     },
                     {
-                        read: true,
+                        read: false,
                         type: "",
                         name: "Bernadette replied",
                         time: "9:16 AM",
-                        message: "Image annotation in that demo ...",
+                        message: "Image annotation in chat demon...",
                         avatar: "/images/profile_2.png"
                     },
                     {
-                        read: true,
+                        read: false,
                         type: "",
                         name: "Missed call from Laurence",
                         time: "Yesterday",
-                        message: "That sound right",
-                        avatar: "/images/profile_3.png"
+                        message: "That sounds right",
+                        avatar: "/images/profile_3.png",
+                        missed: true
                     },
                     {
-                        read: true,
+                        read: false,
                         type: "",
                         name: "Cassandra replied",
                         time: "Thursday",
@@ -205,20 +206,12 @@ class App extends Component{
                         avatar: "/images/profile_4.png"
                     },
                     {
-                        read: true,
-                        type: "",
-                        name: "Pete replied",
-                        time: "Monday",
-                        message: "Pasting a link her ein cas...",
-                        avatar: "/images/profile_5.png"
-                    },
-                    {
-                        read: true,
+                        read: false,
                         type: "",
                         name: "Edmee replied",
                         time: "5/20",
                         message: "The sales team are owning that problem.",
-                        avatar: "/images/profile_5.png"
+                        avatar: "/images/profile_6.png"
                     }
                 ]
             };
