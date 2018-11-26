@@ -3,6 +3,7 @@ import reducer from '../reducers';
 const date = new Date();
 
 const initialState = {
+    callAlert: true,
     chatHistory: [
         {
             read: false,

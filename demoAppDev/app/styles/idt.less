@@ -13,14 +13,15 @@
         bottom: 0;
     }
 
-    li {
+    a{
         padding: 1rem 0;
         flex: 1;
-        font-size: 15px;
+        color: @icon-fill;
+    }
 
-        a {
-            color: @icon-fill;
-        }
+    li {
+        font-size: 15px;
+        opacity: 0.6;
 
         &::before {
             display: none;
@@ -30,6 +31,12 @@
             background: @icon-fill;
             content: "";
             bottom: 0;
+        }
+
+        &.selected{
+            transition-property: opacity;
+            transition-duration: 5s;
+            opacity:1;
         }
 
         &.chat.selected::before{

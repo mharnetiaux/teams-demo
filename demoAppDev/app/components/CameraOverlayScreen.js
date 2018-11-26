@@ -43,7 +43,7 @@ class CameraOverlayScreen extends Component{
     }
     componentWillUnmount(){
         window.setTimeout(() => {
-            document.getElementById("alertContainer").style.opacity = 1;
+            //document.getElementById("alertContainer").style.opacity = 1;
             // document.getElementById("appFooter").style.opacity = 1;
             document.getElementById("appFooter").style.display = "inherit";
         } , 200);

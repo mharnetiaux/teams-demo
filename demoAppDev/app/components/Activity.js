@@ -6,6 +6,19 @@ import read from '../../icon/unread.svg';
 import CallMissed from '../../icon/CallMissed.svg';
 import Promote from '../../icon/Promote.svg';
 
+//not DRY 
+import { store } from '../store';
+const Alert = () => {
+    const alertType = {
+        on: true,
+        content: "URGENT! Darrell Salyer's blood sugar is hi...",
+        image: "/icon/urgent-white.svg",
+    };
+    return(
+        <Link id="alertContainer" className="alert-container" to='/'><section className={alertType.on ? "alert": "none"}><img src={alertType.image} width="20" height="20"/><span className="alert-message">{alertType.content}</span></section></Link>
+    );
+};
+
 const header = {
     title: "Activity",
     links:['menu','search']
@@ -41,6 +54,7 @@ class Activity extends Component {
     render() {
         return(
             <section className="page activity">
+                {store.getState().callAlert && Alert()}
                 <Header title={header.title} links={header.links}/>
                 <section className="page-content">
                     {this.chatItem()}

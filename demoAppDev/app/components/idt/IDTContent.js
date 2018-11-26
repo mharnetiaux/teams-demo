@@ -141,15 +141,21 @@ export default class IDTContent extends Component{
                         <li className="follow-icon"><SVG src={FollowIcon}/></li>
                     </ul>
                     <ul className="idt-sub-nav">
-                        <li className={this.state.chat ? 'chat selected': "chat"} onClick={() => {this.toggleClass("chat")}}>
-                            <Link to={{pathname:'/idt', state:{next:'false'}}}>Chat</Link>
-                        </li>
-                        <li className={this.state.files ? 'files selected': "files"} onClick={() => {this.toggleClass("files")}}>
-                            <Link to={{pathname:'/files', state:{next:'false'}}}>Files</Link>
-                        </li>
-                        <li className={this.state.more ? 'more selected': "more"} onClick={() => {this.toggleClass("more")}}>
-                            <Link to={{pathname:'/more', state:{next:'false'}}}>More</Link>
-                        </li>
+                        <Link to={{pathname:'/idt', state:{next:'false'}}}>
+                            <li className={this.state.chat ? 'chat selected': "chat"} onClick={() => {this.toggleClass("chat")}}>
+                                Chat
+                            </li>
+                        </Link>
+                        <Link to={{pathname:'/files', state:{next:'false'}}}>
+                            <li className={this.state.files ? 'files selected': "files"} onClick={() => {this.toggleClass("files")}}>
+                                Files
+                            </li>
+                        </Link>
+                        <Link to={{pathname:'/more', state:{next:'false'}}}>
+                            <li className={this.state.more ? 'more selected': "more"} onClick={() => {this.toggleClass("more")}}>
+                                More
+                            </li>
+                        </Link>
                     </ul>
                 </header>
                 <div className="chat-item-scroll">
