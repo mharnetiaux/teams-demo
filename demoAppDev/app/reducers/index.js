@@ -23,7 +23,7 @@ export default (state, action) => {
                                 },
                                 received: [
                                     {
-                                        name: "Ruth Franklin",
+                                        name: "Ruth F.",
                                         pic: "/images/profile-small.png",
                                         priority: "URGENT!",
                                         message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
@@ -98,7 +98,7 @@ export default (state, action) => {
                                 },
                                 received: [
                                     {
-                                        name: "Ruth Franklin",
+                                        name: "Ruth F.",
                                         pic: "/images/profile_4.png",
                                         priority: "",
                                         message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",
@@ -204,7 +204,7 @@ export default (state, action) => {
                                 },
                                 received: [
                                     {
-                                        name: "Ruth Franklin",
+                                        name: "Ruth F.",
                                         pic: "/images/profile-small.png",
                                         priority: "URGENT!",
                                         message: "Darell Salyer's blood sugar is high. I'm updating his diagnosis to prediabetic. Need to evaluate treatment plan.",

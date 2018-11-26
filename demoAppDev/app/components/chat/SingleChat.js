@@ -86,7 +86,7 @@ class SingleChat extends Component {
                         <li className="priority">{item.priority}</li>
                         <li className="content">{item.message}</li>
                     </ul>
-                    {item.urgent ?  <img src={item.urgentImg}/> : null}
+                    {item.urgent ? <img src={item.urgentImg}/> : null}
                 </section>
             )
         });
@@ -117,7 +117,14 @@ class SingleChat extends Component {
         } else{ 
             textNode.classList.add("response");
             document.getElementById("send").classList.remove("send-fill");
-            textNode.textContent = this.state.response.message;
+            if(this.state.response.urgent) {
+                textNode.innerHTML = '<span style="display:block; padding: 2px 4px 6px 0px;">URGENT!</span>';
+                textNode.innerHTML += this.state.response.message;
+            }
+            else{
+                textNode.textContent = this.state.response.message;
+            }
+            
             messageContainer.appendChild(textNode);
             textAreaElement.value = "";
             textAreaElement.style.height = "1rem";
@@ -251,11 +258,11 @@ class SingleChat extends Component {
                             <h2>Priority</h2>
                             <span className="priority-modal-container">
                                 <span className="priority important">
-                                    <h3>IMPORTANT</h3>
+                                    <h3>Important</h3>
                                     <span className="priority-content">Message will be marked as important</span>
                                 </span>
                                 <span className="priority urgent" onClick={this.urgentMessage}>
-                                   <h3>URGENT</h3>
+                                   <h3>Urgent</h3>
                                     <span className="priority-content">Notify recipient every 2 minutes for 20 minutes</span>
                                 </span>
                             </span>

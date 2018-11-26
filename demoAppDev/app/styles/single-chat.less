@@ -138,6 +138,7 @@
                 width: 98%;
                 order: 3;
                 margin-left: auto;
+                background-color: white;
 
                 textarea {
                     border: 1px solid transparent;
@@ -204,7 +205,10 @@
             margin: 1rem 2rem 1rem auto;
             width: 65%;
             padding: 0.5rem;
-
+            
+            &.urgent{
+                width: 80%;
+            }
             &.urgent::before {
                 content: "";
                 background: url(~"/icon/urgent.svg") no-repeat;
@@ -312,6 +316,16 @@
 
             &.important {
                 background: url(~"/icon/important.svg") no-repeat top left;
+                fill: black;
+                &::after {
+                    position: absolute;
+                    height: 1px;
+                    width: 100%;
+                    background: @black;
+                    opacity: 0.1;
+                    content: "";
+                    bottom: 0;
+                }
             }
 
             &.urgent {
@@ -325,15 +339,7 @@
                 text-indent: 0;
             }
 
-            &::after {
-                position: absolute;
-                height: 1px;
-                width: 100%;
-                background: @black;
-                opacity: 0.1;
-                content: "";
-                bottom: 0;
-            }
+            
         }
     }
 
