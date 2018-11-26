@@ -10,20 +10,17 @@ class ChatContent extends Component {
     constructor() {
         super(...arguments);
         this.dispatchChatAction = this.dispatchChatAction.bind(this);
-        // this.state = {
-        //     chatHistory: this.props.chatHistory
-        // };
     }
 
-    dispatchChatAction(e) {
-        store.dispatch(setChatHistory());
+    dispatchChatAction(stage) {
+        store.dispatch(setChatHistory(stage));
     }
 
     chatItem() {
         let chatHistory = store.getState().chatHistory;
         return chatHistory.map(((item, key)=>{
             return (
-                <Link to={`/single-chat/${key}`} onClick={this.dispatchChatAction} key={key}>
+                <Link to={`/single-chat/${key}`} onClick={()=>{this.dispatchChatAction(key)}} key={key}>
                     <section className="chat-container" key={key}>
                         <span className="avatar-container">
                             <span className={item.read ? "read" : "unread"}><SVG src={read}/></span>

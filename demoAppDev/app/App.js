@@ -149,4 +149,9 @@ render((
     <App />
 ), document.getElementById('root'));
 
+document.addEventListener("deviceready", function(){ 
+    console.log("Hiding these buttons");
+    Keyboard.hideFormAccessoryBar(true);
+});
+
 

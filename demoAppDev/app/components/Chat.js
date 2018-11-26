@@ -12,7 +12,7 @@ Chat = (props) => (
     <section className="page chat">
         <Header title={header.title} links={header.links}/>
         <SubNav/>
-        <ChatContent chatHistory={props.chatHistory}/>
+        <ChatContent/>
     </section>
 );
 

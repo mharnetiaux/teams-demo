@@ -16,8 +16,11 @@ import PhoneImportantIcon from '../../../icon/phone-important.svg';
 import PhoneImagesIcon from '../../../icon/phone-images.svg';
 import CameraModal from './CameraModal';
 
+import { store } from '../../store';
+
 /// Overwrite inline styles provided by UrgentModal
 UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+let chatHistory = store.getState().chatHistory;
 
 class SingleChat extends Component {
     constructor() {
@@ -32,9 +35,9 @@ class SingleChat extends Component {
         this.closeModal = this.closeModal.bind(this);
         this.state = {
             counter: 0,
-            response: this.props.chatHistory[this.props.match.params.id].response,
-            received: this.props.chatHistory[this.props.match.params.id].received,
-            chatHistory: this.props.chatHistory,
+            response: chatHistory[this.props.match.params.id].response,
+            received: chatHistory[this.props.match.params.id].received,
+            chatHistory: chatHistory,
             showGalleryModal: false,
             modalIsOpen: false
         };
@@ -57,6 +60,7 @@ class SingleChat extends Component {
     /// Pass string to tell input what to write on keyDown() event
     typeWriter(event) {
         event.preventDefault();
+        // window.Keyboard.hideFormAccessoryBar(true);
         document.getElementById("send").classList.add("send-fill");
         if(this.state.counter < this.state.response.message.length){
             document.getElementById("send-message").value += this.state.response.message.charAt(this.state.counter);
