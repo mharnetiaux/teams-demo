@@ -3,19 +3,27 @@ import {Link} from "react-router-dom";
 import SVG from 'react-inlinesvg';
 import read from '../../../icon/unread.svg';
 
-class ChatContent extends Component {
+import { store } from '../../store';
+import { setChatHistory } from '../../actions';
 
+class ChatContent extends Component {
     constructor() {
         super(...arguments);
-        this.state = {
-            chatHistory: this.props.chatHistory
-        }
+        this.dispatchChatAction = this.dispatchChatAction.bind(this);
+        // this.state = {
+        //     chatHistory: this.props.chatHistory
+        // };
+    }
+
+    dispatchChatAction(e) {
+        store.dispatch(setChatHistory());
     }
 
     chatItem() {
-        return this.state.chatHistory.map(((item, key)=>{
+        let chatHistory = store.getState().chatHistory;
+        return chatHistory.map(((item, key)=>{
             return (
-                <Link to={`/single-chat/${key}`}  key={key}>
+                <Link to={`/single-chat/${key}`} onClick={this.dispatchChatAction} key={key}>
                     <section className="chat-container" key={key}>
                         <span className="avatar-container">
                             <span className={item.read ? "read" : "unread"}><SVG src={read}/></span>
