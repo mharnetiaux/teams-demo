@@ -23,7 +23,8 @@
     }
 
     &.compose {
-        .input-message {
+        .input-message,
+        .to-message {
             form {
                 display: flex;
                 align-items: center;
@@ -41,11 +42,13 @@
             }
         }
 
-        .footer-2 {
+        .footer-2,
+        .input-message {
             display: none;
 
             &.open {
                 display: inherit;
+                flex: none;
             }
         }
     }
@@ -120,7 +123,8 @@
 
     #send-message:focus::-webkit-input-placeholder { color:transparent; }
     
-    .input-message {
+    .input-message,
+    .to-message {
         flex: 0;
         
         span {

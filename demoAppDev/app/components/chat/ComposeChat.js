@@ -68,10 +68,13 @@ class ComposeChat extends Component {
 
     /// Open/Close individual Team Menu
     toggleContacts() {
-        const contacts = document.getElementsByClassName("contact"),
+        const contact = document.getElementsByClassName("contact"),
               inputCompose = document.getElementById("send-message"),
-              inputComposeContainer = document.getElementById("input-message");
-        for(let name of contacts) {
+              inputComposeContainer = document.getElementById("to-message"),
+              footer = document.getElementById("single-chat-footer-2"),
+              inputSendMessage = document.getElementById("input-message");
+
+        for(let name of contact) {
             name.onclick = () => {
                this.setState({
                    name: name.innerHTML
@@ -79,7 +82,8 @@ class ComposeChat extends Component {
                    inputCompose.value = this.state.name;
                    inputComposeContainer.classList.add("open");
                    document.getElementsByClassName("contact-list")[0].classList.remove("open");
-                   document.getElementById("single-chat-footer-2").classList.add("open");
+                   footer.classList.add("open");
+                   inputSendMessage.classList.add("open");
                    inputCompose.focus();
                })
             }
@@ -209,7 +213,7 @@ class ComposeChat extends Component {
                             <li className="back-arrow" onClick={this.backButton}><Link to='/'><SVG src={BackArrow}/></Link></li>
                         </ul>
                     </header>
-                    <section className="input-message" id="input-message">
+                    <section className="to-message" id="to-message">
                         <form>
                             <label>To:</label>
                             <textarea placeholder="Start typing name or group" id="send-message" onKeyDown={this.typeWriter}></textarea>
@@ -219,6 +223,11 @@ class ComposeChat extends Component {
                         <ul>
                             <li className="contact">John Snow,</li>
                         </ul>
+                    </section>
+                    <section className="input-message" id="input-message">
+                        <form>
+                            <textarea placeholder="Send a message" id="send-message"></textarea>
+                        </form>
                     </section>
                     <footer className="footer-2" id="single-chat-footer-2">
                         <ul className="footer-icons">
