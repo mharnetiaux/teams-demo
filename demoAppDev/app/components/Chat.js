@@ -5,7 +5,7 @@ import Header from "./Header";
 
 const header = {
     title: "Chat",
-    links:['menu','search','contact'],
+    links:['menu','search','compose-chat'],
 },
 
 Chat = (props) => (

@@ -3,26 +3,22 @@ import {Link} from "react-router-dom";
 import { Redirect } from 'react-router';
 import SVG from 'react-inlinesvg';
 import UrgentModal from 'react-modal';
-import PhoneIcon from '../../../icon/phone.svg';
 import BackArrow from '../../../icon/back-arrow.svg';
-import CameraIcon from '../../../icon/camera.svg';
-import PhoneSendIcon from '../../../icon/phone-send.svg';
-import SendIcon from '../../../icon/Send.svg';
-import PhoneEmojiIcon from '../../../icon/phone-emoji.svg';
-import PhoneLocationIcon from '../../../icon/phone-location.svg';
-import PhoneEmailIcon from '../../../icon/phone-email.svg';
-import PhoneAttachmentIcon from '../../../icon/phone-attachment.svg';
-import PhoneImportantIcon from '../../../icon/phone-important.svg';
-import PhoneImagesIcon from '../../../icon/phone-images.svg';
 import CameraModal from './CameraModal';
-
 import { store } from '../../store';
+import PhoneImagesIcon from "../../../icon/phone-images.svg";
+import PhoneImportantIcon from "../../../icon/phone-important.svg";
+import PhoneAttachmentIcon from "../../../icon/phone-attachment.svg";
+import PhoneEmailIcon from "../../../icon/phone-email.svg";
+import PhoneLocationIcon from "../../../icon/phone-location.svg";
+import PhoneEmojiIcon from "../../../icon/phone-emoji.svg";
+import SendIcon from "../../../icon/Send.svg";
 
 /// Overwrite inline styles provided by UrgentModal
 UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-let chatHistory = store.getState().chatHistory;
+let composeHistory = store.getState().composeHistory;
 
-class SingleChat extends Component {
+class ComposeChat extends Component {
     constructor() {
         super(...arguments);
         this.backButton = this.backButton.bind(this);
@@ -33,11 +29,11 @@ class SingleChat extends Component {
         this.sendMessage = this.sendMessage.bind(this);
         this.openModal = this.openModal.bind(this);
         this.closeModal = this.closeModal.bind(this);
+        this.toggleContacts = this.toggleContacts.bind(this);
         this.state = {
             counter: 0,
-            response: chatHistory[this.props.match.params.id].response,
-            received: chatHistory[this.props.match.params.id].received,
-            chatHistory: chatHistory,
+            name: "",
+            message: composeHistory.message,
             showGalleryModal: false,
             modalIsOpen: false
         };
@@ -60,46 +56,46 @@ class SingleChat extends Component {
     /// Pass string to tell input what to write on keyDown() event
     typeWriter(event) {
         event.preventDefault();
-        // window.Keyboard.hideFormAccessoryBar(true);
         document.getElementById("send").classList.add("send-fill");
-        if(this.state.counter < this.state.response.message.length){
-            document.getElementById("send-message").value += this.state.response.message.charAt(this.state.counter);
+        document.getElementById("single-chat-footer-2").classList.add("open");
+        if(this.state.counter < this.state.name.length){
+            document.getElementById("send-message").value += this.state.name.charAt(this.state.counter);
             this.state.counter++;
             this.adjustHeight();
         }
     }
-    
+
+
+    /// Open/Close individual Team Menu
+    toggleContacts() {
+        const contacts = document.getElementsByClassName("contact");
+        for(let name of contacts) {
+            name.onclick = () => {
+               this.setState({
+                   name: name.innerHTML
+               }, () => {
+                   document.getElementById("send-message").value = this.state.name;
+                   document.getElementsByClassName("contact-list")[0].classList.remove("open");
+                   document.getElementById("single-chat-footer-2").classList.add("open");
+                   document.getElementById("send-message").focus();
+               })
+            }
+        }
+    }
+
     /// Adjust height of <textarea> depending on size of content
     adjustHeight() {
         const a = document.getElementById("send-message");
         a.style.height = (a.scrollHeight > a.clientHeight) ? (a.scrollHeight - 34) + "px" : "1px";
     }
-
-    /// Read state object containing array of objects
-    getMessage() {
-        return this.state.chatHistory[this.props.match.params.id].received.map((item, key) => {
-            return (
-                <section className="message" id="message" key={key}>
-                    <img className="profile-pic" src={item.pic}/>
-                    <ul className={item.urgent ? "urgent" : null}>
-                        <li className="name">{item.name}</li>
-                        <li className="priority">{item.priority}</li>
-                        <li className="content">{item.message}</li>
-                    </ul>
-                    {item.urgent ? <img src={item.urgentImg}/> : null}
-                </section>
-            )
-        });
-    }
-
+    
     /// Return user input as message
     sendMessage() {
         const messageContainer = document.getElementById("messages"),
-              textNode = document.createElement("section"),
-              textAreaElement = document.getElementById("send-message");
+            textNode = document.createElement("section"),
+            textAreaElement = document.getElementById("send-message");
 
         if(this.props.showImage){
-            console.log("HELLOOOOOOOOOOOOOOOOOOOOOOO!");
             document.getElementById("imageNodeID").style.opacity = 1;
             this.props.toggleShowImage();
 
@@ -113,8 +109,8 @@ class SingleChat extends Component {
                     message: "Need a consult."
                 }
             });
-            
-        } else{ 
+
+        } else{
             textNode.classList.add("response");
             document.getElementById("send").classList.remove("send-fill");
             if(this.state.response.urgent) {
@@ -124,7 +120,7 @@ class SingleChat extends Component {
             else{
                 textNode.textContent = this.state.response.message;
             }
-            
+
             messageContainer.appendChild(textNode);
             textAreaElement.value = "";
             textAreaElement.style.height = "1rem";
@@ -136,7 +132,7 @@ class SingleChat extends Component {
                 textNode.classList.remove("urgent");
             }
         }
-        
+
         textAreaElement.classList.remove("image-send-message");
         textAreaElement.style.cssText = `background: none`;
         textAreaElement.style.height = "1rem";
@@ -146,8 +142,8 @@ class SingleChat extends Component {
     urgentMessage(event){
         event.preventDefault();
         const responseWrapper = document.getElementById("input-message"),
-              reminder = document.createElement("span"),
-              title = document.createElement("span");
+            reminder = document.createElement("span"),
+            title = document.createElement("span");
         responseWrapper.classList.add("urgent");
         title.textContent = "URGENT!";
         reminder.textContent = "Notify recipient every 2 min for 20 min";
@@ -186,43 +182,40 @@ class SingleChat extends Component {
     }
 
     componentDidMount() {
-        //console.log(this.state.chatHistory[this.props.match.params.id].received);
+        this.toggleContacts();
+
         setTimeout(() => {
             document.getElementById("single-chat").classList.add("open");
-        },50)
+        },50);
+
+        setTimeout(() => {
+            document.getElementById("send-message").focus();
+        },100);
     }
-    
+
     render() {
         if (this.state.redirect) {
             return <Redirect push to="/cameraOverlay"/>;
         }
         else {
             return (
-                <section className="page single-chat" id="single-chat">
+                <section className="page single-chat compose" id="single-chat">
                     <header id="single-chat-header">
-                        <h2 className="person">{this.state.chatHistory[this.props.match.params.id].name}</h2>
+                        <h2 className="person new-chat">New Chat</h2>
                         <ul className="icon-container">
                             <li className="back-arrow" onClick={this.backButton}><Link to='/'><SVG src={BackArrow}/></Link></li>
-                            <li className="camera-icon"><SVG src={CameraIcon}/></li>
-                            <li className="phone-icon"><SVG src={PhoneIcon}/></li>
-                        </ul>
-                        <ul className="chat-sub-nav">
-                            <li className="recent">
-                                <Link to={{pathname: '/', state: {next: 'false'}}}>Conversation</Link>
-                            </li>
-                            <li className="contacts">
-                                <Link to={{pathname: '/', state: {next: 'false'}}}>Files</Link>
-                            </li>
                         </ul>
                     </header>
-                    <section className="message-received" id="messages">
-                        {this.getMessage()}
-                        <span id="scroll"></span>
-                    </section>
                     <section className="input-message" id="input-message">
                         <form>
-                            <textarea placeholder="Send a message" id="send-message" onKeyDown={this.typeWriter}></textarea>
+                            <label>To:</label>
+                            <textarea placeholder="Start typing name or group" id="send-message" onKeyDown={this.typeWriter}></textarea>
                         </form>
+                    </section>
+                    <section className="contact-list open">
+                        <ul>
+                            <li className="contact">John Snow,</li>
+                        </ul>
                     </section>
                     <footer className="footer-2" id="single-chat-footer-2">
                         <ul className="footer-icons">
@@ -267,4 +260,4 @@ class SingleChat extends Component {
     }
 }
 
-export default SingleChat;
+export default ComposeChat;

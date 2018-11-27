@@ -5,6 +5,7 @@ import Teams from "../components/Teams";
 import Activity from "../components/Activity";
 import Chat from "../components/Chat";
 import SingleChat from "../components/chat/SingleChat";
+import ComposeChat from "../components/chat/ComposeChat";
 import IDTcontent from "../components/idt/IDTContent";
 import moreContent from "../components/idt/moreContent";
 import IDTpatientList from "../components/idt/PatientList";
@@ -40,6 +41,7 @@ const DemoAppRouter = (props) => (
                             <Route path="/activity" render={routeProps => <Activity {...routeProps} activityHistory={props.activityHistory}/>}/>
                             <Route exact path="/" render={() => <Chat chatHistory={props.chatHistory}/>} />
                             <Route path="/single-chat/:id" render={routeProps => <SingleChat {...routeProps} chatHistory={props.chatHistory} toggleShowImage={props.toggleShowImage} showImage={props.showImage}/>}/>
+                            <Route path="/compose-chat/" render={routeProps => <ComposeChat {...routeProps} chatHistory={props.chatHistory} toggleShowImage={props.toggleShowImage} showImage={props.showImage}/>}/>
                             <Route path="/IDT" component={IDTcontent} />
                             <Route path="/more" component={moreContent} />
                             <Route path="/idt-patient-list" component={IDTpatientList}/>

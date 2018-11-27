@@ -154,6 +154,11 @@ const initialState = {
                 }
             ]
         }
-    ]
-}
+    ],
+    composeHistory: {
+        name: "Ruth Franklin",
+        message: "you ok in my book."
+    }
+};
+
 export const store = createStore(reducer, initialState);
