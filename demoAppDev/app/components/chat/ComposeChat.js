@@ -13,6 +13,8 @@ import PhoneEmailIcon from "../../../icon/phone-email.svg";
 import PhoneLocationIcon from "../../../icon/phone-location.svg";
 import PhoneEmojiIcon from "../../../icon/phone-emoji.svg";
 import SendIcon from "../../../icon/Send.svg";
+import CameraIcon from "../../../icon/camera.svg";
+import PhoneIcon from "../../../icon/phone.svg";
 
 /// Overwrite inline styles provided by UrgentModal
 UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
@@ -24,6 +26,7 @@ class ComposeChat extends Component {
         this.backButton = this.backButton.bind(this);
         this.urgentMessage = this.urgentMessage.bind(this);
         this.findContact = this.findContact.bind(this);
+        this.typeWriter = this.typeWriter.bind(this);
         this.toggleCameraControls = this.toggleCameraControls.bind(this);
         this.toggleGalleryModal = this.toggleGalleryModal.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
@@ -32,6 +35,7 @@ class ComposeChat extends Component {
         this.toggleContacts = this.toggleContacts.bind(this);
         this.state = {
             counter: 0,
+            toCounter: 0,
             title: "New Chat",
             name: "John Snow,",
             message: composeHistory.message,
@@ -69,7 +73,18 @@ class ComposeChat extends Component {
         document.getElementById("input-message").classList.add("open");
     }
 
-
+    /// Pass string to tell input what to write on keyDown() event
+    typeWriter(event) {
+        event.preventDefault();
+        // window.Keyboard.hideFormAccessoryBar(true);
+        document.getElementById("send").classList.add("send-fill");
+        if(this.state.toCounter < this.state.message.length){
+            document.getElementById("compose-message").value += this.state.message.charAt(this.state.toCounter);
+            this.state.toCounter++;
+            this.adjustHeight();
+        }
+    }
+    
     /// Open/Close individual Team Menu
     toggleContacts() {
         const contact = document.getElementsByClassName("contact"),
@@ -77,7 +92,8 @@ class ComposeChat extends Component {
               inputCompose = document.getElementById("send-message"),
               inputComposeContainer = document.getElementById("to-message"),
               footer = document.getElementById("single-chat-footer-2"),
-              inputSendMessage = document.getElementById("input-message");
+              inputSendMessage = document.getElementById("input-message"),
+              title = document.getElementsByClassName("person")[0];
 
         for(let name of contact) {
             name.onclick = () => {
@@ -90,6 +106,7 @@ class ComposeChat extends Component {
                    document.getElementsByClassName("contact-list")[0].classList.remove("open");
                    footer.classList.add("open");
                    inputSendMessage.classList.add("open");
+                   title.classList.add("selected");
                    inputCompose.focus();
                })
             }
@@ -98,7 +115,7 @@ class ComposeChat extends Component {
 
     /// Adjust height of <textarea> depending on size of content
     adjustHeight() {
-        const a = document.getElementById("send-message");
+        const a = document.getElementById("compose-message");
         a.style.height = (a.scrollHeight > a.clientHeight) ? (a.scrollHeight - 34) + "px" : "1px";
     }
     
@@ -163,13 +180,6 @@ class ComposeChat extends Component {
         responseWrapper.appendChild(title);
         responseWrapper.appendChild(reminder);
 
-        this.setState({
-            response: {
-                message: this.state.response.message,
-                urgent: !this.state.response.urgent
-            }
-        });
-
         this.closeModal();
     }
 
@@ -218,6 +228,8 @@ class ComposeChat extends Component {
                         <h2 className="person new-chat">{this.state.title}</h2>
                         <ul className="icon-container">
                             <li className="back-arrow" onClick={this.backButton}><Link to='/'><SVG src={BackArrow}/></Link></li>
+                            <li className="camera-icon"><SVG src={CameraIcon}/></li>
+                            <li className="phone-icon"><SVG src={PhoneIcon}/></li>
                         </ul>
                     </header>
                     <section className="to-message" id="to-message">
@@ -232,9 +244,12 @@ class ComposeChat extends Component {
                             <li className="contact"><img src="/images/profile_5.png" alt="profile picture"/><span className="contact-name">John Snow</span></li>
                         </ul>
                     </section>
+                    <section className="message-received" id="messages">
+                        <span id="scroll"></span>
+                    </section>
                     <section className="input-message" id="input-message">
                         <form>
-                            <textarea placeholder="Send a message" id="send-message"></textarea>
+                            <textarea placeholder="Send a message" id="compose-message" onKeyDown={this.typeWriter}></textarea>
                         </form>
                     </section>
                     <footer className="footer-2" id="single-chat-footer-2">

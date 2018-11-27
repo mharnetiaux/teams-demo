@@ -158,7 +158,8 @@ const initialState = {
     ],
     composeHistory: {
         name: "Ruth Franklin",
-        message: "you ok in my book."
+        message: "Order a CT scan of Darell Salyer's left lung before today's IDT.",
+        urgent: true
     }
 };
 
