@@ -135,6 +135,14 @@ class SingleChat extends Component {
             }else {
                 textNode.classList.remove("urgent");
             }
+
+            //added back in
+            this.setState({
+                counter: 0,
+                response: {
+                    message: "Order a CT scan of Darell Salyer's left lung before today's IDT."
+                }
+            });
         }
         
         textAreaElement.classList.remove("image-send-message");

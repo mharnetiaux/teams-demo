@@ -15,7 +15,7 @@ export default class xrayFile extends Component{
         return (
             <section className="idt-chat">
                 <header>
-                    <h2 className="header-center">SalyerDarrellScan.png</h2>
+                    <h2 className="header-center ">SalyerDarrellScan.png</h2>
                     <h1 className="header-center header-center-under">Contoso Hospital / IDT</h1>
                     <ul className="icon-container">
                         <Link to={{pathname:'/idt', state:{prev:'true'}}}>
