@@ -32,7 +32,7 @@ class ComposeChat extends Component {
         this.toggleContacts = this.toggleContacts.bind(this);
         this.state = {
             counter: 0,
-            name: "",
+            name: "John Snow,",
             message: composeHistory.message,
             showGalleryModal: false,
             modalIsOpen: false
@@ -58,7 +58,7 @@ class ComposeChat extends Component {
         event.preventDefault();
         document.getElementById("send").classList.add("send-fill");
         document.getElementById("single-chat-footer-2").classList.add("open");
-        if(this.state.counter < this.state.name.length){
+        if(this.state.counter <= this.state.name.length){
             document.getElementById("send-message").value += this.state.name.charAt(this.state.counter);
             this.state.counter++;
             this.adjustHeight();
@@ -79,7 +79,7 @@ class ComposeChat extends Component {
                this.setState({
                    name: name.innerHTML
                }, () => {
-                   inputCompose.value = this.state.name;
+                   inputCompose.value = this.state.name + ",";
                    inputComposeContainer.classList.add("open");
                    document.getElementsByClassName("contact-list")[0].classList.remove("open");
                    footer.classList.add("open");
@@ -198,6 +198,10 @@ class ComposeChat extends Component {
         setTimeout(() => {
             document.getElementById("send-message").focus();
         },100);
+
+        setTimeout(() => {
+            document.getElementsByClassName("contact-list")[0].classList.add("open");
+        },500);
     }
 
     render() {
@@ -219,9 +223,10 @@ class ComposeChat extends Component {
                             <textarea placeholder="Start typing name or group" id="send-message" onKeyDown={this.typeWriter}></textarea>
                         </form>
                     </section>
-                    <section className="contact-list open">
+                    <section className="contact-list">
+                        <h3>Suggestions</h3>
                         <ul>
-                            <li className="contact">John Snow,</li>
+                            <li className="contact">John Snow</li>
                         </ul>
                     </section>
                     <section className="input-message" id="input-message">
