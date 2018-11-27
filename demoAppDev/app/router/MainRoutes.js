@@ -9,6 +9,8 @@ import ComposeChat from "../components/chat/ComposeChat";
 import IDTcontent from "../components/idt/IDTContent";
 import moreContent from "../components/idt/moreContent";
 import IDTpatientList from "../components/idt/PatientList";
+import IDTpage from "../components/idt/IDTpage";
+import XrayFile from "../components/idt/xrayFile";
 import filesContent from "../components/idt/filesContent";
 import CameraOverlayScreen from "../components/CameraOverlayScreen";
 import Footer from "../components/Footer";
@@ -44,10 +46,11 @@ const DemoAppRouter = (props) => (
                             <Route exact path="/" render={() => <Chat chatHistory={props.chatHistory}/>} />
                             <Route path="/single-chat/:id" render={routeProps => <SingleChat {...routeProps} chatHistory={props.chatHistory} toggleShowImage={props.toggleShowImage} showImage={props.showImage}/>}/>
                             <Route path="/compose-chat/" render={routeProps => <ComposeChat {...routeProps} chatHistory={props.chatHistory} toggleShowImage={props.toggleShowImage} showImage={props.showImage}/>}/>
-                            <Route path="/IDT" component={IDTcontent} />
-                            <Route path="/more" component={moreContent} />
+                            <Route path="/IDT" component={IDTpage} />
+                            <Route path="/xrayFile" component={XrayFile} />
+                            {/* <Route path="/more" component={moreContent} />
                             <Route path="/idt-patient-list" component={IDTpatientList}/>
-                            <Route path="/files" component={filesContent} />
+                            <Route path="/files" component={filesContent} /> */}
                             <Route path="/cameraOverlay" render={routeProps => <CameraOverlayScreen {...routeProps} showKeyboard={props.showKeyboard} imgCameraSrc={props.imgCameraSrc} setImgSrc={props.setImgCameraSrc}/>} />
                         </Switch>
                         <Footer/>

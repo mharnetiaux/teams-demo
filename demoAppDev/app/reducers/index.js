@@ -158,7 +158,12 @@ export default (state, action) => {
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        composeHistory: {
+                            name: "Ruth Franklin",
+                            message: "Order a CT scan of Darell Salyer's left lung before today's IDT.",
+                            urgent: true
+                        }
                     }
                 }
                 case 2:{
@@ -315,7 +320,12 @@ export default (state, action) => {
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        composeHistory: {
+                            name: "Ruth Franklin",
+                            message: "Order a CT scan of Darell Salyer's left lung before today's IDT.",
+                            urgent: true
+                        }
                     }
                 }
                 default: return state;

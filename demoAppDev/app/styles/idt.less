@@ -13,13 +13,16 @@
         bottom: 0;
     }
 
-    a{
+    // a{
+    //     padding: 1rem 0;
+    //     flex: 1;
+    //     color: @icon-fill;
+    // }
+
+    li {
         padding: 1rem 0;
         flex: 1;
         color: @icon-fill;
-    }
-
-    li {
         font-size: 15px;
         opacity: 0.6;
 
@@ -34,23 +37,25 @@
         }
 
         &.selected{
-            transition-property: opacity;
-            transition-duration: 5s;
+            transition: opacity .3s ease-in;
             opacity:1;
         }
 
         &.chat.selected::before{
             display: block;
+            transition: left 1s;
             left: 0;
         }
 
         &.files.selected::before {
             display: block;
+            transition: right 1s;
             right: 33%;
         }
 
         &.more.selected::before {
             display: block;
+            transition: right 1s;
             right: 0;
         }
     }
@@ -513,7 +518,9 @@
     }
 }
 
-
+.idt-scroll{
+    overflow-y: scroll;
+}
 
 .idt-chat{
     position: fixed;

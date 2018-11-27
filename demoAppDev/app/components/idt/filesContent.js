@@ -1,17 +1,12 @@
 import React, {Component} from 'react';
-import {Link} from "react-router-dom";
 import SVG from 'react-inlinesvg';
 import PhoneImagesIcon from '../../../icon/phone-images.svg';
-import BackArrow from '../../../icon/back-arrow.svg';
-import CloseHeader from '../../../icon/close-header.svg';
-import ShareIOS from '../../../icon/share-ios.svg';
+import { Redirect } from 'react-router-dom'
 
 export default class filesContent extends Component{
     constructor(){
         super(...arguments);
         let date = new Date();
-        this.toggleClass = this.toggleClass.bind(this);
-        this.backButton = this.backButton.bind(this);
         this.redirectFile = this.redirectFile.bind(this);
         this.state = {
             redirect: true,
@@ -76,30 +71,7 @@ export default class filesContent extends Component{
             ]
         };
     }
-    
-    toggleClass(navValue) {
-        if(navValue === "chat"){
-            this.setState({
-                chat: true, files: false, more: false
-            });
-        } else if(navValue === "files"){
-            this.setState({
-                chat: false, files: true, more: false
-            });
-        } else{
-            this.setState({
-                chat: false, files: false, more: true
-            });
-        }
 
-    };
-
-    /// Add selected class to previous page
-    backButton() {
-        setTimeout(() => {
-            document.getElementsByClassName("page")[0].classList.add("page-selected");
-        },100)
-    }
     redirectFile() {
         this.setState((prevState) => {
             return {
@@ -127,58 +99,37 @@ export default class filesContent extends Component{
 
         if (this.state.redirect) {
             return (
-                <section className="idt-chat">
-                    <header>
-                        <h2 className="header-center header-center-purple">IDT</h2>
-                        <h1 className="header-center header-center-under">Contoso Hospital</h1>
-                        <ul className="icon-container">
-                            <li className="back-arrow" onClick={this.backButton}><Link to={{pathname: '/teams', state: {prev: 'true'}}}><SVG
-                                src={BackArrow}/></Link></li>
-                        </ul>
-                        <ul className="idt-sub-nav">
-                            <Link to={{pathname:'/idt', state:{next:'false'}}}>
-                                <li className={this.state.chat ? 'chat selected': "chat"} onClick={() => {this.toggleClass("chat")}}>
-                                    Chat
-                                </li>
-                            </Link>
-                            <Link to={{pathname:'/files', state:{next:'false'}}}>
-                                <li className={this.state.files ? 'files selected': "files"} onClick={() => {this.toggleClass("files")}}>
-                                    Files
-                                </li>
-                            </Link>
-                            <Link to={{pathname:'/more', state:{next:'false'}}}>
-                                <li className={this.state.more ? 'more selected': "more"} onClick={() => {this.toggleClass("more")}}>
-                                    More
-                                </li>
-                            </Link>
-                        </ul>
-                    </header>
+                <section className="idt-scroll">
                     {idtFileItem}
                 </section>
             )
-        } else{
+        } 
+        else{
             return (
-            <section className="idt-chat">
-                <header>
-                    <h2 className="header-center">SalyerDarrellScan.png</h2>
-                    <h1 className="header-center header-center-under">Contoso Hospital / IDT</h1>
-                    <ul className="icon-container">
-                        <li className="back-close" onClick={this.redirectFile}><SVG
-                                src={CloseHeader}
-                                />
-                        </li>
-                    </ul>
-                </header>
-                <div style={{background: "white", height: "100%"}}>
-                    <img style={{width: "100%", transform: "translateY(80%)"}}src={"/images/Scan.png"} alt="scan"></img>
-                </div>
-                <footer className="footer-2" id="single-chat-footer-2">
-                    <ul className="footer-icons">
-                        <li className="share-ios"><SVG src={ShareIOS}/></li>
-                    </ul>
-                </footer>
-            </section>
-            )
+                <Redirect to='/xrayFile'/>
+            );
+        //     return (
+        //     <section className="idt-chat">
+        //         <header>
+        //             <h2 className="header-center">SalyerDarrellScan.png</h2>
+        //             <h1 className="header-center header-center-under">Contoso Hospital / IDT</h1>
+        //             <ul className="icon-container">
+        //                 <li className="back-close" onClick={this.redirectFile}><SVG
+        //                         src={CloseHeader}
+        //                         />
+        //                 </li>
+        //             </ul>
+        //         </header>
+        //         <div style={{background: "white", height: "100%"}}>
+        //             <img style={{width: "100%", transform: "translateY(80%)"}}src={"/images/Scan.png"} alt="scan"></img>
+        //         </div>
+        //         <footer className="footer-2" id="single-chat-footer-2">
+        //             <ul className="footer-icons">
+        //                 <li className="share-ios"><SVG src={ShareIOS}/></li>
+        //             </ul>
+        //         </footer>
+        //     </section>
+        //     )
         }
     }
 }

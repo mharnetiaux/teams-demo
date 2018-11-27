@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
 import SVG from 'react-inlinesvg';
-import FollowIcon from "../../../icon/follow-icon.svg";
-import BackArrow from '../../../icon/back-arrow.svg';
+// import FollowIcon from "../../../icon/follow-icon.svg";
+// import BackArrow from '../../../icon/back-arrow.svg';
 
 import ReplyIcon from "../../../icon/reply-icon.svg";
 import ConversationNewIcon from '../../../icon/conversation-new.svg';
@@ -10,8 +10,8 @@ import ConversationNewIcon from '../../../icon/conversation-new.svg';
 export default class IDTContent extends Component{
     constructor(){
         super();
-        this.backButton = this.backButton.bind(this);
-        this.toggleClass = this.toggleClass.bind(this);
+        // this.backButton = this.backButton.bind(this);
+        // this.toggleClass = this.toggleClass.bind(this);
         let date = new Date();
         let copiedDate = new Date(date.valueOf());
         let dateYesterday = new Date(copiedDate.setDate(date.getDate() - 1));
@@ -41,29 +41,29 @@ export default class IDTContent extends Component{
         };
     }
 
-    toggleClass(navValue) {
-        if(navValue === "chat"){
-            this.setState({
-                chat: true, files: false, more: false
-            });
-        } else if(navValue === "files"){
-            this.setState({
-                chat: false, files: true, more: false
-            });
-        } else{
-            this.setState({
-                chat: false, files: false, more: true
-            });
-        }
+    // toggleClass(navValue) {
+    //     if(navValue === "chat"){
+    //         this.setState({
+    //             chat: true, files: false, more: false
+    //         });
+    //     } else if(navValue === "files"){
+    //         this.setState({
+    //             chat: false, files: true, more: false
+    //         });
+    //     } else{
+    //         this.setState({
+    //             chat: false, files: false, more: true
+    //         });
+    //     }
 
-    };
+    // };
 
-    /// Add selected class to previous page
-    backButton() {
-        setTimeout(() => {
-            document.getElementsByClassName("page")[0].classList.add("page-selected");
-        },100)
-    }
+    // /// Add selected class to previous page
+    // backButton() {
+    //     setTimeout(() => {
+    //         document.getElementsByClassName("page")[0].classList.add("page-selected");
+    //     },100)
+    // }
 
     render() {
         // let yesterdayMonthDay = dateYesterday.toLocaleString('en-US', { month: 'numeric', day: 'numeric'});
@@ -131,8 +131,9 @@ export default class IDTContent extends Component{
         });
 
         return (
-            <section className="idt-chat">
-                <header>
+            // <section className="idt-chat">
+            <section className="idt-scroll">
+                {/* <header>
                     <h2 className="header-center header-center-purple">IDT</h2>
                     <h1 className="header-center header-center-under">Contoso Hospital</h1>
                     <ul className="icon-container">
@@ -157,7 +158,7 @@ export default class IDTContent extends Component{
                             </li>
                         </Link>
                     </ul>
-                </header>
+                </header> */}
                 <div className="chat-item-scroll">
                     {chatItem}
                     {meetItem}

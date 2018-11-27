@@ -166,7 +166,7 @@ export default class PatientList extends Component{
                     <h2 className="header-center">Patients</h2>
                     <h1 className="header-center header-center-under">Contoso Hospital / IDT</h1>
                         <ul className="icon-container">
-                            <li className="back-close"><Link to={{pathname: '/more', state: {prev: 'true'}}}><SVG
+                            <li className="back-close"><Link to={{pathname: '/idt', state: {prev: 'true'}}}><SVG
                                 src={CloseHeader}/></Link></li>
                         </ul>
                     </header>
