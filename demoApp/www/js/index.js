@@ -14,9 +14,8 @@ var app = {
 
     // Update DOM on a Received Event
     receivedEvent: function() {
-
         Keyboard.shrinkView(true);
-        Keyboard.hideFormAccessoryBar(false);
+        Keyboard.hideFormAccessoryBar(true);
         Keyboard.disableScrollingInShrinkView(false);
         Keyboard.automaticScrollToTopOnHiding = false;
         

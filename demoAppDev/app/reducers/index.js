@@ -6,15 +6,16 @@ export default (state, action) => {
             switch(action.stage){
                 case 0:{
                     return {
+                        callAlert: false,
                         chatHistory: [
                             {
                                 read: true,
-                                type: "urgent",
+                                type: "",
                                 name: "Ruth Franklin",
                                 time: date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
                                 message: "Order a CT scan of Darrel Salyer's left...",
                                 priorityIcon: "/icon/urgent.svg",
-                                priority: "- URGENT",
+                                priority: "",
                                 avatar: "/images/profile_1.png",
                                 response: {
                                     message: "Might be the dexamethasone. Will order additional tests.",
@@ -162,6 +163,7 @@ export default (state, action) => {
                 }
                 case 2:{
                     return {
+                        callAlert: false,
                         chatHistory: [
                             {
                                 read: true,
@@ -190,12 +192,12 @@ export default (state, action) => {
                             },
                             {
                                 read: true,
-                                type: "urgent",
+                                type: "",
                                 name: "Ruth Franklin",
                                 time: date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
                                 message: "Order a CT scan of Darrel Salyer's left...",
                                 priorityIcon: "/icon/urgent.svg",
-                                priority: "- URGENT",
+                                priority: "",
                                 avatar: "/images/profile_1.png",
                                 response: {
                                     message: "Might be the dexamethasone. Will order additional tests.",

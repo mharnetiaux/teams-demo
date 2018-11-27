@@ -14,6 +14,8 @@ import CameraOverlayScreen from "../components/CameraOverlayScreen";
 import Footer from "../components/Footer";
 import React from "react";
 
+import { store } from '../store';
+
 /// Move this out eventually
 const Alert = () => {
     const alertType = {
@@ -29,7 +31,7 @@ const Alert = () => {
 const DemoAppRouter = (props) => (
     <Router>
         <span>
-        {Alert()}
+        {/* {store.getState().callAlert && Alert()} */}
             <Route
                 render={({ location }) => {
                     return (
