@@ -84,31 +84,31 @@ class ComposeChat extends Component {
             this.adjustHeight();
         }
     }
-    
+
     /// Open/Close individual Team Menu
     toggleContacts() {
         const contact = document.getElementsByClassName("contact"),
-              text = document.getElementsByClassName("contact-name")[0],
-              inputCompose = document.getElementById("send-message"),
-              inputComposeContainer = document.getElementById("to-message"),
-              footer = document.getElementById("single-chat-footer-2"),
-              inputSendMessage = document.getElementById("input-message"),
-              title = document.getElementsByClassName("person")[0];
+            text = document.getElementsByClassName("contact-name")[0],
+            inputCompose = document.getElementById("send-message"),
+            inputComposeContainer = document.getElementById("to-message"),
+            footer = document.getElementById("single-chat-footer-2"),
+            inputSendMessage = document.getElementById("input-message"),
+            title = document.getElementsByClassName("person")[0];
 
         for(let name of contact) {
             name.onclick = () => {
-               this.setState({
-                   name: text.innerHTML,
-                   title: text.innerHTML
-               }, () => {
-                   inputCompose.value = this.state.name + ",";
-                   inputComposeContainer.classList.add("open");
-                   document.getElementsByClassName("contact-list")[0].classList.remove("open");
-                   footer.classList.add("open");
-                   inputSendMessage.classList.add("open");
-                   title.classList.add("selected");
-                   inputCompose.focus();
-               })
+                this.setState({
+                    name: text.innerHTML,
+                    title: text.innerHTML
+                }, () => {
+                    inputCompose.value = this.state.name + ",";
+                    inputComposeContainer.classList.add("open");
+                    document.getElementsByClassName("contact-list")[0].classList.remove("open");
+                    footer.classList.add("open");
+                    inputSendMessage.classList.add("open");
+                    title.classList.add("selected");
+                    inputCompose.focus();
+                })
             }
         }
     }
@@ -118,7 +118,7 @@ class ComposeChat extends Component {
         const a = document.getElementById("compose-message");
         a.style.height = (a.scrollHeight > a.clientHeight) ? (a.scrollHeight - 34) + "px" : "1px";
     }
-    
+
     /// Return user input as message
     sendMessage() {
         const messageContainer = document.getElementById("messages"),
@@ -243,9 +243,6 @@ class ComposeChat extends Component {
                         <ul>
                             <li className="contact"><img src="/images/profile_5.png" alt="profile picture"/><span className="contact-name">John Snow</span></li>
                         </ul>
-                    </section>
-                    <section className="message-received" id="messages">
-                        <span id="scroll"></span>
                     </section>
                     <section className="input-message" id="input-message">
                         <form>
