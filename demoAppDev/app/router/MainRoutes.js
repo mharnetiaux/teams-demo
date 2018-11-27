@@ -48,9 +48,9 @@ const DemoAppRouter = (props) => (
                             <Route path="/compose-chat/" render={routeProps => <ComposeChat {...routeProps} chatHistory={props.chatHistory} toggleShowImage={props.toggleShowImage} showImage={props.showImage}/>}/>
                             <Route path="/IDT" component={IDTpage} />
                             <Route path="/xrayFile" component={XrayFile} />
-                            {/* <Route path="/more" component={moreContent} />
+                            {/* <Route path="/more" component={moreContent} /> */}
                             <Route path="/idt-patient-list" component={IDTpatientList}/>
-                            <Route path="/files" component={filesContent} /> */}
+                            {/* <Route path="/files" component={filesContent} /> */}
                             <Route path="/cameraOverlay" render={routeProps => <CameraOverlayScreen {...routeProps} showKeyboard={props.showKeyboard} imgCameraSrc={props.imgCameraSrc} setImgSrc={props.setImgCameraSrc}/>} />
                         </Switch>
                         <Footer/>

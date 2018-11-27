@@ -38,6 +38,7 @@ class ComposeChat extends Component {
             toCounter: 0,
             title: "New Chat",
             name: "John Snow,",
+            urgent: true,
             message: composeHistory.message,
             showGalleryModal: false,
             modalIsOpen: false
@@ -76,7 +77,6 @@ class ComposeChat extends Component {
     /// Pass string to tell input what to write on keyDown() event
     typeWriter(event) {
         event.preventDefault();
-        // window.Keyboard.hideFormAccessoryBar(true);
         document.getElementById("send").classList.add("send-fill");
         if(this.state.toCounter < this.state.message.length){
             document.getElementById("compose-message").value += this.state.message.charAt(this.state.toCounter);
@@ -122,50 +122,23 @@ class ComposeChat extends Component {
     /// Return user input as message
     sendMessage() {
         const messageContainer = document.getElementById("messages"),
-            textNode = document.createElement("section"),
-            textAreaElement = document.getElementById("send-message");
+              textNode = document.createElement("section"),
+              textAreaElement = document.getElementById("compose-message");
 
-        if(this.props.showImage){
-            document.getElementById("imageNodeID").style.opacity = 1;
-            this.props.toggleShowImage();
-
-            document.getElementById("send").classList.remove("send-fill");
-            textAreaElement.value = "";
-            textAreaElement.style.height = "1rem";
-
-            this.setState({
-                counter: 0,
-                response: {
-                    message: "Need a consult."
-                }
-            });
-
-        } else{
-            textNode.classList.add("response");
-            document.getElementById("send").classList.remove("send-fill");
-            if(this.state.response.urgent) {
-                textNode.innerHTML = '<span style="display:block; padding: 2px 4px 6px 0px;">URGENT!</span>';
-                textNode.innerHTML += this.state.response.message;
-            }
-            else{
-                textNode.textContent = this.state.response.message;
-            }
-
-            messageContainer.appendChild(textNode);
-            textAreaElement.value = "";
-            textAreaElement.style.height = "1rem";
-            document.getElementById("input-message").classList.remove("urgent");
-
-            if(this.state.response.urgent) {
-                textNode.classList.add("urgent");
-            }else {
-                textNode.classList.remove("urgent");
-            }
-        }
-
-        textAreaElement.classList.remove("image-send-message");
-        textAreaElement.style.cssText = `background: none`;
+        textNode.classList.add("response");
+        textNode.innerHTML += this.state.message;
+        document.getElementById("send").classList.remove("send-fill");
+        messageContainer.appendChild(textNode);
+        textAreaElement.value = "";
         textAreaElement.style.height = "1rem";
+        document.getElementById("input-message").classList.remove("urgent");
+        messageContainer.classList.add("open");
+
+        if(this.state.urgent) {
+            textNode.classList.add("urgent");
+        }else {
+            textNode.classList.remove("urgent");
+        }
     }
 
     /// Mark message as URGENT
@@ -220,8 +193,7 @@ class ComposeChat extends Component {
     render() {
         if (this.state.redirect) {
             return <Redirect push to="/cameraOverlay"/>;
-        }
-        else {
+        } else {
             return (
                 <section className="page single-chat compose" id="single-chat">
                     <header id="single-chat-header">
@@ -243,6 +215,9 @@ class ComposeChat extends Component {
                         <ul>
                             <li className="contact"><img src="/images/profile_5.png" alt="profile picture"/><span className="contact-name">John Snow</span></li>
                         </ul>
+                    </section>
+                    <section className="message-received" id="messages">
+                        <span id="scroll"></span>
                     </section>
                     <section className="input-message" id="input-message">
                         <form>
