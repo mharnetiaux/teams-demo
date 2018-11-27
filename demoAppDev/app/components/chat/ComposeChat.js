@@ -68,16 +68,19 @@ class ComposeChat extends Component {
 
     /// Open/Close individual Team Menu
     toggleContacts() {
-        const contacts = document.getElementsByClassName("contact");
+        const contacts = document.getElementsByClassName("contact"),
+              inputCompose = document.getElementById("send-message"),
+              inputComposeContainer = document.getElementById("input-message");
         for(let name of contacts) {
             name.onclick = () => {
                this.setState({
                    name: name.innerHTML
                }, () => {
-                   document.getElementById("send-message").value = this.state.name;
+                   inputCompose.value = this.state.name;
+                   inputComposeContainer.classList.add("open");
                    document.getElementsByClassName("contact-list")[0].classList.remove("open");
                    document.getElementById("single-chat-footer-2").classList.add("open");
-                   document.getElementById("send-message").focus();
+                   inputCompose.focus();
                })
             }
         }
