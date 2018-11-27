@@ -20,7 +20,7 @@ html {
 
 /// Header container
 header {
-    padding-top: 1rem;
+    padding-top: 2rem;
     position: relative;
     background-color: @iphone-bg-grey;
     &::after {
@@ -52,6 +52,14 @@ header {
             margin-left: auto;
         }
     }
+}
+
+.alert-container ~ header {
+    padding-top: 1rem;
+}
+
+.alert-container ~ header ~ .chat-sub-nav ~ .page-content.chat{
+    max-height: 65vh;
 }
 
 /// Footer
