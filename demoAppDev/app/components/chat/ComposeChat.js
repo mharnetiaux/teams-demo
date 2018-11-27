@@ -23,7 +23,7 @@ class ComposeChat extends Component {
         super(...arguments);
         this.backButton = this.backButton.bind(this);
         this.urgentMessage = this.urgentMessage.bind(this);
-        this.typeWriter = this.typeWriter.bind(this);
+        this.findContact = this.findContact.bind(this);
         this.toggleCameraControls = this.toggleCameraControls.bind(this);
         this.toggleGalleryModal = this.toggleGalleryModal.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
@@ -32,6 +32,7 @@ class ComposeChat extends Component {
         this.toggleContacts = this.toggleContacts.bind(this);
         this.state = {
             counter: 0,
+            title: "New Chat",
             name: "John Snow,",
             message: composeHistory.message,
             showGalleryModal: false,
@@ -54,7 +55,7 @@ class ComposeChat extends Component {
     }
 
     /// Pass string to tell input what to write on keyDown() event
-    typeWriter(event) {
+    findContact(event) {
         event.preventDefault();
         document.getElementById("send").classList.add("send-fill");
         document.getElementById("single-chat-footer-2").classList.add("open");
@@ -63,12 +64,16 @@ class ComposeChat extends Component {
             this.state.counter++;
             this.adjustHeight();
         }
+        document.getElementsByClassName("contact-list")[0].classList.remove("open");
+        document.getElementById("to-message").classList.add("open");
+        document.getElementById("input-message").classList.add("open");
     }
 
 
     /// Open/Close individual Team Menu
     toggleContacts() {
         const contact = document.getElementsByClassName("contact"),
+              text = document.getElementsByClassName("contact-name")[0],
               inputCompose = document.getElementById("send-message"),
               inputComposeContainer = document.getElementById("to-message"),
               footer = document.getElementById("single-chat-footer-2"),
@@ -77,7 +82,8 @@ class ComposeChat extends Component {
         for(let name of contact) {
             name.onclick = () => {
                this.setState({
-                   name: name.innerHTML
+                   name: text.innerHTML,
+                   title: text.innerHTML
                }, () => {
                    inputCompose.value = this.state.name + ",";
                    inputComposeContainer.classList.add("open");
@@ -197,11 +203,8 @@ class ComposeChat extends Component {
 
         setTimeout(() => {
             document.getElementById("send-message").focus();
-        },100);
-
-        setTimeout(() => {
             document.getElementsByClassName("contact-list")[0].classList.add("open");
-        },500);
+        },100);
     }
 
     render() {
@@ -212,7 +215,7 @@ class ComposeChat extends Component {
             return (
                 <section className="page single-chat compose" id="single-chat">
                     <header id="single-chat-header">
-                        <h2 className="person new-chat">New Chat</h2>
+                        <h2 className="person new-chat">{this.state.title}</h2>
                         <ul className="icon-container">
                             <li className="back-arrow" onClick={this.backButton}><Link to='/'><SVG src={BackArrow}/></Link></li>
                         </ul>
@@ -220,13 +223,13 @@ class ComposeChat extends Component {
                     <section className="to-message" id="to-message">
                         <form>
                             <label>To:</label>
-                            <textarea placeholder="Start typing name or group" id="send-message" onKeyDown={this.typeWriter}></textarea>
+                            <textarea placeholder="Start typing name or group" id="send-message" onKeyDown={this.findContact}></textarea>
                         </form>
                     </section>
                     <section className="contact-list">
                         <h3>Suggestions</h3>
                         <ul>
-                            <li className="contact">John Snow</li>
+                            <li className="contact"><img src="/images/profile_5.png" alt="profile picture"/><span className="contact-name">John Snow</span></li>
                         </ul>
                     </section>
                     <section className="input-message" id="input-message">
