@@ -61,6 +61,15 @@
                 padding-left: 0;
             }
         }
+
+        .message-received {
+            display: none;
+
+            &.open {
+                display: block;
+                margin-top: -1rem; ///can be better
+            }
+        }
     }
 
     .contact-list {
@@ -81,10 +90,10 @@
         }
 
         &.open {
-            overflow-y: hidden;
+            overflow: hidden;
             transition-delay: 0.75s;
             transition-property: visibility, max-height;
-            transition-duration: 2s, 2s;
+            transition-duration: 1.5s, 1.5s;
             visibility: visible;
             max-height: 200px;
             display: block;
@@ -334,8 +343,9 @@
             padding: 0.5rem;
             
             &.urgent{
-                width: 80%;
+                width: 77%;
             }
+
             &.urgent::before {
                 content: "";
                 background: url(~"/icon/urgent.svg") no-repeat;
