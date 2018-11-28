@@ -37,7 +37,7 @@ class ComposeChat extends Component {
             counter: 0,
             toCounter: 0,
             title: "New Chat",
-            name: "John Snow,",
+            name: "Laurence Gilbertson,",
             urgent: true,
             message: composeHistory.message,
             showGalleryModal: false,
@@ -213,7 +213,7 @@ class ComposeChat extends Component {
                     <section className="contact-list">
                         <h3>Suggestions</h3>
                         <ul>
-                            <li className="contact"><img src="/images/profile_5.png" alt="profile picture"/><span className="contact-name">John Snow</span></li>
+                            <li className="contact"><img src="/images/profile_5.png" alt="profile picture"/><span className="contact-name">Laurence Gilbertson</span></li>
                         </ul>
                     </section>
                     <section className="message-received" id="messages">
