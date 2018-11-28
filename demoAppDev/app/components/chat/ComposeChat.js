@@ -213,7 +213,7 @@ class ComposeChat extends Component {
                     <section className="contact-list">
                         <h3>Suggestions</h3>
                         <ul>
-                            <li className="contact"><img src="/images/profile_5.png" alt="profile picture"/><span className="contact-name">Laurence Gilbertson</span></li>
+                            <li className="contact"><img src="/images/profile_3.png" alt="profile picture"/><span className="contact-name">Laurence Gilbertson</span></li>
                         </ul>
                     </section>
                     <section className="message-received" id="messages">
