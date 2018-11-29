@@ -12,15 +12,16 @@
     margin: auto;
     position: relative;
 
-    &::after {
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        background: @black;
-        opacity: 0.1;
-        content: "";
-        bottom: 0;
-    }
+    //Yessi said to remove all lines, might be added back in?
+    // &::after {
+    //     position: absolute;
+    //     height: 1px;
+    //     width: 100%;
+    //     background: @black;
+    //     opacity: 0.1;
+    //     content: "";
+    //     bottom: 0;
+    // }
 
     .team-menu {
         display: none;
@@ -37,6 +38,8 @@
 
             img{
                 width: 32px;
+                border: 1px solid @light-gray-border;
+                border-radius: 7px;
             }
         }
 
