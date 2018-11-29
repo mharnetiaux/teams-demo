@@ -28,13 +28,13 @@
     <config-file overwrite="true" parent="NSCameraUsageDescription" platform="ios" target="*-Info.plist">
         <string>Allow the app to use your camera</string>
     </config-file>
-    <config-file parent="CFBundleDisplayName" platform="ios" target="*-Info.plist">
+    <edit-config file="*-Info.plist" mode="merge" target="CFBundleDisplayName">
         <string>Teams</string>
-    </config-file>
+    </edit-config>
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
-    <plugin name="cordova-plugin-ionic-keyboard" spec="^2.1.2" />
+    <plugin name="cordova-plugin-ionic-keyboard" spec="^2.1.3" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.2" />
-    <plugin name="cordova-plugin-ionic-webview" spec="~2.1.4" />
+    <plugin name="cordova-plugin-ionic-webview" spec="^2.2.0" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
     <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
     <plugin name="cordova-plugin-splashscreen" spec="^5.0.2" />

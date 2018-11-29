@@ -129,18 +129,18 @@ class CameraOverlayScreen extends Component{
     //<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: content:;">
     cameraTakePicture(event) {         
         let imageSrcData = undefined;
-        // window.CameraPreview.takePicture({width:500, height: 810, quality: 80}, onSuccess, onFail);
-        // function onSuccess(imageData) { 
-        //     console.log("GOT PICTURE!!!!!!!!");
-        //     imageSrcData = 'data:image/jpeg;base64,' +imageData;       
-        // }  
-        // function onFail(error) { 
-        //    console.log('Failed because: ' + error); 
-        // } 
+        window.CameraPreview.takePicture({width:500, height: 810, quality: 80}, onSuccess, onFail);
+        function onSuccess(imageData) { 
+            console.log("GOT PICTURE!!!!!!!!");
+            imageSrcData = 'data:image/jpeg;base64,' +imageData;       
+        }  
+        function onFail(error) { 
+           console.log('Failed because: ' + error); 
+        } 
         this.togglePhotoControls();
 
         window.setTimeout(() => {
-            // this.stopCamera();
+            this.stopCamera();
             this.setImg(imageSrcData);
         }, 1500);        
     }
