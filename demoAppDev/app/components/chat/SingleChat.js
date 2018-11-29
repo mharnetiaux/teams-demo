@@ -138,10 +138,7 @@ class SingleChat extends Component {
 
             //added back in
             this.setState({
-                counter: 0,
-                response: {
-                    message: "Order a CT scan of Darell Salyer's left lung before today's IDT."
-                }
+                counter: 0
             });
         }
         
