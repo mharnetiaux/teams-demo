@@ -26,7 +26,7 @@ const Alert = () => {
         image: "/icon/urgent-white.svg",
     };
     return(
-        <Link id="alertContainer" className="alert-container" to='/'><section className={alertType.on ? "alert": "none"}><img src={alertType.image} width="20" height="20"/><span className="alert-message">{alertType.content}</span></section></Link>
+        <Link id="alertContainer" className="alert-container" to='/single-chat/0'><section className={alertType.on ? "alert": "none"}><img src={alertType.image} width="20" height="20"/><span className="alert-message">{alertType.content}</span></section></Link>
     );
 };
 

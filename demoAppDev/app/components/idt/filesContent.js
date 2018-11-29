@@ -108,28 +108,6 @@ export default class filesContent extends Component{
             return (
                 <Redirect to='/xrayFile'/>
             );
-        //     return (
-        //     <section className="idt-chat">
-        //         <header>
-        //             <h2 className="header-center">SalyerDarrellScan.png</h2>
-        //             <h1 className="header-center header-center-under">Contoso Hospital / IDT</h1>
-        //             <ul className="icon-container">
-        //                 <li className="back-close" onClick={this.redirectFile}><SVG
-        //                         src={CloseHeader}
-        //                         />
-        //                 </li>
-        //             </ul>
-        //         </header>
-        //         <div style={{background: "white", height: "100%"}}>
-        //             <img style={{width: "100%", transform: "translateY(80%)"}}src={"/images/Scan.png"} alt="scan"></img>
-        //         </div>
-        //         <footer className="footer-2" id="single-chat-footer-2">
-        //             <ul className="footer-icons">
-        //                 <li className="share-ios"><SVG src={ShareIOS}/></li>
-        //             </ul>
-        //         </footer>
-        //     </section>
-        //     )
         }
     }
 }
