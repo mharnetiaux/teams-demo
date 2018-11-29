@@ -171,7 +171,7 @@
             }
         }
         .icon-container {
-            width: 95%;
+            width: 93%;
             margin: 0 auto;
             list-style: none;
             display: flex;
@@ -179,12 +179,14 @@
 
             .camera-icon {
                 margin-left: auto;
-                padding-right: 1rem
+                padding-right: 1.4rem;
+                height: 1.6rem;
             }
 
             .phone-icon {
                 flex: 0;
                 margin-left: 0;
+                height: 2rem;
             }
 
             .back-arrow {
@@ -216,10 +218,11 @@
                 overflow-y: auto;
                 resize: none;
                 box-shadow: none;
+                -webkit-appearance: none;
                 width: 90%;
                 margin: auto;
                 display: block;
-                border: 1px solid #DFDEDE;
+                border: 1px solid @input-border;
                 border-radius: 4px;
                 height: 1rem;
                 max-height: 5rem;
@@ -252,16 +255,22 @@
             span:first-of-type {
                 order:2;
                 background: @white;
-                width:98%;
+                width:98.8%;
                 font-size: 13px;
                 padding-top: 1rem;
                 text-indent: 0.6rem;
                 display: block;
                 color: @alert-red;
                 margin-left: auto;
+                font-weight: 500;
+                border-right: 1px solid @light-gray-border;
+                // textarea{
+                //     border: none;
+                // }
             }
 
             span:last-of-type {
+                font-weight: 500;
                 font-size: 13px;
                 display: block;
                 color: @white;
@@ -270,15 +279,18 @@
             }
 
             form {
-                width: 98%;
+                width: 98.8%;
                 order: 3;
                 margin-left: auto;
                 background-color: white;
+                border-right: 1px solid @light-gray-border;
+                border-bottom: 1px solid @light-gray-border;
+                // border-radius: 0px 0px 5px 0px;
 
                 textarea {
                     border: 1px solid transparent;
                     border-radius: 0;
-                    width: 100%;
+                    width: 95%;
                 }
             }
         }
@@ -296,28 +308,38 @@
             margin: 0 auto;
 
             ul {
-                border: 1px solid @input-border;
+                // border: 1px solid @input-border;
+                background-color: @white;
                 border-radius: 4px;
                 margin-right: 0.5rem;
 
                 li {
-                    padding: 0 0.5rem;
+                    padding: 0 0.6rem;
                     margin: 0.3rem 0;
                 }
+                // li:first-of-type{
+                //     padding: 0.2rem 0.6rem;
+                // }
 
                 .name {
                     font-size: 13px;
                     color: @font-grey;
+                    margin-top: 0.5rem;
+                    margin-bottom: 0.1rem;
                 }
 
                 .priority {
                     font-size: 12px;
+                    font-weight: 500;
                     color: @alert-red;
+                    margin: 0;
                 }
 
                 .content {
                     font-size: 17px;
                     color: @black;
+                    margin-top: 0.1rem;
+                    margin-bottom: 0.5rem;
                 }
             }
 
@@ -340,6 +362,7 @@
             margin: 1rem 2rem 1rem auto;
             width: 65%;
             padding: 0.5rem;
+            font-size: 17px;
             
             &.urgent{
                 width: 77%;
@@ -368,10 +391,10 @@
         .response-image {
             position: relative;
             border-radius: 4px;
-            margin: 1rem 2rem 1rem auto;
+            margin: 0.1rem 2rem 0.1rem auto;
             width: 40%;
             height: 250px;
-            padding: 0.5rem;
+            padding: 0.1rem 0.5rem;
         }
     }
 
@@ -416,7 +439,7 @@
     background: @white;
     position: absolute;
     bottom: 0;
-    min-height: 10rem;
+    min-height: 9rem;
     width: 100%;
     margin: auto;
     border-top-left-radius: 22px;
@@ -451,8 +474,8 @@
             }
 
             &.important {
-                background: url(~"/icon/important.svg") no-repeat top left;
-                fill: black;
+                background: url(~"/icon/important.svg") no-repeat 1% 31%;
+                // fill: black;
                 &::after {
                     position: absolute;
                     height: 1px;
@@ -465,7 +488,8 @@
             }
 
             &.urgent {
-                background: url(~"/icon/urgent.svg") no-repeat top left;
+                background: url(~"/icon/urgent.svg") no-repeat 0% 31%;
+                margin-bottom: 0.2rem;
             }
 
             .priority-content {
