@@ -144,12 +144,13 @@ class App extends Component{
             }, 200);
 
             const messageContainer = document.getElementById("messages"),
-                textNode = document.createElement("section"),
+                // textNode = document.createElement("section"),
                 imageNode = document.createElement("section");
             //add responses again
-            textNode.classList.add("response");
-            textNode.textContent = "Dr. Gilbertson, are you available?";
-            messageContainer.appendChild(textNode);
+            //removed for now
+            // textNode.classList.add("response");
+            // textNode.textContent = "Dr. Gilbertson, are you available?";
+            // messageContainer.appendChild(textNode);
 
             //add image
             messageContainer.appendChild(imageNode);

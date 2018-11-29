@@ -15,6 +15,11 @@ import PhoneEmojiIcon from "../../../icon/phone-emoji.svg";
 import SendIcon from "../../../icon/Send.svg";
 import CameraIcon from "../../../icon/camera.svg";
 import PhoneIcon from "../../../icon/phone.svg";
+import { setChatHistory } from '../../actions';
+
+function dispatchChatAction(stage) {
+    store.dispatch(setChatHistory(stage));
+}
 
 /// Overwrite inline styles provided by UrgentModal
 UrgentModal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.5)';
@@ -199,7 +204,11 @@ class ComposeChat extends Component {
                     <header id="single-chat-header">
                         <h2 className="person new-chat">{this.state.title}</h2>
                         <ul className="icon-container">
-                            <li className="back-arrow" onClick={this.backButton}><Link to='/'><SVG src={BackArrow}/></Link></li>
+                            <li className="back-arrow" onClick={this.backButton}>
+                                <Link to='/' onClick={()=>{dispatchChatAction(1)}}>
+                                    <SVG src={BackArrow}/>
+                                </Link>
+                            </li>
                             <li className="camera-icon"><SVG src={CameraIcon}/></li>
                             <li className="phone-icon"><SVG src={PhoneIcon}/></li>
                         </ul>
@@ -213,7 +222,10 @@ class ComposeChat extends Component {
                     <section className="contact-list">
                         <h3>Suggestions</h3>
                         <ul>
-                            <li className="contact"><img src="/images/profile_3.png" alt="profile picture"/><span className="contact-name">Laurence Gilbertson</span></li>
+                            <li className="contact" onClick={() => {document.getElementById('compose-message').focus();}}>
+                                <img src="/images/profile_3.png" alt="profile picture"/>
+                                <span className="contact-name">Laurence Gilbertson</span>
+                            </li>
                         </ul>
                     </section>
                     <section className="message-received" id="messages">

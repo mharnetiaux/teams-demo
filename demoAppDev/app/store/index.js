@@ -33,33 +33,8 @@ const initialState = {
         {
             read: true,
             type: "",
-            name: "Bernadette Guibord",
-            time: "9:16 AM",
-            message: "Can you please send the file over ...",
-            priorityIcon: "/icon/urgent.svg",
-            priority: "",
-            avatar: "/images/profile_2.png",
-            response: {
-                message: "Word up!!!",
-                read: true,
-                urgent: false
-            },
-            received: [
-                {
-                    name: "Bernadette Guibord",
-                    pic: "/images/profile_2.png",
-                    priority: "",
-                    message: "Can you please send the file over ...",
-                    urgent: false,
-                    urgentImg: "../../../icon/urgent.svg"
-                }
-            ]
-        },
-        {
-            read: true,
-            type: "",
             name: "Laurence Gilbertson",
-            time: "Yesterday",
+            time: "9:16 AM",
             message: "great, talk to you tomorrow?",
             priorityIcon: "/icon/urgent.svg",
             priority: "",
@@ -75,6 +50,31 @@ const initialState = {
                     pic: "/images/profile_3.png",
                     priority: "",
                     message: "great, talk to you tomorrow?",
+                    urgent: false,
+                    urgentImg: "../../../icon/urgent.svg"
+                }
+            ]
+        },
+        {
+            read: true,
+            type: "",
+            name: "Bernadette Guibord",
+            time: "Yesterday",
+            message: "Can you please send the file over ...",
+            priorityIcon: "/icon/urgent.svg",
+            priority: "",
+            avatar: "/images/profile_2.png",
+            response: {
+                message: "Need a consult.",
+                read: true,
+                urgent: false
+            },
+            received: [
+                {
+                    name: "Bernadette Guibord",
+                    pic: "/images/profile_2.png",
+                    priority: "",
+                    message: "Can you please send the file over for Darrel Salyer?",
                     urgent: false,
                     urgentImg: "../../../icon/urgent.svg"
                 }
@@ -138,7 +138,7 @@ const initialState = {
             message: "The sales team are owning that problem.",
             priorityIcon: "/icon/urgent.svg",
             priority: "",
-            avatar: "/images/profile_5.png",
+            avatar: "/images/profile_6.png",
             response: {
                 message: "Might be the dexamethasone. Will order additional tests.",
                 read: true,
@@ -147,7 +147,7 @@ const initialState = {
             received: [
                 {
                     name: "Edmee Plant",
-                    pic: "/images/profile_5.png",
+                    pic: "/images/profile_6.png",
                     priority: "",
                     message: "The sales team are owning that problem.",
                     urgent: false,

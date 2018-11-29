@@ -5,6 +5,11 @@ import Header from "./Header";
 //not DRY 
 import {Link} from "react-router-dom";
 import { store } from '../store';
+import { setChatHistory } from '../actions';
+
+function dispatchChatAction(stage) {
+    store.dispatch(setChatHistory(stage));
+}
 const Alert = () => {
     const alertType = {
         on: true,
@@ -12,7 +17,12 @@ const Alert = () => {
         image: "/icon/urgent-white.svg",
     };
     return(
-        <Link id="alertContainer" className="alert-container" to='/single-chat/0'><section className={alertType.on ? "alert": "none"}><img src={alertType.image} width="20" height="20"/><span className="alert-message">{alertType.content}</span></section></Link>
+        <Link id="alertContainer" className="alert-container" to='/single-chat/0' onClick={()=>{dispatchChatAction(0)}}>
+            <section className={alertType.on ? "alert": "none"}>
+                <img src={alertType.image} width="20" height="20"/>
+                <span className="alert-message">{alertType.content}</span>
+            </section>
+        </Link>
     );
 };
 

@@ -16,6 +16,21 @@ import classNames from 'classnames';
 
 //not DRY 
 import { store } from '../store';
+import { setChatHistory } from '../actions';
+
+function dispatchChatAction(stage) {
+    store.dispatch(setChatHistory(stage));
+}
+function activityLink(key){
+    if(key === 0){
+        store.dispatch(setChatHistory(-1));
+    } else if(key===1){
+        store.dispatch(setChatHistory(1));
+    } else{
+        console.log("do nothing");
+    }
+}
+
 const Alert = () => {
     const alertType = {
         on: true,
@@ -23,7 +38,7 @@ const Alert = () => {
         image: "/icon/urgent-white.svg",
     };
     return(
-        <Link id="alertContainer" className="alert-container" to='/single-chat/0'>
+        <Link id="alertContainer" className="alert-container" to='/single-chat/0' onClick={()=>{dispatchChatAction(0)}}>
             <section className={alertType.on ? "alert": "none"}>
                 <img src={alertType.image} width="20" height="20"/>
                 <span className="alert-message">{alertType.content}</span>
@@ -57,13 +72,13 @@ class Activity extends Component {
             )
             return (
                 <Link to='activity' key={key}>
-                    <section className="activity-container" key={key}>
-                    <span className="activity-avatar-container">
-                        <span className={item.read ? "read" : "unread"}>
-                            <SVG src={read}/>
+                    <section className="activity-container" key={key} onClick={()=>{activityLink(key)}}>
+                        <span className="activity-avatar-container">
+                            <span className={item.read ? "read" : "unread"}>
+                                <SVG src={read}/>
+                            </span>
+                            <img width="44px" src={item.avatar} alt="profile picture"/>
                         </span>
-                        <img width="44px" src={item.avatar} alt="profile picture"/>
-                    </span>
                         <ul>           
                             <li className={"activity-message-info" + " " + item.type}>
                                 <span className={"activity-message " + item.type}>{item.name}</span>
