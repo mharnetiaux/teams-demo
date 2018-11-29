@@ -21,6 +21,7 @@ import { setChatHistory } from '../actions';
 function dispatchChatAction(stage) {
     store.dispatch(setChatHistory(stage));
 }
+
 function activityLink(key){
     if(key === 0){
         store.dispatch(setChatHistory(-1));
@@ -59,6 +60,16 @@ class Activity extends Component {
             activityHistory: this.props.activityHistory
         }
         this.determineSvgSrc = this.determineSvgSrc.bind(this);
+    }
+
+    returnUnreadMessages() {
+        const unreadMessages = document.getElementsByClassName("unread"),
+            readMessages = document.getElementsByClassName("read");
+        if(unreadMessages.length <= 0) {
+            for(let read of readMessages){
+                read.classList.add("no-unread");
+            }
+        }
     }
 
     chatItem() {
@@ -112,6 +123,10 @@ class Activity extends Component {
             src = ReplyIcon;
         }
         return src;
+    }
+
+    componentDidMount() {
+        this.returnUnreadMessages();
     }
     
     render() {

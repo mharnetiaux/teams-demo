@@ -15,6 +15,16 @@ class ChatContent extends Component {
     dispatchChatAction(stage) {
         store.dispatch(setChatHistory(stage));
     }
+    
+    returnUnreadMessages() {
+        const unreadMessages = document.getElementsByClassName("unread"),
+              readMessages = document.getElementsByClassName("read");
+        if(unreadMessages.length <= 0) {
+            for(let read of readMessages){
+                read.classList.add("no-unread");
+            }
+        }
+    }
 
     chatItem() {
         let chatHistory = store.getState().chatHistory;
@@ -34,6 +44,10 @@ class ChatContent extends Component {
                 </Link>
             );
         }));
+    }
+
+    componentDidMount(){
+        this.returnUnreadMessages();
     }
 
     render() {
