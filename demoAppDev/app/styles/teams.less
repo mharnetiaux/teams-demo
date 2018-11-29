@@ -6,21 +6,10 @@
 }
 
 .teams-content {
-    padding-top: 1rem;
-    min-height: 3rem;
+    padding: 1rem 0;
     width: 95%;
     margin: auto;
     position: relative;
-
-    &::after {
-        position: absolute;
-        height: 1px;
-        width: 100%;
-        background: @black;
-        opacity: 0.1;
-        content: "";
-        bottom: 0;
-    }
 
     .team-menu {
         display: none;
@@ -91,9 +80,6 @@
     }
 
     &.closed {
-        .team-info {
-            padding-bottom: 0.5rem;
-        }
 
         .team-menu {
             display: inherit;
