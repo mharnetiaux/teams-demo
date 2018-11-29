@@ -42,12 +42,14 @@
     border-radius: 0;
     height: 90px;
 }
+
 .block2{
-    margin-top: 134%;
+    margin-top: 127%;
     padding: 0;
     border-radius: 0;
-    height: 95px;
+    height: 100px;
 }
+
 .blackBlock{
     background: black;
 }
@@ -83,13 +85,14 @@
     margin: auto;
     width: 63px;
     height: 63px;
+    padding-bottom: 10px;
 }
 .camera-controls-text{
     color: white;
     float: right;
 }
 .camera-controls-text span{
-    margin-left: 7px;
+    margin-left: 2px;
     padding-left: 7px;
     display: inline-block;
 }
@@ -173,7 +176,7 @@ button{
     width: 10%;
     height: 265px;
     top: 48px;
-    right: 0
+    right: 5px;
 }
 .camera-color-modal-inner > .btn{
     width: 25px;
@@ -215,10 +218,30 @@ button{
     background-color: #000000; 
 }
 
+//ipad
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)  { 
     .block2{
         margin-top: 100%;
+    }
+}
+
+// iPhone 6, 7, 8 plus
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .block2{
+        margin-top: 130%;
+        padding: 0;
+        border-radius: 0;
+        height: 110px;
+    }
+    .camera-controls-text span {
+        margin-left: 12px;
+    }
+    .camera-color-modal-inner{
+        right: 0
     }
 }
