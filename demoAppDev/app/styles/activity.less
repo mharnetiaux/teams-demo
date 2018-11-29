@@ -25,19 +25,34 @@
 
     .activity-message-svg{
         svg{
-            width: 20px;
-            fill: @icon-fill;
+            width: 12px;
         } 
     }
+    .activity-message-svg.red-icon{
+        fill: @alert-red;
+    }
+    .activity-message-svg.purple-icon{
+        fill: @icon-fill;
+    }
     .activity-message-info {
-        color: @font-grey;
+        // color: @font-grey;
         display: flex;
         justify-content: flex-start;
+        color: #6F6D6D;
+        opacity: 0.75;
 
         &:first-of-type {
             color: @black;
-            margin-bottom: 0.2rem;
-            font-weight: bold;
+            // margin-bottom: 0.2rem;
+            font-weight: 500;
+        }
+        &:nth-of-type(2) {
+            margin-bottom: 0.3rem;
+        }
+
+        &:last-of-type .activity-message{
+            font-size: 12px;
+            padding-left: 3px;
         }
 
         .normal {
@@ -47,15 +62,17 @@
 
         .time {
             flex-grow: 1;
-            color: @font-grey;
+            color: #6F6D6D;
             font-size: 12px;
             text-align: end;
+            line-height: 1.8;
+            font-weight: 400;
         }
 
         .activity-message {
             flex-grow: 1;
             font-size: 15px;
-            color: @font-grey;
+            // color: @font-grey;
         }
 
         img {

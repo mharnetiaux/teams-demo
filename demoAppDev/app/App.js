@@ -26,45 +26,81 @@ class App extends Component{
                 showImage: false,
                 activityHistory: [
                     {
-                        read: false,
+                        read: true,
                         type: "",
-                        name: "Ruth replied",
+                        name: "Pat E. mentioned you",
                         time: date.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }),
-                        message: "Priority messages chat demonst...",
-                        avatar: "/images/profile_1.png"
+                        message: "Priority messages chat demonstration.",
+                        avatar: "/images/profile-pat-emerson.png",
+                        icon: "AtIcon",
+                        iconColor: false,
+                        iconText: "Nurses"
                     },
                     {
-                        read: false,
+                        read: true,
                         type: "",
-                        name: "Bernadette replied",
-                        time: "9:16 AM",
-                        message: "Image annotation in chat demon...",
-                        avatar: "/images/profile_2.png"
+                        name: "Babek S. +2 liked your message",
+                        time: "8:16 AM",
+                        message: "Image annotation in chat demonstration.",
+                        avatar: "/images/profile_8.png",
+                        icon: "LikeIcon",
+                        iconColor: true,
+                        iconText: "Friday Fundays"
                     },
                     {
-                        read: false,
+                        read: true,
                         type: "",
-                        name: "Missed call from Laurence",
+                        name: "Laurence G. posted a message",
                         time: "Yesterday",
-                        message: "That sounds right",
+                        message: "Does anyone know if there's going to b...",
                         avatar: "/images/profile_3.png",
-                        missed: true
+                        icon: "ChannelFollowIcon",
+                        iconColor: true,
+                        iconText: "Contoso Hospital/General"
                     },
                     {
-                        read: false,
+                        read: true,
                         type: "",
-                        name: "Cassandra replied",
-                        time: "Thursday",
-                        message: "No urgency",
-                        avatar: "/images/profile_4.png"
+                        name: "Bernadette G. replied to you",
+                        time: "Wednesday",
+                        message: "That's a great idea. We could also get it...",
+                        avatar: "/images/profile_2.png",
+                        icon: "ReplyIcon",
+                        iconColor: true,
+                        iconText: "ICU/Performance"
                     },
                     {
-                        read: false,
+                        read: true,
                         type: "",
-                        name: "Edmee replied",
-                        time: "5/20",
+                        name: "Reta T. mentioned Designers",
+                        time: "Tuesday",
+                        message: "Don't forget the all hands taking place...",
+                        avatar: "/images/profile_1.png",
+                        icon: "ChannelIcon",
+                        iconColor: false,
+                        iconText: "ICU/Performance"
+                    },
+                    {
+                        read: true,
+                        type: "",
+                        name: "Cassandra D. liked your message",
+                        time: "11/23",
+                        message: "I think Karin Blair will be able to help...",
+                        avatar: "/images/profile_4.png",
+                        icon: "LikeIcon",
+                        iconColor: false,
+                        iconText: "Chat with Cassandra Dunn"
+                    },
+                    {
+                        read: true,
+                        type: "",
+                        name: "Edmee P. mentioned you",
+                        time: "11/22",
                         message: "The sales team are owning that problem.",
-                        avatar: "/images/profile_6.png"
+                        avatar: "/images/profile_6.png",
+                        icon: "AtIcon",
+                        iconColor: true,
+                        iconText: "Nurses"
                     }
                 ]
             };
@@ -96,15 +132,13 @@ class App extends Component{
     showKeyboard(){
         window.setTimeout(() =>{
             console.log("SHOWING KEYBOARD!!!!!!!!");
-            // window.Keyboard.show(); doesn't work because iOS sucks, have to focus instead and change config.xml
-            // document.getElementById("send-message").focus();
-            // document.getElementById("send-message").style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 50px 80px; background-position: 5% 5%;`;
             const a = document.getElementById("send-message");
             a.style.cssText = `padding: 0px 0px 0px 0px; width:100%; height: 150px; background:url(${this.state.imgCameraSrc}) no-repeat; background-size: 100px 160px; background-position: 5% 5%; caret-color: transparent;`;
             a.classList.add("image-send-message");
             a.value = "";
             document.getElementById("send").classList.add("send-fill");
             
+            // window.Keyboard.show(); doesn't work because iOS sucks, have to focus instead and change config.xml
             window.setTimeout(() =>{
                 a.focus();
             }, 200);
@@ -126,7 +160,6 @@ class App extends Component{
             imageNode.style.opacity = 0;
             
             this.toggleShowImage();
-
         }, 0);
     }
 
