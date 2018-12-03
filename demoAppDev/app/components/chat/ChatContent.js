@@ -46,7 +46,7 @@ class ChatContent extends Component {
         }));
     }
 
-    componentDidMount(){
+    componentDidMount() {
         this.returnUnreadMessages();
     }
 

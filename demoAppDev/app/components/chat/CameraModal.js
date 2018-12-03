@@ -10,6 +10,24 @@ class CameraModal extends Component{
         this.startCameraAbove = this.startCameraAbove.bind(this);
         this.startCameraBelow = this.startCameraBelow.bind(this);
     }
+    
+    startCameraAbove() {
+        window.StatusBar.hide();
+        window.CameraPreview.startCamera({toBack: false, previewDrag: true, tapPhoto: true});
+        this.props.toggleCameraControls();
+    }
+
+    startCameraBelow() {
+        window.StatusBar.hide();
+        window.CameraPreview.startCamera({camera: "front", tapPhoto: true, previewDrag: false, toBack: true});
+        this.props.toggleCameraControls();
+        let htmlElements = document.getElementsByTagName("html");
+        htmlElements[0].style.backgroundColor = "transparent";
+        setTimeout(() => {
+            document.getElementById("appFooter").classList.add("hidden");
+        } , 200);
+    }
+
     render(){
         return(
             <div className="camera-modal" onClick={this.props.closeMe}>
@@ -42,24 +60,6 @@ class CameraModal extends Component{
     consoleThis(event){
         event.stopPropagation();
         console.log(`event is ${event}`);
-    }
-
-    startCameraAbove(){
-        window.StatusBar.hide();
-        window.CameraPreview.startCamera({x: 0, y: 0, width: 400, height: 700, camera: "back", toBack: false, previewDrag: true, tapPhoto: true});
-        this.props.toggleCameraControls();
-    }
-    startCameraBelow(){
-        window.StatusBar.hide();
-        window.CameraPreview.startCamera({x: 0, y: 0, width: window.screen.width, height: window.screen.height, camera: "back", toBack: true, previewDrag: true, tapPhoto: true});
-        this.props.toggleCameraControls();
-        let htmlElements = document.getElementsByTagName("html");
-        htmlElements[0].style.backgroundColor = "transparent";
-        window.setTimeout(() => {
-            //document.getElementById("alertContainer").style.opacity = 0;
-            // document.getElementById("appFooter").style.display = 0;
-            document.getElementById("appFooter").style.display = "none";
-        } , 200);
     }
 }
 

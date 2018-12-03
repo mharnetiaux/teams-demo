@@ -1,19 +1,16 @@
 .app {
-    height: calc(100% - 150px); 
+    height: calc(100% - 150px);
 }
-  
-#cameraBackground{
+
+#cameraBackground {
+    padding-top: calc(~"1rem +" ~'@{safe-area-inset-top}') 0 1rem 0;
+    text-align: center;
     background-image: null;
     background-size: contain;
     background-repeat: no-repeat;
     position: fixed;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
 }
 
 .canvas-container{
@@ -30,6 +27,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
+    bottom: 0;
 }
 
 .hidden-canvas{
@@ -66,6 +64,7 @@
     width: 26px;
     height: 26px;
     margin: 11px;
+    margin-top: calc(~"5px +" ~'@{safe-area-inset-top}');
     float: left;
 }
 .camera-controls .btn.ReverseAndPower span {
@@ -73,21 +72,26 @@
     background-size: 80px 30px;
     width: 80px;
     height: 30px;
-    margin: 10px;
-    float: right; 
+    margin: 11px;
+    margin-top: calc(~"5px +" ~'@{safe-area-inset-top}');
+    float: right;
 }
-.camera-controls .btn span{
+.camera-controls .btn span {
     background-size: contain;
     display: block;
 }
 .camera-controls .btn.OvalTakePhoto span {
+    position: absolute;
+    bottom: calc(~"0.5rem +" ~'@{safe-area-inset-bottom}');
+    left: 0;
+    right: 0;
     background: center/contain no-repeat url(~"/images/OvalTakePhoto.png");
     margin: auto;
     width: 63px;
     height: 63px;
-    padding-bottom: 10px;
 }
 .camera-controls-text{
+    display: none; /// Do we need this?
     color: white;
     float: right;
 }
@@ -102,7 +106,7 @@
     width: 165px;
     height: 40px;
     margin: 3px 7px 3px 3px;
-    float: right; 
+    float: right;
 }
 .camera-controls .btn.CameraIcon span {
     background: center/contain no-repeat url(~"/images/camera_icon_annotation.png");
@@ -200,38 +204,38 @@ button{
 }
 
 .RedSelector{
-    background-color: #CF021A; 
+    background-color: #CF021A;
 }
 .GreenSelector{
-    background-color: #0DAC37; 
+    background-color: #0DAC37;
 }
 .BlueSelector{
-    background-color: #1E5EFE; 
+    background-color: #1E5EFE;
 }
 .YellowSelector{
-    background-color: #FFF600; 
+    background-color: #FFF600;
 }
 .WhiteSelector{
-    background-color: #FFFFFF; 
+    background-color: #FFFFFF;
 }
 .BlackSelector{
-    background-color: #000000; 
+    background-color: #000000;
 }
 
 //ipad
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)  { 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  {
     .block2{
         margin-top: 100%;
     }
 }
 
 // iPhone 6, 7, 8 plus
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (-webkit-min-device-pixel-ratio: 3) {
     .block2{
         margin-top: 130%;
         padding: 0;

@@ -25,7 +25,7 @@ function dispatchChatAction(stage) {
 function activityLink(key){
     if(key === 0){
         store.dispatch(setChatHistory(-1));
-    } else if(key===1){
+    } else if(key === 1){
         store.dispatch(setChatHistory(1));
     } else{
         console.log("do nothing");
@@ -80,7 +80,7 @@ class Activity extends Component {
                     'purple-icon': item.iconColor,
                     'red-icon': !item.iconColor,
                 }
-            )
+            );
             return (
                 <Link to='activity' key={key}>
                     <section className="activity-container" key={key} onClick={()=>{activityLink(key)}}>

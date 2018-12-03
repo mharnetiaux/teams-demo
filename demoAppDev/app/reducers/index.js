@@ -245,7 +245,6 @@ export default (state, action) => {
                                     }
                                 ]
                             },
-                            
                             {
                                 read: true,
                                 type: "",
