@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "rm -f -r ./dist & replace 'false' 'true' webpack/environment.js & babel-node -- server/server.js",
     "build": "replace 'true' 'false' webpack/environment.js & webpack -p && npm run post-build",
-    "post-build": "sh ./bash/dist.sh"
+    "post-build": "sh ./bash/dist.sh",
+    "prod": "npm run build && cd ../demoApp && npm run sim"
   },
   "author": "Matt Harnetiaux <mattskyh@gmail.com>",
   "license": "ISC",
