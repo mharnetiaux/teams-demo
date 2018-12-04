@@ -46,10 +46,6 @@
                 width: 100%;
                 border: 0;
             }
-
-            &.open {
-                flex: 0;
-            }
         }
 
         .footer-2,
@@ -71,7 +67,6 @@
 
             &.open {
                 display: block;
-                margin-top: 0;
             }
         }
     }
@@ -206,15 +201,15 @@
     }
 
     #send-message:focus::-webkit-input-placeholder { color:transparent; }
-    
+
     .input-message,
     .to-message {
         flex: 0;
-        
+
         span {
             display: none;
         }
-        
+
         form {
             width: 100%;
 
@@ -236,11 +231,12 @@
                     line-height: 16px;
                 }
             }
+
             .image-send-message{
-                padding: 0px 0px 0px 0px;
+                padding: 0;
                 max-height: 210px;
-                height: 210px;  
-                background-size: 150px 200px; 
+                height: 210px;
+                background-size: 150px 200px;
                 background-position: 5% 5%;
             }
         }
@@ -302,8 +298,7 @@
 
     .message-received {
         overflow-y: scroll;
-        margin: 4rem 0 1rem 0;
-        flex-grow: 4;
+        margin: auto 0 1rem 0;
 
         .message {
             display: flex;
@@ -367,7 +362,7 @@
             width: 65%;
             padding: 0.5rem;
             font-size: 17px;
-            
+
             &.urgent{
                 width: 77%;
             }
@@ -404,7 +399,7 @@
 
     footer {
         padding: 0.7rem 0;
-        padding-bottom: calc(~"0.7rem +" ~'@{safe-area-inset-bottom}');
+        padding-bottom: @safe-area-inset-bottom;
         width: 100%;
 
 
@@ -494,7 +489,7 @@
             }
 
             &.urgent {
-                background: url(~"/icon/urgent.svg") no-repeat 0% 31%;
+                background: url(~"/icon/urgent.svg") no-repeat 0 31%;
                 margin-bottom: 0.2rem;
             }
 
@@ -504,9 +499,6 @@
                 padding: 0 1.5rem;
                 text-indent: 0;
             }
-
-            
         }
     }
-
 }
