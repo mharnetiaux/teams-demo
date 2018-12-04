@@ -358,7 +358,7 @@
             color: @white;
             border: 1px solid @icon-fill;
             border-radius: 4px;
-            margin: 1rem 2rem 1rem auto;
+            margin: 1rem 2rem 0 auto;
             width: 65%;
             padding: 0.5rem;
             font-size: 17px;
@@ -399,7 +399,7 @@
 
     footer {
         padding: 0.7rem 0;
-        padding-bottom: @safe-area-inset-bottom;
+        padding-bottom: calc(~"0.3rem +" ~'@{safe-area-inset-bottom}');
         width: 100%;
 
 
