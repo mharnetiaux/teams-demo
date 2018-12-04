@@ -17,7 +17,6 @@ class App extends Component{
             this.showKeyboard = this.showKeyboard.bind(this);
             this.toggleShowImage = this.toggleShowImage.bind(this);
             this.resizeForKeyboard = this.resizeForKeyboard.bind(this);
-            this.setImgCameraSrc = this.setImgCameraSrc.bind(this);
             this.showKeyboard = this.showKeyboard.bind(this);
 
             this.state = {

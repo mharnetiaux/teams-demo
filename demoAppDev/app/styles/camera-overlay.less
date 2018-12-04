@@ -20,7 +20,8 @@
 }
 
 .camera-controls {
-    position: fixed;
+    // position: fixed;
+    position: absolute;
     height: 100%;
     width: 100%;
 }
@@ -30,8 +31,14 @@
 }
 
 /// Header
+.blackBlock{
+    background: black;  
+}
+.blackBlock.block2{
+    height: 90px;
+}
 .block1 {
-    background: @black;
+    // background: @black;
     padding-top: @safe-area-inset-top;
     display: flex;
     align-items: center;
@@ -57,7 +64,7 @@
     .AnnotationControls {
         background: right/contain no-repeat url(~"/images/right_annotation_icons.png");
         width: 165px;
-        height: 26px;
+        height: 35px;
         margin-left: auto;
         margin-right: 1rem;
     }
@@ -65,17 +72,17 @@
 
 /// Footer
 .block2 {
-    background: @black;
+    // background: @black;
     position: fixed;
     bottom: 0;
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     padding: 0;
     padding-bottom: @safe-area-inset-bottom;
     border-radius: 0;
-    height: 90px;
+    height: 115px;
 
     .OvalTakePhoto {
         position: absolute;
@@ -85,6 +92,7 @@
         top: 0;
         background: center/contain no-repeat url(~"/images/OvalTakePhoto.png");
         margin: auto;
+        margin-top: 0;
         width: 63px;
         height: 63px;
     }
@@ -97,6 +105,7 @@
         height: 50px;
         border-radius: 50%;
         margin-left: 1rem;
+        margin-top: 3%;
     }
 
     .DoneIcon {
@@ -108,6 +117,7 @@
         fill: @white;
         margin-left: auto;
         margin-right: 1rem;
+        margin-top: 4%;
 
         .doneSpan {
             position: relative;
@@ -129,8 +139,16 @@
 }
 
 .camera-controls-text {
-    display: none; /// Do we need this?
     color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 86%;
+    margin-left: 14%;
+    margin-top: 19%;
+    span{
+        margin-left: 2px;
+        padding-left: 7px;
+    }
 }
 
 button {
