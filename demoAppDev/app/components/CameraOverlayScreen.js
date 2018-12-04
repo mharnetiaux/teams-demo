@@ -98,8 +98,8 @@ class CameraOverlayScreen extends Component{
                                     </div>
                                     <div className={`btn DoneIcon`} onClick={this.setCanvasImage}>
                                         <span className="doneSpan">
-                                        <span>Done</span>
-                                        <SVG src={ChevronMedRight}/> 
+                                            <span>Done</span>
+                                            <SVG src={ChevronMedRight}/>
                                         </span>
                                     </div>
                                 </div>

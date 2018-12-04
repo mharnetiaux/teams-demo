@@ -9,17 +9,19 @@ export default class CanvasElement extends React.Component {
             istouching : false,
             image: "/images/Rectangle8.png",
             imgSrc: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAnElEQVR42u3RAQ0AAAgDoJvc6FrDOahATdLhjBIiBCFCECIEIUIQIkSIEIQIQYgQhAhBiBCEIEQIQoQgRAhChCAEIUIQIgQhQhAiBCEIEYIQIQgRghAhCEGIEIQIQYgQhAhBCEKEIEQIQoQgRAhCECIEIUIQIgQhQhCCECEIEYIQIQgRghCECEGIEIQIQYgQhAgRIgQhQhAiBCHfLcjClZ2EzWBMAAAAAElFTkSuQmCC"
-        }
+        };
         this.handleTouchEnd = this.handleTouchEnd.bind(this);
         this.handleTouchStart = this.handleTouchStart.bind(this);
         this.handleTouchMove = this.handleTouchMove.bind(this);
         this.startDrawing = this.startDrawing.bind(this);
         this.moved = this.moved.bind(this);
     }
+
     componentWillReceiveProps(nextProps) {
         // console.log("CHECK THIS: "+ nextProps.canvasImage);
         // this.setState({ imgSrc: nextProps.canvasImage });  
     }
+
     componentDidMount() {
         const canvas = this.refs.elementCanvas;
         const ctx = canvas.getContext("2d");
@@ -27,7 +29,7 @@ export default class CanvasElement extends React.Component {
         // let dataURL = undefined;        
 
         img.onload = () => {
-            ctx.drawImage(img, 0, 0, window.screen.width, window.screen.height-180);      
+            ctx.drawImage(img, 0, 0, window.screen.width, window.screen.height);
             
             canvas.addEventListener("touchstart", this.handleTouchStart, false);
             canvas.addEventListener("touchend", this.handleTouchEnd, false);
@@ -40,7 +42,7 @@ export default class CanvasElement extends React.Component {
     render() {
         return (
             <div className="canvas-div">
-                <canvas ref="elementCanvas" width={window.screen.width} height={window.screen.height-180} id="canvasElement"></canvas>
+                <canvas ref="elementCanvas" width={window.screen.width} height={window.screen.height} id="canvasElement"></canvas>
                 <img ref="imageCanvas" alt="Embedded Image"  src={this.props.myImage} className="hidden-canvas"></img>
             </div>
         )

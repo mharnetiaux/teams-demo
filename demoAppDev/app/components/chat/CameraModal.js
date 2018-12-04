@@ -13,19 +13,17 @@ class CameraModal extends Component{
     
     startCameraAbove() {
         window.StatusBar.hide();
-        window.CameraPreview.startCamera({toBack: false, previewDrag: true, tapPhoto: true});
+        window.CameraPreview.startCamera({x: 0, y: 0, width: window.screen.width, height: window.screen.height, camera: "back", toBack: false, previewDrag: true, tapPhoto: true});
         this.props.toggleCameraControls();
     }
 
     startCameraBelow() {
         window.StatusBar.hide();
-        window.CameraPreview.startCamera({camera: "front", tapPhoto: true, previewDrag: false, toBack: true});
+        window.CameraPreview.startCamera({x: 0, y: 0, width: window.screen.width, height: window.screen.height, camera: "back", toBack: true, previewDrag: true, tapPhoto: true});
         this.props.toggleCameraControls();
         let htmlElements = document.getElementsByTagName("html");
         htmlElements[0].style.backgroundColor = "transparent";
-        setTimeout(() => {
-            document.getElementById("appFooter").classList.add("hidden");
-        } , 200);
+        document.getElementById("appFooter").classList.add("hidden");
     }
 
     render(){

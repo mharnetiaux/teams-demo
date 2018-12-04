@@ -1,10 +1,5 @@
-.app {
-    height: calc(100% - 150px);
-}
-
 #cameraBackground {
     padding-top: calc(~"1rem +" ~'@{safe-area-inset-top}') 0 1rem 0;
-    text-align: center;
     background-image: null;
     background-size: contain;
     background-repeat: no-repeat;
@@ -13,35 +8,64 @@
     height: 100%;
 }
 
-.canvas-container{
+.canvas-container {
     position: relative;
 }
 
-.canvas-div{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 90px;
-}
-.camera-controls{
+.canvas-div {
     position: absolute;
     height: 100%;
     width: 100%;
     bottom: 0;
 }
 
-.hidden-canvas{
+.camera-controls {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+
+.hidden-canvas {
     display:none;
 }
 
-.block1{
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    height: 90px;
+/// Header
+.block1 {
+    background: @black;
+    padding-top: calc(~'@{safe-area-inset-top}'~"- 1rem");
+    display: flex;
+    align-items: center;
+    height: 65px;
+    width: 100%;
+
+    .Close {
+        background: center/contain no-repeat url(~"/images/close.png");
+        width: 26px;
+        height: 26px;
+        margin-left: 1rem;
+    }
+
+    .ReverseAndPower {
+        background: right/contain no-repeat url(~"/images/ReverseAndPowerCameraIcons.png");
+        background-size: 80px 26px;
+        margin-left: auto;
+        margin-right: 1rem;
+        width: 80px;
+        height: 26px;
+    }
+
+    .AnnotationControls {
+        background: right/contain no-repeat url(~"/images/right_annotation_icons.png");
+        width: 165px;
+        height: 26px;
+        margin-left: auto;
+        margin-right: 1rem;
+    }
 }
 
-.block2{
+/// Footer
+.block2 {
+    background: @black;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -49,189 +73,132 @@
     align-items: center;
     justify-content: space-between;
     padding: 0;
+    padding-bottom: @safe-area-inset-bottom;
     border-radius: 0;
     height: 90px;
+
+    .OvalTakePhoto {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background: center/contain no-repeat url(~"/images/OvalTakePhoto.png");
+        margin: auto;
+        width: 63px;
+        height: 63px;
+    }
+
+    .CameraIcon {
+        background: center/contain no-repeat url(~"/images/camera_icon_annotation.png");
+        background-size: 40px 35px;
+        background-color: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-left: 1rem;
+    }
+
+    .DoneIcon {
+        background: @icon-fill;
+        border-radius: 25px;
+        color: @white;
+        font-weight: 300;
+        font-size: 14px;
+        fill: @white;
+        margin-left: auto;
+        margin-right: 1rem;
+
+        .doneSpan {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 50px;
+
+            svg {
+                height: 1rem;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin-bottom: auto;
+                margin-top: auto;
+                right: 0;
+            }
+        }
+    }
 }
 
-.blackBlock{
-    background: black;
-}
-.blackBloc.block1{
-    height: 80px;
-}
-.blackBloc.block2{
-    margin-top: 145%;
-    height: 80px;
-}
-
-.camera-controls .btn.Close span {
-    background: center/contain no-repeat url(~"/images/close.png");
-    width: 26px;
-    height: 26px;
-    margin: 11px;
-    margin-top: calc(~"5px +" ~'@{safe-area-inset-top}');
-    float: left;
-}
-.camera-controls .btn.ReverseAndPower span {
-    background: center/contain no-repeat url(~"/images/ReverseAndPowerCameraIcons.png");
-    background-size: 80px 30px;
-    width: 80px;
-    height: 30px;
-    margin: 11px;
-    margin-top: calc(~"5px +" ~'@{safe-area-inset-top}');
-    float: right;
-}
-.camera-controls .btn span {
-    background-size: contain;
-    display: block;
-}
-.camera-controls .btn.OvalTakePhoto span {
-    position: absolute;
-    bottom: calc(~"0.5rem +" ~'@{safe-area-inset-bottom}');
-    left: 0;
-    right: 0;
-    background: center/contain no-repeat url(~"/images/OvalTakePhoto.png");
-    margin: auto;
-    width: 63px;
-    height: 63px;
-}
-.camera-controls-text{
+.camera-controls-text {
     display: none; /// Do we need this?
     color: white;
-    float: right;
-}
-.camera-controls-text span{
-    margin-left: 2px;
-    padding-left: 7px;
-    display: inline-block;
 }
 
-.camera-controls .btn.AnnotationControls span {
-    background: center/contain no-repeat url(~"/images/right_annotation_icons.png");
-    width: 165px;
-    height: 40px;
-    margin: calc(~"5px +" ~'@{safe-area-inset-bottom}') 7px 3px 3px;
-    float: right;
-}
-.camera-controls .btn.CameraIcon span {
-    background: center/contain no-repeat url(~"/images/camera_icon_annotation.png");
-    background-size: 40px 35px;
-    background-color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    float: left;
-}
-.camera-controls .btn.DoneIcon .doneSpan {
-    background: @icon-fill;
-    width: 80px;
-    height: 50px;
-    border-radius: 25px;
-    float: right;
-    color: @white;
-    font-weight: 300;
-    font-size: 14px;
-    text-align: left;
-    padding-left: 30px;
-    line-height: 2.8rem;
-    fill: @white;
-    margin-right: 20px;
-    span{
-        width: 1.2rem;
-        display: inline-block;
-    }
-    svg{
-        top: 5px;
-        right: -15px;
-        position: relative;
-    }
-}
-
-.doneSpan2 {
-    color: white;
-    font-size: 26px;
-    text-align: left;
-    line-height: 2.8rem;
-}
-
-
-button{
+button {
     background: gray;
     color:#333;
     border-radius: 3px;
-    border:1px solid #ccc;
-    margin:.25rem;
     width: 30%;
     height: 30%;
     background: url(~"/images/OvalTakePhoto.png") no-repeat;
 }
 
 /* camera modal */
-.camera-color-modal{
+.camera-color-modal {
     position: fixed;
-    width: 20%;
     height: 100%;
-    top: 0;
-    left: 0;
-    right: 5px;
-    bottom: 0;
-    margin: auto;
-    /* background-color: rgba(0,0,0, 0.5); */
+    right: 1rem;
+    top: 95px;
 }
-.camera-color-modal-inner{
+
+.camera-color-modal-inner {
     display: flex;
     flex-direction: column;
-    position: fixed;
     width: 10%;
     height: 265px;
-    top: 48px;
-    right: 5px;
 }
-.camera-color-modal-inner > .btn{
+
+.camera-color-modal-inner > .btn {
     width: 25px;
     height: 25px;
     border: 1px solid grey;
     border-radius: 50%;
-    margin: 8px;
+    margin: 8px 0;
     box-shadow: 0 0 0 1pt white;
     outline-width: 2px;
     outline-color: white;
 }
-.camera-color-modal-inner > .active{
+
+.camera-color-modal-inner > .active {
     width: 17px;
     height: 17px;
     border: 5px solid white;
     border-radius: 50%;
-    margin: 8px;
+    margin: 8px 0;
     box-shadow: 0 0 0 3pt black;
     outline-width: 3px;
-    outline-color: black;
+    outline-color: @black;
 }
 
-.RedSelector{
+.RedSelector {
     background-color: #CF021A;
 }
-.GreenSelector{
+
+.GreenSelector {
     background-color: #0DAC37;
 }
-.BlueSelector{
+
+.BlueSelector {
     background-color: #1E5EFE;
 }
-.YellowSelector{
+
+
+.YellowSelector {
     background-color: #FFF600;
 }
-.WhiteSelector{
+
+.WhiteSelector {
     background-color: @white;
 }
-.BlackSelector{
+.BlackSelector {
     background-color: @black;
-}
-
-//ipad
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)  {
-    .block2{
-        margin-top: 100%;
-    }
 }
