@@ -42,10 +42,15 @@
 }
 
 .block2{
-    margin-top: 127%;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 0;
     border-radius: 0;
-    height: 100px;
+    height: 90px;
 }
 
 .blackBlock{
@@ -105,7 +110,7 @@
     background: center/contain no-repeat url(~"/images/right_annotation_icons.png");
     width: 165px;
     height: 40px;
-    margin: 3px 7px 3px 3px;
+    margin: calc(~"5px +" ~'@{safe-area-inset-bottom}') 7px 3px 3px;
     float: right;
 }
 .camera-controls .btn.CameraIcon span {
@@ -216,10 +221,10 @@ button{
     background-color: #FFF600;
 }
 .WhiteSelector{
-    background-color: #FFFFFF;
+    background-color: @white;
 }
 .BlackSelector{
-    background-color: #000000;
+    background-color: @black;
 }
 
 //ipad
@@ -228,24 +233,5 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)  {
     .block2{
         margin-top: 100%;
-    }
-}
-
-// iPhone 6, 7, 8 plus
-@media only screen
-  and (min-device-width: 414px)
-  and (max-device-width: 736px)
-  and (-webkit-min-device-pixel-ratio: 3) {
-    .block2{
-        margin-top: 130%;
-        padding: 0;
-        border-radius: 0;
-        height: 110px;
-    }
-    .camera-controls-text span {
-        margin-left: 12px;
-    }
-    .camera-color-modal-inner{
-        right: 0
     }
 }
