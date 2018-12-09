@@ -5,9 +5,12 @@
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
   "scripts": {
-    "build": "cordova build ios --buildFlag='-UseModernBuildSystem=0'",
-    "sim": "cordova run --device ios --buildFlag='-UseModernBuildSystem=0'",
-    "em": "cordova emulate ios --target='iPhone-8-Plus' --buildFlag='-UseModernBuildSystem=0'",
+    "build-ios": "cordova build ios --buildFlag='-UseModernBuildSystem=0'",
+    "build-android": "cordova build android --buildFlag='-UseModernBuildSystem=0'",
+    "sim-ios": "cordova run --device ios --buildFlag='-UseModernBuildSystem=0'",
+    "em-ios": "cordova emulate ios --target='iPhone-8-Plus' --buildFlag='-UseModernBuildSystem=0'",
+    "sim-android": "cordova run --device android --buildFlag='-UseModernBuildSystem=0'",
+    "em-android": "cordova emulate android  --buildFlag='-UseModernBuildSystem=0'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Apache Cordova Team",
@@ -15,14 +18,12 @@
   "dependencies": {
     "cordova-android": "^7.1.4",
     "cordova-ios": "^4.5.5",
-    "cordova-plugin-badge": "^0.8.8",
+    "cordova-plugin-android-support-v4": "^21.0.1",
     "cordova-plugin-camera-preview": "^0.10.0",
-    "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-dialogs": "^2.0.1",
     "cordova-plugin-ionic-keyboard": "^2.1.3",
     "cordova-plugin-ionic-webview": "^2.2.5",
     "cordova-plugin-keyboard": "^1.2.0",
-    "cordova-plugin-local-notification": "^0.9.0-beta.2",
     "cordova-plugin-screen-orientation": "^3.0.1",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
@@ -43,8 +44,8 @@
       "cordova-plugin-screen-orientation": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-camera-preview": {},
-      "cordova-plugin-local-notification": {},
-      "cordova-plugin-keyboard": {}
+      "cordova-plugin-keyboard": {},
+      "cordova-plugin-android-support-v4": {}
     }
   },
   "devDependencies": {
