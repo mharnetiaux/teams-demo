@@ -1,8 +1,1 @@
-<svg width="30" height="21" xmlns="http://www.w3.org/2000/svg">
-	<g fill="none" fill-rule="evenodd">
-		<rect fill="#CC4A31" width="30" height="21" rx="10.5"/>
-		<text font-family=".AppleSystemUIFont" font-size="13" letter-spacing="-.078" fill="#FFF">
-			<tspan x="11.546" y="16">1</tspan>
-		</text>
-	</g>
-</svg>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 21"><defs><style>.cls-1{fill:#cc4a31;}.cls-2{isolation:isolate;}.cls-3{fill:#fff;}</style></defs><title>teams-alert</title><path class="cls-1" d="M10.5,0h9A10.5,10.5,0,0,1,30,10.5h0A10.5,10.5,0,0,1,19.5,21h-9A10.5,10.5,0,0,1,0,10.5H0A10.5,10.5,0,0,1,10.5,0Z"/><g class="cls-2"><g class="cls-2"><path class="cls-3" d="M16.39,16H15.25V8.72a5.85,5.85,0,0,1-1.08.79,7.61,7.61,0,0,1-1.2.59V9A6.89,6.89,0,0,0,14.64,7.9a4.29,4.29,0,0,0,1-1.24h.74Z"/></g></g></svg>
