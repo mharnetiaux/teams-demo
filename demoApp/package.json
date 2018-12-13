@@ -9,8 +9,8 @@
     "build-android": "cordova build android --buildFlag='-UseModernBuildSystem=0'",
     "sim-ios": "cordova run --device ios --buildFlag='-UseModernBuildSystem=0'",
     "em-ios": "cordova emulate ios --target='iPhone-8-Plus' --buildFlag='-UseModernBuildSystem=0'",
-    "sim-android": "cordova run --device android --buildFlag='-UseModernBuildSystem=0'",
-    "em-android": "cordova emulate android  --buildFlag='-UseModernBuildSystem=0'",
+    "sim-android": "cordova run --device android",
+    "em-android": "cordova emulate android",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Apache Cordova Team",
@@ -28,12 +28,13 @@
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
-    "es6-promise-plugin": "^4.2.2"
+    "es6-promise-plugin": "^4.2.2",
+    "cordova-plugin-crosswalk-webview": "~2.4.0"
   },
   "cordova": {
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ],
     "plugins": {
       "cordova-plugin-statusbar": {},
@@ -45,7 +46,14 @@
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-camera-preview": {},
       "cordova-plugin-keyboard": {},
-      "cordova-plugin-android-support-v4": {}
+      "cordova-plugin-android-support-v4": {},
+      "cordova-plugin-crosswalk-webview": {
+        "XWALK_VERSION": "23+",
+        "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+        "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+        "XWALK_MODE": "embedded",
+        "XWALK_MULTIPLEAPK": "true"
+      }
     }
   },
   "devDependencies": {
