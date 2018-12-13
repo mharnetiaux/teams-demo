@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="12" height="22">
-	<font horiz-adv-x="2048">
-		<font-face font-family="TeamsAssets-Light" units-per-em="2048" underline-position="-119" underline-thickness="119"/>
-		<glyph unicode="" horiz-adv-x="2048" d="M1407 1920c0-17-6-32-19-45l-850-851 850-851c13-13 19-28 19-45s-6-32-19-45-28-19-45-19-32 6-45 19L402 979c-13 13-19 28-19 45s6 32 19 45l896 896c13 13 28 19 45 19s32-6 45-19 19-28 19-45z"/>
-	</font>
-	<text transform="translate(-4 22)" fill="#6264A7" font-family="'TeamsAssets-Light'" font-size="22">
-		
-	</text>
-</svg>
+<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 22" width="12" height="22"><path d="M10.8.2a.67.67 0 0 1 0 1l-9.13 9.11 9.13 9.14a.707.707 0 1 1-1 1L.21 10.79a.67.67 0 0 1 0-1L9.83.2a.67.67 0 0 1 1 0z" fill="#6264a7"/></svg>
