@@ -6,11 +6,13 @@
   "main": "index.js",
   "scripts": {
     "build-ios": "cordova build ios --buildFlag='-UseModernBuildSystem=0'",
-    "build-android": "cordova build android --buildFlag='-UseModernBuildSystem=0'",
-    "sim-ios": "cordova run --device ios --buildFlag='-UseModernBuildSystem=0'",
-    "em-ios": "cordova emulate ios --target='iPhone-8-Plus' --buildFlag='-UseModernBuildSystem=0'",
-    "sim-android": "cordova run --device android",
+    "build-android": "cordova build android",
+    "sim-ios": "cordova run ios --buildFlag='-UseModernBuildSystem=0'",
+    "em-ios": "cordova emulate ios --buildFlag='-UseModernBuildSystem=0'",
+    "sim-android": "cordova run android",
     "em-android": "cordova emulate android",
+    "build-platforms": "npm run build-android && npm run build-ios",
+    "em-platforms": "npm run em-android && npm run em-ios",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Apache Cordova Team",

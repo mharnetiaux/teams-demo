@@ -7,7 +7,10 @@
     "dev": "rm -f -r ./dist & replace 'false' 'true' webpack/environment.js & babel-node -- server/server.js",
     "build": "replace 'true' 'false' webpack/environment.js & webpack -p && npm run post-build",
     "post-build": "sh ./bash/dist.sh",
-    "prod": "npm run build && cd ../demoApp && npm run sim"
+    "build-prod": "npm run build && cd ../demoApp && npm run build-platforms",
+    "em-ios": "npm run build && cd ../demoApp && npm run em-ios",
+    "em-android": "npm run build && cd ../demoApp && npm run em-android",
+    "em-prod": "npm run build && cd ../demoApp && npm run em-platforms"
   },
   "author": "Matt Harnetiaux <mattskyh@gmail.com>",
   "license": "ISC",
