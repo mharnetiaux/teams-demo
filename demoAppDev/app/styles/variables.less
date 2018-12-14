@@ -21,15 +21,18 @@
 
 @input-border: #DFDEDE;
 
+/// Global spacing
 @spacingHalf: 0.5rem;
 @spacing: 1rem;
-@spacingx2: calc(@spacing * 2);
+@spacingDouble: calc(@spacing * 2);
 
-/// Clear the "notch" space on iphone
+/// iPhone specific
 @safe-area-inset-top: env(safe-area-inset-top);
 @safe-area-inset-bottom: env(safe-area-inset-bottom);
-@iphone-notch-clear-top: calc(~"1rem +" ~'@{safe-area-inset-top}' ~"- 0.5rem");
-@iphone-notch-clear-bottom: calc(~"1rem +" ~'@{safe-area-inset-bottom}' ~"- 0.5rem");
+@iphone-notch-clear-top: calc(~'@{spacing} +'~'@{safe-area-inset-top}');
+@iphone-notch-clear-top-half: calc(~'@{spacing} +'~'@{safe-area-inset-top} -' ~'@{spacingHalf}');
+@iphone-notch-clear-bottom: calc(~'@{spacing} +'~'@{safe-area-inset-bottom}');
+@iphone-notch-clear-bottom-half: calc(~'@{spacing} +'~'@{safe-area-inset-bottom} -' ~'@{spacingHalf}');
 
 
 

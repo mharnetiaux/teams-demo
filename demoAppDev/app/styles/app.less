@@ -22,7 +22,7 @@ html {
 
 /// Header container
 header {
-    padding-top: 2rem;
+    padding-top: @spacing;
     position: relative;
     background-color: @iphone-bg-grey;
     &::after {
@@ -40,7 +40,7 @@ header {
         flex-direction: row;
         margin: 0 auto;
         position: relative;
-        min-height: 2rem;
+        min-height: @spacingDouble;
         
         > a:last-child {
             margin-left: auto;
@@ -356,19 +356,12 @@ div div.rectangle11 {
     display: block;
 
     .alert {
-        padding: 1rem 0.5rem;
+        padding: 1rem @spacingHalf;
         width: 100%;
         background: @alert-red;
         color: @white;
         display: flex;
         justify-content: space-evenly;
-    }
-
-    /// iPhone specific
-    @supports(padding-top: max(0px)) {
-        .alert {
-            padding-top: @iphone-notch-clear-top;
-        }
     }
 }
 
@@ -383,3 +376,15 @@ div div.rectangle11 {
 @import "./meetings.less";
 @import "./camera-overlay.less";
 @import "./activity.less";
+
+
+/// iPhone specific
+@supports(padding-top: max(0px)) {
+    .alert-container .alert {
+        padding-top: @iphone-notch-clear-top-half;
+    }
+
+    header {
+        padding-top: @iphone-notch-clear-top;
+    }
+}
