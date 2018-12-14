@@ -221,16 +221,3 @@ button {
 .BlackSelector {
     background-color: @black;
 }
-
-/// iPhone specific
-@supports(padding-top: max(0px)) {
-    #cameraBackground,
-    .camera-color-modal,
-    .block1 {
-        padding-top: @iphone-notch-clear-top;
-    }
-
-    .block2 {
-        padding-bottom: @iphone-notch-clear-bottom;
-    }
-}

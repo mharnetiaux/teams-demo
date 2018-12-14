@@ -149,7 +149,7 @@
     }
 
     header {
-        padding: @spacingDouble 0;
+        padding: @spacing 0;
         position: relative;
 
         .person {
@@ -500,15 +500,5 @@
                 text-indent: 0;
             }
         }
-    }
-}
-
-/// iPhone specific
-@supports(padding-top: max(0px)) {
-    .single-chat header {
-        padding-top: @iphone-notch-clear-top;
-    }
-    .urgent-modal {
-        padding-bottom: @safe-area-inset-bottom;
     }
 }

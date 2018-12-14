@@ -1,0 +1,22 @@
+/// iPhone specific
+@supports(padding-top: max(0px)) {
+    header,
+    #cameraBackground,
+    .camera-color-modal,
+    .block1,
+    .single-chat header {
+        padding-top: @iphone-notch-clear-top;
+    }
+
+    .alert-container .alert {
+        padding-top: @iphone-notch-clear-top-half;
+    }
+
+    .urgent-modal {
+        padding-bottom: @safe-area-inset-bottom;
+    }
+
+    .block2 {
+        padding-bottom: @iphone-notch-clear-bottom;
+    }
+}

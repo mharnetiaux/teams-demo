@@ -1,5 +1,5 @@
 @import "./css-reset.less";
-@import "./variables.less";
+@import "variables/variables.less";
 
 body,
 html {
@@ -376,15 +376,4 @@ div div.rectangle11 {
 @import "./meetings.less";
 @import "./camera-overlay.less";
 @import "./activity.less";
-
-
-/// iPhone specific
-@supports(padding-top: max(0px)) {
-    .alert-container .alert {
-        padding-top: @iphone-notch-clear-top-half;
-    }
-
-    header {
-        padding-top: @iphone-notch-clear-top;
-    }
-}
+@import "device-supports/supports.less";
