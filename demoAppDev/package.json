@@ -9,7 +9,9 @@
     "post-build": "sh ./bash/dist.sh",
     "build-prod": "npm run build && cd ../demoApp && npm run build-platforms",
     "em-ios": "npm run build && cd ../demoApp && npm run em-ios",
+    "build-ios": "npm run build && cd ../demoApp && npm run build-ios",
     "em-android": "npm run build && cd ../demoApp && npm run em-android",
+    "build-android": "npm run build && cd ../demoApp && npm run build-android",
     "em-prod": "npm run build && cd ../demoApp && npm run em-platforms"
   },
   "author": "Matt Harnetiaux <mattskyh@gmail.com>",

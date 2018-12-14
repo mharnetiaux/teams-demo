@@ -21,9 +21,15 @@
 
 @input-border: #DFDEDE;
 
+@spacingHalf: 0.5rem;
+@spacing: 1rem;
+@spacingx2: calc(@spacing * 2);
+
 /// Clear the "notch" space on iphone
 @safe-area-inset-top: env(safe-area-inset-top);
 @safe-area-inset-bottom: env(safe-area-inset-bottom);
+@iphone-notch-clear-top: calc(~"1rem +" ~'@{safe-area-inset-top}' ~"- 0.5rem");
+@iphone-notch-clear-bottom: calc(~"1rem +" ~'@{safe-area-inset-bottom}' ~"- 0.5rem");
 
 
 

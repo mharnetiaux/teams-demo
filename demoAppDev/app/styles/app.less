@@ -9,18 +9,20 @@ html {
     position: relative;
     font-size: 1rem;
 
-    a {
-        text-decoration: none !important; /// Figure out why you need !important
+    a,
+    a:hover,
+    a:active {
+        text-decoration: none
     }
 
     li {
         list-style-type: none;
     }
 }
+
 /// Header container
 header {
-    padding-top: 1rem;
-    padding-top: @safe-area-inset-top;
+    padding-top: 2rem;
     position: relative;
     background-color: @iphone-bg-grey;
     &::after {
@@ -78,9 +80,7 @@ footer:not(.footer-2) {
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-bottom: @safe-area-inset-bottom;
+    padding: 1rem 0;
 
     &::before {
         position: absolute;
@@ -210,7 +210,6 @@ footer:not(.footer-2) {
     height: 265px;
     bottom: 0;
     padding-bottom: 1rem;
-    padding-bottom: @safe-area-inset-bottom;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
@@ -357,14 +356,19 @@ div div.rectangle11 {
     display: block;
 
     .alert {
-        padding-top: 1.5rem;
-        padding-top: @safe-area-inset-top;
-        padding-bottom: 1rem;
+        padding: 1rem 0.5rem;
         width: 100%;
         background: @alert-red;
         color: @white;
         display: flex;
         justify-content: space-evenly;
+    }
+
+    /// iPhone specific
+    @supports(padding-top: max(0px)) {
+        .alert {
+            padding-top: @iphone-notch-clear-top;
+        }
     }
 }
 

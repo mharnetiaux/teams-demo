@@ -114,7 +114,7 @@
                     align-items: center;
                     position: relative;
                     text-indent: 0.5rem;
-                    padding: 1rem 0;
+                    padding: @spacing 0;
 
                     img {
                         padding: 0 0.5rem
@@ -149,9 +149,7 @@
     }
 
     header {
-        padding-bottom: 1rem;
-        padding-top: 1rem;
-        padding-top: @safe-area-inset-top;
+        padding: 2rem 0;
         position: relative;
 
         .person {
@@ -225,9 +223,9 @@
                 display: block;
                 border: 1px solid @input-border;
                 border-radius: 4px;
-                height: 1rem;
+                height: @spacing;
                 max-height: 5rem;
-                padding: 1rem 0.5rem;
+                padding: @spacing 0.5rem;
 
                 &::placeholder {
                     line-height: 16px;
@@ -259,7 +257,7 @@
                 background: @white;
                 width:98.8%;
                 font-size: 13px;
-                padding-top: 1rem;
+                padding-top: @spacing;
                 text-indent: 0.6rem;
                 display: block;
                 color: @alert-red;
@@ -277,7 +275,7 @@
                 display: block;
                 color: @white;
                 padding: 0.5rem 0;
-                text-indent: 1rem;
+                text-indent: @spacing;
             }
 
             form {
@@ -300,7 +298,7 @@
 
     .message-received {
         overflow-y: scroll;
-        margin: auto 0 1rem 0;
+        margin: auto 0 @spacing 0;
 
         .message {
             display: flex;
@@ -360,7 +358,7 @@
             color: @white;
             border: 1px solid @icon-fill;
             border-radius: 4px;
-            margin: 1rem 2rem 0 auto;
+            margin: @spacing 2rem 0 auto;
             width: 65%;
             padding: 0.5rem;
             font-size: 17px;
@@ -372,8 +370,8 @@
             &.urgent::before {
                 content: "";
                 background: url(~"/icon/urgent.svg") no-repeat;
-                height: 1rem;
-                width: 1rem;
+                height: @spacing;
+                width: @spacing;
                 position: absolute;
                 left: -1.5rem;
                 top: 0;
@@ -382,8 +380,8 @@
             &::after {
                 content: "";
                 background: url(~"/icon/read.svg") no-repeat;
-                height: 1rem;
-                width: 1rem;
+                height: @spacing;
+                width: @spacing;
                 position: absolute;
                 bottom: -0.2rem;
                 right: -1.5rem;
@@ -391,7 +389,7 @@
         }
         .response-image {
             border-radius: 4px;
-            margin: 1rem 1rem 1rem auto;
+            margin: @spacing @spacing @spacing auto;
             max-width: 40%;
             min-height: 250px;
             max-height: 250px;
@@ -400,9 +398,7 @@
     }
 
     footer {
-        padding: 0.7rem 0;
-        padding-bottom: 0.5rem;
-        padding-bottom: @safe-area-inset-bottom;
+        padding: @spacing 0;
         width: 100%;
 
 
@@ -442,8 +438,8 @@
 .urgent-modal {
     background: @white;
     position: absolute;
-    padding-bottom: @safe-area-inset-bottom;
     bottom: 0;
+    padding-bottom: @spacing;
     min-height: 9rem;
     width: 100%;
     margin: auto;
@@ -466,8 +462,8 @@
         .priority {
             position: relative;
             text-indent: 1.5rem;
-            padding-bottom: 1rem;
-            margin-bottom: 1rem;
+            padding-bottom: @spacing;
+            margin-bottom: @spacing;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -505,4 +501,11 @@
             }
         }
     }
+}
+
+/// iPhone specific
+@supports(padding-top: max(0px)) {
+  .urgent-modal {
+    padding-bottom: @safe-area-inset-bottom;
+  }
 }
