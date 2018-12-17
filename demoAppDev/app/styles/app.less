@@ -303,7 +303,7 @@ div div.rectangle11 {
         background-size: cover;
         width: 66px;
         height: 130px;
-        margin: 10px 10px 0px 10px;
+        margin: 10px 10px 0 10px;
         border-radius: 8px;
         float: left;
     }
@@ -312,7 +312,7 @@ div div.rectangle11 {
         background-size: cover;
         width: 99px;
         height: 130px;
-        margin: 10px 10px 0px 0px;
+        margin: 10px 10px 0 0px;
         border-radius: 8px;
         float: left;
     }
@@ -321,7 +321,7 @@ div div.rectangle11 {
         background-size: cover;
         width: 99px;
         height: 130px;
-        margin: 10px 10px 0px 00px;
+        margin: 10px 10px 0 0;
         border-radius: 8px;
         float: left;
     }
@@ -357,11 +357,20 @@ div div.rectangle11 {
 
     .alert {
         padding: 1rem @spacingHalf;
-        width: 100%;
+        width: 95%;
         background: @alert-red;
         color: @white;
         display: flex;
         justify-content: space-evenly;
+        margin: 0 auto;
+
+        .alert-message {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 20rem;
+            padding: 0 @spacingHalf;
+        }
     }
 }
 
