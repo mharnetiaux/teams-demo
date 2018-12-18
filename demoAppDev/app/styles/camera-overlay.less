@@ -1,5 +1,4 @@
 #cameraBackground {
-    padding: @spacing 0;
     background-image: null;
     background-size: contain;
     background-repeat: no-repeat;
@@ -125,6 +124,11 @@
             display: flex;
             align-items: center;
             width: 50px;
+
+            .loaded {
+                width: 100%;
+                position: absolute;
+            }
 
             svg {
                 height: @spacing;
